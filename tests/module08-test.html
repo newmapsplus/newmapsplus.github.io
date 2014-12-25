@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <style>
 *{margin:0;padding:0;}
 body {
@@ -95,6 +96,9 @@ sup {
 	}
 }
 </style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script>hljs.initHighlightingOnLoad();</script>
+
 <title>Module 08: Introduction to Leaflet</title>
 
 </head>
@@ -139,18 +143,18 @@ sup {
 
 <p>Within the <em>&lt;head&gt;</em> tags we see our typical <em>meta</em> tag describing the character set used within the page, the document's <em>title</em> tags, and another meta tag describing the viewport. We need not worry too much about the character set or the viewport, but remember that it's always important to give your document a meaningful title within these <em>title</em> tags.</p>
 
-<pre>
+<pre><code>
 
 &lt;meta charset=utf-8 /&gt;
 &lt;title&gt;Map Page Template&lt;/title&gt;
 &lt;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&gt;
 
-</pre>
+</pre></code>
 
 
 <p>The document is loading four external files using &lt;script&gt; and &lt;link&gt; tags: the leaflet JavaScript file, the JQuery JavaScript file, the Leaflet CSS file, and (just for fun), and Google web font CSS file.</p>
 
-<pre>
+<pre><code>
 
 &lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">&lt;/script&gt;
 &lt;script src="https://code.jquery.com/jquery-1.11.1.min.js">&lt;/script&gt;
@@ -158,14 +162,14 @@ sup {
 &lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
 &lt;link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'&gt;
 
-</pre>
+</pre></code>
 
 
 <p></p>
 
 <p>Finally, the boilerplate has supplied some custom styles to help with the page layout itself. You need not worry about editing or modifying any of these currently, but feel free to do so.</p>
 
-<pre>
+<pre><code>
 
 &lt;style&gt;
   body { margin:0; padding:0; background: whitesmoke; font-family: Lato, sans-serif; color: #0D0000; }
@@ -180,7 +184,7 @@ sup {
   
 &lt;/style&gt;
 
-</pre>
+</pre></code>
 
 
 <p><strong>2.2. body code</strong></p>
@@ -199,7 +203,7 @@ sup {
 
 <p>Within the &lt;script&gt; tags at the bottom of our boilerplate web document we find the following code:</p>
 
-<pre>
+<pre><code>
 
 var map = L.map('map', {
   center: [38.0489,-84.5025],
@@ -215,7 +219,7 @@ var tiles = L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading
 
 map.addLayer(tiles);
 
-</pre>
+</pre></code>
 
 
 <p>We see that we're first declaring a new variable we've named <em>map</em>. What are we assigning to map though? It doesn't appear to be a datatype we're familiar with, does it?</p>
@@ -224,11 +228,11 @@ map.addLayer(tiles);
 
 <p>This is potentially confusing because we have three things called "map" here. Are they the same? No they are not. Which is which then?</p>
 
-<p>We're okay with the idea of the first one: <pre>var = map;</pre></p>
+<p>We're okay with the idea of the first one: <pre><code>var = map;</pre></code></p>
 
 <p>The second use of "map" is invoking the name of a <em>method</em> (a.k.a function) that is chained to the L using dot notation. This is  Leaflet method named <em>map</em>. Recall that methods and functions in JavaScript always contain parenthesis within their definition for passing additional arguments. So what this assignment really is:</p>
 
-<pre>var map = L.map(*arguments go in here*);</pre>
+<pre><code>var map = L.map(*arguments go in here*);</pre></code>
 
 
 <p>We see that the method is passing two arguments. What's the first one, this 'map.' The answer is that it's a string type, and it's referencing the value of our id attribute within the empty div tag in the html. This is how leaflet knows to put in the map object within those div tags.</p>
@@ -237,7 +241,7 @@ map.addLayer(tiles);
 
 <p>Consider that this code is the same as above:</p>
 
-<pre>
+<pre><code>
 
 var map;
 
@@ -249,7 +253,7 @@ var options = {
 }
 map = L.map(targetDiv, options);
 
-</pre>
+</pre></code>
 
 
 <h2>Exercise: Bringing Leaflet Tilelayers into the Leaflet map</h2>
