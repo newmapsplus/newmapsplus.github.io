@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Twitter Reaction to the Charlie Hedbo Attack</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<style>
+  body {  margin:0; padding:0; background: whitesmoke; font-family: Lato, sans-serif; color: #0D0000; }
+    h1 { padding-top: 30px; margin-left: 100px; }
+    h2 { margin-left: 100px;}
+  #wrapper { width: 960px; margin: 0 auto 15px;  }
+  #map { width:960px; height: 580px; border: 1px dashed #0d0000; clear: both; margin-top: 30px; }
+  .fl {
+    float: left;   
+  }
+  .countries {
+		fill: #e5e5e5;
+		stroke: #fff;
+		stroke-width:1px;
+	}
+  .stroke {
+    fill: none;
+    stroke: #888;
+    stroke-width: 1px;
+  }
+
+  .fill {
+    fill: #fff;
+  }
+
+  .graticule {
+    fill: none;
+    stroke: #777;
+    stroke-width: .5px;
+    stroke-opacity: .5;
+  }
+
+  .land {
+    fill: #222;
+  }
+
+  .boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-width: .5px;
+  }
+  .country {
+      stroke: grey;
+      stroke-width: .01em;
+  }
+  select {
+    font-size: 2em;
+    margin-top: 15px;
+  }
+
+}
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+    <img src="sheep.png" class="fl" />
+    
+    <h1>Twitter Reaction to the Charlie Hedbo Attack</h1>
+    <h2>Tweets containing <span id="currentAttribute"></span></h2>
+<!--    <div class="clear"></div>-->
+    <div id='map'></div>
+    
+    <select id='attSwitcher' name="attribute">
+        <option value="CharlieHebdo" selected>CharlieHebdo</option> 
+        <option value="JeSuisCharlie">JeSuisCharlie</option>
+        <option value="Either2">Either</option>
+    </select>
+
+    <p>Map description here ...</p>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="ss.js"></script>
+<script>
+(function() {
+	
+	var width = 960,
+		height = 580;
+
+	var projection = d3.geo.naturalEarth()
+        .scale(167)
+        .translate([width / 2, height / 2])
+        .precision(.1);
+
+    var zoom = d3.behavior.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", zoomed);
+    
+	var path = d3.geo.path()
+		.projection(projection);
+    
+    var graticule = d3.geo.graticule(); // create a graticule
+ 
+	var svg = d3.select('#map').append('svg')
+		.attr('width', width)
+		.attr('height', height)
+		.append('g');
+
+	var g = svg.append('g');
+
+	g.append("defs").append("path")   // prepare some svg for outer container of svg elements
+      .datum({type: "Sphere"})
+      .attr("id", "sphere")
+      .attr("d", path);
+    
+    g.append("use")   // use that svg to style with css
+      .attr("class", "stroke")
+      .attr("xlink:href", "#sphere");
+    
+    g.append("path")    // use path generator to draw a graticule
+      .datum(graticule)
+      .attr("class", "graticule")
+      .attr("d", path);
+
+    svg
+        .call(zoom)
+        .call(zoom.event);
+	
+	queue()
+        .defer(d3.json, 'world-topo.json')
+		.defer(d3.csv, 'lqs.csv')
+		.await(drawMap);
+    
+    var CharlieHebdoArray = [],
+        JeSuisCharlieArray = [],
+        Either2Array = [],
+        currentAttribute = 'CharlieHebdo';
+    
+    $("#currentAttribute").html('#'+currentAttribute);
+    
+    var controlCutValue = 16;
+ 
+	function drawMap(error, world, tweetData) {
+        
+        var countries = world.objects.countries.geometries;
+        
+        for (var i in countries) {
+            for (var j in tweetData) {
+                if(countries[i].properties.id == tweetData[j].ISO){
+                    countries[i].properties.tweetData = tweetData[j];
+                    if(tweetData[j].control1 >= controlCutValue) {
+                        if(tweetData[j].CharlieHebdo > 0) {
+                            CharlieHebdoArray.push(Number(tweetData[j].CharlieHebdo));
+                        }
+                        if(tweetData[j].JeSuisCharlie > 0) {
+                           JeSuisCharlieArray.push(Number(tweetData[j].JeSuisCharlie)); 
+                        }
+                        if(tweetData[j].Either2 > 0) {
+                            Either2Array.push(Number(tweetData[j].Either2));
+                        }    
+                    }
+                }
+            }    
+        }        
+        
+        g.selectAll(".country") 
+              .data(topojson.feature(world, world.objects.countries).features)
+              .enter().append("path") 
+              .attr("class", "country") 
+              .attr("id", function(d) { return "code_" + d.properties.id; }, true)
+              .attr("d", path)
+              .attr('fill', function(d) {
+                    try {
+                        if(Number(d.properties.tweetData.control1) >= controlCutValue) {
+                           return getColor(Number(d.properties.tweetData[currentAttribute]), getDataRange(currentAttribute)); 
+                        } else {
+                            return '#e6e6e6';   
+                        }
+                        
+                    } catch(e) {
+                        return '#e6e6e6';   
+                    }
+                });
+        
+        $('select').change(function() {
+		
+			updateMap($(this).val());
+
+		});
+
+	}
+
+    function getColor(valueIn, valuesIn) {
+        if(valueIn >= 1) {
+            
+            var color = d3.scale.linear() // create a linear scale
+                .domain([1,valuesIn[1]])  // input uses min and max values
+                .range(["rgb(253,174,97)", "rgb(165,0,38)"])
+                .interpolate(d3.interpolateRgb);
+
+                return color(valueIn);  // return that number to the caller 
+        } else {
+            var color = d3.scale.linear() // create a linear scale
+                .domain([valuesIn[0],.99999])  // input uses min and max values
+                .range(["rgb(69,117,180)", "rgb(224,243,248)"])
+                .interpolate(d3.interpolateRgb);
+
+                return color(valueIn);  // return that number to the caller
+            
+        }
+
+    }
+
+    function getDataRange(att){
+
+        if(att == 'CharlieHebdo') {
+            return [ss.min(CharlieHebdoArray),ss.max(CharlieHebdoArray)];
+        }
+        
+        if(att == 'JeSuisCharlie') {
+             return [ss.min(CharlieHebdoArray),ss.max(JeSuisCharlieArray)];
+        }
+        
+        if(att == 'Either2') {
+            return [ss.min(CharlieHebdoArray),ss.max(Either2Array)];
+        }
+    }
+    function updateMap(att) {
+
+        var dataRange = getDataRange(att),
+            currentAttribute = att;
+        if(att == "Either2") {
+              $("#currentAttribute").html("either #CharlieHebdo or #JeSuisCharlie");
+        } else {
+             $("#currentAttribute").html('#'+att); 
+        }
+      
+        
+        d3.selectAll('.country').transition()
+          .duration(750) 
+          .attr('fill', function(d) {
+            
+            try {
+                 if(Number(d.properties.tweetData.control1) >= controlCutValue) {
+                     
+                    return getColor(Number(d.properties.tweetData[att]), getDataRange(att));
+                 } else {
+
+                    return '#e6e6e6';  
+                 }
+            } catch(e) {
+                return '#e6e6e6';
+            }
+            
+          })
+
+    }
+    function zoomed() {
+      g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+    }
+
+    d3.select(self.frameElement).style("height", height + "px");
+
+})();
+</script>
+
+</body>
+</html>
