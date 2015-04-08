@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Task J Solution</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="simple_statistics.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: whitesmoke;
+            font-family: Lato, sans-serif;
+            color: #0D0000;
+        }
+        header {
+            padding: 6px 10%;
+        }
+        h1 {
+            display: inline-block;
+            margin-right: 20px;
+            color: #001323;
+        }
+        h2 {
+            display: inline-block;
+            color: #001323;
+        }
+        #map {
+            width: 960px;
+            height: 540px;
+            margin: 10px auto;
+            background: whitesmoke;
+            border: 2px solid #dddedf;
+        }
+        footer {
+            padding: 6px 10%;
+            width: 80%;
+        }
+        p {
+            font-size: 1em;
+            color: #001323;
+        }
+        .legend {
+            padding: 6px 8px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 160px;
+        }
+        .legend h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            line-height: 1em;
+            color: #001323;
+            margin: 0;
+        }
+        .legend li {
+            list-style-type: none;
+            height: 22px;
+        }
+        .legend span {
+            width: 30px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+        }
+        #ui-controls {   
+            width: 160px;
+        }
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .info {
+            padding: 6px 8px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            text-align: right;   
+        }
+        .info h3 {
+            margin: 0;   
+        }
+        .leaflet-popup-content {
+            max-width: 120px;   
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Map Title</h1>
+        <h2>Map Subtitle</h2>
+    </header>
+    <div id='ui-controls'>
+     <label>Choose a data attribute:<br>
+        <select name="occupied">
+            <option value="OWNED_MORT" selected>owned with mortgage</option>
+            <option value="OWNED_FREE">owned free and clear</option> 
+            <option value="RENTER">rented</option>
+        </select>
+        </label>
+    </div>
+    <div id='map'></div>
+    <script>
+        
+        // initial map options, disabling pan/zoom
+        var options = {
+            center: [38.2, -85.8],
+            zoom: 7.4,
+            minZoom: 7.4,
+            maxZoom: 7.4,
+            dragging: false,
+            zoomControl: false
+        }
+        
+        // create Leaflet map and apply options
+        var map = L.map('map', options);
+        
+        // set global variables for map layer, 
+        // mapped attribute, and normalizing attribute
+        var dataLayer,
+            attribute = "OWNED_MORT",
+            norm = "OCCUPIED";
+        
+        // create object to hold legend titles
+        var labels = {
+            "OWNED_MORT": "% occupied housing units owned with mortgage",
+            "OWNED_FREE": "% occupied housing units owned free and clear",
+            "RENTER": "% occupied housing units rented"   
+        }
+        
+        // AJAX call to load county-level data
+        $.getJSON("ky_counties_housing.json", function(data) {
+            
+            // create Leaflet data layer and add to map
+            dataLayer = L.geoJson(data, {
+                 style: function(feature) {
+                    // style counties with initial default path options
+                    return {
+                            color: '#dddddd',
+                            weight: 2,
+                            fillOpacity: 1,
+                            fillColor: '#1f78b4'
+                        };
+                }          
+            }).addTo(map);
+            
+            ui();  // create the UI controls
+            drawLegend(); // draw the legend
+            drawMap(); // draw the map
+            drawInfo(); // draw the info panel
+        });
+        
+        function drawMap() {
+            
+            // get the class breaks for the initial data attribute
+            var breaks = getClassBreaks();
+
+            // loop through each county layer
+            dataLayer.eachLayer(function(layer) {
+                
+                // set the fill color of layer based on its normalized data value
+                layer.setStyle({
+                    fillColor: getColor(layer.feature.properties[attribute]/
+                                        layer.feature.properties[norm], breaks)
+                });
+                
+                // bind a popup to layer with county-specific information
+                layer.bindPopup("<b>"+layer.feature.properties["NAME"]+" County</b></br>" +
+                                labels[attribute] + ": " + ((layer.feature.properties[attribute]/
+                                        layer.feature.properties[norm])*100).toLocaleString());
+
+                // on mousing over layer
+                layer.on('mouseover', function() {
+                    
+                    // update the info panel
+                    updateInfo(this); 
+                    
+                    // change the stroke color and bring that element to the front
+                    layer.setStyle({color: 'yellow'}).bringToFront();  
+                });
+                
+                // on mousing off layer
+                layer.on('mouseout', function() {
+                    
+                    // reset the layer style to its original stroke color
+                    layer.setStyle({color: '#dddddd'});
+                });
+                
+            });  
+            
+            // when mousing over the map
+            dataLayer.on('mouseover', function() {
+                $(".info").show(); // display the info panel
+            });
+            
+            // when mousing off the map
+            dataLayer.on('mouseout', function() {
+                $(".info").hide();  // hide the info panel 
+            });
+            
+            // update the legend with the current data attribute information
+            updateLegend(breaks);
+            
+        }
+        
+        function getClassBreaks() {
+            
+            // create empty Array for storing values
+            var values = [];
+            
+            // loop through all the counties
+            dataLayer.eachLayer(function(layer) {
+                var value = layer.feature.properties[attribute]/layer.feature.properties[norm];
+                values.push(value);   // push the normalized value for each layer into the Array
+            }); 
+            
+            var breaks = ss.jenks(values, 5);  // determine the class breaks
+            return breaks;  // return Array of class breaks
+            
+        }   
+        
+        function getColor(d, breaks) {
+            // function accepts a single normalized data attribute value 
+            // and uses a series of conditional statements to determine which 
+            // which color value to return to return to the function caller
+            
+            if(d <= breaks[1]) {
+                return '#f1eef6';
+            } else if(d <= breaks[2]) {
+                return '#bdc9e1';
+            } else if(d <= breaks[3]) {
+                return '#74a9cf';
+            } else if(d <= breaks[4]) {
+                return '#2b8cbe'
+            } else if(d <= breaks[5]) {
+                return '#045a8d'
+            }
+        }
+        
+        function drawLegend() {
+            
+            // create a new Leaflet control object, and position it top left
+            var legend = L.control({position: 'topleft'});
+            
+            // when the legend is added to the map
+            legend.onAdd = function(map) {
+                
+                // create a div element with an class attribute of legend
+                var div = L.DomUtil.create('div', 'legend');
+                
+                // return the div to the method
+                return div;
+        
+            };
+            
+            // add the empty legend div to the map
+            legend.addTo(map);
+        }
+        
+        function updateLegend(breaks) {
+            
+            // select the legend, add a title, begin an unordered list and assign to a variable
+            var legend = $('.legend').html("<h3>" + labels[attribute] + "</h3><ul>"); 
+
+            // loop through the Array of classification break values
+            for (var i = 0; i < breaks.length-1; i++) {
+                
+                // get a color value for each
+                var color = getColor(breaks[i + 1], breaks);
+                
+                // append a list item to the legend
+                legend.append('<li><span style="background:' + color + '"></span> ' +
+                    (breaks[i]*100).toLocaleString() + ' &mdash; ' + 
+                    (breaks[i + 1]*100).toLocaleString() + '</li>');
+            }
+            
+            // close the legend's unordered list
+            legend.append("</ul>");
+        }
+        
+        function ui() {
+         
+            // create a new Leaflet control Object and assign to a variable
+            var dataView = L.control({position: 'topleft'});
+            
+            // when the control is added to the map
+            dataView.onAdd = function(map) {
+                
+                // select an existing DOM element with id of 'ui-controls'
+                var controls = L.DomUtil.get('ui-controls');
+                
+                // return that element to the method
+                return controls;
+            }
+            
+            // add the control to the map
+            dataView.addTo(map);
+         
+            // select the dropdown elemetn and listen for a change
+            $('select[name="occupied"]').change(function() {
+                
+                // re-assign the value based off user's selection
+                attribute = $(this).val();
+                
+                // update the map
+                drawMap();
+                
+            });
+        }
+        
+        function drawInfo() {
+            
+            // create a new Leaflet control object and position top right
+            var info = L.control({position: 'topright'});
+            
+            // when adding control to map
+            info.onAdd = function(map) {
+                
+                // create a new div with class of info
+                var div = L.DomUtil.create('div', 'info');
+                
+                // return div to control object
+                return div;  
+                
+            }
+            
+            // add the empty info div to the map
+            info.addTo(map);
+            
+            // select the info panel and hide it
+            $(".info").hide();
+        }
+        
+        function updateInfo(layer) {
+            
+            // create shortcut for accessing properties
+            var props = layer.feature.properties;
+            
+            // build an HTML string of relevant information about that county
+            var html = "<h3>"+props['NAME']+" County</h3>"+
+                        "total # occupied units: <b>"+ props["OCCUPIED"]+"</b><br>"+
+                        "# owned with mortage or loan: <b>"+ props["OWNED_MORT"]+"</b><br>"+
+                        "# owned free and clear: <b>"+ props["OWNED_FREE"]+"</b><br>"+
+                        "# occupied by renters: <b>"+ props["RENTER"]+"</b>"
+            
+            // insert HTML content into empty info panel
+            $(".info").html(html);
+        }
+
+    </script>
+    
+</body>
+
+</html>

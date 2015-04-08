@@ -14,23 +14,23 @@
     
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300' rel='stylesheet' type='text/css'>
 
 
 <style>
     body { 
         margin:0; 
         padding:0; 
-        background: whitesmoke; 
-        font-family: Lato, sans-serif; 
+        background: whitesmoke;  
         color: #0D0000; 
+        font-family: Imprima, sans-serif;
     }
     header { 
         width: 80%;
         min-width: 800px;
         margin: 0 auto;
     }
-    a, a:visited {
-        
+    a, a:visited {   
         color: #003d71;
     }
     nav {
@@ -59,22 +59,26 @@
         text-decoration: none;
     }
     h1 { 
-        font-family: "Bree Serif", serif;
+        font-family: Dosis, sans-serif;
         color: #375671 ; 
     }
     h2 { 
-        font-family: "Bree Serif", serif;
+        font-family: Dosis, sans-serif;
         color: #375671 ; 
     }
     h3 {
-        font-family: "Bree Serif", serif;
-        font-weight: normal;
+        font-family: Dosis, sans-serif;
         color: #003d71
     }
     p { 
-        font-family: Imprima, sans-serif;
         font-size: .9em; 
         color: #375671; 
+    }
+    ul {
+        list-style-type: none; 
+        font-size: .9em; 
+        color: #375671; 
+        line-height: 1.6em;
     }
     .project {
         width: 80%;
@@ -109,29 +113,34 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/blog/">GitHub</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://github.com/newmapsplus/geo409">GitHub</a></li>
         </ul>
     </nav>
-    <h1>Geo409: Advanced GIS</h1>
+    <h1>Geo409 &ndash; 709: Advanced GIS</h1>
     <h2>Web Mapping at the University of Kentucky</h2>
 </header>
     
 <section class="project">
-    <a href="#"><image src="images/ky-unemployment.png" class="image" /></a>
-    <h3><a href="#">Unemployment rates in Kentucky</a></h3>
+    <a target="_blank" href="us-unemployment/"><image src="images/us-unemployment.png" class="image" /></a>
+    <h3><a target="_blank" href="us-unemployment/">US Unemployment Rates: 2001 &ndash; 2013</a></h3>
+    <p>This choropleth map shows unemployment rates in the Commonwealth of Kentucky by county for years ranging between 2001 and 2013.</p>
+    <p>The data is loaded dynamically with an AJAX request, and classifications are calculated at run-time within the client. The map uses an HTML5 range slider used to sequence through the years and update the map.</p>
+    <ul>
+        <li>Data Source: <a href="http://www.bls.gov/data/">Bureau of Labor Statistics</a></li>
+        <li>See the <a href="https://github.com/newmapsplus/geo409/tree/master/map-04">code for this map hosted on GitHub</a></li>
+    </ul>
+</section>
+    
+<section class="project">
+    <a target="_blank" href="ky-housing/"><image src="images/ky-housing.png" class="image" /></a>
+    <h3><a target="_blank" href="ky-housing/">Housing In Kentucky</a></h3>
     <p>This map blah blah blah</p>
 </section>
     
 <section class="project">
-    <a href="#"><image src="images/ky-housing.png" class="image" /></a>
-    <h3><a href="#">Housing In Kentucky</a></h3>
-    <p>This map blah blah blah</p>
-</section>
-    
-<section class="project">
-    <a href="#"><image src="images/power-plants.png" class="image" /></a>
-    <h3><a href="#">US Electric Power Generation</a></h3>
+    <a target="_blank" href="us-power-plants/"><image src="images/power-plants.png" class="image" /></a>
+    <h3><a target="_blank" href="us-power-plants/">US Electric Power Generation</a></h3>
     <p>This map blah blah blah</p>
 </section>
     

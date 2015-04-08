@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Module 15 Solution</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.0/papaparse.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="simple_statistics.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: whitesmoke;
+            font-family: Lato, sans-serif;
+            color: #0D0000;
+        }
+        header {
+            padding: 6px 10%;
+        }
+        h1 {
+            position: absolute;
+            z-index: 100;
+            top: 10px;
+            left: 60px;
+            padding: 8px 15px;
+            margin: 0;
+            color: whitesmoke;
+            font-size: 1.5em;
+            background: rgba(25,25,25,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px; 
+        }
+        h2 {
+            display: inline-block;
+            color: #001323;
+        }
+        #map {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+        }
+        footer {
+            padding: 6px 10%;
+            width: 80%;
+        }
+        p {
+            font-size: 1em;
+            color: #001323;
+        }
+        .legend {
+            padding: 6px 8px;
+            font-size: 1em;
+            background: rgba(75,75,75,0.8);
+            color: whitesmoke;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 160px;
+        }
+        .legend h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            line-height: 1em;
+            color: whitesmoke;
+            margin: 0;
+        }
+        .legend li {
+            list-style-type: none;
+            height: 22px;
+        }
+        .legend span {
+            width: 30px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+        }
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .leaflet-popup-content {
+            max-width: 120px;   
+        }
+        #ui-controls {
+            width: 176px;   
+            padding: 8px 25px 8px 15px;
+            background: rgba(75,75,75,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px; 
+            color: whitesmoke;
+        }
+        #ui-controls .min {
+            float: left;   
+        }
+        #ui-controls .max {
+            float: right;
+            margin-right: -15px;
+        }
+        .year-slider {
+            width: 100%;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>US Unemployment Rates: 2001 &ndash; 2013</h1>
+    <div id='map'></div>
+    <div id="ui-controls">
+        <label><span class="min">2001</span><span class="max">2013</span>
+            <input type="range" min = "2001", max= "2013", 
+                   value = "2001", step= "1", class="year-slider"></input>
+        </label>
+    </div>
+    
+    
+    <script>
+        
+        var options = {
+            center: [38.2, -94],
+            zoom: 4,
+            minZoom: 4,
+            maxZoom: 6,
+            dragging: true,
+            zoomControl: true
+        }
+        var map = L.map('map', options);
+        
+        var tiles = L.tileLayer('http://{s}.tile.stamen.com/toner-background/{z}/{x}/{y}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            subdomains: 'abcd',
+            minZoom: 4,
+            maxZoom: 6,
+            ext: 'png'
+        });
+        map.addLayer(tiles);
+                
+        var dataLayer,
+            attribute = '2001';
+
+
+        $.getJSON("us-states.json", function(states) {
+                    
+            Papa.parse('states-unemployment.csv', {
+                download: true,
+                header: true,
+                complete: function(data) {
+                    processData(states, data);
+                }
+            });
+                    
+        });
+        
+        function processData(states,data) {
+
+            for (var state in states.features) {
+                
+                var props = states.features[state].properties;
+                
+                for(var d in data.data) {
+                   if(props.STATEFP == data.data[d].STATE_FIP) {
+                      states.features[state].properties = data.data[d]; 
+                      break;
+                   }  
+                }
+               
+            }
+            
+            drawLegend();
+            createSliderUI();
+            drawMap(states);   
+        }
+
+        
+        function drawMap(states) {
+            
+            dataLayer = L.geoJson(states, {
+                 style: function(feature) {
+                    return {
+                            color: '#383838',
+                            weight: 1,
+                            fillOpacity: 1,
+                            fillColor: '#1f78b4'
+                        };
+                }          
+            }).addTo(map);
+            
+            updateMap();
+                  
+        }
+        
+        function updateMap() {
+            
+            var breaks = getClassBreaks();
+           
+            dataLayer.eachLayer(function(layer) {
+                
+                layer.setStyle({
+                    fillColor: getColor(Number(layer.feature.properties[attribute]), breaks)
+                });
+                                
+            }); 
+            
+            updateLegend(breaks);
+        }
+        
+        function getClassBreaks() {
+            
+            var values = [];
+            
+            dataLayer.eachLayer(function(layer) {
+                var value = layer.feature.properties[attribute];
+                values.push(Number(value));   
+            }); 
+
+            var breaks = ss.quantile(values, [0, 0.2, 0.4, 0.6, 0.8, 1]);
+            
+            return breaks;
+            
+        }   
+        
+        function getColor(d, breaks) {
+            if(d <= breaks[1]) {
+                return '#f2f0f7';
+            } else if(d <= breaks[2]) {
+                return '#cbc9e2';
+            } else if(d <= breaks[3]) {
+                return '#9e9ac8';
+            } else if(d <= breaks[4]) {
+                return '#756bb1'
+            } else if(d <= breaks[5]) {
+                return '#54278f'
+            } 
+        }
+                
+        function drawLegend() {
+            
+            var legend = L.control({position: 'topright'});
+
+            legend.onAdd = function(map) {
+                
+                var div = L.DomUtil.create('div', 'legend');
+                
+                return div;
+        
+            };
+
+            legend.addTo(map);
+        }
+        
+        function updateLegend(breaks) {
+            
+            var legend = $('.legend').html("<h3>% Unemployment: " + attribute + "</h3><ul>"); 
+
+            for (var i = 0; i < breaks.length-1; i++) {
+                var color = getColor(breaks[i + 1], breaks);
+                legend.append('<li><span style="background:' + color + '"></span> ' +
+                    breaks[i] + ' &mdash; ' + 
+                    breaks[i + 1] + '</li>');
+            }
+            legend.append("</ul>");
+        }
+
+        function createSliderUI() {
+
+            var sliderControl = L.control({ position: 'bottomleft'} );
+
+            sliderControl.onAdd = function(map) {
+
+                var slider = L.DomUtil.get("ui-controls");
+
+                    L.DomEvent.addListener(slider, 'mousedown', function(e) { 
+
+                        L.DomEvent.stopPropagation(e); 
+
+                    });
+
+                return slider;
+            }
+
+            sliderControl.addTo(map);
+            
+            $(".year-slider")
+                .on('input change', function() {
+                    attribute = $(this).val();
+                    updateMap();
+                });
+
+        } // end createSliderUI()
+
+    </script>
+    
+</body>
+
+</html>
