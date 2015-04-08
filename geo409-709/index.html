@@ -2,75 +2,149 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Geo404/709 </title>
-</head>		
+<title>Geo404/709</title>
 
-<body>
-
-
-
-</body>
-</html>
-
-
-<html>
-<head>
-<meta charset=utf-8 />
-<title>Map Page Template</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
+
 
 <style>
-  body { margin:0; padding:0; background: whitesmoke; font-family: Lato, sans-serif; color: #0D0000; }
-  header { padding: 6px 10%; }
-  h1 { display: inline-block; margin-right: 20px; color: #001323; }
-  h2 { display: inline-block; color: #001323; }
-  #map { width:80%; height: 540px; margin: 10px auto; }
-  footer { padding: 6px 10%; width: 80%; }
-  p { font-size: 1em; color: #001323; }
-    
-  /* Additional style rules go here! */
+    body { 
+        margin:0; 
+        padding:0; 
+        background: whitesmoke; 
+        font-family: Lato, sans-serif; 
+        color: #0D0000; 
+    }
+    header { 
+        width: 80%;
+        min-width: 800px;
+        margin: 0 auto;
+    }
+    a, a:visited {
+        
+        color: #003d71;
+    }
+    nav {
+        font-family: Imprima, sans-serif;
+        float: right;
+    }
+    nav ul {
+        list-style-type: none;
+    }
+    nav li {
+        display: inline;
+        margin-left: 15px;
+        background: white;
+        padding: 3px 6px;
+        border: .08em solid #003d71;
+        border-radius: 3px;
+    }
+    nav li:hover {
+        background: whitesmoke;
+    }
+    nav li:hover a {
+        color: #003d71;   
+    }
+    nav a {
+        color: #003d71;
+        text-decoration: none;
+    }
+    h1 { 
+        font-family: "Bree Serif", serif;
+        color: #375671 ; 
+    }
+    h2 { 
+        font-family: "Bree Serif", serif;
+        color: #375671 ; 
+    }
+    h3 {
+        font-family: "Bree Serif", serif;
+        font-weight: normal;
+        color: #003d71
+    }
+    p { 
+        font-family: Imprima, sans-serif;
+        font-size: .9em; 
+        color: #375671; 
+    }
+    .project {
+        width: 80%;
+        min-width: 800px;
+        height: 100%;
+        margin: 35px auto;
+    }
+    .project:after{
+        content: "";
+        display: table;
+        clear: both; 
+    }
+    .image {
+        width: 388px;
+        height: 240px;
+        background: white;
+        float: left;
+        margin-right: 20px;
+        border: 2px solid #dddddd;
+    }
+    footer { 
+        width: 80%;
+        min-width: 800px;
+        padding: 6px 10%; 
+    }
+
 </style>
 </head>
 
 <body>
 <header>
-  <h1>Map Title</h1>
-  <h2>Map Subtitle</h2>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/blog/">GitHub</a></li>
+        </ul>
+    </nav>
+    <h1>Geo409: Advanced GIS</h1>
+    <h2>Web Mapping at the University of Kentucky</h2>
+
 </header>
 
-<div id='map'></div>
+<section class="project">
+    <a href="#"><image src="images/beer-tweets.png" class="image" /></a>
+    <h3><a href="#">Beer Tweets Across America</a></h3>
+    <p>This map blah blah blah. Here is a <a href="#">link to the map</a>. And here is a link to the <a href="#">code on GitHub</a>.</p>
+</section>
+    
+<section class="project">
+    <a href="#"><image src="images/ky-unemployment.png" class="image" /></a>
+    <h3><a href="#">Unemployment rates in Kentucky</a></h3>
+    <p>This map blah blah blah</p>
+</section>
+    
+<section class="project">
+    <a href="#"><image src="images/power-plants.png" class="image" /></a>
+    <h3><a href="#">US Electric Power Generation</a></h3>
+    <p>This map blah blah blah</p>
+</section>
+    
+<section class="project">
+    <a href="#"><image src="images/ky-housing.png" class="image" /></a>
+    <h3><a href="#">Housing In Kentucky</a></h3>
+    <p>This map blah blah blah</p>
+</section>
 
-<footer>
-<p>Map authored by YOUR NAME</p>
-<p>Additional information about the data and map goes here.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.<p>
-</footer>
 
 <script>
     
-var map;
-var targetDiv = 'map';
-var options = {
-  center: [38.0489,-84.5025],
-  zoom: 13
-}
-map = L.map(targetDiv, options);
-
-var tiles = L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
-  attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-  subdomains: '0123',
-  minZoom: 2,
-  maxZoom: 18
-});
-
-map.addLayer(tiles);
-
 </script>
 </body>
 </html>
