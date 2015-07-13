@@ -118,7 +118,7 @@
 
         // first load and display the land geometry so user has something to look at
         $.getJSON("data/land.json", function(land) {
-            var landLayer = L.geoJson(land, {
+            L.geoJson(land, {
                 style: function(feature) {
                     return {                
                         stroke: false,
@@ -130,10 +130,24 @@
                 }
             }).addTo(map);
             
-            // then load in the bigger data file
-            $.getJSON("data/beer-hexgrid.json", function(data) {
-                ready(data)
-            })
+            $.getJSON("data/states.json", function(states) {
+                 L.geoJson(states, {
+                    style: function(feature) {
+                        return {                
+                            stroke: true,
+                            fill: false,
+                            color: 'whitesmoke',
+                            weight: 2.5,
+                            opacity: .04
+                        }
+                }
+                }).addTo(map);
+                // then load in the bigger data file
+                $.getJSON("data/beer-hexgrid.json", function(data) {
+                    ready(data)
+                })
+            });
+
         });
 
     function ready(data) {
