@@ -46,14 +46,17 @@
         normalized = 'norm',
         hexgrid, 
         breaks = {
-            norm: [2,1,.5,.3], // encoded high to low
-            compare: [1.6,1.3,1,.6,.3]
+            // breaks should be symmetrical 
+            norm: [2.5,1.25,.8,.4], // encoded high to low
+            compare: [2.5,1.25,.8,.4]
         },
         colorSchemes = {
-            norm: ['#0868ac','#43a2ca','#7bcce4','#bae4bc','#f0f9e8'],
+            //norm: ['#0868ac','#43a2ca','#7bcce4','#bae4bc','#f0f9e8'],
+            norm: ['rgb(255,255,212)','rgb(254,217,142)','rgb(254,153,41)','rgb(217,95,14)','rgb(153,52,4)'].reverse(),
             normLabels: ['highly likely','likely','about average','unlikely','highly unlikely'],
-            compare: ['#2166ac','#67a9cf','#d1e5f0','#f7f7f7','#fddbc7','#ef8a62','#b2182b'],
-            compareLabels: ['highly more likely','more likely','slighly more likely','about equal', 'slightly more likely','more likely','highly more likely']
+            //compare: ['#2166ac','#67a9cf','#d1e5f0','#f7f7f7','#fddbc7','#ef8a62','#b2182b'],
+            compare: ['rgb(230,97,1)','rgb(253,184,99)','rgb(247,247,247)','rgb(178,171,210)','rgb(94,60,153)'],
+            compareLabels: ['highly likely','likely','about average','unlikely','highly unlikely']
         },
         displayNames = {
             ale: 'ale',
@@ -249,13 +252,15 @@
             var props = layer.feature.properties;
             
             // calculate a value for each hex based on the selected beer attribute
-            if(!props[normAtt]) {
-                var val = (props[selectedAtt]/sumData[selectedAtt])/(1/sumData[normAtt]);
-            } else {
-                var val = (props[selectedAtt]/sumData[selectedAtt])/(props[normAtt]/sumData[normAtt]);
-            }
+            if(!props[normAtt]) props[normAtt] = 1
 
-            if(val != 0){
+            var odds = (props[selectedAtt]/sumData[selectedAtt])/(props[normAtt]/sumData[normAtt]);
+            var ciUpper = Math.exp(Math.log(odds)+1.96*Math.sqrt(1/props[selectedAtt]+1/sumData[selectedAtt]+1/props[normAtt]+1/sumData[normAtt])) 
+            var ciLower = Math.exp(Math.log(odds)-1.96*Math.sqrt(1/props[selectedAtt]+1/sumData[selectedAtt]+1/props[normAtt]+1/sumData[normAtt])) 
+            var ci = (ciUpper - ciLower) / odds
+            var val = odds
+            
+            if(val != 0 & ci < 8){ // cutoff based on very scientific method
                 // color the hex value based upon the current data value 
                 layer.setStyle({
                     fill: true,
