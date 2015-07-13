@@ -52,7 +52,7 @@
         },
         colorSchemes = {
             //norm: ['#0868ac','#43a2ca','#7bcce4','#bae4bc','#f0f9e8'],
-            norm: ['rgb(255,255,212)','rgb(254,217,142)','rgb(254,153,41)','rgb(217,95,14)','rgb(153,52,4)'].reverse(),
+            norm: ['#005daa','#2a86d1','#5aa4e0','#90c5f0','#cce8ff '],
             normLabels: ['highly likely','likely','about average','unlikely','highly unlikely'],
             //compare: ['#2166ac','#67a9cf','#d1e5f0','#f7f7f7','#fddbc7','#ef8a62','#b2182b'],
             compare: ['rgb(230,97,1)','rgb(253,184,99)','rgb(247,247,247)','rgb(178,171,210)','rgb(94,60,153)'],
@@ -354,7 +354,7 @@
     function updateLegend(){
         var currentBeer = $("#brew").val();
         if(normAtt == 'rn0to10000') { 
-            $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#48a3c8 ">"'+displayNames[currentBeer]+'"</span></h3><ul>');
+            $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#005daa; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span></h3><ul>');
             var labels = ['highly likely', 'likely', 'about average', 'unlikely', 'highly unlikely'];
         } else {
             $('.legend').html('<h3>Comparison of <span class="highly-unlikely">"'+displayNames[currentBeer]+'"</span>  vs <span class="highly-likely">"'+displayNames[normAtt]+'"</span></h3><ul>');
