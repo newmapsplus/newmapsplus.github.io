@@ -22,8 +22,8 @@
     var map = L.map('map', {
         center: [40,-93],
         zoom: zoomLevel,
-        minZoom: zoomLevel,
-        maxZoom: zoomLevel,
+        minZoom: zoomLevel - .3,
+        maxZoom: zoomLevel + .3,
         zoomControl: false,
         dragging: false,
         attributionControl: false,
