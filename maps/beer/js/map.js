@@ -51,11 +51,9 @@
             compare: [2.5,1.25,.8,.4]
         },
         colorSchemes = {
-            //norm: ['#0868ac','#43a2ca','#7bcce4','#bae4bc','#f0f9e8'],
-            norm: ['#005daa','#2a86d1','#5aa4e0','#90c5f0','#cce8ff '],
+            norm: ['#045a8d','#2b8cbe','#74a9cf','#bdc9e1','#f1eef6'],
             normLabels: ['highly likely','likely','about average','unlikely','highly unlikely'],
-            //compare: ['#2166ac','#67a9cf','#d1e5f0','#f7f7f7','#fddbc7','#ef8a62','#b2182b'],
-            compare: ['rgb(230,97,1)','rgb(253,184,99)','rgb(247,247,247)','rgb(178,171,210)','rgb(94,60,153)'],
+            compare: ['#2c7bb6','#abd9e9','#ffffbf','#fdae61','#d7191c'],
             compareLabels: ['highly likely','likely','about average','unlikely','highly unlikely']
         },
         displayNames = {
@@ -137,7 +135,7 @@
                             stroke: true,
                             fill: false,
                             color: 'whitesmoke',
-                            weight: 2.5,
+                            weight: 1.5,
                             opacity: .04
                         }
                 }
@@ -357,9 +355,10 @@
             $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#005daa; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span></h3><ul>');
             var labels = ['highly likely', 'likely', 'about average', 'unlikely', 'highly unlikely'];
         } else {
-            $('.legend').html('<h3>Comparison of <span class="highly-unlikely">"'+displayNames[currentBeer]+'"</span>  vs <span class="highly-likely">"'+displayNames[normAtt]+'"</span></h3><ul>');
+            $('.legend').html('<h3>Comparison of <span style="color:#2c7bb6; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span>  vs <span style="color:#d7191c; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[normAtt]+'"</span></h3><ul>');
             var labels = ['highly more likely', 'more likely', 'slighly more likely', 'about equal', 'slightly more likely', 'more likely', 'highly more likely'];
         }
+        
 
         for(var i=0; i<=colorSchemes[normalized].length-1;i++){
 
