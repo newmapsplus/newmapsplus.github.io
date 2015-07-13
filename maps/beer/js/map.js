@@ -1,4 +1,4 @@
-// deterimine approximate screen size and zoom map accordingly (roughly)
+    // deterimine approximate screen size and zoom map accordingly (roughly)
     var w = window.innerWidth,
         zoomLevel;
 
@@ -18,6 +18,7 @@
 
     }
 
+    // create initial map object and use CartoDB's projection to reproject
     var map = L.map('map', {
         center: [40,-93],
         zoom: zoomLevel,
@@ -29,17 +30,17 @@
         crs: cartodb.proj('+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs', '102003')
     });
 
+    // load a graticule thnx to Bjørn Sandvik
     L.graticule({
         interval: 5,
         style: {
             color: '#777',
-            opacity: .4,
-            fillColor: '#ccf',
-            fillOpacity: 1,
+            opacity: .3,
             weight: 2
         }      
     }).addTo(map);
 
+    // initial global variables
     var selectedAtt, 
         normAtt = 'rn0to10000', 
         normalized = 'norm',
@@ -125,8 +126,9 @@
                     }
                 }
             }).addTo(map);
+            
             // then load in the bigger data file
-            $.getJSON("data/hex-35.json", function(data) {
+            $.getJSON("data/beer-hexgrid.json", function(data) {
                 ready(data)
             })
         });
@@ -136,23 +138,22 @@
         // get a list of the available property variables
         var beerTypes = Object.keys(data.features[0].properties);
 
-        // populate UI with beer type variables
+        // populate UI with beer type variables (using pretty display names)
         buildUI(beerTypes);
 
-        // set initial map view with selectedAtt variable
-
+        // set initial map view with 'beer' variable
         selectedAtt =  'beer';
         $("#brew").val('beer')
 
-        // create a new object from data to hold summed values
+        // create a new object from data to hold summed values for normalizing
         sumData = JSON.parse(JSON.stringify(data.features[0].properties));
 
-        // ensure that all property values are zero
+        // then ensure that all property values are zero
         for (var key in sumData) {
             sumData[key] = 0;   
         }
 
-        // loop through data and aggregate totals for each property
+        // then loop through data and aggregate totals for each property
         data.features.forEach(function(f) {
            for(var p in f.properties) {
                sumData[p]+=f.properties[p]
@@ -180,9 +181,10 @@
                   }         
             },
             onEachFeature: function(feature,layer){
-                layer.symbolColor = layer.options.fillColor;
+                // for each hex, determine the top 10 beers tweeted
+                // and display on a mouseover event
                 layer.on('mouseover', function() {                          
-                    layer.setStyle({color: 'yellow'});
+                    
                     var props = layer.feature.properties;
 
                     var sortArray = []
@@ -203,24 +205,28 @@
                     }
                     html+='</ul>';  
                     stats.html(html);
-                });
-                layer.on('mouseout', function() {
-                     layer.setStyle({color: '#3f3f3f'})
                 });     
 
             }
         }).addTo(map);
 
+        // info window UI functionality
         $(document).mousemove(function(e){
+            // first offset from the mouse position of the info window
             stats.css({"left": e.pageX + 6, "top": e.pageY - stats.height() - 15}); 
+            
+            // if it crashes into the top, flip it lower right
             if(stats.offset().top < 4) {
                 stats.css({"top": e.pageY + 15});
             }
-            if(stats.offset().left + stats.width() >= $(document).width() - 4) {
-                stats.css({"left": e.pageX - stats.width() + 6});
+            // do the same for crashing into the right
+            if(stats.offset().left + stats.width() >= $(document).width() - 40) {
+                console.log('hes');
+                stats.css({"left": e.pageX - stats.width() - 30});
             }
         });
-
+        
+        // only show the info window when hovering over our hexgrid
         hexgrid.on('mouseover', function(e){
             stats.show();
         });
@@ -241,7 +247,8 @@
         hexgrid.eachLayer(function(layer) {
 
             var props = layer.feature.properties;
-
+            
+            // calculate a value for each hex based on the selected beer attribute
             if(!props[normAtt]) {
                 var val = (props[selectedAtt]/sumData[selectedAtt])/(1/sumData[normAtt]);
             } else {
@@ -249,12 +256,14 @@
             }
 
             if(val != 0){
+                // color the hex value based upon the current data value 
                 layer.setStyle({
                     fill: true,
                     stroke: true,
                     fillColor: getColor(val)
                 });   
             } else {
+                // don't display the ones with no data for this attribute
                 layer.setStyle({
                    fill: false,
                    stroke: false
@@ -329,7 +338,7 @@
             $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#48a3c8 ">"'+displayNames[currentBeer]+'"</span></h3><ul>');
             var labels = ['highly likely', 'likely', 'about average', 'unlikely', 'highly unlikely'];
         } else {
-            $('.legend').html('<h3>comparison of <span class="highly-unlikely">'+displayNames[currentBeer]+'</span>  vs <span class="highly-likely">'+displayNames[normAtt]+'</span></h3><ul>');
+            $('.legend').html('<h3>Comparison of <span class="highly-unlikely">"'+displayNames[currentBeer]+'"</span>  vs <span class="highly-likely">"'+displayNames[normAtt]+'"</span></h3><ul>');
             var labels = ['highly more likely', 'more likely', 'slighly more likely', 'about equal', 'slightly more likely', 'more likely', 'highly more likely'];
         }
 
