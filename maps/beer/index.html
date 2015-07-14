@@ -22,15 +22,13 @@
 <!--    <h2>Where are people tweeting<br /> about their favorite beers?</h2>-->
     <a href='#' id='huh'>huh?</a>
     <div id='about'>
-        <h3>About this map.</h3>
+        <h3>about this map</h3>
         <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra nulla vitae erat faucibus vulputate. Suspendisse ut nibh odio. Maecenas varius neque nec massa convallis, nec iaculis elit lacinia. Quisque sed magna vehicula, condimentum justo quis, mollis libero. </p>
+            <p>This map shows where people are tweeting about their favorite beers. More saturated (darker) colors indicate a higher probability of tweets containing the text of the selected beer type. You can visually explore a variety of beers by selecting a new beer (top right). By default, a given beer is normalized by the entire tweet population. You can also compare two different beers.</p>
+            <p>Utilizing the <a href='http://leafletjs.com/'>Leaflet library</a>, the map aggregates point-level data into 35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj'>CartoDB's cardodb.proj extension</a>).</p>
             <h4>data collection and cultivation</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra nulla vitae erat faucibus vulputate. Suspendisse ut nibh odio. Maecenas varius neque nec massa convallis, nec iaculis elit lacinia. Quisque sed magna vehicula, condimentum justo quis, mollis libero. </p>
-            <h4>cartographic design and thematic symbolization</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra nulla vitae erat faucibus vulputate. Suspendisse ut nibh odio. Maecenas varius neque nec massa convallis, nec iaculis elit lacinia. Quisque sed magna vehicula, condimentum justo quis, mollis libero. </p>
-            <h4>ui refinement</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra nulla vitae erat faucibus vulputate. Suspendisse ut nibh odio. Maecenas varius neque nec massa convallis, nec iaculis elit lacinia. Quisque sed magna vehicula, condimentum justo quis, mollis libero. </p>  
+            <p>Data for this map was pulled from the Dolly project. We then used scripts written in R and node.js to aggregate totals into hexbin polygons, encoded as GeoJSON.</p>
+  
         </div>
         <h4>Authors</h4>
         <ul>
@@ -39,7 +37,7 @@
             <li><b><a href='https://github.com/rgdonohue'>Rich Donohue</a></b> (map and UI design and development)</li>
         </ul>
         <h4>Data Sources</h4>
-        <p>bla bla bla</p>
+        <p>Twitter API</p>
         <h4>Additional information</h4>
         <ul>
             <li>Read about <a href='#'>how to make a sweet web map like this at New Maps Plus</a></li>
