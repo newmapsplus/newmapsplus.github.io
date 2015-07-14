@@ -113,9 +113,11 @@
         },
         sumData,
         stats = $(".stats");
+	
+    var data = {};
 
-        // first load and display the land geometry so user has something to look at
-        $.getJSON("data/land.json", function(land) {
+    $.when(
+          $.getJSON("data/land.json", function(land) {
             L.geoJson(land, {
                 style: function(feature) {
                     return {                
@@ -127,28 +129,19 @@
                     }
                 }
             }).addTo(map);
-            
-            $.getJSON("data/states.json", function(states) {
-                 L.geoJson(states, {
-                    style: function(feature) {
-                        return {                
-                            stroke: true,
-                            fill: false,
-                            color: 'whitesmoke',
-                            weight: 1.5,
-                            opacity: .04
-                        }
-                }
-                }).addTo(map);
-                // then load in the bigger data file
-                $.getJSON("data/beer-hexgrid.json", function(data) {
-                    ready(data)
-                })
-            });
+          }),
+          $.getJSON("data/states.json", function(states) {
+             data.states =  states;
+          }),
+          $.getJSON("data/beer-hexgrid.json", function(hexgrids) {
+             data.hexgrids =  hexgrids;
+          })
+    ).then(function() {
+          ready(data.hexgrids, data.states)
+    });
+ 
 
-        });
-
-    function ready(data) {
+    function ready(data, states) {
 
         // get a list of the available property variables
         var beerTypes = Object.keys(data.features[0].properties);
@@ -224,6 +217,18 @@
 
             }
         }).addTo(map);
+        
+        L.geoJson(states, {
+                    style: function(feature) {
+                        return {                
+                            stroke: true,
+                            fill: false,
+                            color: 'whitesmoke',
+                            weight: 1.5,
+                            opacity: .5
+                        }
+                }
+                }).addTo(map);
 
         // info window UI functionality
         $(document).mousemove(function(e){
