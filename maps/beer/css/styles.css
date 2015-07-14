@@ -12,12 +12,19 @@ h1 {
     position: absolute;
     z-index: 200;
     color: #f0f9e8;
-    letter-spacing: .2em;
+    letter-spacing: .16em;
     font-size: 2.5em;
     font-weight: 400;
     top: -15px;
-    left: 15px;
+    left: 80px;
     text-shadow: 2px 2px 0 #282828, 4px 4px 0 #43a2ca;
+    display: inline-block;
+    float: left;
+}
+h1 img {
+    position: absolute;
+    top: 10px;
+    left: -70px;
 }
 h2 {
     font-family: 'Montserrat', serif;
@@ -30,12 +37,14 @@ h2 {
     font-size: 1.3em;
     font-weight: 400;
     font-variant: small-caps;
-
-}
-h2 a {
-    padding: 2px 6px 4px;
-    margin-top: 10px;
     display: inline-block;
+}
+#huh {
+    position: absolute;
+    top: 63px;
+    left: 91px;
+    padding: 3px 6px;
+    z-index: 800;
     color: #f0f9e8;
     font-size: 1em;
     background-color:rgba(40,40,40,0.8);
@@ -45,7 +54,7 @@ h2 a {
     transition: background-color 0.5s ease;
     transition: color 0.5s ease;
 }
-h2 a:hover {
+#huh:hover {
    background-color:rgba(255,255,255,0.8); 
    color: #202020;
 }

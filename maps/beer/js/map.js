@@ -26,6 +26,7 @@
         maxZoom: zoomLevel + .3,
         zoomControl: false,
         dragging: false,
+        doubleClickZoom: false,
         attributionControl: false,
         crs: cartodb.proj('+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs', '102003')
     });
@@ -219,16 +220,16 @@
         }).addTo(map);
         
         L.geoJson(states, {
-                    style: function(feature) {
-                        return {                
-                            stroke: true,
-                            fill: false,
-                            color: 'whitesmoke',
-                            weight: 1.5,
-                            opacity: .5
-                        }
+            style: function(feature) {
+                return {                
+                    stroke: true,
+                    fill: false,
+                    color: 'whitesmoke',
+                    weight: 1.5,
+                    opacity: .4
                 }
-                }).addTo(map);
+            }
+        }).addTo(map);
 
         // info window UI functionality
         $(document).mousemove(function(e){
@@ -339,7 +340,7 @@
 
         $('#ui').fadeIn(2000);
         
-        $('a.about').click(function(e){
+        $('#huh').click(function(e){
             $('#about').fadeIn(400);
             $('#cover').fadeIn(400);
         });
