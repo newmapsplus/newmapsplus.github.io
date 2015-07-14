@@ -54,7 +54,7 @@
             norm: ['#045a8d','#2b8cbe','#74a9cf','#bdc9e1','#f1eef6'],
             normLabels: ['highly likely','likely','about average','unlikely','highly unlikely'],
             compare: ['#2c7bb6','#abd9e9','#ffffbf','#fdae61','#d7191c'],
-            compareLabels: ['highly likely','likely','about average','unlikely','highly unlikely']
+            compareLabels: ['highly likely','likely','about average','likely','highly likely']
         },
         displayNames = {
             ale: 'ale',
@@ -333,6 +333,13 @@
         });
 
         $('#ui').fadeIn(2000);
+        
+        $('h2 a').click(function(e){
+            $('#about').fadeIn(400);
+        });
+        $('#map').click(function(e){
+            $('#about').fadeOut(400);
+        });
 
     }
 
@@ -352,11 +359,11 @@
     function updateLegend(){
         var currentBeer = $("#brew").val();
         if(normAtt == 'rn0to10000') { 
-            $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#005daa; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span></h3><ul>');
-            var labels = ['highly likely', 'likely', 'about average', 'unlikely', 'highly unlikely'];
+            $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#005daa; background: rgb(245,245,245); padding: 1px 3px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span></h3><ul>');
+            var labels = colorSchemes.normLabels;
         } else {
-            $('.legend').html('<h3>Comparison of <span style="color:#2c7bb6; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span>  vs <span style="color:#d7191c; background: rgb(245,245,245); padding: 1px 2px; margin: 0 2px; border-radius: 2px;">"'+displayNames[normAtt]+'"</span></h3><ul>');
-            var labels = ['highly more likely', 'more likely', 'slighly more likely', 'about equal', 'slightly more likely', 'more likely', 'highly more likely'];
+            $('.legend').html('<h3>Probability of tweets<br> containing <span style="color:#2c7bb6; background: rgb(245,245,245); padding: 1px 3px; margin: 0 2px; border-radius: 2px;">"'+displayNames[currentBeer]+'"</span>  vs <span style="color:#d7191c; background: rgb(245,245,245); padding: 1px 3px; margin: 0 2px; border-radius: 2px;">"'+displayNames[normAtt]+'"</span></h3><ul>');
+            var labels = colorSchemes.compareLabels;
         }
         
 
