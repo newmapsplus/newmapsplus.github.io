@@ -74,6 +74,7 @@ h3 {
     border: 1px grey solid;
     color: whitesmoke;
     display: none;
+    overflow: scroll;
 }
 #about > div {
     width: 60%;
@@ -84,17 +85,21 @@ h3 {
 #about h3, #about h4 {
     font-variant: small-caps;
     font-size: 1.4em;
+    margin: 0 auto;
 }
 #about h4 {
     font-size: 1.2em;   
 }
 #about p, #about li {
     color: whitesmoke;
-    font-size: .9em;
+    font-size: .8em;
 }
 #about li {
     list-style-type: none;
     margin-bottom: .6em;
+}
+#about a {
+    color: #48a3c8;
 }
 b {
     font-weight: bold;
