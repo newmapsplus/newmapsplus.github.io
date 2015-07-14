@@ -24,6 +24,7 @@
     <div id='about'>
         <h3>about this map</h3>
         <div>
+            <p>This map is a joint <a href="http://newmapsplus.uky.edu/">New Maps Plus</a> and <a href="http://www.floatingsheep.org/">FloatingSheep</a> project.</p>
             <p>This map shows where people are tweeting about their favorite beers. More saturated (darker) colors indicate a higher probability of tweets containing the text of the selected beer type. You can visually explore a variety of beers by selecting a new beer (top right). By default, a given beer is normalized by the entire tweet population. You can also compare two different beers.</p>
             <p>Utilizing the <a href='http://leafletjs.com/'>Leaflet library</a>, the map aggregates point-level data into 35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj'>CartoDB's cardodb.proj extension</a>).</p>
             <h4>data collection and cultivation</h4>
@@ -53,7 +54,7 @@
         <select id='normalize'></select>
         <div id='output'></div>
     </div>
-    <div id='branding'><a href='http://newmapsplus.uky.edu/' title='Would you like to learn how to make a map like this?' ><img src='img/nmp.png' alt='New Maps Plus' /></a></div>
+    <div id='branding'><a href='http://newmapsplus.uky.edu/' title='Check us out and learn<br>how to make a map like this!' ><img src='img/nmp.png' alt='New Maps Plus' /></a></div>
     <div class='stats'></div>  
     <div id='cover'></div>
     
