@@ -334,13 +334,14 @@
 
         $('#ui').fadeIn(2000);
         
-        $('h2 a').click(function(e){
+        $('a.about').click(function(e){
             $('#about').fadeIn(400);
+            $('#cover').fadeIn(400);
         });
-        $('#map').click(function(e){
+        $('#cover, #about').click(function(e){
             $('#about').fadeOut(400);
+            $('#cover').fadeOut(400);
         });
-
     }
 
     function drawLegend() {

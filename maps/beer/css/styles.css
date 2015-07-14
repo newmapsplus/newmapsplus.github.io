@@ -52,9 +52,9 @@ h2 a:hover {
 h3 {
     font-size: 1.1em;   
 }
-#about, #about p {
+#about {
     position: absolute;
-    z-index: 300;
+    z-index: 400;
     width: 66%;
     left: 15%;
     top: 15%;
@@ -66,6 +66,30 @@ h3 {
     color: whitesmoke;
     display: none;
 }
+#about > div {
+    width: 60%;
+    float: left;
+    border-right: 1px solid #d4d4d4;
+    margin-right: 25px;
+}
+#about h3, #about h4 {
+    font-variant: small-caps;
+    font-size: 1.4em;
+}
+#about h4 {
+    font-size: 1.2em;   
+}
+#about p, #about li {
+    color: whitesmoke;
+    font-size: .9em;
+}
+#about li {
+    list-style-type: none;
+    margin-bottom: .6em;
+}
+b {
+    font-weight: bold;
+}
 #map { 
     position:absolute; 
     top:0; 
@@ -73,6 +97,16 @@ h3 {
     width:100%; 
     z-index: 100;
     background: #202020;
+}
+#cover {
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%; 
+    z-index: 300;
+    background: #202020;
+    opacity: .7;
+    display: none;
 }
 button {
     padding: 0 6px;   
