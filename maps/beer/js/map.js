@@ -19,11 +19,11 @@ switch (true) {
     case (w >= 1024):
         zoomLevel = 4.6;
         break;
-    case (w >= 800):
+    case (w >= 736):
         zoomLevel = 4.2;
         break;
     default:
-        zoomLevel = 4.2;
+        zoomLevel = 4;
         break;
 }
 
