@@ -249,8 +249,7 @@ p {
 /* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (max-device-width: 736px) {
       * {
           display: none;
       }
@@ -261,12 +260,16 @@ p {
         bottom:0; 
         width:100%; 
         z-index: 100;
-        background: #202020;
+        background: whitesmoke;
         padding: 10% 6%;
         font-size: 1em;
-        color: whitesmoke;
+        
         z-index: 500;
-    }
+      }
+      #mobile-apology p {
+        color: #545252;   
+      }
+    
 
 }
 
