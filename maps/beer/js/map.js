@@ -34,10 +34,15 @@ var map = L.map('map', {
     minZoom: zoomLevel - .3,
     maxZoom: zoomLevel + .3,
     zoomControl: false,
-    dragging: false,
+    //maxBounds:([[19,-127],[44,-53]]), // seems wonky for now
     doubleClickZoom: false,
     attributionControl: false,
     crs: cartodb.proj('+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs', '102003')
+});
+
+map.on('click', function(e){
+    console.log(e.latlng);
+    
 });
 
 // load a graticule (thnx to Bjørn Sandvik)
