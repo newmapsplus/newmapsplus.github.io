@@ -54,7 +54,8 @@ L.graticule({
 var selectedAtt, 
     normAtt = 'rn0to10000', 
     normalized = 'norm',
-    hexgrid, 
+    hexgrid,
+    stats,
     breaks = {
         // breaks should be symmetrical 
         norm: [2.5,1.25,.8,.4], // encoded high to low
@@ -155,13 +156,7 @@ $.when(
 function ready(data, states) {
     
     // store this selection as we make it frequently
-    var stats = $(".stats").hide();   
-
-    // get a list of the available property variables
-    var beerTypes = Object.keys(data.features[0].properties);
-
-    // populate UI with beer type variables (using pretty display names)
-    buildUI(beerTypes);
+    stats = $(".stats").hide();   
 
     // set initial map view with 'beer' variable
     selectedAtt =  'beer';
@@ -250,31 +245,12 @@ function ready(data, states) {
             }
         }
     }).addTo(map);
+    
+    // get a list of the available property variables
+    var beerTypes = Object.keys(data.features[0].properties);
 
-    // info window UI functionality
-    $(document).mousemove(function(e){
-        // first offset from the mouse position of the info window
-        stats.css({"left": e.pageX + 6, "top": e.pageY - stats.height() - 15}); 
-
-        // if it crashes into the top, flip it lower right
-        if(stats.offset().top < 4) {
-            stats.css({"top": e.pageY + 15});
-        }
-        // do the same for crashing into the right
-        if(stats.offset().left + stats.width() >= $(document).width() - 40) {
-            console.log('hes');
-            stats.css({"left": e.pageX - stats.width() - 30});
-        }
-    });
-
-    // only show the info window when hovering over our hexgrid
-    hexgrid.on('click mouseover', function(e){
-        stats.show();
-    });
-    // hide it when off the hexbins
-    hexgrid.on('click mouseout', function(e){
-        stats.hide();
-    });
+    // populate UI with beer type variables (using pretty display names)
+    buildUI(beerTypes);
 
    // initial call to symbolize map
    updateMap();
@@ -368,6 +344,30 @@ function buildUI(vars) {
     
     // sexy fadeIn of UI (why not?)
     $('#ui').fadeIn(2000);
+    
+    // only show the info window when hovering over our hexgrid
+    hexgrid.on('click mouseover', function(e){
+        stats.show();
+        // info window UI functionality
+        $(document).mousemove(function(e){
+            // first offset from the mouse position of the info window
+            stats.css({"left": e.pageX + 6, "top": e.pageY - stats.height() - 15}); 
+
+            // if it crashes into the top, flip it lower right
+            if(stats.offset().top < 4) {
+                stats.css({"top": e.pageY + 15});
+            }
+            // do the same for crashing into the right
+            if(stats.offset().left + stats.width() >= $(document).width() - 40) {
+                console.log('hes');
+                stats.css({"left": e.pageX - stats.width() - 30});
+            }
+        });
+    });
+    // hide it when off the hexbins
+    hexgrid.on('click mouseout', function(e){
+        stats.hide();
+    });
 
     // if use clicks 'about' show it
     $('#huh').on('click tap', function(){
