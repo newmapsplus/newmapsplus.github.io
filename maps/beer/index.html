@@ -23,8 +23,8 @@
         <h3>About This Map</h3>
         <div>
             <p>This map is a joint <a href='http://newmapsplus.uky.edu/' target='_blank'>New Maps Plus</a> and <a href='http://www.floatingsheep.org/' target='_blank'>FloatingSheep</a> project. Use the menus at the right to explore the haze of beer tweets gently drifting over the United States.</p>
-            <p>More saturated (darker) colors indicate a higher probability of tweets containing the text of the selected beer type. You can visually explore a variety of beers by selecting a new beer (top right). By default, a given beer is normalized by the entire tweet population. You can also compare two different beers.</p>
-            <p>Utilizing the <a href='http://leafletjs.com/' target='_blank'>Leaflet library</a>, the map aggregates point-level data into 35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj' target='_blank'>CartoDB's cardodb.proj extension</a>).</p>
+            <p>More saturated (darker) colors indicate a higher probability of tweets containing the text of the selected beer type. You can visually explore a variety of beers by selecting a new beer (top right). By default, a given beer is normalized by the entire tweet population. You can also compare two different beers. Hexagons without a significant number of observations/tweets do no show up. That's why some beers have more coverage than others.</p>
+            <p>Utilizing the <a href='http://leafletjs.com/' target='_blank'>Leaflet library</a>, the map aggregates point-level data into .35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj' target='_blank'>CartoDB's cardodb.proj extension</a>).</p>
             <h4>Data Collection and Cultivation</h4>
             <p>Data for this map was pulled from the <a href='http://www.floatingsheep.org/p/dolly.html' target='_blank'>Dolly project</a>. We then wrote scripts in R and Node.js to aggregate totals into hexbin polygons, and encoded the results as GeoJSON, which were then loaded into the map client-side at runtime.</p>
   
@@ -39,8 +39,8 @@
         <p>Twitter API</p>
         <h4>Additional Information</h4>
         <ul>
-            <li>Read about <a href='#'>how to make a sweet web map like this at New Maps Plus</a></li>
-            <li>See other <a href='#'>revealing Tweet maps at floating sheep</a></li>
+            <li>A write-up and some static images are available at <a href='http://www.floatingsheep.org/2015/07/beertweets.html' target='_blank'>Floating Sheep</a></li>
+            <li>The code for this project is licences under a <a href=''>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</a> and hosted as a <a href='https://github.com/newmapsplus/maps/beertweets/' target='_blank'>New Maps Plus GitHub repository</a></li>
         </ul>
     
     </div>
