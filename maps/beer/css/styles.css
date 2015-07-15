@@ -240,12 +240,21 @@ p {
     bottom: 10px;
     z-index: 200;
 }
-/*
-@media screen {
-    * {
-        display; none;   
-    }
-    #mobile-apology {
+#mobile-apology {
+    display: none;   
+}
+
+/* ----------- attempting to detect phones and handhelds ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+      * {
+          display: none;
+      }
+      #mobile-apology {
         display: block;
         position:absolute; 
         top:0; 
@@ -256,5 +265,8 @@ p {
         padding: 10% 6%;
         font-size: 1em;
         color: whitesmoke;
+        z-index: 500;
     }
-}*/
+
+}
+

@@ -22,7 +22,9 @@ switch (true) {
     case (w >= 800):
         zoomLevel = 4.2;
         break;
-
+    default:
+        zoomLevel = 4.2;
+        break;
 }
 
 // create initial map object and use CartoDB's projection to reproject
