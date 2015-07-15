@@ -266,11 +266,11 @@ function ready(data, states) {
     });
 
     // only show the info window when hovering over our hexgrid
-    hexgrid.on('mouseover', function(e){
+    hexgrid.on('click mouseover', function(e){
         stats.show();
     });
     // hide it when off the hexbins
-    hexgrid.on('mouseout', function(e){
+    hexgrid.on('click mouseout', function(e){
         stats.hide();
     });
 
@@ -368,13 +368,13 @@ function buildUI(vars) {
     $('#ui').fadeIn(2000);
 
     // if use clicks 'about' show it
-    $('#huh').click(function(e){
+    $('#huh').on('click tap', function(){
         $('#about').fadeIn(400);
         $('#cover').fadeIn(400);
     });
     
     // clicking anywhere removes the 'about'
-    $('#cover, #about').click(function(e){
+    $('#cover, #about').on('click tap', function(){
         $('#about').fadeOut(400);
         $('#cover').fadeOut(400);
     });
