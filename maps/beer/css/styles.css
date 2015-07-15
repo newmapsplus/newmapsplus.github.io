@@ -240,6 +240,7 @@ p {
     bottom: 10px;
     z-index: 200;
 }
+/*
 @media screen {
     * {
         display; none;   
@@ -256,4 +257,4 @@ p {
         font-size: 1em;
         color: whitesmoke;
     }
-}
+}*/
