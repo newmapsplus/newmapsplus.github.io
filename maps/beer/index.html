@@ -19,23 +19,22 @@
 <body>
 
     <h1><img src='img/floatingsheep.png' alt='floating sheep' />#beerTweets</h1>
-<!--    <h2>Where are people tweeting<br /> about their favorite beers?</h2>-->
     <a href='#' id='huh'>huh?</a>
     <div id='about'>
         <h3>about this map</h3>
         <div>
-            <p>This map is a joint <a href="http://newmapsplus.uky.edu/">New Maps Plus</a> and <a href="http://www.floatingsheep.org/">FloatingSheep</a> project. Use the menus at the right to explore the haze of beer tweets gently drifting over the United States.</p>
+            <p>This map is a joint <a href='http://newmapsplus.uky.edu/' target='_blank'>New Maps Plus</a> and <a href='http://www.floatingsheep.org/' target='_blank'>FloatingSheep</a> project. Use the menus at the right to explore the haze of beer tweets gently drifting over the United States.</p>
             <p>More saturated (darker) colors indicate a higher probability of tweets containing the text of the selected beer type. You can visually explore a variety of beers by selecting a new beer (top right). By default, a given beer is normalized by the entire tweet population. You can also compare two different beers.</p>
-            <p>Utilizing the <a href='http://leafletjs.com/'>Leaflet library</a>, the map aggregates point-level data into 35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj'>CartoDB's cardodb.proj extension</a>).</p>
+            <p>Utilizing the <a href='http://leafletjs.com/' target='_blank'>Leaflet library</a>, the map aggregates point-level data into 35 degree hexbin polygon units to show the spatial distribution of the tweets related to specific beers. A single beer normalized by the tweet population is encoded using a 5-class sequential color scheme, while the comparison of two beers uses a 5-class divergent color scheme. The map is also projected into an Albers equal-area projection (with the help of <a href='https://github.com/cartodb/cartodb.proj' target='_blank'>CartoDB's cardodb.proj extension</a>).</p>
             <h4>data collection and cultivation</h4>
-            <p>Data for this map was pulled from the <a href="http://www.floatingsheep.org/p/dolly.html">Dolly project</a>. We then used scripts written in R and node.js to aggregate totals into hexbin polygons, encoded as GeoJSON.</p>
+            <p>Data for this map was pulled from the <a href='http://www.floatingsheep.org/p/dolly.html' target='_blank'>Dolly project</a>. We then wrote scripts in R and Node.js to aggregate totals into hexbin polygons, and encoded the results as GeoJSON, which was then loaded into the map client-side at runtime.</p>
   
         </div>
         <h4>Authors</h4>
         <ul>
-            <li><b><a href='http://newmapsplus.uky.edu/directors-welcome'>Matthew Zook</a></b> (creative direction)</li>
-            <li><b><a href='https://github.com/atepoorthuis'>Ate Poortuis</a></b> (data wrangling)</li>
-            <li><b><a href='https://github.com/rgdonohue'>Rich Donohue</a></b> (map and UI design and development)</li>
+            <li><b><a href='http://newmapsplus.uky.edu/directors-welcome' target='_blank'>Matthew Zook</a></b> (creative direction)</li>
+            <li><b><a href='https://github.com/atepoorthuis' target='_blank'>Ate Poortuis</a></b> (data wrangling)</li>
+            <li><b><a href='https://github.com/rgdonohue' target='_blank'>Rich Donohue</a></b> (map and UI design and development)</li>
         </ul>
         <h4>Data Sources</h4>
         <p>Twitter API</p>

@@ -1,3 +1,4 @@
+/* Styles written by Rich Donohue for New Maps Plus and Floating Sheep */
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400);
 body {
@@ -41,12 +42,12 @@ h2 {
 }
 #huh {
     position: absolute;
-    top: 63px;
-    left: 91px;
+    top: 65px;
+    left: 95px;
     padding: 3px 6px;
     z-index: 300;
     color: #f0f9e8;
-    font-size: 1em;
+    font-size: 1.2em;
     background-color:rgba(40,40,40,0.8);
     border: 1px grey solid; 
     text-decoration: none;
