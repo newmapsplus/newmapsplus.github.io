@@ -246,7 +246,7 @@ function ready(data, states) {
                 fill: false,
                 color: 'whitesmoke',
                 weight: 1,
-                opacity: .5
+                opacity: .3
             }
         }
     }).addTo(map);
@@ -339,12 +339,10 @@ function buildUI(vars) {
     select.change(function(e) {
         selectedAtt = select.val();
         updateMap();
-        $("#output").html("");
     });  
     normalize.change(function(e) {
         normAtt = normalize.val();
         updateMap();
-        $("#output").html("");
     });
     
     // sexy fadeIn of UI (why not?)
