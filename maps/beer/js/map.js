@@ -140,7 +140,7 @@ $.when(
                 return {                
                     stroke: false,
                     fill: true,
-                    color: '#545252',
+                    color: '#313030',
                     weight: 1,
                     fillOpacity: 1
                 }
