@@ -748,20 +748,10 @@ Figure 5.18: Four map layers in QGIS Map Canvas</p>
 <p>While we call these spatial databases PostGIS and SpatiaLite, they are actually extensions to popular open source databases. PostGIS extends <a href="https://www.postgresql.org/">PostgreSQL</a> and SpatiaLite extends <a href="http://www.sqlite.org/">SQLite</a>. While both databases are free and open source software, full-featured, share the same functions, and are natively supported in QGIS, we have some notable differences.</p>
 
 <ul>
-<li><p><strong>PostGIS/PostgreSQL</strong> is the preferred spatial database, but it is more difficult to install and setup, server-based (requires a service to continuously run on a computer), and not as portable. That said, if you want to work on big data, you will gain a lot of great experience installing and running this spatial database. PostGIS supports raster data type and analysis. Find the installation programs and instructions for your operating system:</p>
+<li><p><strong>PostGIS/PostgreSQL</strong> is the preferred spatial database, but it is more difficult to install and setup, server-based (requires a service to continuously run on a computer), and not as portable. That said, if you want to work on big data, you will gain a lot of great experience installing and running this spatial database. PostGIS supports the raster data type and analysis. Find the installation programs and instructions with our <a href="http://newmapsplus.github.io/map671/module-01/jumpstart">installation guide</a>.</p>
 
 <ul>
-<li>Windows: <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">Download the latest version of PostgreSQL</a> and install with the PostGIS extension enabled.</li>
-<li>Mac OS: <a href="http://postgresapp.com/">Postgres.app</a> works nicely on Mac OS. You will need to get PostGIS extension installed, which is covered in our jump start guide. If you are on a Mac exclusively and don't use a virtual machine to host a Windows OS, then you must use PostGIS instead of SpatiaLite in DB manager.</li>
-<li>Ubuntu: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postgis-on-ubuntu-14-04">Digital Ocean's tutorial</a> will work if you have Ubuntu 14 or 16 Desktop or Server. This will get PostgreSQL and PostGIS running.</li>
-<li>After you get a PostgreSQL server installed, you new to setup a connection, add a graphical database client, and practice with a tutorial. While we can use QGIS to work in a PostGIS database, let's find another application to access data in case we get in a jam.
-
-<ul>
-<li>Use our <a href="http://newmapsplus.github.io/map671/module-01/jumpstart">jump start guide</a> to make sure you have a valid server running with PostGIS extension.</li>
-<li>For a <strong>graphical client</strong>, the popular choice is <a href="https://www.pgadmin.org/">pgAdmin</a> which is free and open source. Windows installation above includes pgAdmin so you don't need to download this utility.</li>
-<li>Finally, visit the Boundless Geo <a href="http://workshops.boundlessgeo.com/postgis-intro/">tutorial</a> to learn how to setup your first database and do simple SQL. This tutorial uses their bundled software, so you can skip section 3.</li>
-</ul>
-</li>
+<li>Important Mac OS note: If you are on a Mac exclusively and don't use a virtual machine to host a Windows OS, then you must use PostGIS instead of SpatiaLite in DB manager.</li>
 </ul>
 </li>
 <li><p><strong>SpatiaLite/SQLite</strong> is a server-less file-based format that is easily shared and doesn't require any additional software installation. SpatiaLite is not maintained and updated as well as PostGIS, so it is better suited for basic data analysis and storage. We'll discover that after importing our layers in SpatiaLite, we'll have a very clean data hygiene for our GIS projects. SpatiaLite does not support raster data.</p></li>
