@@ -319,8 +319,8 @@ sup {
 
 
 <ul>
-<li><a href="#lesson-01-overview">Overview</a></li>
-<li><a href="#lesson-01-data-files">Data files</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-files">Data files</a></li>
 <li><a href="#what-is-cartography-mapping-and-gis">What is cartography, mapping, and GIS?</a>
 
 <ul>
@@ -381,7 +381,12 @@ sup {
 
 <ul>
 <li><a href="#project-all-layers-on-the-fly">Project all layers 'on the fly'</a></li>
-<li><a href="#converting-layers-to-geojson-format-with-a-projection-transformation">Converting layers to GeoJSON format with a projection transformation</a></li>
+<li><a href="#converting-layers-to-geojson-format-with-a-projection-transformation">Converting layers to GeoJSON format with a projection transformation</a>
+
+<ul>
+<li><a href="#editing-geojson-layers">Editing GeoJSON layers</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#creating-a-thematic-category-map-in-qgis">Creating a thematic category map in QGIS</a>
@@ -406,7 +411,7 @@ sup {
 <!-- /MarkdownTOC -->
 
 
-<p><a name="lesson-01-overview"></a></p>
+<p><a name="overview"></a></p>
 
 <h1>Overview</h1>
 
@@ -425,7 +430,7 @@ sup {
 </ul>
 
 
-<p><a name="lesson-01-data-files"></a></p>
+<p><a name="data-files"></a></p>
 
 <h1>Data files</h1>
 
@@ -1250,7 +1255,7 @@ Figure 20. Project Properties window enable 'on the fly' transformation</p>
 
 <h2>Converting layers to GeoJSON format with a projection transformation</h2>
 
-<p>Let's say that now we wish to export spatial layers into a different format more suitable for a web mapping environment; we use the GeoJSON format. GeoJSON is a widely embraced open interchange format for encoding geographic data (points, lines, polygons) and used within such mapping libraries as <a href="https://www.mapbox.com">Mapbox.js</a>, <a href="http://leafletjs.com/">Leaflet</a>, <a href="https://CARTO.com">CARTO</a>, <a href="http://d3js.org/">Data Driven Documents (D3)</a>. GeoJSON is a convenient way to store your spatial data within a single text file and used it within QGIS or a web map.</p>
+<p>Let's say that now we wish to export or copy spatial layers into a format more suitable for a web mapping. We use the GeoJSON format. GeoJSON is a widely embraced open interchange format for encoding geographic data (points, lines, polygons) and used within such mapping libraries as <a href="https://www.mapbox.com">Mapbox.js</a>, <a href="http://leafletjs.com/">Leaflet</a>, <a href="https://CARTO.com">CARTO</a>, <a href="http://d3js.org/">Data Driven Documents (D3)</a>. GeoJSON is a convenient way to store your spatial data within a single text file and used it within QGIS or a web map.</p>
 
 <p>The GeoJSON has additional advantages over the Shapefile and SpatiaLite formats. The GeoJSON format can store multiple vector geometry types in one file (e.g., point and polygon in the same file. Shapefiles can store only one type of geometry in a file). GeoJSON is readable/editable with a plain text editor, e.g. such as in Brackets. Neither the SQLite nor Shapefile have this option. GeoJSON can have long field names, but Shapefiles have a 10-character limit as noted earlier.</p>
 
@@ -1279,6 +1284,12 @@ Figure 21. Save vector layer as...</p>
 <p>While it's not initially a reading-friendly collection of text, careful examination of it's contents reveal a simple standard encoding all the geographic features. We can see, for instance, the file encodes the output spatial reference information we specified in QGIS (<em>"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },</em>), as well as the data attribute information encoded as key/value pairs that we saw earlier within the Attribute Table.</p>
 
 <p>Before submitting a GeoJSON, load the file into <a href="http://geojson.io">http://geojson.io</a>. If it looks correct on this site, then you have a properly formatted GeoJSON.</p>
+
+<p><a name="editing-geojson-layers"></a></p>
+
+<h3>Editing GeoJSON layers</h3>
+
+<p>If you're using QGIS on Windows or Mac OS you can now edit GeoJSON layers, such as adding fields new fields or geometric objects. When create a GeoJSON, you do not need to reduce the coordinate precision. You should change the CRS to a local coordinate system, e.g., in Kentucky we would use "EPSG: 3089".</p>
 
 <p><a name="creating-a-thematic-category-map-in-qgis"></a></p>
 
