@@ -302,25 +302,27 @@ sup {
 	}
 }
 </style>
-<title>Geoprocessing in QGIS and Automating Workflows+++++++</title>
+<title>Geoprocessing in QGIS and Automating Workflows</title>
 
 </head>
 <body>
-<h1>Geoprocessing in QGIS and Automating Workflows+++++++</h1>
+<h1>Geoprocessing in QGIS and Automating Workflows</h1>
+
+<hr />
 
 <h1>Table of Contents</h1>
 
-<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0 -->
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0  -->
 
 
 <ul>
-<li> <a href="#module-07-geoprocessing-in-qgis-and-automating-workflows">Module 07: Geoprocessing in QGIS and Automating Workflows</a>
+<li><a href="#lesson-07-overview">Lesson 07 Overview</a></li>
+<li><a href="#lesson-07-data-files">Lesson 07 Data files</a>
 
 <ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#data-files">Data files</a></li>
-<li><a href="#toc">TOC</a></li>
 <li><a href="#geospatial-challenge">Geospatial challenge</a></li>
+</ul>
+</li>
 <li><a href="#extracting-and-preparing-data">Extracting and preparing data</a>
 
 <ul>
@@ -328,16 +330,15 @@ sup {
 <li><a href="#saving-osm-data-for-two-geoprocessing-workflows">Saving OSM data for two geoprocessing workflows</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li> <a href="#option-1-sql-based-geoprocessing-workflow">Option 1: SQL-based geoprocessing workflow</a>
+<li><a href="#option-1-sql-based-geoprocessing-workflow">Option 1: SQL-based geoprocessing workflow</a>
 
 <ul>
+<li><a href="#example-sql-statements-for-this-lesson">Example SQL statements for this lesson</a></li>
 <li><a href="#buffer-and-clip">Buffer and clip</a></li>
 <li><a href="#find-length-of-trail-in-parks">Find length of trail in parks</a></li>
 </ul>
 </li>
-<li> <a href="#option-2-tool-based-geoprocessing-workflow">Option 2: Tool-based geoprocessing workflow</a>
+<li><a href="#option-2-tool-based-geoprocessing-workflow">Option 2: Tool-based geoprocessing workflow</a>
 
 <ul>
 <li><a href="#creating-a-buffer-around-a-polyline-feature">Creating a buffer around a Polyline feature</a></li>
@@ -346,7 +347,7 @@ sup {
 <li><a href="#common-geoprocessing-tools-in-qgis">Common geoprocessing tools in QGIS</a>
 
 <ul>
-<li><a href="#attribute-table-maintenance-prior-to-geoprocessing">Attribute Table maintenance prior to geoprocessing</a></li>
+<li><a href="#attribute-table-maintenance-before-geoprocessing">Attribute Table maintenance before geoprocessing</a></li>
 <li><a href="#clip">Clip</a></li>
 <li><a href="#difference">Difference</a></li>
 <li><a href="#intersect">Intersect</a></li>
@@ -355,23 +356,30 @@ sup {
 <li><a href="#dissolve">Dissolve</a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a href="#using-the-graphical-processing-modeler-to-automate-tool-based-workflows">Using the Graphical Processing Modeler to automate tool-based workflows</a>
 
 <ul>
 <li><a href="#building-a-tool-to-find-amenities-within-distance-of-a-marathon-route">Building a tool to find amenities within distance of a marathon route</a></li>
 <li><a href="#save-and-run-model">Save and run model</a></li>
-</ul>
-</li>
 <li><a href="#give-model-documentation">Give model documentation</a></li>
-<li>[Resources and references](#resources-and-references</li>
+<li><a href="#resources-and-references">Resources and references</a></li>
 </ul>
 </li>
 </ul>
 
+
+<!-- /MarkdownTOC -->
+
+
+<p><a name="lesson-07-overview"></a></p>
 
 <h1>Lesson 07 Overview</h1>
 
 <p>This lesson continues our exploration of harvesting OSM data and geoprocessing tools. Our task is to propose a typical geospatial problem and explore how we would solve it in a few ways. We will create geoprocessing workflows in two environments and compare and contrast their relative advantages. We will write a series of SQL statements that accomplish our goal and do the same with the QGIS geoprocessing tools. We will create a tool that automates this analysis, which can be shared with any QGIS user and used on any similar spatial data. You have two options in the lesson; you can do both or either option.</p>
+
+<p><a name="lesson-07-data-files"></a></p>
 
 <h1>Lesson 07 Data files</h1>
 
@@ -382,6 +390,8 @@ sup {
 <li>Additional data will be harvested from OSM.</li>
 </ul>
 
+
+<p><a name="geospatial-challenge"></a></p>
 
 <h2>Geospatial challenge</h2>
 
@@ -394,6 +404,8 @@ sup {
 
 
 <p>Let's gather our data and see how we can solve this challenge.</p>
+
+<p><a name="extracting-and-preparing-data"></a></p>
 
 <h1>Extracting and preparing data</h1>
 
@@ -414,6 +426,8 @@ Figure 2: GeoJSON files can hold multiple geometry types.</p>
 <p><img src="module-07-graphics/route-loaded.png" alt="Marathon route layers loaded into QGIS and centered in map view pane" /><br/>
 Figure 3: Marathon route and mile markers.</p>
 
+<p><a name="importing-new-osm-data"></a></p>
+
 <h2>Importing new OSM data</h2>
 
 <p>Next, we're going to pull in some OSM data. In the previous lesson, we introduced a few methods for harvesting OSM data. Let's use the QuickOSM plugin to collect the following key/value pairs for our area:</p>
@@ -433,6 +447,8 @@ Figure 5: Adding parklands and water features</p>
 
 <p><img src="module-07-graphics/q03-osm.png" alt=" Adding parklands and water features" />  <br/>
 Figure 6: Adding parklands and water features</p>
+
+<p><a name="saving-osm-data-for-two-geoprocessing-workflows"></a></p>
 
 <h2>Saving OSM data for two geoprocessing workflows</h2>
 
@@ -455,9 +471,13 @@ Figure 7: Save vector layer as a SpatiaLite database layer in the UTM 13 CRS</p>
 <p><img src="module-07-graphics/q06-database.png" alt="Spatial databases setup" />  <br/>
 Figure 8: Spatial databases setup</p>
 
+<p><a name="option-1-sql-based-geoprocessing-workflow"></a></p>
+
 <h1>Option 1: SQL-based geoprocessing workflow</h1>
 
 <p>SQL functions use the same GEOS library that many of the vector geoprocessing tools use. The output is the same, but the SQL statements are a little more obscure to create compared to QGIS tools. The advantages of using SQL are that they are plain-text files and that we can run the SQL on many databases outside of QGIS. Access to code allows us to write it once and run it often.</p>
+
+<p><a name="example-sql-statements-for-this-lesson"></a></p>
 
 <h2>Example SQL statements for this lesson</h2>
 
@@ -468,6 +488,8 @@ Figure 8: Spatial databases setup</p>
 <li><a href="https://gist.github.com/boydx/d36632c02d8c958c8c68a3b8b437a6b0">SpatiaLite</a></li>
 </ul>
 
+
+<p><a name="buffer-and-clip"></a></p>
 
 <h2>Buffer and clip</h2>
 
@@ -627,6 +649,8 @@ and
 
 <p>This statement should select the identical point layer as the previous statement. When you're confident you have successful results, import the layer into your geoprocessing output database.</p>
 
+<p><a name="find-length-of-trail-in-parks"></a></p>
+
 <h2>Find length of trail in parks</h2>
 
 <p>Since the <code>st_intersection()</code> creates a geometry object, we can use it to measure features. Let's say we wanted to find where the marathon route went through parks and measure the distance. We could make the following query that 'clips' the marathon by every park and adds the park name to the route and it's length in meters:</p>
@@ -688,6 +712,8 @@ where
 <p><img src="module-07-graphics/q13-sql-database.png" alt="Databases after analysis" />  <br/>
 Figure 15: Databases after analysis</p>
 
+<p><a name="option-2-tool-based-geoprocessing-workflow"></a></p>
+
 <h1>Option 2: Tool-based geoprocessing workflow</h1>
 
 <p>QGIS tools have the advantage of presenting options for parameters, which takes a lot of the guess-work out of running the tool. Tools can also be chained together using the Processing Modeler. The disadvantages of using tools are that they change in QGIS (e.g., move in the program's graphical user interface) and we don't have as much control over attributes as compared to SQL.</p>
@@ -696,6 +722,8 @@ Figure 15: Databases after analysis</p>
 
 <p><img src="module-07-graphics/q14-prepare-for-geoprocessing-layers.png" alt="Prepare for geoprocessing by adding all necessary layers to Map Canvas" /> <br/>
 Figure 16: Prepare for geoprocessing by adding all necessary layers to Map Canvas</p>
+
+<p><a name="creating-a-buffer-around-a-polyline-feature"></a></p>
 
 <h2>Creating a buffer around a Polyline feature</h2>
 
@@ -718,6 +746,8 @@ Figure 17: Buffer tool settings</p>
 Figure 18: Output buffer polygon</p>
 
 <p>We now have a polygon ('buffer') around the route that we can use for extracting all the amenities we want. Let's do that next.</p>
+
+<p><a name="clipping-features-within-a-buffer"></a></p>
 
 <h2>Clipping features within a buffer</h2>
 
@@ -761,6 +791,8 @@ Figure 22: Save out to GeoJSON format for online mapping</p>
 
 <p>Repeat for the buffer and marathon route.</p>
 
+<p><a name="intersection-of-marathon-route-and-parks"></a></p>
+
 <h2>Intersection of marathon route and parks</h2>
 
 <p>The intersect analysis tool finds all the places where two layers intersect and combines their attributes. Let's intersect the marathon route with the parklands. An example purpose of this analysis would be to quantify the marathon distance in each park.</p>
@@ -790,9 +822,13 @@ Figure 25: Intersection output in attribute table</p>
 <p><img src="module-07-graphics/q24-field-calculator.png" alt="field calculate" /> <br/>
 Figure 21: Field calculating distance of marathon routes inside parks</p>
 
+<p><a name="common-geoprocessing-tools-in-qgis"></a></p>
+
 <h2>Common geoprocessing tools in QGIS</h2>
 
 <p>In the following section, we will discuss some uses of the common geoprocessing functions in QGIS.</p>
+
+<p><a name="attribute-table-maintenance-before-geoprocessing"></a></p>
 
 <h3>Attribute Table maintenance before geoprocessing</h3>
 
@@ -805,6 +841,8 @@ Figure 21: Field calculating distance of marathon routes inside parks</p>
 
 
 <p>Remove unnecessary fields and rename field names with the <strong>Vector > Table Manager</strong> plugin or during an attribute table edit session. You can also prune attributes during a <strong>Save As...</strong> with the <strong>Select fields to export and their export options</strong>. For the best results, make sure the "Name" fields are different in all of your attribute fields.</p>
+
+<p><a name="clip"></a></p>
 
 <h3>Clip</h3>
 
@@ -822,6 +860,8 @@ Figure 26: "C" is for Clip, not cookies!</p>
 </ul>
 
 
+<p><a name="difference"></a></p>
+
 <h3>Difference</h3>
 
 <p><strong>Difference</strong> - This is tool is the opposite of clip and could be called "erase." The layer created by this tool will be the input layer minus whatever portion was overlapped by the difference layer.</p>
@@ -832,6 +872,8 @@ Figure 26: "C" is for Clip, not cookies!</p>
 <li>The attributes of the input layer are not changed. If you have geometry calculations of clipped features, they will need to be recalculated.</li>
 </ul>
 
+
+<p><a name="intersect"></a></p>
 
 <h3>Intersect</h3>
 
@@ -849,6 +891,8 @@ Figure 26: "C" is for Clip, not cookies!</p>
 </ul>
 
 
+<p><a name="union"></a></p>
+
 <h3>Union</h3>
 
 <p><strong>Union</strong> - The Union tool will divide and combine two polygon layers into one layer. A typical use of the union function is combining the attributes of two overlapping polygon layers. Imagine if you needed to find which land parcel had the greatest amount of a certain soil type. After a union between these layers, every soil polygon would be divided by parcel with an attribute that described to which parcel it belonged. With a geometry field calculation you could find which parcel had the greatest amount of certain soil type.</p>
@@ -865,6 +909,8 @@ Figure 26: "C" is for Clip, not cookies!</p>
 <li>If unioning polygon layers, this tool can produce many tiny polygons called, "sliver polygons", especially if input features are numerous and adjacent. Use the tool, "Eliminate sliver polygons" to merge smaller polygons into larger neighboring polygons.</li>
 </ul>
 
+
+<p><a name="symmetrical-difference-analysis"></a></p>
 
 <h3>Symmetrical Difference analysis</h3>
 
@@ -887,6 +933,8 @@ Figure 26: "C" is for Clip, not cookies!</p>
 <p><img src="module-07-graphics/GeoprocessingImage.png" alt="field calculate" /> <br/>
 Figure 22: Comparison of three overlay geoprocessing tools</p>
 
+<p><a name="dissolve"></a></p>
+
 <h3>Dissolve</h3>
 
 <p><strong>Dissolve</strong> - We saw Dissolve as an option earlier within the buffer tool. The tool can combine overlapping and adjacent features into a single feature. If you have polygon layer for counties in one state, you could dissolve them into a single polygon representing the state boundary. This is the default option, "Dissolve all" for this tool.</p>
@@ -901,6 +949,8 @@ Figure 22: Comparison of three overlay geoprocessing tools</p>
 <li>The attributes are lost if the option "Dissolve all" is enabled, which is default. If you dissolve by attribute, the attribute table contains only the dissolve field and its value for each feature.</li>
 </ul>
 
+
+<p><a name="using-the-graphical-processing-modeler-to-automate-tool-based-workflows"></a></p>
 
 <h1>Using the Graphical Processing Modeler to automate tool-based workflows</h1>
 
@@ -918,6 +968,8 @@ Figure 22: Comparison of three overlay geoprocessing tools</p>
 
 
 <p>Imagine if we had many marathon routes to analyze or wanted to tweak the buffer distance. Instead of running each tool numerous times, we could build a model and run it once. We could also share the model, aka tool, with other QGIS users.</p>
+
+<p><a name="building-a-tool-to-find-amenities-within-distance-of-a-marathon-route"></a></p>
 
 <h2>Building a tool to find amenities within distance of a marathon route</h2>
 
@@ -993,6 +1045,8 @@ Figure 39: Clip settings.</p>
 <p><img src="module-07-graphics/gm_final-reproject.png" alt="reproject" /> <br/>
 Figure 40: Reproject final output for online mapping.</p>
 
+<p><a name="save-and-run-model"></a></p>
+
 <h2>Save and run model</h2>
 
 <p>Save your model and it should look like the following:</p>
@@ -1022,6 +1076,8 @@ Figure 44: Model output toon map canvas.</p>
 <p><img src="module-07-graphics/gm_edit.png" alt="final model" /> <br/>
 Figure 45: Processing Toolbox panel gives access to model actions.</p>
 
+<p><a name="give-model-documentation"></a></p>
+
 <h2>Give model documentation</h2>
 
 <p>One last step is required before closing the processing tool. We need to add metadata or help documentation for the tool. After you open (or edit) the model, choose <strong>Edit model help</strong>:</p>
@@ -1040,6 +1096,8 @@ Figure 47: Editing the help sections and adding descriptive information.</p>
 <br>Figure 48: Help documentation during the execution of the tool.</p>
 
 <p>When you have the tool complete, you can copy to a folder outside of the QGIS's default directory space. This will allow you to share the file, which has a ".model" file extension.</p>
+
+<p><a name="resources-and-references"></a></p>
 
 <h2>Resources and references</h2>
 
