@@ -1,0 +1,1065 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Geoprocessing in QGIS and Automating Workflows+++++++</title>
+
+</head>
+<body>
+<h1>Geoprocessing in QGIS and Automating Workflows+++++++</h1>
+
+<h1>Table of Contents</h1>
+
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0 -->
+
+
+<ul>
+<li> <a href="#module-07-geoprocessing-in-qgis-and-automating-workflows">Module 07: Geoprocessing in QGIS and Automating Workflows</a>
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-files">Data files</a></li>
+<li><a href="#toc">TOC</a></li>
+<li><a href="#geospatial-challenge">Geospatial challenge</a></li>
+<li><a href="#extracting-and-preparing-data">Extracting and preparing data</a>
+
+<ul>
+<li><a href="#importing-new-osm-data">Importing new OSM data</a></li>
+<li><a href="#saving-osm-data-for-two-geoprocessing-workflows">Saving OSM data for two geoprocessing workflows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="#option-1-sql-based-geoprocessing-workflow">Option 1: SQL-based geoprocessing workflow</a>
+
+<ul>
+<li><a href="#buffer-and-clip">Buffer and clip</a></li>
+<li><a href="#find-length-of-trail-in-parks">Find length of trail in parks</a></li>
+</ul>
+</li>
+<li> <a href="#option-2-tool-based-geoprocessing-workflow">Option 2: Tool-based geoprocessing workflow</a>
+
+<ul>
+<li><a href="#creating-a-buffer-around-a-polyline-feature">Creating a buffer around a Polyline feature</a></li>
+<li><a href="#clipping-features-within-a-buffer">Clipping features within a buffer</a></li>
+<li><a href="#intersection-of-marathon-route-and-parks">Intersection of marathon route and parks</a></li>
+<li><a href="#common-geoprocessing-tools-in-qgis">Common geoprocessing tools in QGIS</a>
+
+<ul>
+<li><a href="#attribute-table-maintenance-prior-to-geoprocessing">Attribute Table maintenance prior to geoprocessing</a></li>
+<li><a href="#clip">Clip</a></li>
+<li><a href="#difference">Difference</a></li>
+<li><a href="#intersect">Intersect</a></li>
+<li><a href="#union">Union</a></li>
+<li><a href="#symmetrical-difference-analysis">Symmetrical Difference analysis</a></li>
+<li><a href="#dissolve">Dissolve</a></li>
+</ul>
+</li>
+<li><a href="#using-the-graphical-processing-modeler-to-automate-tool-based-workflows">Using the Graphical Processing Modeler to automate tool-based workflows</a>
+
+<ul>
+<li><a href="#building-a-tool-to-find-amenities-within-distance-of-a-marathon-route">Building a tool to find amenities within distance of a marathon route</a></li>
+<li><a href="#save-and-run-model">Save and run model</a></li>
+</ul>
+</li>
+<li><a href="#give-model-documentation">Give model documentation</a></li>
+<li>[Resources and references](#resources-and-references</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>Lesson 07 Overview</h1>
+
+<p>This lesson continues our exploration of harvesting OSM data and geoprocessing tools. Our task is to propose a typical geospatial problem and explore how we would solve it in a few ways. We will create geoprocessing workflows in two environments and compare and contrast their relative advantages. We will write a series of SQL statements that accomplish our goal and do the same with the QGIS geoprocessing tools. We will create a tool that automates this analysis, which can be shared with any QGIS user and used on any similar spatial data. You have two options in the lesson; you can do both or either option.</p>
+
+<h1>Lesson 07 Data files</h1>
+
+<p>Within the Module 07 > Lesson 07 directory you'll find GeoJSON file with a line feature for a marathon route and point feature for marathon route mile markers.</p>
+
+<ul>
+<li>denver_marathon.json</li>
+<li>Additional data will be harvested from OSM.</li>
+</ul>
+
+
+<h2>Geospatial challenge</h2>
+
+<p>You are a Colfax Marathon race logistics coordinator in Denver, Colorado. You have been tasked with finding:</p>
+
+<ul>
+<li>pub and grub amenities within 500 meters of a marathon route, and</li>
+<li>how many miles of the route are in parks.</li>
+</ul>
+
+
+<p>Let's gather our data and see how we can solve this challenge.</p>
+
+<h1>Extracting and preparing data</h1>
+
+<p>Create a new project in QGIS. Go to <strong>Web > OpenLayers plugin > OpenStreetMap > OpenStreetMap</strong>, load the layer, and then zoom into the Denver, CO area.</p>
+
+<p><img src="module-07-graphics/adding-osm-layer.png" alt="Adding OSM data layer into Q" />  <br/>
+Figure 1: Using OpenLayers to bring in a base map</p>
+
+<p>We'll be using some prepared point and line spatial data of the Denver Colfax marathon route, <em>denver_marathon.json</em>. These data are stored in a GeoJSON format as a <em>FeatureCollection</em>, which includes both a LineString of the marathon route, as well as Point features for the start and end of the route and each mile in between. Load this file into QGIS as a new vector layer.</p>
+
+<p>QGIS will prompt you to select the vector layers you'd like to add to the project. GeoJSON is a flexible data format and allows collections of various feature types (e.g., points, lines, polygons). Choose both layers (hold the Shift key down and click both) and click OK.</p>
+
+<p><img src="module-07-graphics/selecting-vector-layers.png" alt="Selecting layers from GeoJSON to load into the QGIS project" />   <br/>
+Figure 2: GeoJSON files can hold multiple geometry types.</p>
+
+<p>Right-click on the <em>OGRGeoJSON LineString</em> layer and choose <strong>Zoom to Layer</strong>. The default setting for the route may be difficult to see over the OSM map, so feel free to change its color and bump up the line thickness. You'll also want to zoom out slightly to include more of the area around the race route, to a view that looks like this:</p>
+
+<p><img src="module-07-graphics/route-loaded.png" alt="Marathon route layers loaded into QGIS and centered in map view pane" /><br/>
+Figure 3: Marathon route and mile markers.</p>
+
+<h2>Importing new OSM data</h2>
+
+<p>Next, we're going to pull in some OSM data. In the previous lesson, we introduced a few methods for harvesting OSM data. Let's use the QuickOSM plugin to collect the following key/value pairs for our area:</p>
+
+<ul>
+<li>Amenities (key="amenity", value="" leave empty to harvest all amenities)</li>
+<li>Parklands (key="leisure" and value="park")</li>
+<li>Lakes (key="natural" and value="water")</li>
+</ul>
+
+
+<p><img src="module-07-graphics/q01-osm.png" alt="Add amenities to project" />  <br/>
+Figure 4: Adding amenities to project</p>
+
+<p><img src="module-07-graphics/q02-osm.png" alt=" Adding parklands and water features" />  <br/>
+Figure 5: Adding parklands and water features</p>
+
+<p><img src="module-07-graphics/q03-osm.png" alt=" Adding parklands and water features" />  <br/>
+Figure 6: Adding parklands and water features</p>
+
+<h2>Saving OSM data for two geoprocessing workflows</h2>
+
+<p>As you know, the OSM data harvested from QuickOSM are temporary layers with a WGS84 CRS. For our analysis, we need to convert our layers to a local coordinate system for Denver, because we need linear units of measure for producing accurate ground measures in QGIS. A few are available; Colorado Central US ft (EPSG: 2232) and UTM Zone 13 meters (EPSG: 26913) are good choices. Any layers that input a geoprocessing workflow must be in the same CRS. Let's use EPSG: 26913.</p>
+
+<p>We are going to create two sets of projected layers and compare two geoprocessing workflows.</p>
+
+<p>Use the <strong>Save as...</strong> to save your layers as GeoJSONs:</p>
+
+<p><img src="module-07-graphics/q04-save.png" alt="Save vector layer as a GeoJSON in the UTM 13 CRS" />  <br/>
+Figure 6: Save vector layer as a GeoJSON in the UTM 13 CRS</p>
+
+<p>Create a SpatiaLite database and import your layers:</p>
+
+<p><img src="module-07-graphics/q05-save.png" alt="Save vector layer as a SpatiaLite database layer in the UTM 13 CRS" />  <br/>
+Figure 7: Save vector layer as a SpatiaLite database layer in the UTM 13 CRS</p>
+
+<p>For simplicity, you should also create an output, render, or scratch spatial database. Before we begin the next section, make sure you have the following spatial database setup:</p>
+
+<p><img src="module-07-graphics/q06-database.png" alt="Spatial databases setup" />  <br/>
+Figure 8: Spatial databases setup</p>
+
+<h1>Option 1: SQL-based geoprocessing workflow</h1>
+
+<p>SQL functions use the same GEOS library that many of the vector geoprocessing tools use. The output is the same, but the SQL statements are a little more obscure to create compared to QGIS tools. The advantages of using SQL are that they are plain-text files and that we can run the SQL on many databases outside of QGIS. Access to code allows us to write it once and run it often.</p>
+
+<h2>Example SQL statements for this lesson</h2>
+
+<p>The following SQL is this lesson uses SpatiaLite. The PostGIS method allows us to work entirely in SQL with DB Manager or pgAdmin. If you haven't changed table names, you should be able to copy these statements and paste them into DB Manager.</p>
+
+<ul>
+<li><a href="https://gist.github.com/boydx/a3f576e438c46dee9d7dea9a767b03db">PostGIS</a></li>
+<li><a href="https://gist.github.com/boydx/d36632c02d8c958c8c68a3b8b437a6b0">SpatiaLite</a></li>
+</ul>
+
+
+<h2>Buffer and clip</h2>
+
+<p>We introduced the buffer function in the last lesson. A 500-meter buffer polygon can be produced by the following:</p>
+
+<pre><code>/* Buffer a line feature to 500 meters */
+
+select 
+    st_buffer(st_collect(geom),500) as geom,
+    name
+from 
+    denver_marathon
+</code></pre>
+
+<p>The <code>st_collect()</code> function ensures that we'll have one polygon as an output, similar to the dissolve parameter in the buffer tool. Load the query as a layer and inspect the buffer polygon:</p>
+
+<p><img src="module-07-graphics/q07-buffer.png" alt="Create a 500-meter buffer polygon around marathon route" />  <br/>
+Figure 9: Create a 500-meter buffer polygon around marathon route</p>
+
+<p>Import the buffer polygon back into the database or insert it into a new table:</p>
+
+<p><img src="module-07-graphics/q08-buffer-table.png" alt="reate a new table to insert 500-meter buffer polygon around marathon route" />  <br/>
+Figure 10: Create a new table to insert 500-meter buffer polygon around marathon route</p>
+
+<pre><code>/* Create new layer from buffer tool */
+
+insert into 
+    Marathon_buffer_500m 
+    (geom,name)
+select 
+    st_buffer(st_collect(geom),500) as geom,
+    name
+from 
+    denver_marathon
+</code></pre>
+
+<p>A <strong>Clip</strong> function in SQL uses the <code>st_intersection()</code> function, which outputs the intersecting geometries of two layers. The minimum geometry type is the output geometry, e.g., an intersection between point and polygon would output a point geometry type. We could use this simple statement:</p>
+
+<pre><code>/* Clip amenity points by 500-meter buffer polygon around Marathon route */
+
+select 
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) as geom,
+    Marathon_buffer_500m.name as marathon_name,
+    amenity_pts.amenity,
+    amenity_pts.name
+from 
+    Marathon_buffer_500m, amenity_pts
+</code></pre>
+
+<p>This query should take less than a second to run. If you've created a spatial index for the points and buffer polygon, you could append a <code>where</code> clause with a spatial index query:</p>
+
+<pre><code>/* Clip amenity points by 500-meter buffer polygon around Marathon route */
+
+select 
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) as geom,
+    Marathon_buffer_500m.name as marathon_name,
+    amenity_pts.amenity,
+    amenity_pts.name
+from 
+    Marathon_buffer_500m, amenity_pts
+
+/* Spatial index query to speed things up */
+where 
+    amenity_pts.rowid in 
+        (select rowid from SpatialIndex
+        where f_table_name = 'amenity_pts'
+        and search_frame = Marathon_buffer_500m.geom)
+</code></pre>
+
+<p>You should notice a quicker result and a few <code>NULL</code> geometries for non-intersection amenity points. These points are inside the minimum-bounding rectangle out the buffer polygon, but not inside the polygon. How do we remove those? We have a couple of options. We can use the <code>st_intersects()</code> function and do a join as we did in a previous lesson, or we could just append another <code>where</code> clause statement that doesn't include <code>NULL</code> values:</p>
+
+<pre><code>/* Clip amenity points by 500-meter buffer polygon around Marathon route */
+
+select 
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) as geom,
+    Marathon_buffer_500m.name as marathon_name,
+    amenity_pts.amenity,
+    amenity_pts.name
+from 
+    Marathon_buffer_500m, amenity_pts
+
+/* Spatial index query to speed things up */
+where 
+    amenity_pts.rowid in 
+        (select rowid from SpatialIndex
+        where f_table_name = 'amenity_pts'
+        and search_frame = Marathon_buffer_500m.geom)
+
+/* Remove null geometries from selection */
+and
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) is not null
+</code></pre>
+
+<p>Out geospatial challenge asks us to find certain amenities related to bicycle rentals and food/drink. Let's add another <code>where</code> clause that limits our output to just those amenities:</p>
+
+<pre><code>/* Clip amenity points by 500-meter buffer polygon around Marathon route */
+
+select 
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) as geom,
+    Marathon_buffer_500m.name as marathon_name,
+    amenity_pts.amenity,
+    amenity_pts.name
+from 
+    Marathon_buffer_500m, amenity_pts
+
+/* Spatial index query to speed things up */
+where 
+    amenity_pts.rowid in 
+        (select rowid from SpatialIndex
+        where f_table_name = 'amenity_pts'
+        and search_frame = Marathon_buffer_500m.geom)
+
+/* Remove null geometries from selection */
+and
+    st_intersection(Marathon_buffer_500m.geom,amenity_pts.geom) is not null
+
+/* Select only certain amenities */
+and
+    amenity in ('bicycle_rental','cafe','pub','restaurant','bar')
+</code></pre>
+
+<p>My query return 390 amenities. Let's load the layer and inspect the output:</p>
+
+<p><img src="module-07-graphics/q09-sql-output.png" alt="Buffer and clip analysis output" />  <br/>
+Figure 11: Buffer and clip analysis output</p>
+
+<p>Here is the buffer polygon and clip output in Map Canvas:</p>
+
+<p><img src="module-07-graphics/q10-map-output.png" alt=" The output in map canvas" />  <br/>
+Figure 12: The output in map canvas</p>
+
+<p>A convenient feature in SQL is nesting functions and statements. We could nest the <code>st_buffer()</code> function statement as one of the input geometries for the <code>st_intersection()</code> function:</p>
+
+<pre><code>/* Do a buffer and clip in one statement */
+select 
+    st_intersection(
+        (select st_buffer(st_collect(geom), 500) from denver_marathon), 
+        amenity_pts.geom) as geom,
+    denver_marathon.name as marathon_name,
+    amenity_pts.amenity,
+    amenity_pts.name
+from 
+    denver_marathon, amenity_pts
+where
+
+/* Remove null geometries from selection */
+    st_intersection(
+        (select st_buffer(st_collect(geom), 500) from denver_marathon), 
+        amenity_pts.geom) is not null
+
+/* Select only certain amenities */
+and
+    amenity in ('bicycle_rental','cafe','pub','restaurant','bar')
+
+/* Since we're dynamically creating a buffer polygon, it doesn't have a spatial index */
+</code></pre>
+
+<p>This statement should select the identical point layer as the previous statement. When you're confident you have successful results, import the layer into your geoprocessing output database.</p>
+
+<h2>Find length of trail in parks</h2>
+
+<p>Since the <code>st_intersection()</code> creates a geometry object, we can use it to measure features. Let's say we wanted to find where the marathon route went through parks and measure the distance. We could make the following query that 'clips' the marathon by every park and adds the park name to the route and it's length in meters:</p>
+
+<pre><code>/* Find and measure length of marathon route through parks */
+select
+    st_intersection(denver_marathon.geom,leisure_park.geom) as geom,
+    denver_marathon.name,
+    leisure_park.name as park_name,
+    st_length(st_intersection(denver_marathon.geom,leisure_park.geom)) as length_in_meters        
+from
+    denver_marathon,leisure_park
+where 
+    st_intersection(denver_marathon.geom,leisure_park.geom) is not null
+</code></pre>
+
+<p>We don't need to use a spatial index query since the marathon is one line segment. If we had many line segments, then appending a <code>where</code> clause with a spatial index query might speed up the query. Since the spatial index query is a filter to find intersecting minimum bounding rectangles, you don't need to use it except to reduce your query time.</p>
+
+<p>Let's load the query onto our Map Canvas and inspect the attributes:</p>
+
+<p><img src="module-07-graphics/q11-map-output.png" alt="Marathon route in parks with attribute table" />  <br/>
+Figure 13: Marathon route in parks with attribute table</p>
+
+<p>Finally, we want to find the total distance of the course. We could use the following query to find distances of the route through parks and for the whole:</p>
+
+<pre><code>/* Calculate length of route in parks */
+
+select
+    denver_marathon.name,
+    st_length(denver_marathon.geom) as "Total length, meters",
+    sum(st_length(st_intersection(denver_marathon.geom,leisure_park.geom))) as "Length in parks, meters"
+
+from
+    denver_marathon,leisure_park
+</code></pre>
+
+<p>This query should produce the following output:</p>
+
+<p><img src="module-07-graphics/q12-sql-output.png" alt="Length of route through park" />  <br/>
+Figure 14: Length of route through park</p>
+
+<p>Let's finish this analysis by importing the marathon route in parks into our spatial database. If we have errors on import, e.g., invalid geometry type, we will need to use the <code>CastToMulti()</code> function in SpatiaLite to explicitly create a multi-part geometry type:</p>
+
+<pre><code>/* Find and measure length of marathon route through parks */
+/* CastToMulti() function creates a multipart geometry object */
+select
+    CastToMulti(st_intersection(denver_marathon.geom,leisure_park.geom)) as geom,
+    denver_marathon.name,
+    leisure_park.name as park_name,
+    st_length(st_intersection(denver_marathon.geom,leisure_park.geom)) as length        
+from
+    denver_marathon,leisure_park
+where 
+    st_intersection(denver_marathon.geom,leisure_park.geom) is not null
+</code></pre>
+
+<p>When you're finished with your analysis, you should have databases that look similar to these:</p>
+
+<p><img src="module-07-graphics/q13-sql-database.png" alt="Databases after analysis" />  <br/>
+Figure 15: Databases after analysis</p>
+
+<h1>Option 2: Tool-based geoprocessing workflow</h1>
+
+<p>QGIS tools have the advantage of presenting options for parameters, which takes a lot of the guess-work out of running the tool. Tools can also be chained together using the Processing Modeler. The disadvantages of using tools are that they change in QGIS (e.g., move in the program's graphical user interface) and we don't have as much control over attributes as compared to SQL.</p>
+
+<p>Before we begin, add the layers you created earlier in the EPSG: 26913 CRS. You should see something similar:</p>
+
+<p><img src="module-07-graphics/q14-prepare-for-geoprocessing-layers.png" alt="Prepare for geoprocessing by adding all necessary layers to Map Canvas" /> <br/>
+Figure 16: Prepare for geoprocessing by adding all necessary layers to Map Canvas</p>
+
+<h2>Creating a buffer around a Polyline feature</h2>
+
+<p>We want to now create a buffer around the race route (the Polyline) of a certain distance.</p>
+
+<p>Choose <strong>Vector > Geoprocessing Tools > Fixed distance buffer</strong>.</p>
+
+<p>Use the <em>denver_marathon</em> as our input vector layer. Set the Segments open to "20". Refer to Lesson 05 about what this option accomplishes.</p>
+
+<p>Let's say we want to find all the amenities within a short 'walkable' distance of the route, say 500 meters. The Buffer tool in QGIS is going to use a unit of the Coordinate Reference System (which we now know is meter).</p>
+
+<p>Read more about <a href="https://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/vector_spatial_analysis_buffers.html">creating buffers in QGIS</a>.</p>
+
+<p><img src="module-07-graphics/q15-buffer.png" alt="Buffer tool settings" />  <br/>
+Figure 17: Buffer tool settings</p>
+
+<p>The Buffer tool will create a temporary single polygon layer of the buffer zone and add this to the Map Canvas.</p>
+
+<p><img src="module-07-graphics/q16-buffer.png" alt="The new buffer created and added to the Canvas" />  <br/>
+Figure 18: Output buffer polygon</p>
+
+<p>We now have a polygon ('buffer') around the route that we can use for extracting all the amenities we want. Let's do that next.</p>
+
+<h2>Clipping features within a buffer</h2>
+
+<p>The procedure for extracting the amenities that overlap with the newly created buffer is simple and straightforward.</p>
+
+<p>Choose <strong>Vector > Geoprocessing Tools > Clip</strong>.</p>
+
+<p>Use our <em>Amenities</em> layer as the input vector layer (i.e., the one with all our OSM amenity features) and the <em>Buffer</em> layer as the Clip layer. Create temporary output layer:</p>
+
+<p><img src="module-07-graphics/q17-clip.png" alt="Clip settings " />  <br/>
+Figure 19: Clip settings</p>
+
+<p>You're output should be close to this screenshot:</p>
+
+<p><img src="module-07-graphics/q18-clip.png" alt="The new buffer created and added to the Canvas" />  <br/>
+Figure 20: Output clip of amenities</p>
+
+<p>We still need to select out only those amenities offering bicycle rentals and food/drink. We should right-click the <em>Clipped</em> and select <strong>Filter...</strong> and issue the following SQL statement:</p>
+
+<pre><code>"amenity" IN ('bicycle_rental','cafe','pub','restaurant','bar')
+</code></pre>
+
+<p>and you should see the following Query Builder expression:</p>
+
+<p><img src="module-07-graphics/q19-query-builder.png" alt="Filtering data with Query Builder" /> <br/>
+Figure 21: Filtering data with Query Builder</p>
+
+<p>We can now right-click and select <strong>Save As...</strong>  to create GeoJSON files of the analysis layers. We want to use the WGS84 CRS for these layers.</p>
+
+<ul>
+<li>select GeoJSON as the format</li>
+<li>save the layer within your project's data directory with a name like "denver_marathon_route"</li>
+<li>can uncheck "Add saved file to map" (optional)</li>
+<li>reduce the Coordinate Precision down to 4)</li>
+<li>click OK</li>
+</ul>
+
+
+<p><img src="module-07-graphics/q20-save-geojson.png" alt="Settings for exporting to GeoJSON" /> <br/>
+Figure 22: Save out to GeoJSON format for online mapping</p>
+
+<p>Repeat for the buffer and marathon route.</p>
+
+<h2>Intersection of marathon route and parks</h2>
+
+<p>The intersect analysis tool finds all the places where two layers intersect and combines their attributes. Let's intersect the marathon route with the parklands. An example purpose of this analysis would be to quantify the marathon distance in each park.</p>
+
+<p>Choose <strong>Vector > Geoprocessing Tools > Intersection</strong>.</p>
+
+<p><img src="module-07-graphics/q21-intersection.png" alt="intersect settings" />  <br/>
+Figure 23: Intersection settings</p>
+
+<p>The "Input vector layer" will be clipped by and take the attributes of the "Intersect layer." The output geometry type will be the same as the input vector layer.</p>
+
+<p><img src="module-07-graphics/q22-intersection.png" alt="output of intersection" /> <br/>
+Figure 24: Intersection output on map</p>
+
+<p>Now open the attribute table and understand how the two layers were combined.</p>
+
+<p><img src="module-07-graphics/q23-intersection.png" alt="Intersection output in attribute table" /> <br/>
+Figure 25: Intersection output in attribute table</p>
+
+<p>Each record in this table is a segment of the marathon in a park. Note the <em>distance</em> field is invalid. Using the <strong>Field Calculator</strong>, we can add the length of the marathon route in each park. This might help organizers plan runner support along the route. The Field Calculator statement would be:</p>
+
+<pre><code>distance = $length
+</code></pre>
+
+<p>with the <strong>Field Calculator</strong> expression:</p>
+
+<p><img src="module-07-graphics/q24-field-calculator.png" alt="field calculate" /> <br/>
+Figure 21: Field calculating distance of marathon routes inside parks</p>
+
+<h2>Common geoprocessing tools in QGIS</h2>
+
+<p>In the following section, we will discuss some uses of the common geoprocessing functions in QGIS.</p>
+
+<h3>Attribute Table maintenance before geoprocessing</h3>
+
+<p>When you start tool-based geoprocessing, you should clean up the attribute tables of your input spatial layers. Although the Clip and Buffer tools do not change the attribute table of the input layer, other tools alter and combine attribute tables. As we have seen in the intersect tool, attributes can be made invalid after geoprocessing. The strategy for managing attributes centers on two goals:</p>
+
+<ul>
+<li>Keep only the required fields in the attribute tables of your geoprocessing layers. Most often, you need only keep identifying name and type fields.</li>
+<li>All field names in geoprocessing layers should be unique, e.g., if you are Intersecting two layers, they must not have identical field names.</li>
+</ul>
+
+
+<p>Remove unnecessary fields and rename field names with the <strong>Vector > Table Manager</strong> plugin or during an attribute table edit session. You can also prune attributes during a <strong>Save As...</strong> with the <strong>Select fields to export and their export options</strong>. For the best results, make sure the "Name" fields are different in all of your attribute fields.</p>
+
+<h3>Clip</h3>
+
+<p><strong>Clip</strong> - You should be familiar with the Clip tool. It allows you to change the shape of an analysis area by clipping one layer to the shape of another. This is helpful when you're trying to limit the area you're working with. A helpful way to think about the clip tool is to imagine that you're using a cookie cutter to cut dough. The input layer to clip is the dough, and the clip layer whose shape you're trying to create is the cookie cutter.</p>
+
+<p><img src="module-07-graphics/c-isi-for-cookie.jpg" alt="intersecting parks and marathon" />  <br/>
+Figure 26: "C" is for Clip, not cookies!</p>
+
+<p>Considerations</p>
+
+<ul>
+<li>The input layer can be point, line, or polygon</li>
+<li>The clip layer must be a polygon</li>
+<li>The attributes of the input layer are not changed. If you have geometry calculations of clipped features, they will need to be recalculated.</li>
+</ul>
+
+
+<h3>Difference</h3>
+
+<p><strong>Difference</strong> - This is tool is the opposite of clip and could be called "erase." The layer created by this tool will be the input layer minus whatever portion was overlapped by the difference layer.</p>
+
+<ul>
+<li>The input layer can be point, line, or polygon</li>
+<li>The difference layer must be a polygon</li>
+<li>The attributes of the input layer are not changed. If you have geometry calculations of clipped features, they will need to be recalculated.</li>
+</ul>
+
+
+<h3>Intersect</h3>
+
+<p><strong>Intersect</strong> -  The intersect analysis tool finds all the places where two layers intersect and combines their attributes.</p>
+
+<p>Considerations</p>
+
+<ul>
+<li>Intersection outputs only what overlaps between set A (Input layer) and set B (Intersect layer).</li>
+<li>Input vector layer can be either point, line, or polygon.</li>
+<li>Intersect layer should be a polygon or the same as the input layer.</li>
+<li>Output layer geometry is same as the input layer geometry</li>
+<li>The attributes are joined. Field names are from each input and intersect layers should by unique before intersection for best results.</li>
+<li>If you have geometry calculations in the attribute table, they will need to be recalculated.</li>
+</ul>
+
+
+<h3>Union</h3>
+
+<p><strong>Union</strong> - The Union tool will divide and combine two polygon layers into one layer. A typical use of the union function is combining the attributes of two overlapping polygon layers. Imagine if you needed to find which land parcel had the greatest amount of a certain soil type. After a union between these layers, every soil polygon would be divided by parcel with an attribute that described to which parcel it belonged. With a geometry field calculation you could find which parcel had the greatest amount of certain soil type.</p>
+
+<p>Considerations</p>
+
+<ul>
+<li>Union outputs all that exists in both set A (Input layer) and set B (Union layer).</li>
+<li>Input vector layer can be either point, line, or polygon.</li>
+<li>Union layer should be a polygon or the same as the input layer.</li>
+<li>Output layer geometry is same as the input layer geometry.</li>
+<li>The attributes are joined. Field names are from each input and intersect layers should by unique before intersection for best results.</li>
+<li>If you have geometry calculations in the attribute table, they will need to be recalculated.</li>
+<li>If unioning polygon layers, this tool can produce many tiny polygons called, "sliver polygons", especially if input features are numerous and adjacent. Use the tool, "Eliminate sliver polygons" to merge smaller polygons into larger neighboring polygons.</li>
+</ul>
+
+
+<h3>Symmetrical Difference analysis</h3>
+
+<p><strong>Symmetrical Difference</strong> - The symmetrical difference tool is the opposite of the intersect tool. Instead of finding the space where two layers overlap and eliminating everything else, symmetrical difference finds the non-intersecting space between the two layers and eliminates the intersecting features.</p>
+
+<p>Considerations</p>
+
+<ul>
+<li>Symmetrical Difference outputs only what doesn't overlap in set A (Input layer) and only in set B (Symmetrical difference layer).</li>
+<li>Input vector layer can be either point, line, or polygon.</li>
+<li>Symmetrical difference should be a polygon or the same as the input layer.</li>
+<li>Output layer geometry is same as the input layer geometry</li>
+<li>The attributes are joined. Field names are from each input and intersect layers should by unique before intersection for best results.</li>
+<li>If you have geometry calculations in the attribute table, they will need to be recalculated.</li>
+</ul>
+
+
+<p>A visual summary of Union, Intersection, and Symmetrical Difference Tools:</p>
+
+<p><img src="module-07-graphics/GeoprocessingImage.png" alt="field calculate" /> <br/>
+Figure 22: Comparison of three overlay geoprocessing tools</p>
+
+<h3>Dissolve</h3>
+
+<p><strong>Dissolve</strong> - We saw Dissolve as an option earlier within the buffer tool. The tool can combine overlapping and adjacent features into a single feature. If you have polygon layer for counties in one state, you could dissolve them into a single polygon representing the state boundary. This is the default option, "Dissolve all" for this tool.</p>
+
+<p>Features can also be dissolved by an attribute. If you county polygon layer had an attribute for "region," e.g., eastern counties and western counties, you could dissolve the layer into two polygons, representing the two regions. If you had a road centerline layer with an attribute for road names, you could dissolve by this attribute and get a line layer representing the entire length of each road.</p>
+
+<p>Considerations</p>
+
+<ul>
+<li>Only one layer is used and it can point, line, or polygon.</li>
+<li>Output layer geometry is same as the input layer geometry</li>
+<li>The attributes are lost if the option "Dissolve all" is enabled, which is default. If you dissolve by attribute, the attribute table contains only the dissolve field and its value for each feature.</li>
+</ul>
+
+
+<h1>Using the Graphical Processing Modeler to automate tool-based workflows</h1>
+
+<p>The graphical processing modeler allows us to automate workflows of geoprocessing tools using a simple graphical interface. As we've seen, most operations are not isolated, but rather part of a chain of operations, e.g., Reproject layer, Buffer, Clip, Intersect, etc... Using this modeler, that chain of processes can be wrapped into a single tool, which can be shared and used on a different set of inputs.</p>
+
+<p>Let's consider our Denver marathon exercise. We wanted to find amenities within 500 meters on the route. After we harvest data from OSM and output a layer of desired amenities, we did the following:</p>
+
+<ul>
+<li>Reprojected the marathon route line layer to UTM 13</li>
+<li>Reprojected the amenities point layer to UTM 13</li>
+<li>Buffered the marathon route by 500 meters</li>
+<li>Clipped the amenities by the buffer</li>
+<li>Reprojected the amenities within 500 meters to back to WGS 84 for use online</li>
+</ul>
+
+
+<p>Imagine if we had many marathon routes to analyze or wanted to tweak the buffer distance. Instead of running each tool numerous times, we could build a model and run it once. We could also share the model, aka tool, with other QGIS users.</p>
+
+<h2>Building a tool to find amenities within distance of a marathon route</h2>
+
+<p>Before we build the tool, we need to make sure we have a marathon route and a shapefile or GeoJSON of filtered amenities. The layers can be in the original CRS of WGS 84. Your QGIS should like:</p>
+
+<p><img src="module-07-graphics/gm_pretool.png" alt="field calculate" /> <br/>
+Figure 27: Original marathon route and filtered amenities, both in WGS 84 CRS. Make a tool that does all the prior work in one step.</p>
+
+<p>Open the <strong>Processing -> Graphical Modeler...</strong> tool in QGIS:</p>
+
+<p><img src="module-07-graphics/gm_menutool.png" alt="field calculate" /> <br/>
+Figure 28: Launching the processing modeler.</p>
+
+<p>Before we build the model, give it a [model name] of "Amenities within Distance Of Marathon" and [group name] of "MAP671 Tools" and then <strong>Save</strong> the model in its default location. This will give you access to the tool within other panels in QGIS:</p>
+
+<p><img src="module-07-graphics/gm_saveas.png" alt="field calculate" /> <br/>
+Figure 29: Save tool with descriptive Model Name and Group Name before proceeding.</p>
+
+<p>Use the <strong>Inputs</strong> tab to add a <strong>Vector layer</strong> for the input marathon route making sure you give it a unique name:</p>
+
+<p><img src="module-07-graphics/gm_add-vector-layer.png" alt="field calculate" /> <br/>
+Figure 30: Add tool that requires  a line vector layer input.</p>
+
+<p>Then add <strong>Vector layer</strong> for the input amenities points:</p>
+
+<p><img src="module-07-graphics/gm_add-vector-layer-2.png" alt="field calculate" /> <br/>
+Figure 31: Add tool that requires a point vector layer input.</p>
+
+<p>We need to reproject both layers to our local CRS go UTM 13 (EPSG: 26913). Go to the <strong>Algorithms</strong> tab and search for <strong>Retroject layer</strong> in <strong>QGIS geoalgorithms -> Vector General Tools</strong>:</p>
+
+<p><img src="module-07-graphics/gm_search-reproject.png" alt="reproject" /> <br/>
+Figure 32: Search for Reproject layer algorithm.</p>
+
+<p>Insert this tool for each input layer paying attention to the connections between tool and layer. This tool will produce a temporary layer that we will use as an input in another tool. Tool settings for reprojecting the marathon route.</p>
+
+<p>Reproject tool settings for reprojecting the marathon route:</p>
+
+<p><img src="module-07-graphics/gm_reproject-1.png" alt="reproject" /><br/>
+Figure 33: Reproject line layer settings.</p>
+
+<p>Reproject tool settings for reprojecting the amenities:</p>
+
+<p><img src="module-07-graphics/gm_reproject-2.png" alt="reproject" /> <br/>
+Figure 34: Reproject point layer settings.</p>
+
+<p>What your processing modeler canvas should look like:</p>
+
+<p><img src="module-07-graphics/gm_after-reproject.png" alt="field calculate" /> <br/>
+Figure 35: Model after adding first algorithms.</p>
+
+<p>Search for <strong>Buffer</strong> or "Fixed Distance Buffer" and add the tool to chain using the reprojected route layer as input:</p>
+
+<p><img src="module-07-graphics/gm_buffer-tool.png" alt="field calculate" /> <br/>
+Figure 36: Search for the Buffer, aka Fixed Distance Buffer, algorithm.</p>
+
+<p>Settings for the <strong>Fixed Distance Buffer</strong> tool:</p>
+
+<p><img src="module-07-graphics/gm_buffer.png" alt="field calculate" /> <br/>
+Figure 37: Settings to buffer the marathon route. Note the distance is in meters.</p>
+
+<p>Search for the <strong>Clip</strong> tool:</p>
+
+<p><img src="module-07-graphics/gm_clip-tool.png" alt="field calculate" /> <br/>
+Figure 38: Search for the Clip algorithm.</p>
+
+<p>Settings for the <strong>Clip</strong> tool:</p>
+
+<p><img src="module-07-graphics/gm_clip.png" alt="field calculate" /> <br/>
+Figure 39: Clip settings.</p>
+
+<p>Finally, reproject the output layer, amenities within 500 meters, back to WGS 84 for use in online mapping. Since this is the last layer, aka "final result," in our workflow give it a name. This will be the layer's name in QGIS's layer panel:</p>
+
+<p><img src="module-07-graphics/gm_final-reproject.png" alt="reproject" /> <br/>
+Figure 40: Reproject final output for online mapping.</p>
+
+<h2>Save and run model</h2>
+
+<p>Save your model and it should look like the following:</p>
+
+<p><img src="module-07-graphics/gm_final-model.png" alt="final model" /> <br/>
+Figure 41: Final model schematic.</p>
+
+<p><strong>Run model</strong> and observe the required inputs:</p>
+
+<p><img src="module-07-graphics/gm_run-model.png" alt="final model" /> <br/>
+Figure 42: Run model button.</p>
+
+<p>Add the correct input layers:</p>
+
+<p><img src="module-07-graphics/gm_inputs.png" alt="final model" /> <br/>
+Figure 43: Model dialog and required settings.</p>
+
+<p>Finally, inspect the output in QGIS's map canvas:</p>
+
+<p><img src="module-07-graphics/gm_output-on-map-canvas.png" alt="final model" /> <br/>
+Figure 44: Model output toon map canvas.</p>
+
+<p>Notice that it didn't include any of the intermediate layers, such as the buffer or reprojected layers. You could add those layers to the Layers Panel if you gave the respective tool an output layer name. Also notice that right-hand Processing Toolbox panel. It is activated in QGIS's menus <strong>Processing -> Toolbox</strong>. After you save the tool in its default location in QGIS, it will be added to the <strong>Models</strong> dropdown with the name of the tool.</p>
+
+<p>If you want to edit the model, you can open it via QGIS's menu <strong>Processing -> Processing Modeler -> Open Model</strong>. If you right+click the model in your <strong>Processing Toolbox</strong> panel, you find additional options, including batch processing. Batch processing allows you run the tool on multiple inputs:</p>
+
+<p><img src="module-07-graphics/gm_edit.png" alt="final model" /> <br/>
+Figure 45: Processing Toolbox panel gives access to model actions.</p>
+
+<h2>Give model documentation</h2>
+
+<p>One last step is required before closing the processing tool. We need to add metadata or help documentation for the tool. After you open (or edit) the model, choose <strong>Edit model help</strong>:</p>
+
+<p><img src="module-07-graphics/gm_edit-tool-help.png" alt="final model" /> <br/>
+Figure 46: Edit model help gives documentation to help tool users.</p>
+
+<p>Use the <strong>Select element to edit</strong> and give descriptive information making sure you note any requirements and output formats:</p>
+
+<p><img src="module-07-graphics/gm_help-edit.png" alt="final model" /> <br/>
+Figure 47: Editing the help sections and adding descriptive information.</p>
+
+<p>After you complete, click <strong>OK</strong> and then <strong>Save</strong> in the model menu to ensure you saved the information to the tool. Now, when you run the tool, you should have the following information in the <strong>Help</strong> tab:</p>
+
+<p><img src="module-07-graphics/gm_help-final.png" alt="final model" />
+<br>Figure 48: Help documentation during the execution of the tool.</p>
+
+<p>When you have the tool complete, you can copy to a folder outside of the QGIS's default directory space. This will allow you to share the file, which has a ".model" file extension.</p>
+
+<h2>Resources and references</h2>
+
+<p><a href="http://docs.qgis.org/2.14/en/docs/user_manual/processing/modeler.html">QGIS's Processing Modeler</a></p>
+
+<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
+
+
+
+
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+
+<p><link rel="stylesheet" href="https://yandex.st/highlightjs/7.3/styles/github.min.css"></p>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+</body>
+</html>
