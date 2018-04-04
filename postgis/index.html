@@ -623,77 +623,77 @@ pre.editor-colors[mini] .scroll-view {
 <h2 id="mac-os-install">Mac OS install</h2>
 <p>Let's show the steps needed to install PostGIS on a Mac.</p>
 <p>Step 01: Download the <a href="http://postgresapp.com/">Postgres.app</a></p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q01.png"><br>Make sure to read and execute all steps before installation. <strong>DO NOT</strong> mix with other installations.</p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q01.png"><br>Make sure to read and execute all steps before installation. <strong>DO NOT</strong> mix with other installations.</p>
 <p></p><hr>
 Step 02: After install, find your server configuration files. These will be useful for twerking database performance down the road. <strong>Initialize</strong> to start the server.<p></p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q02.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q02.png">   </p>
 <hr>
 
 <p>Step 03: Open the <strong>Applications &gt; Utilities &gt; Terminal.app</strong> and copy and paste the following statement:</p>
 <pre class="editor-colors lang-bash"><div class="line"><span class="syntax--source syntax--shell"><span>sudo&nbsp;mkdir&nbsp;-p&nbsp;/etc/paths.d&nbsp;</span><span class="syntax--keyword syntax--operator syntax--list syntax--shell"><span>&amp;&amp;</span></span></span></div><div class="line"><span class="syntax--source syntax--shell"><span class="syntax--support syntax--function syntax--builtin syntax--shell"><span>echo</span></span><span>&nbsp;/Applications/Postgres.app/Contents/Versions/latest/bin&nbsp;</span><span class="syntax--keyword syntax--operator syntax--pipe syntax--shell"><span>|</span></span><span>&nbsp;sudo&nbsp;tee&nbsp;/etc/paths.d/postgresapp</span></span></div></pre>
 <p>Hit the <strong>return</strong> key and you should see:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q03.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q03.png">   </p>
 <hr>
 
 <p>Step 04: You should see three databases with one for your Mac OS username. <strong>Double-click</strong> the one with your username which should open a new terminal window logging you into your database via the command line. Run the following three statements:</p>
 <pre class="editor-colors lang-sql"><div class="line"><span class="syntax--source syntax--sql"><span>CREATE&nbsp;EXTENSION&nbsp;postgis</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>SELECT</span></span><span>&nbsp;PostGIS_version</span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--begin syntax--sql"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--section syntax--bracket syntax--round syntax--end syntax--sql"><span>)</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--source syntax--sql"><span>\q</span></span></div></pre>
 <p>If you see PostGIS version reported, you're all good:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q04.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q04.png">   </p>
 <hr>
 
 <p>Step 05: Open QGIS Browser Panel and right-click <strong>PostGIS &gt; New Connection</strong> to access your new database</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q05.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q05.png">   </p>
 <hr>
 
 <p>Step 06: Supply the following credentials. Since we didn't create a password then it is not needed.</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q06.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q06.png">   </p>
 <hr>
 
 <p><a name="windows-install"></a></p>
 <h2 id="windows-install">Windows install</h2>
 <p>Let's show the steps needed to install PostGIS on Windows OS.</p>
 <p>Step 01: Download the latest PostgreSQL version from <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">EnterpriseDB.com</a>. At the time this tutorial was written, the current version was 9.6. </p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q09.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q09.png">   </p>
 <hr>
 
 <p>Step 02: Once installed, run <strong>Stack Builder</strong> to add the PostGIS extension:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q10.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q10.png">   </p>
 <hr>
 
 <p>Step 03: Connect to your server and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q11.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q11.png">   </p>
 <hr>
 
 <p>Step 04: Add the Spatial Extension PostGIS bundle and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q12.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q12.png">   </p>
 <hr>
 
 <p>Step 05: Might take awhile...</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q13.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q13.png">   </p>
 <hr>
 
 <p>Step 06: Do not skip installation. Make sure the Skip installation is NOT checked and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q14.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q14.png">   </p>
 <hr>
 
 <p>Step 07: Select PostGIS and Create new spatial database and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q15.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q15.png">   </p>
 <hr>
 
 <p>Step 08: Add a password and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q16.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q16.png">   </p>
 <hr>
 
 <p>Step 09: Create a spatial database name and press <strong>Next</strong>:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q17.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q17.png">   </p>
 <hr>
 
 <p>Step 0510: Open QGIS Browser Panel and right-click <strong>PostGIS &gt; New Connection</strong> to access your new database</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q05.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q05.png">   </p>
 <hr>
 
 <p>Step 11: Add your credentials and database name you created from the previous steps:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q18.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q18.png">   </p>
 <hr>
 
 <p><a name="ubuntu-install"></a></p>
@@ -702,11 +702,11 @@ Step 02: After install, find your server configuration files. These will be usef
 <p><a name="add-data-to-your-spatial-database"></a></p>
 <h1 id="add-data-to-your-spatial-database">Add data to your spatial database</h1>
 <p>Step 01: Open QGIS and add a vector layer to your <strong>Layers Panel</strong>. Then open <strong>DB Manager</strong> and select your database.  Click on the <strong>Import vector layer</strong> table icon to add data to your database:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q07.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q07.png">   </p>
 <hr>
 
 <p>Step 02: Select an input layer and then click the <strong>Update options</strong> button. Always do this since the import tool will autocomplete the parameters for coordinate system, field names, etc. on import. In most cases, let's also enable the <strong>Convert field names to lowercase</strong> and <strong>Create spatial index</strong> options:</p>
-<p><img alt="" src="/Users/boyd/Documents/School/NMP/newmapsplus.github.io/postgis/spatial-database-setup-images-postgis/q08.png">   </p>
+<p><img alt="" src="spatial-database-setup-images-postgis/q08.png">   </p>
 <hr>
 
 <p>After import, look at the <strong>Table</strong> and <strong>Preview</strong> sections in DB Manager to verify your data was imported properly.</p>
