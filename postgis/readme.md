@@ -45,12 +45,12 @@ Let's show the steps needed to install PostGIS on a Mac.
 
 Step 01: Download the [Postgres.app](http://postgresapp.com/)
 
-![](spatial-database-setup-images-postgis/q01.png)   
+![support screen capture](spatial-database-setup-images-postgis/q01.png)   
 Make sure to read and execute all steps before installation. **DO NOT** mix with other installations.
 <hr>
 Step 02: After install, find your server configuration files. These will be useful for twerking database performance down the road. **Initialize** to start the server.
 
-![](spatial-database-setup-images-postgis/q02.png)   
+![support screen capture](spatial-database-setup-images-postgis/q02.png)   
 <hr>
 
 Step 03: Open the **Applications > Utilities > Terminal.app** and copy and paste the following statement:
@@ -61,7 +61,7 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 ```
 Hit the **return** key and you should see:
 
-![](spatial-database-setup-images-postgis/q03.png)   
+![support screen capture](spatial-database-setup-images-postgis/q03.png)   
 <hr>
 
 Step 04: You should see three databases with one for your Mac OS username. **Double-click** the one with your username which should open a new terminal window logging you into your database via the command line. Run the following three statements:
@@ -76,17 +76,17 @@ SELECT PostGIS_version();
 
 If you see PostGIS version reported, you're all good:
 
-![](spatial-database-setup-images-postgis/q04.png)   
+![support screen capture](spatial-database-setup-images-postgis/q04.png)   
 <hr>
 
 Step 05: Open QGIS Browser Panel and right-click **PostGIS > New Connection** to access your new database
 
-![](spatial-database-setup-images-postgis/q05.png)   
+![support screen capture](spatial-database-setup-images-postgis/q05.png)   
 <hr>
 
 Step 06: Supply the following credentials. Since we didn't create a password then it is not needed.
 
-![](spatial-database-setup-images-postgis/q06.png)   
+![support screen capture](spatial-database-setup-images-postgis/q06.png)   
 <hr>
 
 <a name="windows-install"></a>
@@ -94,59 +94,59 @@ Step 06: Supply the following credentials. Since we didn't create a password the
 
 Let's show the steps needed to install PostGIS on Windows OS.
 
-Step 01: Download the latest PostgreSQL version from [EnterpriseDB.com](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). At the time this tutorial was written, the current version was 9.6. 
+Step 01: Download the latest PostgreSQL version from [EnterpriseDB.com](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). At the time this tutorial was written, the current version was 9.6.
 
-![](spatial-database-setup-images-postgis/q09.png)   
+![support screen capture](spatial-database-setup-images-postgis/q09.png)   
 <hr>
 
 Step 02: Once installed, run **Stack Builder** to add the PostGIS extension:
 
-![](spatial-database-setup-images-postgis/q10.png)   
+![support screen capture](spatial-database-setup-images-postgis/q10.png)   
 <hr>
 
 Step 03: Connect to your server and press **Next**:
 
-![](spatial-database-setup-images-postgis/q11.png)   
+![support screen capture](spatial-database-setup-images-postgis/q11.png)   
 <hr>
 
 Step 04: Add the Spatial Extension PostGIS bundle and press **Next**:
 
-![](spatial-database-setup-images-postgis/q12.png)   
+![support screen capture](spatial-database-setup-images-postgis/q12.png)   
 <hr>
 
 Step 05: Might take awhile...
 
-![](spatial-database-setup-images-postgis/q13.png)   
+![support screen capture](spatial-database-setup-images-postgis/q13.png)   
 <hr>
 
 Step 06: Do not skip installation. Make sure the Skip installation is NOT checked and press **Next**:
 
-![](spatial-database-setup-images-postgis/q14.png)   
+![support screen capture](spatial-database-setup-images-postgis/q14.png)   
 <hr>
 
 Step 07: Select PostGIS and Create new spatial database and press **Next**:
 
-![](spatial-database-setup-images-postgis/q15.png)   
+![support screen capture](spatial-database-setup-images-postgis/q15.png)   
 <hr>
 
 Step 08: Add a password and press **Next**:
 
-![](spatial-database-setup-images-postgis/q16.png)   
+![support screen capture](spatial-database-setup-images-postgis/q16.png)   
 <hr>
 
 Step 09: Create a spatial database name and press **Next**:
 
-![](spatial-database-setup-images-postgis/q17.png)   
+![support screen capture](spatial-database-setup-images-postgis/q17.png)   
 <hr>
 
 Step 0510: Open QGIS Browser Panel and right-click **PostGIS > New Connection** to access your new database
 
-![](spatial-database-setup-images-postgis/q05.png)   
+![support screen capture](spatial-database-setup-images-postgis/q05.png)   
 <hr>
 
 Step 11: Add your credentials and database name you created from the previous steps:
 
-![](spatial-database-setup-images-postgis/q18.png)   
+![support screen capture](spatial-database-setup-images-postgis/q18.png)   
 <hr>
 
 <a name="ubuntu-install"></a>
@@ -160,12 +160,12 @@ We recommend using Ubuntu/Debian Linux distribution and using the [Digital Ocean
 
 Step 01: Open QGIS and add a vector layer to your **Layers Panel**. Then open **DB Manager** and select your database.  Click on the **Import vector layer** table icon to add data to your database:
 
-![](spatial-database-setup-images-postgis/q07.png)   
+![support screen capture](spatial-database-setup-images-postgis/q07.png)   
 <hr>
 
 Step 02: Select an input layer and then click the **Update options** button. Always do this since the import tool will autocomplete the parameters for coordinate system, field names, etc. on import. In most cases, let's also enable the **Convert field names to lowercase** and **Create spatial index** options:
 
-![](spatial-database-setup-images-postgis/q08.png)   
+![support screen capture](spatial-database-setup-images-postgis/q08.png)   
 <hr>
 
 After import, look at the **Table** and **Preview** sections in DB Manager to verify your data was imported properly.
