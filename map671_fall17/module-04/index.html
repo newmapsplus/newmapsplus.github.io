@@ -1,0 +1,1139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Lesson 04: Hexbin and Heat Mapping</title>
+
+</head>
+<body>
+<h1>Lesson 04: Hexbin and Heat Mapping</h1>
+
+<hr />
+
+<h1>Table of Contents</h1>
+
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0 -->
+
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-files">Data files</a></li>
+<li><a href="#using-hexbins-for-thematic-mapping">Using hexbins for thematic mapping</a>
+
+<ul>
+<li><a href="#coordinate-reference-systems">Coordinate Reference Systems</a>
+
+<ul>
+<li><a href="#find-your-local-coordinate-system">Find your local coordinate system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#extracting-our-layers-for-analysis">Extracting our layers for analysis</a>
+
+<ul>
+<li><a href="#extract-to-geojson">Extract to GeoJSON</a></li>
+<li><a href="#extract-to-spatial-database">Extract to spatial database</a>
+
+<ul>
+<li><a href="#example-sql-statements-for-this-lesson">Example SQL statements for this lesson</a></li>
+<li><a href="#create-three-layers">Create three layers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#styling-your-preliminary-map">Styling your preliminary map</a></li>
+<li><a href="#hexbin-analysis-with-geoprocessing-tools">Hexbin analysis with geoprocessing tools</a>
+
+<ul>
+<li><a href="#create-hexgrid-with-the-mmqgis-plugin">Create hexgrid with the MMQGIS plugin</a></li>
+<li><a href="#spatial-join-wildfires-to-hexgrid">Spatial join wildfires to hexgrid</a>
+
+<ul>
+<li><a href="#styling-your-output">Styling your output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#hexbin-analysis-in-sql">Hexbin analysis in SQL</a>
+
+<ul>
+<li><a href="#making-a-convex-hull-polygon-to-create-a-hexbin">Making a convex hull polygon to create a hexbin</a>
+
+<ul>
+<li><a href="#using-qgis-geometry-tools-to-prep">Using QGIS Geometry Tools to prep</a></li>
+</ul>
+</li>
+<li><a href="#spatial-join-with-spatial-indexes-in-spatialite">Spatial join with spatial indexes in SpatiaLite</a>
+
+<ul>
+<li><a href="#combining-spatial-index-queries-with-intersect-function">Combining spatial index queries with intersect function</a></li>
+<li><a href="#sql-tips-in-db-manager">SQL tips in DB Manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#making-a-heat-map-in-qgis">Making a heat map in QGIS</a>
+
+<ul>
+<li><a href="#pseudocolor-raster-bands">Pseudocolor raster bands</a></li>
+<li><a href="#raster-layer-widgets">Raster Layer widgets</a></li>
+<li><a href="#weighted-heatmap">Weighted heatmap</a></li>
+</ul>
+</li>
+<li><a href="#many-methods-to-visualize-point-data">Many methods to visualize point data</a>
+
+<ul>
+<li><a href="#resources-and-references">Resources and references</a></li>
+</ul>
+</li>
+</ul>
+
+
+<!-- /MarkdownTOC -->
+
+
+<p><a name="overview"></a></p>
+
+<h1>Overview</h1>
+
+<p>This module takes point-level data and explores two techniques for their thematic representation using QGIS: the hexbin and the heatmap.</p>
+
+<p>In this module, we will:</p>
+
+<ul>
+<li>continue our analysis of point data we started in the last lesson</li>
+<li>create hexagonal grids with tessellation and/or QGIS plugins functions</li>
+<li>use spatial indexes for queries</li>
+<li>make 'heatmap' representations of data</li>
+<li>explore raster symbology</li>
+<li>assess the different techniques for point data visualization</li>
+</ul>
+
+
+<p><a name="data-files"></a></p>
+
+<h1>Data files</h1>
+
+<p>This week we have a 'whopper' of a dataset:</p>
+
+<p><strong>US Wildfires 1992-2013</strong> SpatiaLite database <a href="https://www.dropbox.com/s/nppa9gbmfpt2xf0/Wildfires_1992-2013_NAD83.sqlite.zip?dl=0">on Dropbox</a></p>
+
+<ul>
+<li>Derived from: Short, Karen C. 2015. Spatial wildfire occurrence data for the United States, 1992-2013 [FPA_FOD_20150323]. 3rd Edition. Fort Collins, CO: Forest Service Research Data Archive. <a href="https://doi.org/10.2737/RDS-2013-0009.3">https://doi.org/10.2737/RDS-2013-0009.3</a></li>
+<li>Also contains 1:500k scale county and state polygons from <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">U.S. Census Bureau Cartographic Boundary Shapefiles</a></li>
+</ul>
+
+
+<p><a name="using-hexbins-for-thematic-mapping"></a></p>
+
+<h1>Using hexbins for thematic mapping</h1>
+
+<p>What are hexbins, aka hexagonal grids, and why are they cool for mappers? Hexbinning is a technique used to aggregate a large number of points into hexagonal grids. The method is similar to a choropleth, though rather than taking political boundaries as the aggregation unit, we create a grid of equal-sized, adjacent with no gaps, and non-overlapping polygons.</p>
+
+<p>We'll create hexagonal grids using the MMQGIS plugin and/or the <a href="https://www.gaia-gis.it/fossil/libspatialite/wiki?name=tesselations-4.0">tessellation functions</a> in our spatial database. Our grid can be comprised of squares, equilateral triangles, or hexagons. The SpatiaLite and PostGIS functions are remarkably easy to configure and run.</p>
+
+<p>The primary dataset we'll use is point locations for U.S. wildfires from 1992-2013. With over 1.7 million records, we will need a good way to visualize and analyze these points. We'll use the spatial join to aggregate by hexagonal grids, which gives use an immediate density measure, spatial join by county with demographic information, and finally create a heat map, which creates a kernel density raster map.</p>
+
+<p>Unlike our previous lessons, we will need to transform our layer's coordinate systems.</p>
+
+<p><a name="coordinate-reference-systems"></a></p>
+
+<h2>Coordinate Reference Systems</h2>
+
+<p>For displaying maps, we use the 'on the fly' projection method to make our layers overlap regardless of the layer's source CRS. We've found that when we perform spatial joins, the layers must share the same coordinate system. Now, when we use geospatial algorithms that have distance as an input parameter, e.g., buffer points by some distance or create new polygon features of a fixed size, we need to use a projected coordinate system with a linear unit of measure.</p>
+
+<p>Most of the geospatial data we find online, especially small-scale vector data, is in either WGS84 or NAD83, which are geographic coordinate systems. These geographic coordinate systems are the standard for a web mapping workflow, and we'll always need to manage them properly. For example, we know that we need to export GeoJSONs in a WGS84 CRS to use online. Try <a href="http://geojson.io">geojson.io</a> to verify your web mapping layers.</p>
+
+<p>However, a hexagon grid generated in WGS84 or NAD83 will not maintain equal areas for hexagons across a large area, which defeats the purpose of hexbinning. So, we need to find a local projected coordinate to use in our analysis.</p>
+
+<p><a name="find-your-local-coordinate-system"></a></p>
+
+<h3>Find your local coordinate system</h3>
+
+<p>We have (generally) two families of local, projected CRSs we can use, Universal Transverse Mercator (UTM) and State Plane Coordinate System (SPCS).</p>
+
+<p>UTM zones are global, based on the WGS84 GCS, and always have a meter as the linear unit of measure.  The State Plane Coordinate System was developed to maintain the highest level of measurement capability on maps of U.S. states. They are tuned to each state, and most states have multiple zones tuned to even smaller regions in that state. They are based on the NAD83 GCS with multiple datum realizations (correcting for the shifting of North America due to plate tectonics) and offer both meter and feet linear units of measure.</p>
+
+<p>Both families maximize the accuracy of measuring shape, distance, and area for the areas they cover. If we create a hexagon grid in one of these coordinate systems, then we're confident that our hexagons will maintain identical areas in any projection.</p>
+
+<p>Which to use? UTM zones are pretty easy to use, but if you want foot as a linear unit of measure, you'll need an SPCS zone. Find both UTM and SPCS zones for any county in the U.S. with this handy <a href="http://www.avenza.com/sites/default/files/flashmaps/spsc/">old-school Flash map</a>. Note, check your state's SPCS for a single-zone option.</p>
+
+<p><a name="extracting-our-layers-for-analysis"></a></p>
+
+<h1>Extracting our layers for analysis</h1>
+
+<p>In our workflow, we'll render features for our area of interest (from datasets in NAD83 or WGS84) to a new spatial database layer (or GeoJSON layer) in the desired projected coordinate system.</p>
+
+<p>Extract and connect the "Wildfires_1992-2013_NAD83.sqlite" database. The database contains over 1.7 million points representing wildfires. While that is a large dataset by itself, the database contains a spatial index for the layers. That adds considerably to the file size of the database but has important advantages we'll address later in the lesson.</p>
+
+<p>You may select any state to analyze for this lesson. I will select Kentucky and use the Kentucky State Plane single zone US foot (EPSG:3089), the official CRS for the state.</p>
+
+<p><a name="extract-to-geojson"></a></p>
+
+<h2>Extract to GeoJSON</h2>
+
+<p>Add the <em>FPA_FOD_20150323 Fires</em> to your Layers Panel. You probably noticed that it took awhile to draw. Let's subset our desired region by right-clicking the layer and selecting <strong>Filter...</strong>:</p>
+
+<p><img src="module-04-graphics/q001-filter.png" alt="Filtering a layer for Kentucky points" />  <br/>
+Figure 01: Filtering a layer for Kentucky wildfire points</p>
+
+<p>The query is:</p>
+
+<pre><code>"State" = 'KY'
+</code></pre>
+
+<p>Next, we need to save the layer to a new GeoJSON in the correct CRS, with a limited set of fields, and with full coordinate precision. Since we're interested in the size of the fire, we will only keep the field name <em>FIRE_SIZE</em>, which is the the area burned in acres. Right-click the layer and select <strong>Save As...</strong>:</p>
+
+<p><img src="module-04-graphics/q002-save.png" alt="Saving a GeoJSON layer for analysis" />  <br/>
+Figure 02: Saving a GeoJSON layer for analysis</p>
+
+<p>Repeat the same steps for the county and state layers. We want to have three layers in our Layers Panel:</p>
+
+<p><img src="module-04-graphics/q00-three-layers.png" alt="Three layers in Map Canvas" />  <br/>
+Figure 03: Three layers in Map Canvas</p>
+
+<p><a name="extract-to-spatial-database"></a></p>
+
+<h2>Extract to spatial database</h2>
+
+<p>Let's execute some SQL queries to isolate our state and transform the layers' CRS when we add them to our new database I'm calling, "kentucky-wildfires-EPSG3089.sqlite." If you're in PostGIS, then you can create a new schema called "kentucky-wildfires-EPSG3089".</p>
+
+<p><a name="example-sql-statements-for-this-lesson"></a></p>
+
+<h3>Example SQL statements for this lesson</h3>
+
+<p>Before we start executing SQL, let's find example statements we can use during the lesson. If you haven't changed table names, you should be able to copy these statements and paste them into DB Manager.</p>
+
+<ul>
+<li><a href="https://gist.github.com/boydx/ce0775499506b59f6124e1303846dbd7">PostGIS</a></li>
+<li><a href="https://gist.github.com/boydx/473b5337bfbaddf300ce9443cf475ed8">SpatiaLite</a></li>
+</ul>
+
+
+<p><a name="create-three-layers"></a></p>
+
+<h3>Create three layers</h3>
+
+<p>Let's inspect our fire data. To limit the records returned from this huge set, use the following SQL:</p>
+
+<pre><code>/* View the first 10 records in the database */
+select
+    *
+from
+    "FPA_FOD_20150323 Fires"
+limit 
+    10
+</code></pre>
+
+<p>This query will give us enough attributes to craft a query that extracts just Kentucky:</p>
+
+<pre><code>/* Select Kentucky records in the database */
+
+select
+    *
+from
+    "FPA_FOD_20150323 Fires"
+where
+    STATE  = 'KY'
+</code></pre>
+
+<p>Now create queries to use on the county and state layers to extract Kentucky.</p>
+
+<p>We have a couple of ways to get these selections to a new database as we've discovered. We could create new tables or insert these queries like we did in the last lesson. Let's <strong>Load as new layer</strong> and add to the Map Canvas.</p>
+
+<p>Change the 'on the fly' projection to EPSG: 3089 and view your layers in Map Canvas:</p>
+
+<p><img src="module-04-graphics/q00-three-layers.png" alt="Three layers in Map Canvas" />  <br/>
+Figure 04: Three layers in Map Canvas</p>
+
+<p>You might notice that there is a delay in the draw time for the wildfire points. Since it is a query, it is dynamically produced each time you make a change in Map Canvas. Let's render the query to our new database and change it's CRS, too. Use the <strong>Import layer</strong> dialog in DB Manager:</p>
+
+<p><img src="module-04-graphics/q01-import-table.jpg" alt="Import layer into new database" />  <br/>
+Figure 05: Import layer into new database</p>
+
+<p>Notice the change in the <strong>Target SRID: 3089</strong> and make sure you enable the <strong>Create spatial index</strong> option. Now, finish the imports (using the target CRS and creating a spatial index) and verify your database has Kentucky wildfire points, counties, and state outline.</p>
+
+<p><a name="styling-your-preliminary-map"></a></p>
+
+<h1>Styling your preliminary map</h1>
+
+<p>Let's add some initial styles to our layers. Since we're dealing with fire, let's make our points glow against a darker background. Select the wildfire points <strong>Style</strong> tab to <strong>Graduated</strong> by size using the <em>fire_size</em> attribute. Also, change the feature blending mode to <strong>Addition</strong>. The settings could be similar to:</p>
+
+<p><img src="module-04-graphics/q03-style-settings.png" alt="Styling point data" />  <br/>
+Figure 06: Styling point data for glow effect</p>
+
+<p>Finally, style the other layers and set the <strong>Project Properties</strong> background color to a dark gray and make sure the on-the-fly CRS is set to "EPSG: 3089":</p>
+
+<p><img src="module-04-graphics/q04-map.png" alt="Simple map set up" />  <br/>
+Figure 07: Simple map set up</p>
+
+<p>This is a decent visualization of wildfires in Kentucky. We're using the unique feature blending modes to imply wildfire rates; glowing areas imply more wildfire. However, we might need to quantify the rates, i.e., "what is maximum amount of wildfire area burned?" To accomplish this, we need to normalize the amount of wildfire area burned by an enumeration unit. The hexbin provides a useful unit, because we can easily show density with a spatial join.</p>
+
+<p><a name="hexbin-analysis-with-geoprocessing-tools"></a></p>
+
+<h1>Hexbin analysis with geoprocessing tools</h1>
+
+<p>We'll use a plugin and tool we introduced in the previous lessons. The general workflow is 1) create a hexbin and 2) do a spatial join aggregating wildfire points by hexagon.</p>
+
+<p><a name="create-hexgrid-with-the-mmqgis-plugin"></a></p>
+
+<h2>Create hexgrid with the MMQGIS plugin</h2>
+
+<p>Using MMQGIS plugin Create Grid Layer function might be the easiest way to create a hexagonal grid layer. You should remember the plugin from the last lesson. It outputs to a Shapefile. Find the plugin here:</p>
+
+<p><img src="module-04-graphics/q_01_mmqgis_01.png" alt="Using MMQGIS plugin Create Grid Layer function" /> <br/>
+Figure 08: Using MMQGIS plugin Create Grid Layer function</p>
+
+<p>You should select the layer you want cover with a hexagonal grid. Since we're analyzing Kentucky wildfires, let's select that layer. The other parameters should be obvious except for the X and Y dimension. The correspond to the short diameter of a hexagon (X spacing) and the long diameter (Y spacing). If we wanted a 5-mile long-diameter hexagon, the Y spacing parameter would be 5*5280 = 26400:</p>
+
+<p><img src="module-04-graphics/q_01_mmqgis_02.png" alt="Creating a hex grid with a 5-mile long diameter for each hexagon" /> <br/>
+Figure 09: Creating a hex grid with a 5-mile long diameter for each hexagon</p>
+
+<p>Your output should look similar to:</p>
+
+<p><img src="module-04-graphics/q003-output.png" alt="5-mile long diameter hexgrid" /> <br/>
+Figure 09: A 5-mile long diameter hexgrid covering Kentucky</p>
+
+<p><a name="spatial-join-wildfires-to-hexgrid"></a></p>
+
+<h2>Spatial join wildfires to hexgrid</h2>
+
+<p>Launch the QGIS menu tool > <strong>Vector > Data Management Tools > Join attributes by location</strong>  and create a temporary layer that:</p>
+
+<ul>
+<li>counts all points intersecting each hexagon</li>
+<li>sums the <em>FIRE_SIZE</em> attribute (acres of wildfire) by each hexagon</li>
+<li>keep only hexagons that have matching features</li>
+</ul>
+
+
+<p>The tool parameters should look like:</p>
+
+<p><img src="module-04-graphics/q004-join.png" alt="Spatial join wildfires to 5-mile long diameter hexgrid" /> <br/>
+Figure 10: Spatial join wildfires to 5-mile long diameter hexgrid</p>
+
+<p>After a successful output, take a look at the attribute table. You should have a field called <em>sumFIRE_SIZE</em> which is total acreage per hexagon. You can sort by this field (double-clicking the field name) and select the record. That will highlight the hexagon with the most fire.</p>
+
+<p><a name="styling-your-output"></a></p>
+
+<h3>Styling your output</h3>
+
+<p>Access the properties for your joined layer and created a graduated color scheme using the <em>sumFIRE_SIZE</em> field. Add a little transparency to the layer and remove the hexagon outlines. Your style panel should look like:</p>
+
+<p><img src="module-04-graphics/q005-style.png" alt="Styling the hexagon layer" /> <br/>
+Figure 11: Styling the hexagon layer</p>
+
+<p><img src="module-04-graphics/q006-map.png" alt="Your final map visualization" /> <br/>
+Figure 12: Your final map visualization</p>
+
+<p>The next section will explore the same process in SQL.</p>
+
+<p><a name="hexbin-analysis-in-sql"></a></p>
+
+<h1>Hexbin analysis in SQL</h1>
+
+<p>We'll create hexagonal grids using the <a href="https://www.gaia-gis.it/fossil/libspatialite/wiki?name=tesselations-4.0">tessellation functions</a> in SpatiaLite. If you're working in PostGIS, look at the <a href="https://gist.github.com/boydx/ce0775499506b59f6124e1303846dbd7">lesson PostGIS SQL file</a> where we <em>Load custom function to create hexagon grids</em> into PostGIS (starting around line 60). Each function requires only two parameters:</p>
+
+<ul>
+<li>a polygon layer you want to cover with tessellated polygons</li>
+<li>the polygon's side length (in the layer's CRS unit of measure)</li>
+</ul>
+
+
+<p>You can make a hexagon exactly 5-miles wide on the long diagonal (outer diameter) with the equation <code>side = diagonal/2</code>. Hexagons in an equal-area projected CRS also have the same area when they're projected to other CRSs. That's the purpose of hexbinning; making polygons of the same size to measure density.</p>
+
+<p>Let's use SQL to create a 5-mile diagonal hexagon grid. Use the following statement to cover your state of choice:</p>
+
+<pre><code>/* Make hexagonal grid */
+
+select
+    /* function requires geometry field and length of side. Notice the conversion to 2.5 miles */
+    st_hexagonalgrid(geom, 2.5*5280) as geom 
+from
+    ky_state
+</code></pre>
+
+<p>Now, <strong>Load as new layer</strong> to view in Map Canvas. You might notice that it takes awhile to draw. Again, we're dealing with a query layer, so we'll need to render it. If we were creating a lot of grids, we should create a new table and use the <code>insert into</code> statement to populate new layers.</p>
+
+<p><img src="module-04-graphics/q05-hexbin-map.png" alt="5-mile diagonal hexagons" />  <br/>
+Figure 13: Five-mile diagonal hexagons</p>
+
+<p><a name="making-a-convex-hull-polygon-to-create-a-hexbin"></a></p>
+
+<h2>Making a convex hull polygon to create a hexbin</h2>
+
+<p>What if your polygons layer cover too much area and we are only concerned with making a grid that covers the extent of our point layer? Since we already have a point layer that we wish to hexbin, let's just create a grid that only covers those points.</p>
+
+<p>The <code>st_hexagonalgrid()</code> function requires a polygon layer, so using a point layer will not work. We need to create a convex hull on our point layer. A convex hull is the smallest <a href="https://en.wikipedia.org/wiki/Convex_polygon">convex polygon</a> that covers a group of features.  We'll use two functions in our spatial database, the <code>st_convexhull()</code> and <code>st_collect()</code>, to make a convex hull. Let's construct an SQL query to make this polygon:</p>
+
+<pre><code>/* Construct convex hull on wildfire points */
+
+select 
+    st_convexhull(st_collect(geom)) as geom
+from
+    ky_wildfires
+</code></pre>
+
+<p>The <code>st_collect()</code> creates a <em>multipoint</em> feature and the <code>st_convexhull()</code> wraps a polygon around this group of points. The output should look similar to:</p>
+
+<p><img src="module-04-graphics/q90-convex-hull.png" alt="Convex hull from wildfire points" />  <br/>
+Figure 07: Convex hull from wildfire points</p>
+
+<p>Of course, we could combine these queries into one statement:</p>
+
+<pre><code>/* Make hexagonal grid from convex hull on wildfire points */
+
+select
+    /* function requires geometry field and length of side. Notice the conversion to 2.5 miles */
+    st_hexagonalgrid(st_convexhull(st_collect(geom)), 2.5*5280) as geom 
+    -- NOTE: Do NOT include 'id' in table.
+from
+    ky_wildfires
+</code></pre>
+
+<p>The output of this query would look like:</p>
+
+<p><img src="module-04-graphics/q91-convex-hull-hexbin.png" alt="Export/Add geometry columns tool" />  <br/>
+Figure 14: Hexbin from convex hull</p>
+
+<p><a name="using-qgis-geometry-tools-to-prep"></a></p>
+
+<h3>Using QGIS Geometry Tools to prep</h3>
+
+<p>We have an issue that needs to be addressed. The <code>st_hexagonalgrid()</code>  function outputs a "multipolygon" such that all of these hexagons are encoded as a single, multipart polygon. We cannot use this polygon for hexbinning. Let's introduce some Geometry Tools in QGIS into our workflow. The first tool we'll use is the <strong>Multipart to singleparts</strong> tool, which is found in the QGIS menu <strong>Vector > Geometry Tools</strong>. Set the hex grid as your input and leave the "[Create temporary layer]" option for output. This tool will create a unique record for each hexagon that we can use for spatial joining:</p>
+
+<p><img src="module-04-graphics/q06-multipart-to-singlepart-tool.png" alt="Multipart to singleparts tool" /> <br/>
+Figure 15: Multipart to singleparts tool</p>
+
+<p>Next, let's add a unique number for each row using the <strong>Field Calculator</strong> in QGIS. Access it by right-clicking your newly created layer and select <strong>Open attribute table</strong>. Select the <strong>Open field calculator</strong> button:</p>
+
+<p><img src="module-04-graphics/q07-add-row-number.png" alt="Add unique id to each record" /> <br/>
+Figure 16: Add unique id to each record</p>
+
+<p>If you've imported the layer in DB Manager and see only <em>NULL</em> values for your <code>id</code> field, then execute the following query in SpatiaLite:</p>
+
+<pre><code>update 
+    hexgrid_5mi 
+set 
+    id = rowid
+</code></pre>
+
+<p>Or in PostGIS:</p>
+
+<pre><code>/* Remove a corrupted id field */
+
+alter table
+    hexgrid_5mi
+drop if exists
+    id 
+</code></pre>
+
+<pre><code>/* Create new id field as a Primary key (autincrementing and always unique) */
+
+alter table
+    hexgrid_5mi
+add column 
+    id SERIAL PRIMARY KEY
+</code></pre>
+
+<p>We need a unique identifier for each hexagon to work properly during a spatial join.</p>
+
+<p><a name="spatial-join-with-spatial-indexes-in-spatialite"></a></p>
+
+<h2>Spatial join with spatial indexes in SpatiaLite</h2>
+
+<hr />
+
+<p>This section is for SpatiaLite users. PostGIS accomplishes spatial indexing 'behind the scenes'. We only need to specify <strong>Create spatial index</strong> in Db Manager when we import layers into a PostGIS database. If you are in PostGIS, use the <a href="https://gist.github.com/boydx/ce0775499506b59f6124e1303846dbd7">lesson PostGIS SQL file</a>.</p>
+
+<hr />
+
+<p>This section should be familiar from our last lesson with one major exception; we will use SpatiaLite's <a href="https://www.gaia-gis.it/fossil/libspatialite/wiki?name=SpatialIndex">spatial index</a> that we've been creating for each layer. The spatial index leverages SQLite's <a href="https://www.sqlite.org/rtree.html">R*Tree index</a> to search and find features between layers. The spatial index is a hidden table that relates all geometry features in a database to each other and is essentially two columns:</p>
+
+<ul>
+<li>A unique id column that relates to the primary key id for each feature.</li>
+<li>A separate <em>geom</em> column with the minimum bounding rectangle for all spatially indexed features in the database.</li>
+</ul>
+
+
+<p>With this simplification, we can more quickly find our intersecting features, but there is an important caveat. As explained in SQLite's description of the R<em>Tree index, "An R</em>Tree index does not normally provide the exact answer but merely reduces the set of potential answers from millions to dozens." Why? Because a minimum bounding box around a hexagon is larger than the hexagon, but it significantly limits our search to a smaller area.</p>
+
+<p>First, let's look at we already know for a spatial join:</p>
+
+<pre><code>/* Test spatial join wildfire points to 5-mile hexagonal grid */
+
+select 
+    hexgrid_5mi.id,
+    count(ky_wildfire.id) as count,
+    hexgrid_5mi.geom
+from 
+    hexgrid_5mi
+join 
+    ky_wildfire
+on
+    st_intersects(hexgrid_5mi.geom, ky_wildfire.geom)
+group by
+    hexgrid_5mi.id
+
+/**********************************************/
+ limit 40    -- limit to 40 hexagons                
+/***********************************************/
+</code></pre>
+
+<p>The output from query and note the count of wildfires by hexagon ID:</p>
+
+<p><img src="module-04-graphics/q12.5-spatial-index-output.png" alt="Counting wildfires by hexagon ID" /> <br/>
+Figure 17: Counting wildfires by hexagon ID, accurately but slowly</p>
+
+<p>How long did it take? SpatiaLite is checking every single record and finding exact intersections. It's like reading a whole book just to find chapter 2; a long process but will work accurately. What if each hexagon and point already knew which features were in their neighborhood? The minimum bounding rectangle around each feature creates this 'local knowledge' in the spatial index. We just need to query it.</p>
+
+<p>Let's look at how we implement spatial index in the SQL:</p>
+
+<pre><code>/* Using spatial index find points over hexagons and add the hexagon id to the output */
+/* The output is similar to a "one-to-many" spatial join */
+
+select 
+    hexgrid_5mi.id as hex_id,
+    ky_wildfire.id as pt_id,
+    ky_wildfire.geom
+from 
+    hexgrid_5mi, ky_wildfire    
+where
+    /* Start the spatial index query */
+
+    ky_wildfire.rowid 
+
+    in (
+
+        select rowid from SpatialIndex         
+        where 
+            f_table_name = 'ky_wildfire'
+        and
+            search_frame = hexgrid_5mi.geom
+        )
+
+/**********************************************/
+limit 100    -- limit to 100 records            
+/***********************************************/
+</code></pre>
+
+<p>The spatial index query uses system tables that are not shown in DB Manager. The undeclared column <em>rowid</em> is the system name for the primary key, which is usually stored in the 'id' field. The <em>SpatialIndex</em> table contains the minimum bounding boxes for all feature geometries in the database. The <code>in</code> operator will find all matches in <em>SpatialIndex</em> table query where the ky_wildfire point share the same 'neighborhood' with a hexgrid_5mi hexagon. It's not saying that the hexagon exactly contains each point, but rather their minimum bounding rectangles overlap.</p>
+
+<p>This is the output from the above query. Try limiting based to 1000 records. Still fast but not exactly what we're looking for:</p>
+
+<p><img src="module-04-graphics/q13-spatial-index-output.png" alt="Each point 'knows' what hexagon neighborhood it belongs" /> <br/>
+Figure 15: Each point 'knows' in which hexagon neighborhood it belongs</p>
+
+<p>Let's start our "many-to-one" spatial join by adding the <code>join</code> and <code>group by</code> statements, while using our spatial index query:</p>
+
+<pre><code>/* Test spatial join wildfire points using spatial index */
+
+select 
+    hexgrid_5mi.id,
+    count(ky_wildfire.id) as count,
+    hexgrid_5mi.geom
+from 
+    hexgrid_5mi
+join 
+    ky_wildfire    
+on
+    /* Start the spatial index query */
+
+    ky_wildfire.rowid 
+
+    in (
+
+        select rowid from SpatialIndex         
+        where 
+            f_table_name = 'ky_wildfire'
+        and
+            search_frame = hexgrid_5mi.geom
+        )
+
+group by
+    hexgrid_5mi.id
+
+/**********************************************/
+ limit 40    -- limit to 40 hexagons                
+/***********************************************/
+</code></pre>
+
+<p>Let's take a look at the output and compare it Figure: 12. Notice how the count here is higher because we're matching to the hexagon's minimum bounding rectangle.</p>
+
+<p><img src="module-04-graphics/q14-spatial-index-output.png" alt="Counting fire points by a hexagon's minimum bounding rectangle" />  <br/>
+Figure 16: Counting fire points by a hexagon's minimum bounding rectangle, fast but includes points just outside the hexagon</p>
+
+<p><a name="combining-spatial-index-queries-with-intersect-function"></a></p>
+
+<h3>Combining spatial index queries with intersect function</h3>
+
+<p>We seem to have difficult choice with our two different queries; slow and accurate vs. fast and sloppy. We have an easy solution, though. Let's combine them with an <code>and</code> operator. The spatial index query will narrow the search significantly, and <code>st_intersects()</code> function will test for spatial proximity accurately on a much smaller set of points.</p>
+
+<p>Can we do any summary statistics on our fire data when we aggregate by hexagon? When you inspect the <a href="https://www.fs.usda.gov/rds/archive/products/RDS-2013-0009.3/_metadata_RDS-2013-0009.3.html#Entity_and_Attribute_Information">metadata for the wildfire layer</a> you find that we have at least attribute we can use with a <code>sum()</code> function, <em>FIRE_SIZE</em> gives us acres of final fire size.</p>
+
+<p>Let's make a <code>join</code> statement that returns only the hexagons with fires and its id, the area of each hexagon, the count of fires, and the size of fire in square miles. Let's also rank it by cumulative fire size:</p>
+
+<pre><code>/* Perform accurate spatial join using the intersects function and a spatial index query */
+
+select 
+    hexgrid_5mi.id,
+    count(ky_wildfire.id) as count,
+    round((sum(ky_wildfire.FIRE_SIZE)/640),4) as fires_area_sq_mi,
+    hexgrid_5mi.geom
+from 
+    hexgrid_5mi
+join 
+    ky_wildfire
+on    
+
+    /* Perform the accurate intersect test */
+
+    st_intersects(hexgrid_5mi.geom, ky_wildfire.geom)
+
+and
+    /* Use the spatial index query to limit our candidate points */
+
+    ky_wildfire.rowid 
+
+    in (
+
+        select rowid from SpatialIndex         
+        where 
+            f_table_name = 'ky_wildfire'
+        and
+            search_frame = hexgrid_5mi.geom
+        )
+
+
+group by
+    hexgrid_5mi.id
+
+/**********************************************/
+ -- limit 40    -- go full strength!            
+/***********************************************/
+
+order by
+     fires_area_sq_mi desc
+</code></pre>
+
+<p>For output, I got 1975 hexagons with the following attributes:</p>
+
+<p><img src="module-04-graphics/q15-spatial-index-output.png" alt="Query output" />  <br/>
+Figure 18: Query output</p>
+
+<p>As we've done with our first hexagonal grid, we could <strong>Load as a new layer</strong> and start symbology. It will be more efficient to create a new table and insert our query output to its new table.</p>
+
+<p>First, let's create a new table to receive our query's output:</p>
+
+<p><img src="module-04-graphics/q12-new-table.png" alt="Create new table for spatial join" /><br/>
+Figure 19: Create new table for spatial join</p>
+
+<p>And use the following query to population your new table with features:</p>
+
+<pre><code>/* Spatial join wildfire points to 5-mile hexagonal grid */
+
+insert into wildfire_by_5mile_hexagon
+    (hex_area_sq_mi,count,fire_area_sq_mi,geom)
+
+select 
+    hexgrid_5mi.area_sq_mi,
+    count(ky_wildfire.id) as count,
+    round((sum(ky_wildfire.FIRE_SIZE)/640),4) as fires_area_sq_mi,
+    hexgrid_5mi.geom
+from 
+    hexgrid_5mi
+join 
+    ky_wildfire
+on    
+    /* Use the spatial index query to limit our candidate points */
+
+    st_intersects(hexgrid_5mi.geom, ky_wildfire.geom)
+
+    and
+
+    /* Use the spatial index query to limit our candidate points */
+
+    ky_wildfire.rowid 
+
+    in (
+
+        select rowid from SpatialIndex         
+        where 
+            f_table_name = 'ky_wildfire'
+        and
+            search_frame = hexgrid_5mi.geom
+        )
+group by
+    hexgrid_5mi.id
+</code></pre>
+
+<p>Let's take a look at the <strong>Info</strong> and <strong>Table</strong> tabs and see if we have output:</p>
+
+<p><img src="module-04-graphics/q15.5-hexagon-map-table.png" alt="Successful output from query" />  <br/>
+Figure 20: Successful output from query</p>
+
+<p>After you have successful output, add your layer and apply some appropriate styling to make a similar map:</p>
+
+<p><img src="module-04-graphics/q16-hexagon-map.png" alt="Five-mile hexbin map showing cumulative square miles of wildfire area" /> <br/>
+Figure 21: Five-mile hexbin map showing cumulative square miles of wildfire area</p>
+
+<p>Note that we don't need to normalize unless you want to show the ratio of burned area in each hexagon.</p>
+
+<p><a name="sql-tips-in-db-manager"></a></p>
+
+<h3>SQL tips in DB Manager</h3>
+
+<p>The <code>create table as</code> statements can produce new tables from <code>select</code> statements. This option is not available with SpatiaLite geometry tables mainly because of the spatial index. The best way to create and edit tables with geometry is using the DB Manager <strong>Table > Create Table</strong> like we have already done. If your table isn't spatial, then you could use the <code>create table as</code> on queries in SpatiaLite.</p>
+
+<p>For example, if we wanted to create summary statistic tables that we could export for using in a layout, we could apply the following query:</p>
+
+<pre><code>/* Make table with summary statistics */
+
+create table summary_stats as
+
+select 
+    avg(fire_area_sq_mi) as "Average square miles burned by hexagon",
+    sum(fire_area_sq_mi) as "Total cumulative sq mi burned",
+    max(fire_area_sq_mi) as "Largest etc."
+from
+    wildfire_by_5mile_hexagon
+</code></pre>
+
+<p>As you experiment with queries and need to delete tables, you'll discover that you might have 'zombie' tables that persist though you deleted them. A database tool called <strong>Vacuum</strong>. This tool will remove tables and entries that are no longer needed. You can find the tool in DB Manager <strong>Database > Run Vaccum</strong>.</p>
+
+<p><a name="making-a-heat-map-in-qgis"></a></p>
+
+<h1>Making a heat map in QGIS</h1>
+
+<p>Let's now turn to representing the same data with the heatmap, a visualization technique that produces a density raster. This tool is often called a kernel density function and the QGIS's help explains that it will "create a density (heatmap) raster of an input point vector layer. The density is calculated based on the number of points in a location, with larger numbers of clustered points resulting in larger values. Heatmaps allow easy identification of "hotspots" and clustering of points."</p>
+
+<p>Ensure that the heatmap plugin is installed and activated. In QGIS main menu find <strong>Plugins > Manage and Install Plugins... > Heatmap</strong>.</p>
+
+<p><img src="module-04-graphics/heatmap-plugin.png" alt="Heatmap plugin for QGIS" /> <br/>
+Figure 22: Heatmap plugin for QGIS</p>
+
+<p>Open the Heatmap Plugin (<strong>Raster > Heatmap > Heatmap ...</strong>). Within this dialog, select the wildfire point layer as input. The plugin will write a raster file in a GeoTIFF format to disk. Each cell in this raster will be a numeric value representing the number of fires per some area. Adjust the <strong>Radius</strong> parameter to 10,000 feet, which "specifies the distance around a point at which the influence of the point will be felt. Larger values result in greater smoothing, but smaller values may show finer details and variation in point density," as described in QGIS's help documentation.</p>
+
+<p>Leave <strong>Advanced</strong> option disabled for now.</p>
+
+<p><img src="module-04-graphics/q17-heatmap-settings.png" alt="Settings for creating a heat map in QGIS" /> <br/>
+Figure 23: Settings for creating a heat map in QGIS</p>
+
+<p>Let's look at an example using the search <strong>Radius</strong> parameter. If only two fires happened in a search radius and they happened at the same location, you would get an output value of 2 (fires per search radius). If they more distant than the search radius, the output value would be 1. If they were half the distance of the search radius from each other, the output value could 1.5, but it could any value between 1 and 2 depending on the <a href="https://en.wikipedia.org/wiki/Kernel_(statistics">kernel shape</a>) that defines the significance of neighboring points.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kernels.svg/590px-Kernels.svg.png" alt="Kernel shapes" />  <br/>
+Figure 24: Kernel shapes from <a href="https://en.wikipedia.org/wiki/Kernel_(statistics">Wikipedia</a></p>
+
+<p>The default result is a raster map where the lightest color indicates a high density of the given phenomena and the darker color shows a low density. You could say occurrences of fire in the search radius. If our search radius was sufficiently large, the output value would be very close to the total number of fires in the point layer. The values of the raster are currently being displayed using a continuous singleband grayscale.</p>
+
+<p><img src="module-04-graphics/q18-heatmap-gray.png" alt="Default grayscale output of Heatmap tool" /> <br/>
+Figure 25: Default grayscale output of Heatmap tool</p>
+
+<p>Let's take a look at the raster layer's <strong>Properties > Style</strong> tab, which is significantly different than vector styles.</p>
+
+<p><img src="module-04-graphics/q18-heatmap-settings.png" alt="Raster style properties" /> <br/>
+Figure 26: Raster style properties</p>
+
+<p>In singleband gray rasters, cell values show a quantity, the number of wildfires in our search radius, which means we have a continuous range between the minimum and the maximum number of fires. By default, the grayscale color ramp is stretched to the min/max values, where black represents the minimum value and white represents maximum value. Click on <strong>Load min/max values</strong>, select <strong>Min/Max</strong>, enable <strong>Accuracy > Actual (Slower)</strong>, and click <strong>Load</strong>. This gives us the total range of values in our dataset to represent. The hit <strong>Apply</strong>:</p>
+
+<p><img src="module-04-graphics/q18-raster-style.png" alt="Adjust raster settings to show full range of values to symbolize" /> <br/>
+Figure 27: Adjust raster settings to show full range of values to symbolize</p>
+
+<p>Compare with the <strong>Cumulative count cut</strong> option, which compresses the tail ends of the frequency distribution. Adjust the numbers and see how you can best find the "hot spots" on the map:</p>
+
+<p><img src="module-04-graphics/q19-raster-style.png" alt="Cumulative count cut method of defining range of values to symbolize" /> <br/>
+Figure 28: Cumulative count cut method of defining range of values to symbolize</p>
+
+<p>Using the singleband gray <strong>Render type</strong> will help us understand how raster cell values get colored on the map. However, it's a very exciting image and we how more options with different render types.</p>
+
+<p><a name="pseudocolor-raster-bands"></a></p>
+
+<h2>Pseudocolor raster bands</h2>
+
+<p>Let's produce a colored version of this raster by adjusting the layer's properties. Under <strong>Render type</strong>, choose <strong>Singleband pseudocolor</strong> using a <strong>OrRd</strong> color scheme.</p>
+
+<p><img src="module-04-graphics/q20-raster-style.png" alt="Rendering settings for singleband pseudocolor" /> <br/>
+Figure 29: Rendering settings for singleband pseudocolor</p>
+
+<p>Since we're concerned with high-density areas, let's make the low-density areas have less opacity. Click the Color <strong>Edit</strong> button and change the transparencies of the low-density color values:</p>
+
+<p><img src="module-04-graphics/q21-raster-style.png" alt="Custom gradient color ramps" /> <br/>
+Figure 30: Custom gradient color ramps</p>
+
+<p><a name="raster-layer-widgets"></a></p>
+
+<h2>Raster Layer widgets</h2>
+
+<p>We have the option to embed widgets in the legend. The default widget is a transparency slider, which allows us to conveniently change a raster layers transparency.</p>
+
+<p>Find the slider in the raster layer's <strong>Properties > Legend</strong> tab. Add the widget and hit <strong>OK</strong>:</p>
+
+<p><img src="module-04-graphics/q23-raster-widget.png" alt="Raster layer transparency slider" /> <br/>
+Figure 31: Raster layer transparency slider</p>
+
+<p>Map output:</p>
+
+<p><img src="module-04-graphics/q22-raster-output.png" alt="Raster heatmap using pseudocolor settings and transparency slider" /> <br/>
+Figure 32: Raster heatmap using pseudocolor settings and transparency slider</p>
+
+<p><a name="weighted-heatmap"></a></p>
+
+<h2>Weighted heatmap</h2>
+
+<p>We can weight the points that we input to a heatmap function by a numeric attribute. We have fire size for each point that we can use. Let's create a new heatmap with the following options set:</p>
+
+<p><img src="module-04-graphics/q24-heatmap-weighted.png" alt="Weighting a heatmap" /> <br/>
+Figure 33: Weighting a heatmap with an attribute</p>
+
+<p>After we style the raster output, you should see a similar map:</p>
+
+<p><img src="module-04-graphics/q24-heatmap-weighted-map.png" alt="Weighting a heatmap" /> <br/>
+Figure 34: A heatmap using fire size to weight the input points</p>
+
+<p>This map shows the amount of land burned by fire (some areas burned multiple times over two decades), while the count of fires per search area shows the frequency of wildfire. It should be obvious that it takes only one wildfire to create massive damage.</p>
+
+<p>As we can see, the heatmap gives us a lot of options to visualize spatial patterns, but it takes experimentation to find an appropriate setup. Keep at it and don't view my examples as the only option.</p>
+
+<p>One last tip for working in raster: use transparency for your raster layers.</p>
+
+<p><a name="many-methods-to-visualize-point-data"></a></p>
+
+<h1>Many methods to visualize point data</h1>
+
+<p>As we have explored in this lesson, we have numerous techniques to visualize point data in QGIS. Let's summarize the techniques we've used so far in a few maps.</p>
+
+<p><img src="module-04-graphics/q30-final-map.png" alt="Dot map (with custom feature blending mode) and hexagonal grid" /> <br/>
+Figure 35: Dot map (with custom feature blending mode) and hexagonal grid</p>
+
+<p><img src="module-04-graphics/q31-final-map.png" alt="Two subtly distinct heatmaps" /> <br/>
+Figure 36: Two subtly distinct heatmaps</p>
+
+<p><a name="resources-and-references"></a></p>
+
+<h2>Resources and references</h2>
+
+<ul>
+<li><a href="https://www.mapbox.com/blog/binning-alternative-point-maps/">Binning: An Alternative to Point Maps</a> (blog post by Nate Smith)</li>
+<li>SpatiaLite <a href="https://www.gaia-gis.it/fossil/libspatialite/wiki?name=tesselations-4.0">tessellation functions</a></li>
+</ul>
+
+
+<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
+
+
+
+
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+
+<p><link rel="stylesheet" href="https://yandex.st/highlightjs/7.3/styles/github.min.css"></p>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+</body>
+</html>

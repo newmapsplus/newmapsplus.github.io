@@ -1,0 +1,977 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>OpenStreetMap Data and Introduction to Geoprocessing Tools</title>
+
+</head>
+<body>
+<h1>OpenStreetMap Data and Introduction to Geoprocessing Tools</h1>
+
+<hr />
+
+<h1>Table of Contents</h1>
+
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0 -->
+
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-files">Data files</a></li>
+<li><a href="#openstreetmap">OpenStreetMap</a>
+
+<ul>
+<li><a href="#history-of-osm">History of OSM</a>
+
+<ul>
+<li><a href="#how-accurate-is-the-data">How accurate is the data?</a></li>
+<li><a href="#why-use-open-source-data-when-we-have-google-maps">Why use open source data when we have Google Maps?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#openstreetmap-data-structure">OpenStreetMap data structure</a>
+
+<ul>
+<li><a href="#collecting-openstreetmap-data">Collecting OpenStreetMap data</a></li>
+<li><a href="#qgis-native-import-of-osm-data-is-somewhat-flawed">QGIS native import of OSM data (is somewhat flawed)</a></li>
+<li><a href="#quickosm-plugin-for-collecting-osm-data">QuickOSM plugin for collecting OSM data</a></li>
+<li><a href="#need-more-data-download-directly-from-osm-and-companion-sites">Need more data? Download directly from OSM and companion sites</a>
+
+<ul>
+<li><a href="#mapzencom">MapZen.com</a></li>
+<li><a href="#processing-osm-xml-data-files">Processing OSM XML data files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#symbolizing-osm-data">Symbolizing OSM data</a>
+
+<ul>
+<li><a href="#saving-quickosm-data">Saving QuickOSM data</a></li>
+<li><a href="#data-exploration-for-symbology">Data exploration for symbology</a></li>
+</ul>
+</li>
+<li><a href="#rule-based-symbology">Rule-based symbology</a>
+
+<ul>
+<li><a href="#add-scale-ranges-to-symbol-layers">Add scale ranges to symbol layers</a></li>
+<li><a href="#add-scale-ranges-to-turn-onoff-layers">Add scale ranges to turn on/off layers</a></li>
+<li><a href="#export-styles">Export Styles</a>
+
+<ul>
+<li><a href="#make-a-simple-base-map-in-qgis">Make a simple base map in QGIS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#introduction-to-geoprocessing">Introduction to Geoprocessing</a>
+
+<ul>
+<li><a href="#geoprocessing-with-a-buffer-analysis">Geoprocessing with a buffer analysis</a></li>
+<li><a href="#buffer-function-in-sql">Buffer function in SQL</a></li>
+</ul>
+</li>
+<li><a href="#addendum">Addendum</a>
+
+<ul>
+<li><a href="#geoprocessing-and-managing-layers-crs">Geoprocessing and managing layers' CRS</a></li>
+<li><a href="#geographic-coordinate-systems">Geographic Coordinate Systems</a></li>
+<li><a href="#projected-coordinate-systems">Projected Coordinate Systems</a></li>
+</ul>
+</li>
+<li><a href="#data-credits">Data credits</a>
+
+<ul>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+
+<!-- /MarkdownTOC -->
+
+
+<p><a name="overview"></a></p>
+
+<h1>Overview</h1>
+
+<p>In this lesson, we explore how to download and use spatial data from OpenStreetMap. We will use OSM data to feed a simple analysis using the buffer geoprocessing tool.</p>
+
+<p><a name="data-files"></a></p>
+
+<h1>Data files</h1>
+
+<ul>
+<li>Harvested from OpenStreetMap via QGIS.</li>
+<li><em>osm_highway_styles_basic.qml</em>, a QGIS style definition for OSM highways</li>
+</ul>
+
+
+<p><a name="openstreetmap"></a></p>
+
+<h1>OpenStreetMap</h1>
+
+<p>We've run into <a href="https://www.openstreetmap.org/">OpenStreetMap (OSM)</a> a few times in previous modules, but have not used it as a data source, yet. In the last module, you might have used OSM to practice digitizing and editing vector data. In this lesson, we'll download data from OSM, style it, and do a buffer analysis technique using OSM data.</p>
+
+<p>OpenStreetMap is the world's largest crowdsourced mapping project. It is a free, open-source, volunteer-generated global map that aims to be the "Wikipedia of maps" and global GIS data repository. As of February 2017 <a href="http://www.openstreetmap.org/stats/data_stats.html">OSM stats</a>, there were 3.5 million registered users and 5.7 billion GPS points uploaded.</p>
+
+<p><a name="history-of-osm"></a></p>
+
+<h2>History of OSM</h2>
+
+<p>The OSM project started in the United Kingdom in 2004, with a single guy riding his bike through London collecting GPS data. The intent was to create an open-source map that could rival the government-made Ordinance Maps. As you can see in this <a href="https://vimeo.com/31912114">visualization</a> of the first five years of map edits in the London area, progress was slow with users adding tiny pieces of the map as they collected the data themselves. Compare this to the first five years of <a href="https://vimeo.com/51341994">American map edits</a>. In the United States, US Census TIGER data, which is public data, was able to be added to the map, filling it in rather quickly. If you watch the video closely, you'll see little flashes as county and state level data are brought in in large chunks.</p>
+
+<p>Another interesting way to visualize OpenStreetMap is this <a href="http://bl.ocks.org/lxbarth/raw/6545162/#2/30/-10">map</a> by <a href="https://github.com/lxbarth">Alex Barth</a>, which uses color to group the edits made to the map by each user. <a href="http://osmlab.github.io/show-me-the-way/">Show Me the Way</a> lets you view real-time edits to OSM. The purpose here is to illustrate that OSM is a gigantic and dynamic data source.</p>
+
+<p><a name="how-accurate-is-the-data"></a></p>
+
+<h3>How accurate is the data?</h3>
+
+<p>As we have seen in the geocoding exercise, the quality of some services vary. However, OSM has emerged recently as the best single source for consistent, well-attributed global vector data to use in your mapping project.</p>
+
+<p>Crowdsourcing relies on the wisdom of the crowd, which it turns out is pretty reliable. It appears that those amateurs aren't so amateur after all (Brabham, 2012). Research has shown that OSM maps are comparable in accuracy and quality to government-made maps (Haklay, 2010). The OSM user community is hyper-vigilant against map vandalism &ndash; the intentional addition of incorrect or false information to the map &ndash; to the point of it being one of the few ways that a user can be banned from using OSM. Google Map Maker, Google's attempt to recreate the ethos of OSM, is <a href="http://www.independent.co.uk/life-style/gadgets-and-tech/news/google-map-maker-suspended-after-it-was-used-to-draw-androids-urinating-on-apple-logo-10244031.html">not so good at this</a>.</p>
+
+<p>The biggest liability in OSM data isn't its accuracy, but rather it's potential myopathy. While a good deal of the background map data in the US comes from the government sources, the more local knowledge (business names, bike trails, etc.) are created by users who tend to map things they find interesting. Monica Stephens (2013) noted that this leads to the interests of the largely male, well-educated and overwhelmingly German user-base dominating the map. (Check out Monica's SheepCamp presentation <a href="https://vimeo.com/44870758">"Guns, Germans and OpenStreetMap."</a>.)</p>
+
+<p>To be clear, maps have always been biased by the interests and cultural norms of their makers (Harley, 1989) and this is not unique to OSM. The data is accurate but potentially limited by who makes it (Haklay, 2013). In OSM, that's potentially 3.5 million data makers contributing their interests.</p>
+
+<p><a name="why-use-open-source-data-when-we-have-google-maps"></a></p>
+
+<h3>Why use open source data when we have Google Maps?</h3>
+
+<p>First and foremost, it's free to use and modify. OSM is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 license</a> (CC BY-SA). OSM grants users the right to use their map data for free so long as they attribute the data to OSM. If we can see it on openstreetmap.com, we can download it and freely make maps in QGIS.</p>
+
+<p>A <a href="http://www.google.com/permissions/geoguidelines.html">Google Maps license</a> is much more restrictive. Google Maps does have amazing imagery, both satellite and on-the-ground via StreetView that can be used for base maps, but we cannot harvest vector data as we can in OSM.</p>
+
+<p><a name="openstreetmap-data-structure"></a></p>
+
+<h1>OpenStreetMap data structure</h1>
+
+<p>OSM has a basic data structure with a few <a href="http://wiki.openstreetmap.org/wiki/Elements">important elements</a>. The <em>node</em>, or coordinate point, is the basic geographic object. A node represents a specific point on the earth's surface. Each node comprises at least an id number and a pair of coordinates. Nodes can be combined into <em>ways</em>; an open way is a polyline and a closed way is a polygon. OSM data uses only WGS84 coordinates. <em>Relations</em> group geographic objects in familiar relationships, such as routes (bus routes in a city) and multi-polygons (many closed ways belong to the same group).</p>
+
+<p>OpenStreetMap uses <em>tags</em> of the form key=value to add meaning to geographic objects. For example, we could use the following query to find all building polygons that are tagged as 'residential': <code>"building" = 'residential'</code>. Using familiar SQL statements, we can easily filter large datasets to map precisely what we want.</p>
+
+<p>For standard tag meaning, you can reference the <a href="http://wiki.openstreetmap.org/wiki/Map_Features">OSM wiki for specific key values</a>. These are all the items with which a user may tag an object in the OSM editor. Another similar resource is <a href="http://tagfinder.herokuapp.com/">TagFinder</a> which is modeled as a search engine. The <a href="https://taginfo.openstreetmap.org/">TagInfo site</a> is companion resource for looking at statistics of tag usage. TagFinder includes information from, and links back to, TagInfo.</p>
+
+<p><a name="collecting-openstreetmap-data"></a></p>
+
+<h2>Collecting OpenStreetMap data</h2>
+
+<p>The <a href="http://learnosm.org/en/osm-data/data-overview/">OSM data format</a> that we can download directly from the OSM's website is the <em>.osm</em> file format, a plain-text XML standard unique to OSM. This format can be large if not compressed, but it is easily read and parsed. We have numerous methods to extract features from an .osm file, including QGIS plugins and utilities outside of QGIS.</p>
+
+<p><a name="qgis-native-import-of-osm-data-is-somewhat-flawed"></a></p>
+
+<h2>QGIS native import of OSM data (is somewhat flawed)</h2>
+
+<p>There is a built-in feature within QGIS for importing OSM data and even editing/adding features to OSM. If you open QGIS's main menu > <strong>Vector > OpenStreetMap > Download data...</strong> you can download massive datasets to use in QGIS. This worked fine until recently. With the growth of OSM contributions, the website now uses 64-bit identifiers to uniquely identify these new nodes users are submitting. This import method in QGIS cannot yet use these IDs (because of <a href="https://hub.qgis.org/issues/10790">reported issues</a>) and any topology created will not include new features.</p>
+
+<p>We have two opportunities to work around this flaw in QGIS:</p>
+
+<ul>
+<li>The easiest way to get map data into QGIS is to use the plugin <strong>QuickOSM</strong> to create a GeoJSON and Shapefile layers. GeoJSON is the preferred file format, but it is not editable in QGIS. You should import these files into a SpatiaLite database if you wish to edit them. The only drawback with this plugin is that it limits the total area you can download at once. If you find errors using this plugin, you'll need to 'up your game' to a new level of extraction.</li>
+<li>If you need larger areas than QuickOSM can accommodate, then download extracts from OSM companion websites. A few include layers of data ready to map, such as <strong>MapZen</strong>, which allows you to create custom extracts of your area of interest but requires a login.</li>
+</ul>
+
+
+<p>We'll talk about these opportunities in the next sections.</p>
+
+<p><a name="quickosm-plugin-for-collecting-osm-data"></a></p>
+
+<h2>QuickOSM plugin for collecting OSM data</h2>
+
+<p>Let's collect data from inside QGIS with the plugin, QuickOSM, which can be installed via the <strong>Plugin Manager</strong>. Once installed, you can access the plugin via the <strong>Web</strong> menu drop-down or with the green icon in QGIS's toolbar. The plugin has a detailed help documentation.</p>
+
+<p>This plugin offers one of the easiest methods for harvesting OSM data. QuickOSM will allow you download OSM vector layers by location name, extent of map canvas, and extent of a layer, but it limits the amount of data you can pull down at one time. This plugin uses the <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a>, which is optimized for delivering data requests to clients in multiple formats, e.g., GeoJSON or Shapefile downloads. QuickOSM has a convenient link to OSM's <a href="http://wiki.openstreetmap.org/wiki/Map_Features">Help with key/value website</a>. It will also process <em>.osm</em> files, too.</p>
+
+<p>First, let's zoom to an area of interest for which you are very familiar to download data (use the OpenLayers plugin for a base map). Configure the <strong>Parameters</strong> tab to download GeoJSON formatted data:</p>
+
+<p><img src="module-06-graphics/q10-quickosm.png" alt="Using QuickOSM to download GeoJSON formatted data" />
+Figure 01: Using QuickOSM to download GeoJSON formatted data</p>
+
+<p>Now, let's make a query and download GeoJSON layers. The goal is to not query too much data at once. It's hard to say what the limit is, but you'll know it when you see it. Add a polygon feature, such as the county containing your area of interest. Select <strong>Quick Query</strong> and set the <strong>Extent of a layer</strong> to your polygon and select the <strong>Highway</strong> as your Key. Leave the <strong>Value</strong> dropdown empty, which will select all types of highways:</p>
+
+<p><img src="module-06-graphics/q11-quickosm.png" alt="Download highway OSM data for the extent of a layer" />
+Figure 02: Download highway OSM data for the extent of a layer</p>
+
+<p>Then hit <strong>Run query</strong> and it should populate your Layers Panel with point, line, and polygon vector data for the key 'highway.' We can easily identify highways as line features, but what points and polygons? Explore the attribute tables, select a record, and <strong>Zoom to selected feature</strong> to inspect the feature.</p>
+
+<p><img src="module-06-graphics/q12-quickosm.png" alt="Download highway OSM data for the extent of a layer" />
+Figure 03: Download highway OSM data for the extent of a layer</p>
+
+<p>Use the <strong>Identify</strong> tool to view attributes of individual features. Select the layer you want to explore in the Layers Panel and click a feature in the layer on the Map Canvas. If you double-click the feature, you should find a popup window listing all of the key/values for that feature.</p>
+
+<p><img src="module-06-graphics/q12.5-quickosm.png" alt="QuckOSM layers" />
+Figure 04: Using Run Feature Action Tool to open OpenStreetMap's attribute explorer and iD editor.</p>
+
+<p>QuickOSM adds useful functions to the <strong>Run Feature Action</strong> tool. Using the tool's <strong>OpenStreetMap Browser</strong> option, you can click a feature, e.g., a highway segment and a browser will open a webpage showing that feature in OpenStreetMap with information about who digitized this feature and when. If a feature in the layer has a Wikipedia entry or website, <strong>wikipedia</strong> and <strong>website</strong> options will be added. Not all objects will have entries; if you select one with an empty entry, you will find the following message, dude:</p>
+
+<p><img src="module-06-graphics/q12.6-quickosm_sorry.png" alt="QuckOSM layers" />  <br/>
+Figure 05: It's time to login into OSM and add an attribute for this feature!</p>
+
+<p>If you have an OSM account, the <strong>Run Feature Action</strong>  > <strong>User default editor</strong> option will open an OSM edit session for a selected feature. From Lesson 05, you should have been exposed to OSM's editor iD. This offers support to help you digitize features in your neighborhood and contribute great data to OSM.</p>
+
+<p>If you keep adding layers from QuickOSM, you could quickly make a map very similar to OpenStreetMap; in fact, you have access to it all. You can sort through the key=value relationship and identify the attribute you wish symbolize; you have no limit on the type of map you can make. However, what if you find that QuickOSM is limiting the amount of data you can download?</p>
+
+<p><a name="need-more-data-download-directly-from-osm-and-companion-sites"></a></p>
+
+<h2>Need more data? Download directly from OSM and companion sites</h2>
+
+<p>Do you need more data than QuickOSM can deliver? We have a few options to collect massive datasets.</p>
+
+<p><img src="module-06-graphics/q01-osm-export.png" alt="Download data from OSM directly" /> <br/>
+Figure 06: Download data from OSM directly</p>
+
+<p>Visit the <a href="http://www.openstreetmap.org/export">http://openstreetmap.com/export</a> and find your area of interest. Click in the <strong>Manually select a different area</strong> to adjust your download area. If you need a small area, you can <strong>Export</strong> and download your data straight from OSM. The file will start downloading with the file name <em>map.osm</em>. If you find an error after clicking <strong>Export</strong>, then you are requesting too much data from OSM. If so, click on <strong>Overpass API</strong> link to download your data. The <a href="http://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> is optimized for delivering data request to clients, whereas the default OpenStreetMap API is optimized for editing features on the map. You can get large exports from the Overpass API. However, you'll need to add the ".osm" file extension to download, which is called "map."</p>
+
+<p>If you want continental-scale datasets, you should visit some of the sites listed on this page. <a href="http://download.geofabrik.de/">Geofabrik</a> hosts country-level data extracts for nations worldwide and is updated weekly. <a href="http://planet.openstreetmap.org/">Planet OSM</a> is the complete OSM database and extracts out to about 1 TB of data, a fairly ambitious project for a weekend.</p>
+
+<p><a name="mapzencom"></a></p>
+
+<h3>MapZen.com</h3>
+
+<p><a href="https://mapzen.com/data/metro-extracts/">MapZen</a> hosts city-level datasets for some US and international cities updated daily. The most impressive feature that MapZen offers for OSM and QGIS users is the ability to create custom extracts for any area of interest and is <a href="https://mapzen.com/documentation/metro-extracts/file-format/">provided in multiple data formats</a>:</p>
+
+<p><img src="module-06-graphics/q02-osm-export.png" alt="Download data from MapZen" /> <br/>
+Figure 07: Download data from MapZen</p>
+
+<p>These extracts are offered in GeoJSON, Shapefile, and the native OSM XML format  (the <em>.osm</em> file or a compressed version). If you want to use MapZen, you'll need to setup a GitHub user account. Use your uky.edu email address, since it gives you some unique advantages on GitHub, such as private repositories.</p>
+
+<p>Another important distinction between MapZen and QuickOSM data is attribute field names. In QuickOSM data, the key is also the name of the primary attribute field, e.g., the key name 'highway' is also the field name 'highway' we would use to classify and symbolize features in a layer. In MapZen data extracts, this field name is renamed to 'type.'</p>
+
+<p><a name="processing-osm-xml-data-files"></a></p>
+
+<h3>Processing OSM XML data files</h3>
+
+<p>Once you've downloaded these large datasets as a <em>.osm</em> file format, we have a few ways to use them effectively in QGIS. The easiest way to get these layers into QGIS is via the <strong>Add Vector Data</strong> dialog, which can parse any .osm file and pull in desired feature types. This can be an exciting or nerve-wracking endeavor depending on your state of mind.</p>
+
+<p>QuickOSM can process .osm files using the <strong>OSM File</strong> feature, which will create layers like the <strong>Quick Query</strong>. You should experiment with the <em>osmconf.ini</em> configuration file to custom filter your data, which has <code>#comments</code> for guidance of use.</p>
+
+<p><a name="symbolizing-osm-data"></a></p>
+
+<h1>Symbolizing OSM data</h1>
+
+<p>It quickly becomes obvious that OSM data has a lot of attributes and, depending on your area, not entirely consistent coverage for certain feature types, e.g., point features in the key 'highway' showing traffic lights (again, another reason to join OSM and fill out incompletely documented areas). There is so much data to symbolize; we can easily miss the forest for the trees.</p>
+
+<p>Most keys will have such a dominant feature type and should be obvious in many cases. For example, highways are lines, as are railways and cycleways. Notice the 'ways' in the keys' name? Some keys have secondary feature types. Waterways are both polygons and lines. Dominant feature type in land use is the polygon, while for amenity it is the point.</p>
+
+<p>Let's symbolize line feature type for highways. In QuickOSM data, the main attribute field used to classify keys is the key name, e.g., 'highway.' In MapZen data, the field name is called 'type,' but they both contain the same values. Open the highway line layer properties <strong>Style tab</strong> and select <strong>Categorized</strong> method of symbology using the <strong>highway</strong> field:</p>
+
+<p><img src="module-06-graphics/q13-classify-osm.png" alt="QuckOSM layers" />
+Figure 08: QuickOSM brings in all vector geometries for the key "amenities" in the WGS84 CRS. Use the Identity Tool to see attributes by feature.</p>
+
+<p>If you double-click symbol type, you can add unique symbols for residential roads, motorways, trunk roads, etc. We need first to recognize how OSM orders the types, e.g., what is a trunk compared to primary highway? Let's look at the OSM wiki to explain the highway key: <a href="http://wiki.openstreetmap.org/wiki/Key:highway">http://wiki.openstreetmap.org/wiki/Key:highway</a>. This page gives us the definition of the key's value and its symbol on OpenStreetMap. We could labor to make this symbology via the <strong>Categorized</strong> method, but instead, let's leverage QGIS's <strong>Rule-based</strong> symbology which uses SQL to filter and symbolize data 'on-the-fly'.</p>
+
+<p><a name="saving-quickosm-data"></a></p>
+
+<h2>Saving QuickOSM data</h2>
+
+<p>QuickOSM is a convenient method to harvest data from OSM, but it only temporarily saves your layers as virtual layers. If you remove them from your Layers Panel, they will be deleted. In our workflow, we can create two layers from an OSM import:</p>
+
+<ol>
+<li><p>A GeoJSON with full coordinate precision (or no less than 8) to maintain accuracy of location. You can save it with the original CRS, WGS84, but since this is a derivative data, you can save it using the local CRS, e.g, in Kentucky, we use EPSG: 3089. Polygon features have a special requirement we'll address in a below discussion. This will be our source data representing a raw extract from QuickOSM.</p></li>
+<li><p>A spatial database layer, since we'll use SQL to help make symbology (and later for geoprocessing). If we are working in small area, we would import these layers using a local CRS. For Kentucky, we use EPSG: 3089. If you are working in a different area, then select a suitable CRS for your area. We provide more discussion about CRSs in the below Addendum.</p></li>
+</ol>
+
+
+<p>You do not need to save your layers in a spatial database. The advantage is being able to practice your queries to select features you want to symbolize. Later in the lesson, when we use rule-based symbology, SQL is the language we use to create the rules.</p>
+
+<p>Let's create a new database or schema. Give it an appropriate name, e.g., OSM_Lexington_EPSG_3089.sqlite, and import our first layer, the highway GeoJSON layer:</p>
+
+<p><img src="module-06-graphics/q14-import-layers.png" alt="Import OSM layers into a database" /> <br/>
+Figure 09: Import OSM layers into a database</p>
+
+<p>Next, let's illustrate how we would do this with polygon layers, which are structured a little differently. Use the following key:value pair to harvest ponds and lakes for your area:</p>
+
+<p><img src="module-06-graphics/q15-get-water.png" alt="Get lakes and ponds with the Natural=Water tag with QuickOSM" />  <br/>
+Figure 10: Get lakes and ponds with the Natural=Water tag with QuickOSM</p>
+
+<p>Then, save the OSM layer in the original CRS. In the <strong>Geometry</strong> section, select <strong>Polygon</strong>, and enable <strong>Force multi-type</strong>. This extra step is to prevent an error when importing into a SpatiaLite database. It will not "break" the data as multi-part features can contain single-part features.</p>
+
+<p><img src="module-06-graphics/q15-save-geojson.png" alt="Save polygon GeoJSONs with Force multi-type enable" />  <br/>
+Figure 11: Save polygon GeoJSONs with "Force multi-type" enabled</p>
+
+<p>Finally, import the layer into the database.</p>
+
+<p><img src="module-06-graphics/q15-import-layer.png" alt="Save polygon GeoJSONs with Force multi-type enable" />  <br/>
+Figure 12: Import into SpatiaLite database with local coordinate system</p>
+
+<p>The goal is to have a folder of GeoJSONs that are unaltered extracts from OSM as a backup and a database of these same layers projected to our local CRS. We'll continue working with the database layers to show how to make queries for symbology.</p>
+
+<p><a name="data-exploration-for-symbology"></a></p>
+
+<h2>Data exploration for symbology</h2>
+
+<p>Once we have our layers in the database, let's look at counts of types. In this case, we'll look at highway types:</p>
+
+<pre><code>/* Count and rank distinct highway types in your data */
+
+select 
+    count(*) as count, 
+    highway
+from 
+    highway_lines
+group by highway
+order by count desc
+</code></pre>
+
+<p>This query outputs the following:</p>
+
+<p><img src="module-06-graphics/q15-highway-types.png" alt="Count number of different highway types" />  <br/>
+Figure 13: Count number of different highway types</p>
+
+<p>This summary tells us we have a lot of footway features, which in my case are mostly sidewalks. Now, compare that to all the other feature types. Symbolizing 20 different types of highways and making it look good can be a daunting task. We could organize roads into five different types by querying out different groups:</p>
+
+<ul>
+<li>motorways</li>
+<li>primary roads</li>
+<li>secondary roads</li>
+<li>local roads</li>
+<li>pedestrian paths</li>
+</ul>
+
+
+<p>Let's make a few queries that will group these types and count the total number.</p>
+
+<pre><code>
+/* Count motorways (limited access roads) */
+
+select 
+    count(*) as count
+from 
+    highway_lines
+where 
+    "highway" = 'motorway'
+
+/* Simple enough! */
+</code></pre>
+
+<p>Now our Primary roads using the <code>in</code> operator:</p>
+
+<pre><code>
+/* Count primary roads (big roads and access ramps to motorways) */
+
+select 
+    count(*) as count
+from 
+    highway_lines
+where     
+    "highway" IN ( 'motorway_link','trunk','primary')
+</code></pre>
+
+<p>Now secondary roads:</p>
+
+<pre><code>
+/* Count secondary roads */
+
+select 
+    count(*) as count
+from 
+    highway_lines
+where 
+    "highway" IN ( 'trunk_link','primary_link','secondary','secondary_link','road','tertiary','tertiary_link')
+</code></pre>
+
+<p>Local roads using the <code>not in</code> operator to select everything outside the other roads. You could explicitly say which are local roads, but if you have a lot of types you'll need to do more typing.</p>
+
+<pre><code>/* Count local roads (roads not counted elsewhere) */
+
+select 
+    count(*) as count
+from 
+    highway_lines
+where     
+    "highway" NOT IN ('motorway','motorway_link','trunk','primary','trunk_link','primary_link','secondary','secondary_link','road','tertiary','tertiary_link', 'cycleway', 'pedestrian','footway', 'steps', 'path', 'track'  )
+</code></pre>
+
+<p>You might think you add a <code>geom</code> field and load these queries as new layers and apply symbology. That would work, but that would be more work than necessary. We can create a layer style that combines these queries into one definition in the rule-based method of symbolization.</p>
+
+<p><a name="rule-based-symbology"></a></p>
+
+<h1>Rule-based symbology</h1>
+
+<p>If we can group our features with SQL queries, then we can leverage rule-based symbology to put our queries in one style definition. Since we're using common tags, this definition can then be applied to regions; build it once and use it everywhere. The style can be shared with other users as a plain-text file that we create in a layer's <strong>Style</strong> tab.</p>
+
+<p>We won't need the whole SQL statement we developed earlier. We need just the statement defined by the <code>where</code> clause. To symbolize just 'motorways', we'll need only <code>"highway" = 'motorway'</code>. Let's open the highway layer's Style properties, select <strong>Rule-based</strong> symbolization method, and click <strong>Add rule</strong>:</p>
+
+<p><img src="module-06-graphics/q16-rule-based-symbology.png" alt="Add new rule for symbology" /> <br/>
+Figure 14: Add new rule for symbology</p>
+
+<p>Copy the <code>"highway" = 'motorway'</code> and paste into the <strong>Filter</strong> dialog. Alternatively, you could use the Expression Builder denoted by the <strong>...</strong> button to the right of the dialog to build the query. Click <strong>Test</strong> and compared to the count you made in the previous section.</p>
+
+<p><img src="module-06-graphics/q17-rule-based-symbology.png" alt="Add Filter using the SQL where statement content " /> <br/>
+Figure 15: Add Filter using the SQL where statement content</p>
+
+<p>After you verify that your query selected features, let's build a cased line symbol. Click on the <strong>Add symbol layer</strong> and create two lines; one line layer is wider, darker and the lowest layer, while the thinner, lighter line is the top layer.</p>
+
+<p><img src="module-06-graphics/q18-rule-based-symbology.png" alt="Add Symbol layer to build a cased line" /> <br/>
+Figure 16: Add Symbol layers to build a cased line</p>
+
+<p>Click <strong>OK</strong> and then <strong>Apply</strong> the style to the layer. You should find that only motorways are shown:</p>
+
+<p><img src="module-06-graphics/q19-rule-based-symbology.png" alt="Motorways are symbolized" /> <br/>
+Figure 17: Motorways are symbolized</p>
+
+<p>You might observe that the cased lines don't layer properly. We need to open our layer's Style tab and enable <strong>Symbol levels</strong>. Then, make the top layer symbols a higher draw order. "0" levels are drawn first, level "1" are next, etc. Hit <strong>OK</strong> and apply the style.</p>
+
+<p><img src="module-06-graphics/q20-rule-based-symbology.png" alt="Motorways are symbolized" /> <br/>
+Figure 18: Motorways are symbolized</p>
+
+<p>Let's add the next group of roads, our 'Primary' roads definition <code>"highway" IN ( 'motorway_link','trunk','primary')</code> and apply another cased line symbol, making them slightly less prominent than the motorway symbols. Don't forget to change the symbol levels for this new line.</p>
+
+<p><img src="module-06-graphics/q21-rule-based-symbology.png" alt="Primary roads are symbolized" /> <br/>
+Figure 19: Primary roads are symbolized</p>
+
+<p>If you apply the style, you should notice that symbol levels need to be adjusted. We need to make the symbol levels work for both the primary roads, but also with motorways. We can order layers such that the motorway's top symbol layer is always on top:</p>
+
+<p><img src="module-06-graphics/q22-rule-based-symbology.png" alt="Symbol levels that how motorways top layer as most prominent" /> <br/>
+Figure 20: Symbol levels that how motorways top layer as most prominent</p>
+
+<p>The numbers for symbol levels are relative and we add enough spacing to accommodate the next road groups to the definition. Rough-in your styles for these roads such that you have definitions for the four road type groups:</p>
+
+<p><img src="module-06-graphics/q23-rule-based-symbology.png" alt="Basic symbol definition for highways with four groups" /> <br/>
+Figure 21: Basic symbol definition for highways with four groups</p>
+
+<p><a name="add-scale-ranges-to-symbol-layers"></a></p>
+
+<h2>Add scale ranges to symbol layers</h2>
+
+<p>When we symbolize these features, wouldn't it be nice to have them change appearance based on scale? One significant property of 'slippy' maps is how symbols change at different zoom levels. In QGIS we can assign styles for different scale ranges, giving the same appearance as these interactive maps.</p>
+
+<p>Right-click each rule and select <strong>Refine current rule > Add scales to rule</strong>. Let's add a few scale ranges: <code>10000,50000</code> which will process out to the following scale ranges (with a little modification in each symbol's scale options):</p>
+
+<ul>
+<li>1:10,000 - 1:1, which is zoomed in (large scale)</li>
+<li>1:50,000 - 1:10,000, medium zoom (medium scale)</li>
+<li>1:100,000 - 1:50,000, zoomed out (small scale)</li>
+</ul>
+
+
+<p>These values are arbitrary. We want to make our symbols more prominent as we zoom in (increase scale). When the scale ranges are added, the initial symbol is propagated through the scale ranges. Click each symbol instance and change the symbols' width so that when you zoom out, the widths get smaller:</p>
+
+<p><img src="module-06-graphics/q24-rule-based-symbology.png" alt="Add scale ranges with custom symbols" /> <br/>
+Figure 22: Add scale ranges with custom symbols</p>
+
+<p>We have nested rules inside the Motorways primary rule. When any nested rule is matched, it will overwrite the primary rule. Let's take a look at the <strong>Symbol levels</strong> after we added scale rules:</p>
+
+<p><img src="module-06-graphics/q25-rule-based-symbology.png" alt="The new symbol levels were automatically generated" /> <br/>
+Figure 23: The new symbol levels were automatically generated</p>
+
+<p>OK, let's finish out the rule set for highways. Make each highway group become increasingly more significant as we zoom into a map. This will take some practice, but try to develop a style scheme that looks good at multiple zoom levels:</p>
+
+<p><img src="module-06-graphics/q26-highway-styles.png" alt="Rules for highway symbology" /> <br/>
+Figure 24: Rules for highway symbology</p>
+
+<p><a name="add-scale-ranges-to-turn-onoff-layers"></a></p>
+
+<h2>Add scale ranges to turn on/off layers</h2>
+
+<p>Our highway layer has footways (sidewalks) and cycle tracks (paved shared-use paths) that we haven't added to our rules, yet. Let's add them, but only show them when we're zoomed at a close scale:</p>
+
+<p><img src="module-06-graphics/q30-zoomed-in.png" alt=" Adding pedestrian and cycleway paths at fixed zoom level" /> <br/>
+Figure 25: Adding pedestrian and cycleway paths at fixed zoom level</p>
+
+<p><a name="export-styles"></a></p>
+
+<h2>Export Styles</h2>
+
+<p>When you have a rule set that you like, make sure you save the layer's style to <em>.qml</em> file, QGIS's markup language format for sharing style definitions. Access it via the layer's properties style tab with drop-down <strong>Style > Save Style > QGIS Layer Style File</strong>. Once you save this style, you can <strong>Load Style</strong> in other projects and share it online:</p>
+
+<p><img src="module-06-graphics/q27-save-layer-style.png" alt="Save Style to a QML file" />  <br/>
+Figure 26: Save Style to a QML file</p>
+
+<p>Note, a copy of this style definition is posted in Canvas for this module.</p>
+
+<p><a name="make-a-simple-base-map-in-qgis"></a></p>
+
+<h3>Make a simple base map in QGIS</h3>
+
+<p>Using the what we have learned so far, let's make a simple base map showing highways, waterways (line and polygon), and parks from the land use key (polygon), and water from the natural key (polygon). After you apply some queries and styles, your map might look like this:</p>
+
+<p><img src="module-06-graphics/q28-styling-layers-realtime.png" alt="Styling layers in real-time using style dock" />  <br/>
+Figure 27: Styling layers in real-time using style dock</p>
+
+<p>You might find the window <strong>Open layer styling dock</strong> (located in the button row beneath the "Layers Panel" title) might help speed up making your styles.</p>
+
+<p><img src="module-06-graphics/q29-zoomed-in.png" alt="Styling layers in real-time using style dock" /><br/>
+Figure 28: Zoomed in with all layers active.</p>
+
+<p><a name="introduction-to-geoprocessing"></a></p>
+
+<h1>Introduction to Geoprocessing</h1>
+
+<p>Geoprocessing is broadly defined as a workflow of GIS functions, where each function has an input layer, a vector data operation, and an output layer. The classic example is the buffer geoprocessing tool, which we'll do in this lesson and lab. Imagine if you wanted to locate all parks within one mile of a cafe. You first would want to know how far one mile is from each cafe. Using the buffer tool, you input the point layer of cafe locations, the creates a circular polygon with a radius of one mile around each point, and the output is a new polygon layer. You can then select all features from another layer that are within that cafe buffer. You could also find locations with more than one cafe within one mile. How nice that must be!</p>
+
+<p>Let's introduce the tools. Under <strong>Vector > Geoprocessing Tools</strong> you'll find a drop-down menu containing a list of tools. These tools represent the basic ways that spatial data can be overlaid and analyzed in GIS. We'll explore these in more detail in the next lesson, though you might recognize a few of these tools.</p>
+
+<p><img src="module-06-graphics/q30-vector-geoprocessing.png" alt="dropdown menu of geoprocessing tools" />  <br/>
+Figure 29: Geoprocessing tools in QGIS</p>
+
+<p>Before we start, let's get some OSM data with a search for the tag amenities:cafe with the following query:</p>
+
+<p><img src="module-06-graphics/q31-get-amenities.png" alt="Get cafe amenities from OSM" />  <br/>
+Figure 30: Get cafe amenities from OSM</p>
+
+<p>Finally, load the point layer into your SpatiaLite database, making sure you put it in the correct projected CRS:</p>
+
+<p><img src="module-06-graphics/q32-import-layer.png" alt="Import layer into database" />  <br/>
+Figure 31: Import layer into database</p>
+
+<p>Remove the virtual amenities layer and add the projected amenities layer to the Map Canvas. Geoprocessing tools must use layers in a projected CRS.</p>
+
+<p><a name="geoprocessing-with-a-buffer-analysis"></a></p>
+
+<h2>Geoprocessing with a buffer analysis</h2>
+
+<p>Launch the buffer tool via QGIS menu <strong>Vector > Geoprocessing Tools > Fixed distance buffer</strong> You have a couple parameters you need to set:</p>
+
+<ul>
+<li>The <strong>Input layer</strong>. Note that it shows the CRS for the layer. Is it EPSG 4236 or 4269? If so, you have the wrong layer.</li>
+<li>The <strong>Distance</strong> determines how far the buffer will expand from the input vectors edge. It is the units of the input layer's CRS. In our case, it's in feet, so the output will be a circle with a mile radius.</li>
+<li>The <strong>Segments</strong> option is the number of vertices per quarter of the buffer. The default five will result in a fairly blocky polygon, depending on your input shape. The maximum number you can input is 100, but around 20 results in a fairly smooth shape. This value also effects your processing time, and jumping up to 100 may take a while.</li>
+<li>The <strong>Dissolve result</strong> option is turned off by default. If enabled, all buffers are combined into a single, multi-part polygon and the attributes are dropped. If disabled, the attributes of the input are kept in the output. <strong>Important Note</strong>: if you have any geometry measures in the input, such as length, area, etc. they are not recalculated in the output layer.</li>
+<li>The <strong>Buffer</strong> field is the output destination. For most scenarios, leave it as a temporary layer.</li>
+</ul>
+
+
+<p>Let's make our first buffer:</p>
+
+<p><img src="module-06-graphics/q33-buffer-tool.png" alt="Buffer tool settings" />  <br/>
+Figure 32: Buffer tool settings</p>
+
+<p>The tool should create a stack of circles showing areas within one mile of a cafe:</p>
+
+<p><img src="module-06-graphics/q34-buffer-tool.png" alt="Buffer tool output" /> <br/>
+Figure 33: Buffer tool output</p>
+
+<p>As we explored in the previous lessons, let's symbolize this polygon layer to imply density of areas served by cafes. Adjust the layer's style properties by adjusting the blending mode and transparency settings:</p>
+
+<p><img src="module-06-graphics/q35-buffer-tool.png" alt="Using buffer tool to show density of areas served" /> <br/>
+Figure 34: Using buffer tool to show density of areas served</p>
+
+<p>By adding these cartographic techniques we visualize which areas have multiple cafes within a mile walk. Alternatively, and maybe more critically, we can show which areas don't have cafes nearby. This might seem trivial, but what if we were mapping areas within a mile of a bus stop? How far would you walk to catch a bus?</p>
+
+<p><a name="buffer-function-in-sql"></a></p>
+
+<h2>Buffer function in SQL</h2>
+
+<p>You might have thought you escaped SQL functions this lesson. Let's end this module by showing the same geoprocessing technique in SQL. Execute and load the following queries and compare the differences:</p>
+
+<pre><code>/* Buffer function to find areas within one mile of any cafe */
+
+select 
+    st_buffer(geom, 5280) as geom,
+    amenity_cafe.name,
+    amenity_cafe.cuisine,
+    amenity_cafe.internet_access
+from
+    amenity_cafe
+</code></pre>
+
+<p>This query makes the same geometry as the vector tool we used earlier, but we're controlling what attributes we keep in the output layer. We can dissolve all polygons using the <code>st_collect()</code> function, which drops the input layer's attributes:</p>
+
+<pre><code>/* Buffer function to find areas within one mile of ALL cafes */
+
+select 
+    st_buffer(st_collect(geom), 5280) as geom
+from
+    amenity_cafe
+</code></pre>
+
+<p>I think we can observe that SQL provides a concise way to achieve the same results. Both spatial databases and QGIS use the same library, GEOS, to do this type of geoprocessing. In the next we'll explore these approaches in more detail.</p>
+
+<p><a name="addendum"></a></p>
+
+<h1>Addendum</h1>
+
+<p><a name="geoprocessing-and-managing-layers-crs"></a></p>
+
+<h2>Geoprocessing and managing layers' CRS</h2>
+
+<p>Before we begin any geoprocessing, it's important to recognize we have two CRSs we need to consider:</p>
+
+<ul>
+<li>The CRS of our source data, most often in Geographic Coordinate System</li>
+<li>The CRS of the local area covered by the map, a Projected Coordinate System</li>
+</ul>
+
+
+<p>In an online mapping workflow, we harvest and publish our spatial data in a Geographic Coordinate System, such as WGS84. However, when we need to perform an analysis on our spatial data, we convert them to a local CRS.</p>
+
+<p>Why do we do this? It's about measurement and cartographic display. WGS84 is CRS with angular units of measure. When we run tools that require a distance parameter, angular units degrees make very small numbers. More importantly, the distance between a degree is not uniform across the globe. When we display spatial layers in these CRSs, QGIS defaults to an equirectangular projection, which creates unnecessary distortion. Our task is to recognize the different CRSs and use the most appropriate one for our purposes.</p>
+
+<p><a name="geographic-coordinate-systems"></a></p>
+
+<h2>Geographic Coordinate Systems</h2>
+
+<p>Most organizations that provide GIS data, OSM included, provide their data in Geographic CRSs. We also call them "global" CRSs because their intention is to distribute data to a global audience.  All global CRSs define how latitude and longitude fit a sphere-like object. We have only two to consider:</p>
+
+<ul>
+<li>WGS84, World Geodetic System of 1984, EPSG: 4326. This is the most common global CRS and used by organizations that provide GIS data for the entire globe. This is CRS of the GPS network. When you export vector data to web mapping platforms, you will use this CRS.</li>
+<li>NAD83, North American Datum of 1983, EPSG: 4269. This is used by US and Canadian governments to provide GIS data, most notably is TIGER/Line and US Census data.</li>
+</ul>
+
+
+<p><a name="projected-coordinate-systems"></a></p>
+
+<h2>Projected Coordinate Systems</h2>
+
+<p>When we make a map, we must convert a global CRS to a local CRS, which is called a Projected Coordinate System. This defines how lines of latitude and longitude fit on a plane, such as a printed page or a computer screen. These CRSs are "local" because they are tuned to specific locations on earth with specific applications in mind. While we have thousands of local CRSs, we are only concerned with the ones appropriate for our area. The following two families of local CRS attempt to minimize distortion for the areas (or zones) they cover:</p>
+
+<ul>
+<li>State Plane Coordinate Systems divides US states into many zones. If you're mapping in the US, you can find an appropriate zone for your area. Your only consideration is whether you want feet or meters to be your unit of measure.</li>
+<li>UTM Zones (Universal Transverse Mercator) are available for most places on the planet. Their unit of measure is meters.</li>
+</ul>
+
+
+<p>For mapping continents and the entire planet, we have different projected coordinate systems to consider. While covering large areas are not "local," these coordinate systems are "localized" and tuned for the area they cover. The ones we have used in class are the following:</p>
+
+<ul>
+<li>North America Albers Equal Area Conic, EPSG: 102008. This CRS is used in small scale mapping of North America. The latitude and longitude parameters can be modified to focus on region in North America. The unit of measure is feet.</li>
+<li>Mollweide World Equal Area, EPSG: 54009, is useful CRS for displaying global extents.</li>
+<li>Pseudo-Mercator, also know as Spherical Mercator, EPSG:3857, is used by online mapping platforms like Google Maps, Bing, MapBox, CartoDB, OSM, and many others. When using the OpenLayers plugin, the map canvas will use this CRS.</li>
+</ul>
+
+
+<p>For help finding a specific CRS for an area on earth, use <a href="http://epsg.io/">epsg.io</a> to search by location.</p>
+
+<p>Understanding the layers' spatial reference systems is important when geoprocessing. You can only reliably measure between layers that share the same projected coordinate system. We'll now ensure that our newly created layers are all in the same projection (EPSG:2283) and not relying on on-the-fly transformation before doing geoprocessing.</p>
+
+<p><a name="data-credits"></a></p>
+
+<h1>Data credits</h1>
+
+<p>OpenStreetMap data: © OSM contributors</p>
+
+<p><a name="references"></a></p>
+
+<h2>References</h2>
+
+<p>Brabham, D. C. (2012). The Myth of Amateur Crowds. Information, Communication &amp; Society, 15(3), 394–410.</p>
+
+<p>Haklay, M. (2010). How good is volunteered geographical information? A comparative study of OpenStreetMap and Ordnance Survey datasets. Environment and Planning B: Planning and Design, 37(4), 682–703.</p>
+
+<p>Haklay, M. (2013). Neogeography and the delusion of democratization. Environment and Planning A, 45(1), 55–69.</p>
+
+<p>Harley, J. B. (1989). Deconstructing the Map. Cartographica: the International Journal for Geographic Information and Geovisualization, 26(2), 1–20.</p>
+
+<p>Stephens, M. (2013). Gender and the GeoWeb: divisions in the production of user-generated cartographic information. GeoJournal, 78(6), 981–996.</p>
+
+<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
+
+
+
+
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+
+<p><link rel="stylesheet" href="https://yandex.st/highlightjs/7.3/styles/github.min.css"></p>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Lesson 08: Integrating QGIS with CARTO</title>
+
+</head>
+<body>
+<h1>Lesson 08: Integrating QGIS with CARTO</h1>
+
+<h1>Table of Contents</h1>
+
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0  -->
+
+
+<ul>
+<li><a href="#lesson-08-overview">Lesson 08 Overview</a></li>
+<li><a href="#lesson-08-data-files">Lesson 08 Data files</a></li>
+<li><a href="#creating-a-carto-account-and-profile">Creating a CARTO account and profile</a>
+
+<ul>
+<li><a href="#exploring-the-basics-of-carto">Exploring the basics of CARTO</a></li>
+</ul>
+</li>
+<li><a href="#loading-data-into-carto">Loading data into CARTO</a>
+
+<ul>
+<li><a href="#uploading-data-from-your-local-machine-to-carto">Uploading data from your local machine to CARTO</a></li>
+<li><a href="#loading-data-into-carto-from-a-remote-source">Loading data into CARTO from a remote source</a></li>
+</ul>
+</li>
+<li><a href="#the-carto-data-and-map-views">The CARTO Data and Map Views</a>
+
+<ul>
+<li><a href="#cartocss">CartoCSS</a></li>
+</ul>
+</li>
+<li><a href="#using-the-qgis-cartodb-plugin-to-connect-with-our-carto-account">Using the QGIS CartoDB plugin to connect with our CARTO account</a>
+
+<ul>
+<li><a href="#pulling-data-down-from-carto-into-qgis">Pulling data down from CARTO into QGIS</a></li>
+<li><a href="#performing-a-table-join-in-qgis">Performing a table join in QGIS</a></li>
+<li><a href="#pushing-data-back-up-to-carto">Pushing data back up to CARTO</a></li>
+</ul>
+</li>
+<li><a href="#making-a-thematic-map-with-carto">Making a thematic map with CARTO</a>
+
+<ul>
+<li><a href="#adding-pop-up-windows-and-a-legend">Adding pop-up windows and a legend</a></li>
+<li><a href="#publishing-your-carto-map-to-the-web">Publishing your CARTO map to the web</a></li>
+</ul>
+</li>
+<li><a href="#resources-and-references">Resources and references</a></li>
+</ul>
+
+
+<!-- /MarkdownTOC -->
+
+
+<p><a name="lesson-08-overview"></a></p>
+
+<h1>Lesson 08 Overview</h1>
+
+<p>In this module, we continue our move away from purely-desktop GIS operations to the exciting land of the web and web mapping. Within this module, we introduce a new key player in the web mapping world: <a href="https://CARTO.com">CARTO</a>, which has recently rebranded from CartoDB in July 2016. While their transition isn't quite complete yet, e.g., map elements like titles and photos cannot be placed on a map, but the new CARTO help documentation is getting better.</p>
+
+<p>We can think broadly of CARTO as contributing to the backend of our web mapping process, particularly how we store and access our data. They also provide the ability to make effective data-driven web maps quickly through their web interface, JavaScript library, and web services.</p>
+
+<p>We'll first create a CARTO account and briefly get acquainted with some of the awesomeness that it provides. Then, we'll figure out how to link it up with QGIS. Once we do all that, we'll be ready to explore a use case to see how we can integrate CARTO within our mapping workflow. Specifically, we're going to begin by making a US counties choropleth map by joining some tabular data to some county polygons.</p>
+
+<p>Let's get started!</p>
+
+<p><a name="lesson-08-data-files"></a></p>
+
+<h1>Lesson 08 Data files</h1>
+
+<ul>
+<li><em>UninsuredByCounty_2016.csv</em></li>
+<li>imported US counties Shapefile from US Census <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">Cartographic Boundary Shapefiles</a></li>
+</ul>
+
+
+<p><a name="creating-a-carto-account-and-profile"></a></p>
+
+<h1>Creating a CARTO account and profile</h1>
+
+<p>The first step is to visit the New Maps Plus <a href="https://nmp.carto.com/">CARTO website: https://nmp.carto.com</a> and create an account using your uky.edu email. We have an educational account with CARTO, which gives us a few extra services.</p>
+
+<p>You'll want to choose a good user name and take some time and set up your CARTO profile. Eventually, you'll be producing some maps with CARTO, and they offer a nice public-facing interface with which you can share some of your maps and data. They even offer an option to indicate that you're "Available For Hire," so if you're able to make a few compelling maps hosted on CARTO, perhaps a potential employer will find you!</p>
+
+<p>If you want to create additional CARTO accounts, just use a different email than your uky.edu address. You can create additional accounts by following this link: <a href="https://CARTO.com/signup?">https://CARTO.com/signup</a>. This basic, free plan will give you 250MB of data.</p>
+
+<p><a name="exploring-the-basics-of-carto"></a></p>
+
+<h2>Exploring the basics of CARTO</h2>
+
+<p>If you spend some time looking through <a href="https://CARTO.com/">CARTO's website</a> &ndash; and you should! &ndash; you'll see that you can use CARTO to perform an amazing array of mapping tasks (some of which we've been completing using QGIS). In particular, you'll want to minimally glance through:</p>
+
+<ul>
+<li><a href="https://academy.CARTO.com/">The Map Academy</a> (CARTO's online web mapping education material)</li>
+<li><a href="https://docs.CARTO.com/">CARTO's Documentation</a> (including API documentation for using some of CARTO's mapping platform and many useful tutorials for exploring specific CARTO functionality).</li>
+<li><a href="http://cartodb.github.io/training/">CARTO workshops</a> (a series of workshops given by CARTO)</li>
+</ul>
+
+
+<p>CARTO's educational materials are quite excellent, and New Maps Plus encourages you to spend time reading through these and practicing some of their tutorials. The mapping and GIS world is immense, and the more ways you can approach problems and hear the material articulated, the better of you will be.</p>
+
+<p>Once you've created an account and logged in, there are couple key things we want to point and explore before we dive into the exchange of data and maps between QGIS and CARTO. First, note that there are two "views" within CARTO: a maps view and a datasets view. Pay attention to which one you're in, as you'll be switching between the two as you work with CARTO. These are accessed in the upper-left of the webpage next to your name.</p>
+
+<p><img src="module-08-graphics/2016/cartodashboard.png" alt="Accessing the maps vs datasets view" /> <br/>
+Figure 01: CARTO Dashboard. Take some time to familiarize yourself with the <a href="https://carto.com/learn/guides">CARTO Builder interface</a>.</p>
+
+<p>Since you likely have neither maps nor datasets yet, let's first practice getting data into CARTO.</p>
+
+<p><a name="loading-data-into-carto"></a></p>
+
+<h1>Loading data into CARTO</h1>
+
+<p>CARTO's interface is incredibly flexible and offers various ways to access <a href="https://CARTO.com/data-library">datasets already hosted by CARTO</a>, as well as to load data onto their web servers.</p>
+
+<p><a name="uploading-data-from-your-local-machine-to-carto"></a></p>
+
+<h2>Uploading data from your local machine to CARTO</h2>
+
+<p>A predictable way to get data into your CARTO account is to simply upload a file or directory from your computer. To do this, first select <strong>New Dataset</strong> (you'll need to be in the <strong>datasets</strong> view of your dashboard and not the <strong>maps</strong> view).</p>
+
+<p><img src="module-08-graphics/2016/new-dataset.png" alt="Selecting a new dataset in CARTO" /> <br/>
+Figure 02: Selecting a new dataset in CARTO</p>
+
+<p>CARTO supports an <a href="https://carto.com/docs/carto-engine/import-api/importing-geospatial-data/#supported-geospatial-data-formats">impressive variety of file formats</a> including Shapefiles, GeoJSON, comma-separated and tab delimited files, and different spreadsheets. It also supports uploading compressed <em>.zip</em> and <em>.gz</em> files (i.e., your bundled Shapefiles in a <em>.zip</em> file).</p>
+
+<p>Try uploading the <em>UninsuredByCounty_2016.csv</em> file included with this module (you may wish to examine the CSV file first within Open Office or a text editor). This CSV shows percent of county population without health insurance in 2013 and 2016. From CARTO's <strong>Connect dataset</strong> page, choose <strong>Data file</strong> and <strong>Browse</strong>, locate the file in your local directory structure, and then click <strong>Connect Dataset</strong>. You can also drag and drop the file from your local window into the browser.</p>
+
+<p><img src="module-08-graphics/2016/connect-dataset.png" alt="Selecting a new file" /> <br/>
+Figure 03: Selecting a new file</p>
+
+<p>Note the option at the bottom to "Let CARTO automatically guess data types and content on import." Let's leave this check for the moment to see what happens. Also, note the red lock that signifies that your dataset is private. We'll need to pay attention to this setting if we publish maps and want to share our data.</p>
+
+<p>Once uploaded to and processed by CARTO, you will see your data in the Data View. Note that the values within <em>the_geom</em> attribute column for this file are all "null." This is simply tabular data with no spatial information. There are attributes such as state and county names, as well as FIPS ids, with which we can perform a tabular join with some county geometries. However, note that within the county_fips column (which is designated as a number type), CARTO has stripped off the leading zero. CARTO has automatically guessed this field to be a numeric type, and in doing so removed the leading zero. This can create a problem when attempting to do a Join, a problem we'll return to a bit later.</p>
+
+<p><img src="module-08-graphics/2016/tabular-view.png" alt="Tabular view of data" /> <br/>
+Figure 04: The leading zeros of the County FIPS codes have been stripped in the default data connection. To get back your Dashboard, click on the upper-left corner CARTO logo.</p>
+
+<p>Try re-importing the CSV file, but leave the option to "Let CARTO automatically guess data types and content on import" unchecked. This time, you'll notice that CARTO has treated every field as a text string. This can be inconvenient, as you'd then need to manually change each field type (something that CARTO makes quite easy). The advantage is, however, that the leading zero of a column such as our state+county FIPS codes is retained. Again, this small example underscores the importance of paying attention to data types when working with geospatial information.</p>
+
+<p><img src="module-08-graphics/2016/change-data-type.png" alt="Change data type of field to number" /> <br/>
+Figure 05: Change your field data type to "Number" for the percent uninsured rate fields.</p>
+
+<p>It's a best practice, once you upload data to CARTO, to immediately enter metadata about the data (click on <strong>Edit metadata...</strong> to the right of the title "uninsuredbycounty_2016" and fill in the fields). The source of the data is <a href="https://www.enrollamerica.org">Enroll America</a>, a nonprofit, nonpartisan health care coalition.</p>
+
+<p><img src="module-08-graphics/2016/edit-metadata.png" alt="Entering metadata for the new dataset" /> <br/>
+Figure 06: Entering metadata for the new dataset</p>
+
+<p>Let's move on now to get some good county data to join with these uninsured data?</p>
+
+<p><a name="loading-data-into-carto-from-a-remote-source"></a></p>
+
+<h2>Loading data into CARTO from a remote source</h2>
+
+<p>A powerful and useful feature of CARTO is the ability to load data from a remote source URL simply by pasting in a URL. In the <strong>Connect dataset</strong> page of CARTO, we wee a variety of options for loading external data into CARTO. These include data stored within Google Drive or Dropbox. This can be a great solution for giving a client the ability to update a map with new data (e.g., they a simply update the values in a sharedGoogle Spreadsheet document and CARTO will pull in the new information).</p>
+
+<p>While we've seen how <a href="http://www.naturalearthdata.com/">Natural Earth</a> is great for grabbing quick Shapefiles, another excellent resource for mapping with the United States is the <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">Cartographic Boundary Shapefiles</a>. These files have been generalized and simplified at various scales for a variety of political sub-units.</p>
+
+<p>Click on the <a href="https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html">counties</a> and then copy the following URL: http://www2.census.gov/geo/tiger/GENZ2015/shp/cb_2015_us_county_20m.zip.</p>
+
+<p>Paste this URL into the designated field and choose <strong>Submit</strong>.</p>
+
+<p><img src="module-08-graphics/2016/add-url-dataset.png" alt="Connecting a remote database to your CARTO account" />   <br/>
+Figure 07: Connecting a remote database to your CARTO account</p>
+
+<p>CARTO also allows you to Sync this dataset if you choose, meaning that if the source data is updated, CARTO will pull in any changes to the file. There's no need to do this now, but if you were using an external data file that is constantly updated, then this could be reflected in the Synced CARTO dataset.</p>
+
+<p>Choose <strong>Connect Dataset</strong>. CARTO fetches the file, unzips it, and loads it into your account.</p>
+
+<p>When finished processing, CARTO will open the data in the <strong>Data View</strong>.</p>
+
+<p><a name="the-carto-data-and-map-views"></a></p>
+
+<h1>The CARTO Data and Map Views</h1>
+
+<p>First, note that these data encode the state FIPS codes and the county FIPS codes in separate columns, unlike the uninsured adults data we loaded into CARTO above. This will present a challenge for us to complete our anticipated table join. However, the state and county FIPS codes within the county Shapefiles are loaded into CARTO as string types, rather than number types. This usefully prevents the leading zeros from these codes from being removed.</p>
+
+<p>Again, we should enter some metadata for these data before continuing.</p>
+
+<p>Second, note that the <strong>the_geom</strong> field contains Polygon information. Double-click on one of these values within the <strong>the_geom</strong> field. What you're presented with is the GeoJSON encoding of that polygon, in this case encoded as a "MultiPolygon" with latitude and longitude coordinate pairs. CARTO converts the uploaded geometries, whether Shapefile or georeferenced CSV, into GeoJSON format.</p>
+
+<p><img src="module-08-graphics/2016/inspect-the_geom.png" alt="**the_geom** field values Polygon information are encoded as GeoJSON" /> <br/>
+Figure 08: <strong>the_geom</strong> field values Polygon information are encoded as GeoJSON. Be careful not to edit these values (unless you want to change the location features).</p>
+
+<p>Select <strong>Create Map</strong> to see the county polygons drawn to the map. CARTO will, by default, display the county boundaries with a solid orange color using the Web Mercator projection.</p>
+
+<p><img src="module-08-graphics/2016/create-map.png" alt="US Counties drawn with default settings" />
+Figure 09: Create Map of US Counties drawn with default settings</p>
+
+<p>After you create the map, you presented with CARTO's new <strong>Builder</strong> interface. The left column represents your layers on the map. The bottom layer, Positron Basemap, is a mapping tile service that has baseman features rendered at different scales. This is the classic "slippy map". The basemap labels are a separate layer on top of the county polygons. Click on the <strong>Positron Basemap</strong> to change your basemap. While we can add many layers to this map, we cannot change the default basemap settings or styles.</p>
+
+<p><img src="module-08-graphics/2016/builder-first-view.png" alt="CARTO Builder" /> <br/>
+Figure 10: Default Builder view</p>
+
+<p>Click on your county polygon layer <em>cb_2015_us_county_20m</em> to access the new <strong>Builder</strong> functions. In the <strong>DATA</strong> panel we are shown our attribute table columns and the "Add as a widget" option. A widget is a simple visualization technique for your attribute data. It can create a histogram, time series, or do summary statistics on your data. The <strong>ANALYSIS</strong> pane provides tools similar to the ones we use in QGIS. We'll investigate these features later.</p>
+
+<p><img src="module-08-graphics/2016/builder-panes.png" alt="CARTO Builder" /> <br/>
+Figure 11: Builder panels for layers</p>
+
+<p>Access the <strong>STYLE</strong> panel. This visualization tool is simple looking but rather powerful. We can change the polygon's fill color, either as a single symbol or by an attribute, the polygon stroke, and the blending mode with other added layers. Click on the <strong>FILL</strong> symbol to change the color of the polygon fill color. Under the <strong>SOLID</strong> mode we can change the color with <a href="http://www.w3schools.com/colors/colors_picker.asp">three pickers</a>. We are offered HSLa sliders, hexadecimal, and RGBa. The lowercase "a" stands "alpha channel", the amount of opacity in the layer. The sliders can change the Saturation and Lightness (top slider), the Hue (second slider), and the opacity (third slider).</p>
+
+<p><img src="module-08-graphics/2016/color-picker.jpg" alt="CARTO Builder" /> <br/>
+Figure 12: The polygon fill color picker with an opacity set to 0.4.</p>
+
+<p><a name="cartocss"></a></p>
+
+<h2>CartoCSS</h2>
+
+<p>Note the <strong>VALUES/CARTOCSS</strong> switch at the bottom of the <strong>Builder</strong> layer's STYLE panel. Toggle this to enter the CartoCSS editor. Within this text editor we see the CartoCSS style rules that dictate what is displayed on the map and how. "CSS" is an acronym for Cascading Style Sheets, one of the web design markup languages. We're not going to spend a lot of time worrying about how to write these style rules form scratch right now. We recommend you read through <a href="https://carto.com/docs/carto-engine/cartocss/">CARTO's CartoCSS documentation</a> to gain more understanding.</p>
+
+<p><img src="module-08-graphics/2016/cartocss-editor.png" alt="CARTOCSS" /> <br/>
+Figure 13: The CartoCSS editor.</p>
+
+<p>However, let's quickly walk through what's happening with this CartoCSS code.</p>
+
+<p>A style "rule" (line 1 <code>#layer</code>) selects our layer, i.e., our county polygons, using the hashtag and applies the style rule properties (contained within the curly brackets) to those features. These property rules include the <code>polygon-fill</code> and <code>polygon-opacity</code> of the polygons (lines 2 and 3), as well as the <code>line-color</code>, <code>line-width</code>, and <code>line-opacity</code> of the lines (lines 4-6).</p>
+
+<p>CartoCSS is quite powerful. For instance, we could add a second layer definition to create cartographic effects like cased lines and fuzzy borders. Since the code is simple text, we can easily modify and share our symbolization properties. Consider the Figure 13 graphic and code block below. A copy of the layer was generated with <code>#layer::2</code> note the "2" suffix is arbitrarycould be any value, e.g., <code>#layer::mysecondlineeffect</code> or it could be left and use <code>#layer</code> again). The line width and opacity were modified to create a glow around the polygon (lines 14-16). It is encouraged that you also add comments to help organize your code (line 9).</p>
+
+<p><img src="module-08-graphics/2016/cartocss-editor-modified.png" alt="CARTOCSS" /> <br/>
+Figure 14: Adding a copy of the layer for cartographic effect.</p>
+
+<pre><code>#layer {
+  polygon-fill: #f45c2e;
+  polygon-opacity: 0.4;
+  line-width: 1;
+  line-color: #FFF;
+  line-opacity: 0.5;
+}
+
+/* This is a comment */
+
+#layer::2 {
+  /* add a second layer 
+  to make a glow effect */
+  line-width: 10;
+  line-color: #FFF;
+  line-opacity: 0.1;
+}
+</code></pre>
+
+<p>Knowing all the property names (e.g., the <code>polygon-fill</code> and <code>line-opacity</code>) is the tricky part of learning a styling language such as CartoCSS. The values are easier to play with, however. In this case, the color values are encoded as hexadecimal values, opacity values are decimal numbers between 0 and 1, and the line width is whatever number you'd like. The value #f45c2e is a <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Color">hexadecimal color code</a>.</p>
+
+<p>Feel free to play around with them within this editor. For instance, try changing the color and adding a second copy of the layer for effect. You can see the style after you hit the <strong>Apply</strong> button at the bottom right. The arrows are for undoing and redoing your CartoCSS edits.</p>
+
+<p>One more important consideration. If you switch to CartoCSS editor, you cannot switch back to the color picker. You can, however, switch into the CartoCSS editor after you apply styles in the default color picker. Also, you should think about copying your CartoCSS code and saving it to your local computer as a text file with a <em>.css</em> file extension.</p>
+
+<p>That's enough basics on data loading and the interface tour for now. We highly encourage you to take some time to further explore CARTO's tutorials and documentation on your own.</p>
+
+<p><a name="using-the-qgis-cartodb-plugin-to-connect-with-our-carto-account"></a></p>
+
+<h1>Using the QGIS CartoDB plugin to connect with our CARTO account</h1>
+
+<p>To link CARTO with QGIS, first install the <a href="https://plugins.qgis.org/plugins/QgisCartoDB/">QGIS CartoDB Plugin</a> (i.e., go to <strong>Plugins -> Manage and Install Plugins...</strong> and search for "QGIS CartoDB" like we've done with other plugins).</p>
+
+<p>After it's installed, be sure to enable your Web Toolbar within QGIS (<strong>View -> Toolbars -> Web</strong>).</p>
+
+<p><img src="module-08-graphics/2016/web-toolbar.png" alt="Enabling the Web Toolbar" /> <br/>
+Figure 15: Enabling the Web Toolbar</p>
+
+<p>With this toolbar enabled, we should now see several icons associated with the QGIS CartoDB plugin:</p>
+
+<p><img src="module-08-graphics/2016/carto-qgis-plugin.png" alt="QGIS CartoDB icons in the QGIS Web Toolbar" /> <br/>
+Figure 16: QGIS CartoDB icons in the QGIS Web Toolbar after a CARTO connection has been added.</p>
+
+<p>The icon buttons will be different until we connect to our CARTO account. The options we are given allow us to download and upload layers from the account, as well as load a map directly from QGIS to CARTO.</p>
+
+<p>Click on <strong>Add Connection</strong> to open the Connection Manager dialog box. Then choose <strong>New</strong> to create a new connection. This will open the Add CARTO Connection dialog box.</p>
+
+<p>You'll enter your CARTO User name in the first field. To access your CARTO API key, you'll need to be logged into your CARTO account and go to "Your API keys" (https://<em>your_username</em>.CARTO.com/your_apps). You can also click on your avatar within the CARTO dashboard and choose "Your API keys."</p>
+
+<p>Copy your API key from the CARTO website and paste it into the Add CARTO Connection dialog box, and choose <strong>Save</strong>. Your username will now appear as a Connection in the Connection Manager. Choose <strong>Connect</strong> to connect QGIS with your CARTO account.</p>
+
+<p><a name="pulling-data-down-from-carto-into-qgis"></a></p>
+
+<h2>Pulling data down from CARTO into QGIS</h2>
+
+<p>Once the connection is made, we can start doing all sorts of fun things with QGIS and CARTO. To demonstrate a common use, let's perform a tabular join between the US counties layer and our uninsured adults data to make yet another classic choropleth map. Our goal then is to use QGIS to perform the join and populate the county shapefile data with the uninsured data. When complete, we'll push this data back up to CARTO and use it to make a web map.</p>
+
+<p>To begin, let's pull down those data of the US counties we just uploaded to our CARTO account (we're not going to use the copy of the uninsured adults data we uploaded to CARTO, so feel free to delete it from your account). Click on the <strong>Add CARTO layer</strong> button/icon found in the <strong>Add Data Toolbar</strong>.</p>
+
+<p><img src="module-08-graphics/2016/download-carto-layer.png" alt="Adding a CARTO layer" /> <br/>
+Figure 17: Adding a CARTO dataset</p>
+
+<p>This will open a <strong>Add CARTO Layer</strong> window which will display all your available datasets, as well as inform you of your available data usage. Choose both layers we previously loaded into CARTO by selecting the desired layers.</p>
+
+<p><img src="module-08-graphics/2016/adding-two-layers.png" alt="Adding a CARTO layer" /> <br/>
+Figure 18: Adding a multiple CARTO layers</p>
+
+<p>After downloading, we'll see a very familiar layout of the vector data within QGIS <strong>Map Pane</strong> and the layer listed within the <strong>Layers Panel</strong> at left. So far this is operating like any other file we've loaded into QGIS from our local source. For instance, we can go into the layer properties to see the Coordinate Reference System or symbolize the data in some way.</p>
+
+<p>However, there is one important distinction between this data layer and others we may load into QGIS from our local machine. Open the layer's <strong>Properties</strong> and look at the <strong>General</strong> tab. Note that under <strong>Layer source</strong> it provides a rather curious path (this path will be different on a Window's OS): <em>/var/folders/sv/pxq317111lg7xvm82my900h40000gn/T/tmpDECcg5</em>. What is this <em>tmpDECcg5</em> file to which the source is pointed?</p>
+
+<p><img src="module-08-graphics/2016/temp-layer.png" alt="Identifying the temporary layer source" /> <br/>
+Figure 19: Identifying the temporary layer source</p>
+
+<p>It doesn't look like any other data format we've worked with so far (e.g., Shapefile or GeoJSON files). Here QGIS and the QGIS Plugin are storing a temporary version of these data as a binary file (i.e., we aren't meant to directly read this file within our file/directory structure). This means that if we wish to make edits to the geometry or to attribute table, or do any geoprocessing, we first need to save a local copy of these data in another format. Choose GeoJSON as your new layer file format.</p>
+
+<p><a name="performing-a-table-join-in-qgis"></a></p>
+
+<h2>Performing a table join in QGIS</h2>
+
+<p>Go ahead and right-click on the layer, choose <strong>Save As...</strong> and save it a new Shapefile within your project's data directory. Give this new layer a different name than that which we imported from CARTO, <em>cb_2014_us_county_20m</em>, such as <em>us_counties</em>.</p>
+
+<p>Now we wish to edit the attribute table within this US counties Shapefile to concatenate the state FIP code ("statefp") with the county FIP code ("countyfp") and store these within a new column. Do this, open the Attribute Table and then click on the <strong>Field Calculator</strong>. This will automatically open the Editing mode of your Shapefile's attribute table as well.</p>
+
+<p><img src="module-08-graphics/field-calculator.png" alt="Opening the field calculator" /> <br/>
+Figure 20: Opening the field calculator</p>
+
+<p>Within the field calculator we want to keep <strong>Create a new field</strong> checked and provide a name for the new output field ("fips" works fine for this now). Change the <strong>Output field type</strong> to "Text (string)". Even though the FIP ids could be encoded as number types, encoding them as string types ensures that we don't lose the leading 0s on some of the IDs, especially when we import the Shapefile back into CARTO.</p>
+
+<p>In the Expression dialog box we want to enter <em>"statefp" + "countyfp"</em>. Note that because these are string types, it will concatenate them together, and not calculate them as if they were numbers. You can also access the available fields under the dropdown menu of <em>Fields and Values</em>.</p>
+
+<p><img src="module-08-graphics/field-calculator-expression.png" alt="Using the field calculator to concatenate field values" /> <br/>
+Figure 21: Using the field calculator to concatenate field values</p>
+
+<p>Read more about using the <a href="http://docs.qgis.org/2.14/en/docs/user_manual/working_with_vector/expression.html">Field Calculator and building Expressions</a> in QGIS.</p>
+
+<p>Once you have entered these values, click OK. QGIS will create a new field named "fips", in which you see the newly created string values. You'll want to now toggle off the editing mode. QGIS will prompt you to Save the changes to the layer, which you do want to do by clicking <strong>Save</strong>. Close your attribute table.</p>
+
+<p>You might have noticed, we already had a <em>geoid</em> field in the counties layer that could be used for an attribute join. We wanted to illustrate using the Field Calculator on text strings. Building attributes like this will be helpful when you need to produce a minimized attribute table for interactivity in CARTO. Interactive pop-up boxes use your attributes for content and can often cleaned up and aggregated. Imagine if you could minimize a couple fields in OSM data to one field:</p>
+
+<p><img src="module-08-graphics/fieldcalculator_text-attributes.png" alt="Using the field calculator to concatenate field values" /> <br/>
+Figure 22: Using the field calculator to concatenate field values into new strings for pop-up boxes. Note the Output preview is a more friendly presentation of the attributes.</p>
+
+<p>Next, let's import our uninsured adult data into QGIS. The best way to do this, and not have QGIS also strip the leading zero from our FIPS data attribute values like CARTO did, is to drag the file directly from your browser window into the Layers Panel of QGIS. You can also use the <em>.csvt</em> file with one line indicating the data types, "Real" and "String" for the appropriate type. If you then inspect this attribute table within QGIS, you'll see the FIPS id codes have been imported while retaining the leading zero. However, if you added this file as a Text Delimited File (with "no geometry" checked), you'd like run into some problems.</p>
+
+<p><img src="module-08-graphics/2016/uninsured-attribute-table.png" alt="Verifying that the leading zeros of the FIPS field values are retained" /> <br/>
+Figure 23: Verifying that the leading zeros of the FIPS field values are retained</p>
+
+<p>Now we're ready to perform our trusted table join. To quickly walk you through the steps again:</p>
+
+<ol>
+<li>First access the Layer Properties of the newly created <em>us_counties</em> layer (the one with the concatenated state and county fips codes) and open the <strong>Joins</strong> panel.</li>
+<li>Click the green arrow at the bottom left to add a new join. Within the Add vector join dialog box, use your <em>uninsured_adults_2015</em> as the <strong>Join layer</strong>, choose <em>FIPS</em> from that data table as the <strong>Join field</strong>, and use the <em>fips</em> field we created as the <strong>Target field</strong>. Next click <strong>Choose which fields are join</strong> and select only the <em>Uninsured</em> field, as we don't need to duplicate the other field values within our county Shapefile. Also, we don't need a <strong>Custom field name prefix</strong> in this case, so check that option and leave the field blank. When complete, click <strong>OK</strong> on the dialog box and <strong>Apply</strong> the table join.</li>
+</ol>
+
+
+<p><img src="module-08-graphics/2016/table-join.png" alt="Settings for joining the uninsured adults data to the county polygons" /> <br/>
+Figure 24: Settings for joining the uninsured adults data to the county polygons. Note that you should a field call <em>fips</em> that you just created in QGIS.</p>
+
+<p>We can verify that the table join was successful by again opening the <em>us_counties</em> layer's attribute table. Sorting the features by the <em>geoid</em> ID will verify that the insurance was applied to all the features, including those beginning with a zero (e.g., "01001"). Close the attribute table.</p>
+
+<p>Now that we've joined the data to our geometries, we could continue to make a choropleth in QGIS. But let's instead push this new Shapefile back up to CARTO and use it to make a web map.</p>
+
+<p>Before we push our data back up to CARTO, we need to save a new Shapefile layer to ensure that the table join is permanently encoded within the layer. Choose <strong>Save As ...</strong> to a new GeoJSON layer and name it <em>uninsured_adults_county</em> (or something else fitting). CARTO will import the data using this name and later use it to create maps. Create the new Shapefile with the geographic CRS of WGS84 and make sure it's added to your QGIS project.</p>
+
+<p><a name="pushing-data-back-up-to-carto"></a></p>
+
+<h2>Pushing data back up to CARTO</h2>
+
+<p>Note that because our CARTO account size is limited, we can also reduce the size of the datasets by deleting field columns we're not using. We'll skip this step for now, but if you wished you could use the <strong>Table Manager</strong> to delete such columns as <em>aland</em>, <em>awater</em>, etc. This is less important with a fairly small dataset like the one we're now working with. However, sometimes you'll bring in a dataset with thousands of features and many data fields you don't need. It's worth trimming the file size down in these cases.</p>
+
+<p>Click the <strong>Upload layers to CARTO button</strong>, choose the <em>uninsured_adults_county</em> layer from the <strong>Project Layers</strong>, and click Upload. Note that leaving <strong>Add CARTO layers to project</strong> will add this layer to the QGIS project (which we don't need right now, so go ahead and uncheck this option).</p>
+
+<p><img src="module-08-graphics/2016/push-up-to-carto.png" alt="Pushing data up to CARTO" /> <br/>
+Figure 25: Uploading layers to CARTO</p>
+
+<p>The <strong>Upload layers to CARTO</strong> dialog box will indicate that the upload was successful.</p>
+
+<p>Switch back to your CARTO account within your web browser. Make sure you're in the <strong>Datasets</strong> view of your dashboard. It may take a few moments for CARTO to connect the new dataset within their servers. When complete, you'll see your <em>uninsured_adults_county</em> within your datasets view, along with the <em>cb_2014_us_county_20m</em> layer we imported earlier.</p>
+
+<p><a name="making-a-thematic-map-with-carto"></a></p>
+
+<h1>Making a thematic map with CARTO</h1>
+
+<p>Now that we have our uninsured adults data tied to our county geometries and we're back in CARTO let's use that dataset to make a quick web map.</p>
+
+<p>Find your newly added layer in CARTO Datasets and select the layer. You'll notice the column names from CSV file have the name of the file as a prefix. Since we saved the layer in QGIS as a GeoJSON, we should have the full field. We just need to identify which field is the 2016 uninsured rates. Once you find the column, rename it so that it's easier to locate.</p>
+
+<p>We can then adjust the number of classes (CARTO curiously calls them "<strong>Buckets</strong>"), as well as the method of <strong>Quantification</strong>. Try changing the quantification method between equal area and quantiles to inspect the differences in the rendered map. CARTO's interface quickly allow us to produce a choropleth map of these uninsured adult data.</p>
+
+<p><img src="module-08-graphics/2016/rename-column.png" alt="Renaming fields in CARTO" /> <br/>
+Figure 26: Renaming fields in CARTO to make them easier to use</p>
+
+<p>Click on <strong>Create Map</strong> to begin the visualization. Select the layer in Builder and then the <strong>STYLE</strong> panel. Instead of changing the polygon's fill the same way for all polygons, we are going to change the polygon based on field value. Select <strong>BY VALUE</strong> and find the 2016 uninsured rate column.</p>
+
+<p><img src="module-08-graphics/2016/style-by-value.png" alt="Creating a choropleth map using CARTO Builder" /> <br/>
+Figure 27: Creating a choropleth map using CARTO Builder</p>
+
+<p>Continue to style the other properties for your polygon and consider changing basemaps. Zoom in and out to see how your styles look different at different zoom levels. CARTO has many color palettes to use. While the color choice is largely up to the map maker, you should avoid using <a href="http://colorbrewer2.org/">divergent color schemes</a> on data without a known total average. We see that CARTO adds a legend and an estimated average, presumably for the US uninsured rates. However, you cannot do statistics on derived rates like percentages, so some of the features offered might be dubious. Consider two counties. One county has one million people and an uninsured rate of 10% and another county has one hundred people at a 20% rate does NOT make a combined 15% average for those two counties.</p>
+
+<p>Before we publish this map, switch to the <strong>CartoCSS editor</strong>. We can see that <strong>Builder</strong> has added additional CartoCSS rules. Again, we're not going to dive deep into mastering CartoCSS right now. Making adjustments in Builder and toggling back to inspect the changes in the CartoCSS editor is a good way to facilitate your understanding of how to the CartoCSS rules work.</p>
+
+<pre><code>#layer {
+  polygon-fill: ramp([percent_uninsured_2016], 
+  (#ffc6c4, #ee919b, #cc607d, #9e3963, #672044), 
+  quantiles);
+  line-width: 0.2;
+  line-color: #000000;
+  line-opacity: 0.5;
+}
+</code></pre>
+
+<p>Builder utilizes a preprocessing function <code>polygon-fill: ramp</code> to create polygon-fill color gradient in CartoCSS. Polygon-fill color values are drawn from values in the <em>percent_uninsured_2016</em> field and classified into 5 buckets (denoted by the list of 5 hexadecimal color values) using the quantiles classification method. We can manually create a color ramp by removing the ramp function and using the code below:</p>
+
+<pre><code>#layer [percent_uninsured_2016 &lt;=37]
+    { polygon-fill: #672044;
+}
+
+#layer [percent_uninsured_2016 &lt;=25]
+    { polygon-fill: #9e3963;
+}
+
+#layer [percent_uninsured_2016 &lt;=15]
+    { polygon-fill: #cc607d;
+}
+
+#layer [percent_uninsured_2016 &lt;=10]
+    { polygon-fill: #ee919b;
+}
+
+#layer [percent_uninsured_2016 &lt;=5]
+    { polygon-fill: #ffc6c4;
+}
+
+#layer {
+  line-width: 0.2;
+  line-color: #000000;
+  line-opacity: 0.5;
+}
+</code></pre>
+
+<p>Apply these rules in the layer's <strong>STYLE</strong> panel:</p>
+
+<p><img src="module-08-graphics/2016/cascading-styles.png" alt="Using cascading styles" /> <br/>
+Figure 28: Using cascading styles in CartoCSS</p>
+
+<p>The first <code>#layer</code> style rule selects all counties with a percent uninsured less than or equal to 37% with a condition expression enclosed with square brackets <code>percent_uninsured_2016 &lt;=37</code>. That's all counties in our <em>uninsured_adults_county</em> dataset since the highest uninsured rate is 37%. This rule applies a <code>polygon-fill</code> color to all counties. Below this, we see additional rules that select increasing smaller subsets of counties and applies different fill colors. CARTO is using these conditional statements to set the classification breaks on our map, and then applying a new style rule to each polygon.</p>
+
+<p>The CartoCSS rules are applied from top to bottom, i.e., they cascade down the chain, and can be changed. The last <code>#layer</code> style contains only rules that symbolize the polygon outline. It's on bottom so that it can be drawn last.</p>
+
+<p>Since using custom CartoCSS rules causes our legend to break in CARTO currently (maybe a bug that hasn't been smoothed out), switch back the <strong>VALUES</strong> and <strong>CLEAR</strong> the custom CartoCSS rules.</p>
+
+<p><img src="module-08-graphics/2016/clear-cartocss-rules.png" alt="Clear the CartoCSS rules" /> <br/>
+Figure 29: Clear the CartoCSS rules</p>
+
+<p><a name="adding-pop-up-windows-and-a-legend"></a></p>
+
+<h2>Adding pop-up windows and a legend</h2>
+
+<p>Let's add interactivity to our map before we publish. Select the <strong>POP-UP</strong> panel, which will allow users to interrogate the layer's attributes. We have to methods to fire a pop-up window; click and hover. Click is the only usable method on touch screens and hover is most useful for point and line features. Hover can be very annoying on continuous polygon features because the pop-up will never disappear.</p>
+
+<p>Select the feature attributes that you would like to present to a user and change the column names to something friendlier. You can drag and reorder values in the pop-up window. While in builder the interactivity seems buggy, but this will disappear after you publish your map.</p>
+
+<p><img src="module-08-graphics/2016/adding-popups.png" alt="Adding pop-up windows in Builder" /> <br/>
+Figure 30: Adding pop-up windows in Builder</p>
+
+<p>Finally, explore the <strong>LEGEND</strong> panel and <strong>ADD ITEMS</strong> to your legend. The top title in the legend is the name of your layer, so change it to a friendlier title. Experiment with different settings to discover the most useful combination.</p>
+
+<p><img src="module-08-graphics/2016/adding-legend.png" alt="Adding a legend in Builder" /> <br/>
+Figure 31: Adding a legend in Builder</p>
+
+<p><a name="publishing-your-carto-map-to-the-web"></a></p>
+
+<h2>Publishing your CARTO map to the web</h2>
+
+<p>Click on the back arrow icon to get your map layer list.Before we publish the map via the <strong>SHARE</strong> button, we need to modify the Map Options, Rename the map, and give it metadata.</p>
+
+<p><img src="module-08-graphics/2016/back-to-layer-view.png" alt="Back to layer view" /> <br/>
+Figure 32: Getting back to your map layers</p>
+
+<p>As with our layers, we need to Edit Metadata... and Rename the map. This will be the only contextual information presented to the visitor, so we be concise, yet detailed.</p>
+
+<p><img src="module-08-graphics/2016/edit-map-metadata.png" alt="Back to layer view" /> <br/>
+Figure 33: Getting back to your map layers</p>
+
+<p>Select the <strong>Map Options</strong> icon in the left blue bar. Here we can modify options for the map such as a <strong>Search box</strong>, <strong>Scroll wheel zoom</strong>, and <strong>Show Blue Bar</strong>.</p>
+
+<p><img src="module-08-graphics/2016/map-options.png" alt="Changing map options" /> <br/>
+Figure 34: Changing map options</p>
+
+<p>After you've played around with some of these adjustments, click <strong>SHARE</strong> in the lower right corner of the Builder panel. The next screen allows sharing within our New Maps Plus community on CARTO, which is not public. If you select <strong>PUBLISH</strong> you'll be presented with two publishing options: 1) to copy a link to a live version of the map, 2.) to embed the map within an iframe, which then is inserted into a webpage or blog. Copy the link to the map, open a new browser tab or window, and paste in the URL link. You'll see a working version of your map.</p>
+
+<p><img src="module-08-graphics/2016/publish-link.png" alt="Publish map" />
+Figure 35: Publish map and getting the link</p>
+
+<p>If you need to update your map, revisit this screen and press <strong>UPDATE</strong>. The <strong>LINK</strong> button allows you to configure the privacy of your map.</p>
+
+<p>This published map is different than the dataset you've been working with in the map view. To continue to work on the map, return to the map view, make updates, and again click <strong>Publish</strong> to update your map.</p>
+
+<p>Note that by default CARTO renames this map as a copy of the original data source. Feel free to rename the published two whatever you'd like. Also notice that the published map will retain the original zoom and pan level at which it's set within the <strong>Map view</strong> when you publish it. To change this, simply adjust the display in some way and click <strong>Publish</strong> again.</p>
+
+<p>You can now share this map with the world!</p>
+
+<p><a name="resources-and-references"></a></p>
+
+<h1>Resources and references</h1>
+
+<ul>
+<li><a href="http://academy.CARTO.com/">The Map Academy</a> (CARTO's online web mapping education material)</li>
+<li><a href="http://docs.CARTO.com/">CARTO's Documentation</a> (including API documentation for using some of CARTO's mapping platform and many useful tutorials for exploring specific CARTO functionality).</li>
+<li><a href="http://Cartodb.github.io/training/">CARTO workshops</a> (a series of workshops given by CARTO)</li>
+<li><a href="http://blog.CARTO.com/free-your-maps-web-mercator/">Free Your Maps from Web Mercator!</a></li>
+<li><a href="https://carto.com/learn/guides/data-and-sql/apply-the-albers-projection-with-a-sql-query">Apply the Albers Projection with a SQL Query</a></li>
+</ul>
+
+
+<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
+
+
+
+
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+
+<p><link rel="stylesheet" href="https://yandex.st/highlightjs/7.3/styles/github.min.css"></p>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

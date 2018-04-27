@@ -1,0 +1,1489 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Lesson 01: Introduction to New Maps Plus, Cartography and GIS, and Creating Maps in QGIS</title>
+
+</head>
+<body>
+<h1>Lesson 01: Introduction to New Maps Plus, Cartography and GIS, and Creating Maps in QGIS</h1>
+
+<hr />
+
+<!-- Document formatted for export to HTML outside GitHub  -->
+
+
+<h1>Table of Contents</h1>
+
+<!-- MarkdownTOC autolink="true" autoanchor="true" bracket="round" depth=0 -->
+
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#data-files">Data files</a></li>
+<li><a href="#what-is-cartography-mapping-and-gis">What is cartography, mapping, and GIS?</a>
+
+<ul>
+<li><a href="#cartography-the-art-and-science-of-mapmaking">Cartography: The art and science of mapmaking</a></li>
+<li><a href="#geographic-information-systems-gis-an-old-tool-in-a-new-web-mapping-world">Geographic Information Systems (GIS): an "old" tool in a new web mapping world</a></li>
+</ul>
+</li>
+<li><a href="#qgis-an-open-source-solution-for-our-gis-needs">QGIS: An open source solution for our GIS needs</a>
+
+<ul>
+<li><a href="#downloading-and-installing-qgis">Downloading and Installing QGIS</a></li>
+<li><a href="#bugs">Bugs</a></li>
+<li><a href="#getting-started-with-qgis">Getting Started with QGIS</a></li>
+</ul>
+</li>
+<li><a href="#a-quick-primer-on-geodesy-and-spatial-reference-systems">A quick primer on geodesy and spatial reference systems</a></li>
+<li><a href="#understanding-geographic-data-and-data-formats">Understanding geographic data and data formats</a>
+
+<ul>
+<li><a href="#vector-data">Vector data</a></li>
+<li><a href="#raster-data">Raster data</a></li>
+</ul>
+</li>
+<li><a href="#using-vector-data-within-qgis">Using vector data within QGIS</a>
+
+<ul>
+<li><a href="#loading-and-inspecting-points-lines-and-polygon-shapefiles-in-qgis">Loading and inspecting points, lines, and polygon Shapefiles in QGIS</a></li>
+</ul>
+</li>
+<li><a href="#filtering-attributes-in-the-qgis-layers-panel">Filtering attributes in the QGIS Layers Panel</a></li>
+<li><a href="#spatial-databases-and-the-db-manager">Spatial databases and the DB Manager</a>
+
+<ul>
+<li><a href="#popular-open-source-spatial-databases">Popular, open source spatial databases</a></li>
+<li><a href="#create-spatailite-database">Create SpataiLite database</a></li>
+<li><a href="#qgiss-db-manager">QGIS's DB Manager</a>
+
+<ul>
+<li><a href="#add-data-to-db-manager">Add data to DB Manager</a></li>
+</ul>
+</li>
+<li><a href="#example-sql-statements-for-this-lesson">Example SQL statements for this lesson</a></li>
+<li><a href="#sql-in-the-db-manager">SQL in the DB Manager</a></li>
+<li><a href="#field-data-types">Field data types</a></li>
+<li><a href="#use-a-code-editor-to-save-and-edit-your-sql">Use a code editor to save and edit your SQL</a></li>
+<li><a href="#exporting-sql-tables-as-layers-in-map-canvas">Exporting SQL tables as layers in Map Canvas</a></li>
+<li><a href="#export-three-additional-layers">Export three additional layers</a>
+
+<ul>
+<li><a href="#selecting-kentucky-state-polygon">Selecting Kentucky state polygon</a></li>
+<li><a href="#selecting-kentucky-waterbodies">Selecting Kentucky waterbodies</a></li>
+<li><a href="#selecting-kentucky-streams">Selecting Kentucky streams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#why-is-kentucky-squashed-understanding-coordinate-systems-in-qgis">Why is Kentucky squashed? Understanding coordinate systems in QGIS</a>
+
+<ul>
+<li><a href="#project-all-layers-on-the-fly">Project all layers 'on the fly'</a></li>
+<li><a href="#converting-layers-to-geojson-format-with-a-projection-transformation">Converting layers to GeoJSON format with a projection transformation</a>
+
+<ul>
+<li><a href="#editing-geojson-layers">Editing GeoJSON layers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#creating-a-thematic-category-map-in-qgis">Creating a thematic category map in QGIS</a>
+
+<ul>
+<li><a href="#styling-the-map-and-vector-features">Styling the map and vector features</a></li>
+<li><a href="#panning-and-zooming-your-styled-map">Panning and zooming your styled map</a></li>
+</ul>
+</li>
+<li><a href="#qgis-print-composer-to-export-a-finished-map">QGIS Print Composer to export a finished map</a>
+
+<ul>
+<li><a href="#adding-the-map-to-print-composer">Adding the map to Print Composer</a></li>
+<li><a href="#adding-a-title-legend-and-theme">Adding a title, legend, and theme</a></li>
+<li><a href="#exporting-the-map">Exporting the map</a></li>
+</ul>
+</li>
+<li><a href="#resources-and-references">Resources and references</a></li>
+</ul>
+
+
+<!-- /MarkdownTOC -->
+
+
+<p><a name="overview"></a></p>
+
+<h1>Overview</h1>
+
+<p>Within this lesson you will:</p>
+
+<ul>
+<li>Gain a basic conceptual understanding of cartography, GIS, and mapping</li>
+<li>Gain familiarity with geographic data and information, and how it's encoded within computer files</li>
+<li>Download and install a free and open-source GIS application (QGIS)</li>
+<li>Create and query a spatial database</li>
+<li>Gain a basic familiarity with the QGIS interface</li>
+<li>Gain awareness of spatial reference and projection issues</li>
+<li>Practice opening a variety of geographic data with QGIS and viewing their attributes within QGIS</li>
+<li>Perform basic map styling</li>
+<li>Create and export a basic map as a static image file</li>
+</ul>
+
+
+<p><a name="data-files"></a></p>
+
+<h1>Data files</h1>
+
+<p>The following zip files contain spatial data that we'll use in this lesson. It is located on the Canvas course under Module 01 > Lesson 01. Please observe good data hygiene and store your data in a project folder on your computer for this module.</p>
+
+<ul>
+<li>LessonData.zip
+
+<ul>
+<li>Various Shapefiles that will be used in this lesson. The source of this data is <a href="https://viewer.nationalmap.gov/basic">The National Map Small-Scale data</a></li>
+</ul>
+</li>
+<li>US_SmallScale_Layer_Metadata.zip
+
+<ul>
+<li>Contains metadata that describes these layers, including all attributes.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a name="what-is-cartography-mapping-and-gis"></a></p>
+
+<h1>What is cartography, mapping, and GIS?</h1>
+
+<p>Welcome to the world of mapping, cartography, and GIS! This is the business of making maps. We all know what a map is, right? But really, What's a map? Academic cartographers typically define a map as “an authored, graphic representation of geographic phenomena and events.” This is a loaded sentence, and the question of What is a map is widely open to debate.</p>
+
+<p><a name="cartography-the-art-and-science-of-mapmaking"></a></p>
+
+<h2>Cartography: The art and science of mapmaking</h2>
+
+<p><strong>Cartography</strong> is often defined as the "art and science of map making and map use." While maps have taken many forms over the years, cartography is a more recent endeavor, largely connected to exploration, colonialism, and western academic appropriation of map making.</p>
+
+<p><strong>Mapping</strong>. At New Maps Plus, we don't typically defer to the terms "cartography" or "GIS" (though of course we use them). Rather, we use the more general term of "mapping." This usage underscores the insight that, as the provocative writer Denis Wood points out, mapping is a universal human birthright. While academic cartographers (like us) want to lay claim to the "right" way to make a map, and we'll be sharing many of these little rules through these modules, the process for making, sharing, and using maps is bigger than the University.</p>
+
+<p>Case in point are the advancements in mapping, and web mapping technologies in particular, that have in recent decades been furthered by companies like Google, <a href="https://www.mapbox.com/">Mapbox</a>, and <a href="https://CARTO.com">CARTO</a>. The truth is, they often haven't had trained cartographers or GIS professionals on their staff! Yet they've created incredibly effective and useful tools for creating maps.</p>
+
+<p>Still, there are many important mapping and GIS concepts that come from academic research, and our goal with the New Maps Plus curriculum is to integrate these within the modules in an applied, hands-on manner, with a particular focus on web mapping.</p>
+
+<p><a name="geographic-information-systems-gis-an-old-tool-in-a-new-web-mapping-world"></a></p>
+
+<h2>Geographic Information Systems (GIS): an "old" tool in a new web mapping world</h2>
+
+<p>We've been making maps for a long time. And by "we" I don't mean New Maps Plus. I mean humans. Some of the earliest maps may have been drawn on cave walls nearly 19,000 years ago! But we've only been using computers to make them for about half a century. In the 1980s, we started to develop fairly sophisticated software applications for storing, manipulating, and visualizing geographic information. We called these beasts <strong>Geographic Information Systems</strong>, or <strong>GIS</strong> for short. GIS also often stands for <strong>Geographic Information Science</strong>, which involves systematic in-depth study of computational geographic information processing.</p>
+
+<p>At first, GISs were quite slow and clunky, and required you to issue short lines of code into a command line interface. We later improved the interface of GISs to include a Graphical User Interface (GUI), and they've been improving ever since.</p>
+
+<p>The predominate GIS, and the industry standard, is <a href="https://www.arcgis.com/features/">ArcGIS</a>. This product is owned and maintained as proprietary software by the ESRI (Environmental Systems Research Institute) company, headquartered in Redlands, CA. When people talk about GIS, they're often referring to ArcGIS or one of ESRI's other products.</p>
+
+<p>Importantly, ESRI also wrote the specification for one of the more common formats for storing geospatial information: the Shapefile format (see below). While many of ESRI's high-quality products and services come at a cost, they published the specification for the <a href="https://www.esri.com/library/whitepapers/pdfs/Shapefile.pdf">Shapefile format in a white paper</a> (read more about the Shapefile format below). This allows other (open) software applications to read and write Shapefiles, and to convert them to other formats.</p>
+
+<p>GISs are a critical part of map making. For many who work in the industry, manipulating data within a GIS may constitute the majority of their work. For New Maps Plus our web mapping processes, however, operating a GIS is a piece of a larger workflow puzzle. MAP671 therefore seeks to use GIS to 1) ensure we all share a common conceptual and practical understanding geographic information processing, 2) learn some cartography principles and techniques, and 3) are able to take geographic information and prepare it for mapping within a web environment (MAP672 and MAP673).</p>
+
+<p><a name="qgis-an-open-source-solution-for-our-gis-needs"></a></p>
+
+<h1>QGIS: An open source solution for our GIS needs</h1>
+
+<p>For years now, GIS professionals and programmers have developed alternative GISs to ArcGIS. The most successful efforts at creating a free and open-source (FOSS) GIS have happened under the guidance of the <a href="http://www.osgeo.org/">Open Source Geospatial Foundation</a>, or OSGeo (if you're starting to get the impression that GIS and mapping geeks love acronyms, you're right!). Today, <a href="http://qgis.org/">QGIS</a>, which originally stood for Quantum GIS, but is more commonly just called QGIS, is a highly functional software application that rivals ArcGIS while remaining free for download and use. And, it works across both the Mac OS and Windows!</p>
+
+<p>Read <a href="http://gisgeography.com/qgis-arcgis-differences/">27 Differences Between ArcGIS and QGIS – The Most Epic GIS Software Battle in GIS History</a>.</p>
+
+<p>It should also be noted that QGIS offers some great documentation itself. You should consult the <a href="http://docs.qgis.org/2.14/en/docs/user_manual">QGIS User guide</a> and the <a href="http://docs.qgis.org/2.14/en/docs/training_manual/">QGIS Training manual</a> and consider these valuable supplements to the information provided within these modules.</p>
+
+<p>QGIS natively supports open source spatial databases like <a href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite</a> and [PostGIS]Later in the course when we visit CARTO online mapping, we will use the same SQL on CARTO's database backend, PostgreSQL and PostGIS.</p>
+
+<p>What makes QGIS especially powerful within the mapping community are the wide array of plugins written by various developers. Plugins are small programs that enhance and extend the functionality natively built into QGIS. They are easily installed from within the QGIS application itself. You can peruse the <a href="https://plugins.qgis.org/plugins/">available QGIS plugins</a>. We'll be installing and using many of these plugins.</p>
+
+<p>QGIS functionality is driven by open source libraries, a <a href="http://www.gdal.org/">Geospatial Data Abstraction Library named GDAL</a>. GDAL is actually two libraries: 1) GDAL is used for manipulating raster data and 2) OGR is used for manipulating vector data (see below for the distinction between these two data modules). GDAL and OGR operations are fast and powerful, and they can be used independently of QGIS either via a command line interface or accessed through another coded script, likely written in the programming language of Python.</p>
+
+<p>Python (<a href="https://www.python.org/">https://www.python.org/</a>) is a fairly easy-to-learn programming language widely used by mappers within the GIS community. Python also powers much of QGIS (and its plugins), and integrates well with ArcGIS. Additionally, you can write custom scripts in Python to perform repetitive tasks within a GIS (for example, if you need to process 100s of files with the same operations).</p>
+
+<p>You don't need to worry about learning GDAL or Python right now. It's just good for a budding mapper to be aware of them and what they do. Now on to QGIS!</p>
+
+<p><a name="downloading-and-installing-qgis"></a></p>
+
+<h2>Downloading and Installing QGIS</h2>
+
+<p>The QGIS software is available as a free download from the <a href="http://www.qgis.org/en/site/">QGIS.org</a> site. The current long-term release (LTR) version of the software is version 2.14 nicknamed "Essen" while the latest release is 2.18, "Las Palmas." Both are available for Windows, Mac OS X, Linux, and Android platforms and are compatible with most modern computer setups. Either 2.14 or 2.18 are fine to use in class; you are encouraged to install the latest version, but the official QGIS help documentation is written for the LTR version. A significant difference between the two versions is the menu location of some processing tools.</p>
+
+<p>You may notice that these modules were written using QGIS 2.8 through 2.18, which is due to the frequent release schedule of the QGIS project (three new releases in one year). So, do not be alarmed when your screen doesn't look exactly like the example images provided (we also work primarily within the Mac OS environment, but also Linux and Windows, so the screenshots will look a bit different each week). While it may seem odd to continue with examples in the "older" version, QGIS and open source tools, in general, don't work in quite the same way as other enterprise software products. 2.8 projects will work in QGIS 2.16. In fact, the long term release version in the summer of 2016 was 2.8, and the official documentation was written for this version. Just before the start of this semester, the official documentation was updated to the current LTR 2.14.</p>
+
+<p>For Windows users, the installation process consists of downloading either the 32-bit or 64-bit version of the software and running the installer program (most likely your operating system is 64 bit, but double-check before installing). Go to the download site and download and select your version (<a href="https://www.qgis.org/en/site/forusers/download.html">https://www.qgis.org/en/site/forusers/download.html</a>).
+The Mac OS X installation is slightly more complex. QGIS has been packaged for Mac OS by <a href="http://www.kyngchaos.com/macosx/index">KyngChaos</a> and users should install the packages in the order listed on the<a href="http://www.kyngchaos.com/software/qgis">KyngChaos QGIS download</a> page. In the past few releases, he has packaged all dependencies in one installer. Make sure you read the "ReadmeFirst" text file the comes with the installer and install in the proper order. If you want to install earlier versions of QGIS on a Mac, follow instructions closely because different versions of QGIS require different supporting libraries.</p>
+
+<p><img src="module-01-graphics/kyngchaos_download_page.png" alt="The King Chaos download page" /> <br/>
+Figure 01. The King Chaos download page</p>
+
+<p>Another option is to use a virtual machine to run multiple operating systems and experience the full range of open source software. Parallels for Mac OS and Hyper-V on Windows 10 can hosts virtual machines. Popular and free operation systems used in open source mapping include Ubuntu 16.04 and the dedicated mapping platform, <a href="https://live.osgeo.org/en/index.html">OSGeo virtual machine</a>. As a University of Kentucky student, you can <a href="https://download.uky.edu">download Windows 10</a> and other useful software.</p>
+
+<p><a name="bugs"></a></p>
+
+<h2>Bugs</h2>
+
+<p>Bugs exist in all versions of QGIS. While the amazing developers who dedicate their time to building QGIS do all they can to make it a seamless application, you will occasionally find certain functionality that doesn't work quite right (and it may depend on the operating system and its version as well). Prepare for this and avoid becoming frustrated, for running into these kinds of technical obstacles is to be expected. To this end, it's not uncommon to revert to another version of the software to complete a particular task or to use an outdated plugin. In fact, as you'll come to learn, a GIS or mapping workflow often involves tinkering with various tools and technologies to work together. Sometimes it might feel like wizardry, but if you experiment enough you'll discover that getting your idea to become a map is very fulfilling.</p>
+
+<p>Note that Windows users can have multiple versions of QGIS installed simultaneously. Mac users will need to uninstall one version before installing another if we want to switch between them.</p>
+
+<p><a name="getting-started-with-qgis"></a></p>
+
+<h2>Getting Started with QGIS</h2>
+
+<p>After you've installed QGIS, launch the application. It will by default open a new blank project file. The QGIS interface is broken down into 5 major sections:</p>
+
+<ul>
+<li>the <strong>menubar</strong>, where you'll find a number of dropdown menus from which you can access most of the program's features.</li>
+<li>the <strong>toolbar</strong>, this is where your default toolbars and any optional ones you choose to install will live, they provide graphical access to many of the same features accessible through the menubar as well as some that are not in the menubar. Take time and hover over each tool button and see what it does.</li>
+<li>the <strong>Layers Panel</strong>, aka map legend, where you can view and manipulate the various layers within your map (users sometimes close this window accidentally and "lose" their legend, it can be reopened via the menubar by going to <strong>View</strong> > <strong>Panels</strong> and selecting <strong>Layers</strong> from the popup menu)</li>
+<li>the <strong>map view</strong>, where you can view your map.</li>
+<li>the <strong>Browser Panel</strong> is a directory tree, or catalog, of your accessible data.</li>
+<li>the <strong>status bar</strong>, which provides information about the coordinate location of your mouse pointer, the Coordinate Reference System (CRS) of the current map, the scale of the current map view, a rendering progress bar and notifications of the availability of plug-in updates.</li>
+</ul>
+
+
+<p>For an item by item rundown of the QGIS user interface, consult the <a href="http://docs.qgis.org/2.14/en/docs/user_manual/introduction/qgis_gui.html">QGIS User Guide</a>.</p>
+
+<p>QGIS is going to be your primarily tool in MAP671, and you'll want to spend some time outside of of these modules reading the documentation, opening various datasets you encounter, and getting to know the QGIS interface.</p>
+
+<p>Before we explore how Q operates with some content (a.k.a. data), we're going to cover a few important concepts with regard to mapping and GIS.</p>
+
+<p><a name="a-quick-primer-on-geodesy-and-spatial-reference-systems"></a></p>
+
+<h1>A quick primer on geodesy and spatial reference systems</h1>
+
+<p>How do we specify a location on the Earth? The answer to this question turns out to be a surprisingly complex one and involves such mapping/GIS terminology as "geodesy", "projections", "spatial or coordinate reference systems", "datum", "latitude and longitude", and "meridians".</p>
+
+<p>While this module isn't intended to offer an in-depth explanation, we want to gain a working understanding of how space is measured, encoded within our data, and used within QGIS and other mapping processes. For those of you who have worked in GIS for a while, you're already familiar with these concepts. For those of you new to mapping, understand that it is challenging and may take some time to fully understand in both practical and conceptual senses.</p>
+
+<p>To locate geographic features, we use a <strong>spatial reference system (SRS)</strong>, also referred to as a <strong>coordinate reference system (CRS)</strong>. Quoting from the QGIS documentation, a coordinate reference system (CRS) "defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth." Spatial references systems also allow us to bring disparate datasets together and line them up atop one another as "layers".</p>
+
+<p>SRSs have a <strong>spatial reference ID (SRID)</strong>, typically a four-digit number that identifies the type of coordinate system a dataset uses. The European Petroleum Survey Group (EPSG) has maintained a catalog of these IDs and often you'll see a coordinate system defined with a "EPSG:" prefix. For example, the CRS used by the GPS navigation system (including your phone) can be defined as "EPSG:4326" which we know as the WGS84 (World Geodetic System, 1984). Other organizations have created projection definitions, e.g., ESRI, and you'll find their prefix with number IDs.</p>
+
+<p>There are two types of these references systems: 1) those which use the center of the Earth as a point of reference for building the system, known as a <strong>geographic coordinate system (GCS)</strong> (sometimes called a "spherical system"), and 2) those which are used to show the earth on flat surface, known as a <strong>projected coordinate system (PCS)</strong> (also referred to as a planar, rectangular, or Cartesian coordinate system). All PCSs contain a GCS, because before we can flatten earth, we need to model its sphere-like shape.</p>
+
+<p>Geographic Coordinate Systems, or spherical systems, divide the globe into horizontal lines known as lines of latitude and consider the equator to be 0 degrees from the center point of origin. You can imagine a line going from the center of the earth to the surface, and as that surface point is moved north away from the equator, the angular measure increases until you reach the pole (90 degrees north). Moving that surface point south is considering a negative degree of latitude, until you reach the south pole (-90 degrees, or 90 degrees S).</p>
+
+<p>We also divide the earth into vertical lines known as lines of longitude or meridians, and there are 360 degrees of these starting at an arbitrary meridian that passes through Greenwich, England known as the <a href="https://en.wikipedia.org/wiki/Prime_meridian">Prime Meridian</a>. We often count degrees of latitude 180 degrees positive (east) and 180 degrees negative (west) from the Prime Meridian.</p>
+
+<p>Together the lines of latitude and longitude form what's known as the graticule and allow us to designate a coordinate pair specifying a point on the surface of the other. The trick with all this is, however, that the Earth is not a perfect sphere, but rather a lumpy ball. So the measurements of latitude and longitude are not exact.</p>
+
+<p><strong>Geodesy</strong> is the scientific study that measures the shape of earth, and different measurements create slightly different models of the Earth's shape. This is why we need to know which model informed a particular geographic coordinate system. We can also perform transformation of all the coordinate pairs within a dataset to another geographic coordinate system (a fairly common task in GIS processing).</p>
+
+<p>We don't view maps as a round sphere, with the exception of a globe. Rather, we need to flatten out the spherical model onto a flat surface (either a printed map or your computer screen). This involves a process known as map projection. Projections take into account the distortions that occur when you flatten a round(ish) object into a flat surface.</p>
+
+<ul>
+<li>Read more about <a href="http://docs.qgis.org/2.0/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">Coordinate Reference Systems</a></li>
+</ul>
+
+
+<p>When we use a PCS, we cannot avoid distorting earth, e.g., Google maps depiction of Greenland is a gross distortion of the area of the landmass. We select a PCS based on what we want to preserve on the flat map. Generally, we can preserve true area on a map (equal-area projections) or true shape (conformal projections), but not both simultaneously. A vast array of PCSs have been developed to facilitate mapping anywhere on earth; we just need to look up which SRIDs are appropriate for the location we're mapping (more on this later).</p>
+
+<p>For now, let's remember three takeaways about spatial reference and coordinate systems:</p>
+
+<ol>
+<li>GCS's define the shape of Earth and use spherical units of measure (e.g., degrees). PCS's contain a GCS (they need a definition of the shape of earth), are designed to show earth on a 2D plane, and use a linear unit of measure (e.g., most often meters).</li>
+<li>In the web mapping world, like CARTO, we generally work in one GCS, WGS84, using latitude and longitude values for coordinates. NAD83 is another GCS that is used.</li>
+<li>When we make maps in QGIS, we must pick PCS that best suits our scale, area of earth, and measurement goal, e.g., do we want compare area or preserve navigation by showing correct shapes of features.</li>
+</ol>
+
+
+<p><a name="understanding-geographic-data-and-data-formats"></a></p>
+
+<h1>Understanding geographic data and data formats</h1>
+
+<p>One of the preliminary and most expensive parts of the mapping process is that by which we encode information about the mapped environment. This involves abstracting "real" world phenomena into information. Much of what we're going to learn within MAP671's modules, and the rest of the New Maps Plus curriculum, is about how to take good data and make amazing maps and user experiences with those data. But without interesting information with which to create a geo-visualation application or graphic narrative, the story will often fall flat. Great mapping starts with good, clean data.</p>
+
+<p>Mappers have two predominate "models" for encoding the mapped environment into geographic information: a vector model and a raster model. If you've already done GIS you're familiar with these models. If not, this will quickly become important practical knowledge.</p>
+
+<p><a name="vector-data"></a></p>
+
+<h2>Vector data</h2>
+
+<p>The <strong>vector data model</strong> is composed of points, lines and polygons. Vector data is well suited for representing discrete, homogenous features in the world. For example, a point may represent a bus stop, a line may represent a road, and a polygon may represent a state. Read more about <a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/vector_data.html">vector data</a>.</p>
+
+<p>How do we encode point, lines, and polygon features within our computer system (and for use over the web)? On a conceptual level, geographic points are encoded as a pair of numerical values (coordinates). Lines are built from points (polylines are a connected sequence of line segments). Polygons are an enclosed set of polylines. These features can have numerous attributes (such as name of a road and area of a state) encoded as an attribute table.</p>
+
+<p>While there are many vector file formats (or specifications), we as web mappers are primarily concerned with three of these: the SQLite/SpatialLite spatial databases, the <a href="https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">Shapefile</a>, and the <a href="http://geojson.org/geojson-spec.html">GeoJSON</a>. More on these below.</p>
+
+<p><a name="raster-data"></a></p>
+
+<h2>Raster data</h2>
+
+<p>The <strong>raster data model</strong>, by contrast, is composed of a array of gridded cells or pixels. The raster model is best used to represent continuous phenomena, such as air temperature or terrain. Read more about <a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/raster_data.html">raster data</a>.</p>
+
+<p>While you may be familiar with common image formats used in digital photography such as <em>.jpeg</em>, <em>.gif</em>, and <em>.png</em> file formats, there are others better suited to geospatial information that encode metadata and other information within the file (such as spatial reference information). For example, the <em>GeoTIFF</em>, <em>NITF</em>, and <em>JPEG 2000</em> file formats are commonly used in remote sensing analysis.</p>
+
+<p>While we'll be occasionally using raster imagery, the web mapping world is increasingly moving toward vector data. Even the practice of creating raster tiles with map imagery baked into them (first pioneered by Google in 2006) has given way to vector tiles. Mapbox as well is <a href="https://www.mapbox.com/blog/mapbox-gl-js/">quickly moving toward vector over raster with their Mapbox GL</a>. However, satellite, drone, and customer imagery are swelling databases with raster data everyday. Check out the near-realtime imagery from <a href="https://worldview.earthdata.nasa.gov/">MODIS satellite</a>, which can be downloaded and used in QGIS!</p>
+
+<p><a name="using-vector-data-within-qgis"></a></p>
+
+<h1>Using vector data within QGIS</h1>
+
+<p>We're going to briefly explore three separate sets of geographic data to exemplify both the point/line/polygon composition of the vector data model, as well as to understand the SpatiaLite, Shapefile ,and GeoJSON formats. We'll be exploring how to use raster data in QGIS within a later module.</p>
+
+<p><a name="loading-and-inspecting-points-lines-and-polygon-shapefiles-in-qgis"></a></p>
+
+<h2>Loading and inspecting points, lines, and polygon Shapefiles in QGIS</h2>
+
+<p>From the Lesson-01 directory, download the compressed file called <em>LessonData.zip</em> and extract its content. This archive contains vector layers for stream gages, streams, and waterbodies. These three datasets respectively represent points, lines, and polygons. These data show features in Kentucky, Ohio, and Indiana from data downloaded from the <a href="http://nationalmap.gov/small_scale/">National Map Small-Scale Collection</a>. A few other datasets are included to help make a finished map.</p>
+
+<p><img src="module-01-graphics/q01-list-of-data.jpg" alt="List of data for lesson" /> <br/>
+Figure 02: Lesson data and metadata</p>
+
+<p><img src="module-01-graphics/q02-list-of-data.jpg" alt="List of data for lesson" /> <br/>
+Figure 03: Five zip files are actually five Shapefile layers</p>
+
+<p>First decompress (a.k.a. "unzip") the <em>StateAreas-KY-OH-IN.zip</em> file, which is a bundled collection of files that comprise the Shapefile multi-file format. Shapefiles are actually composed of at least 3 files, but often more, with a common filename prefix.</p>
+
+<p>Three of these are the mandatory files required for by the Shapefile format:</p>
+
+<ul>
+<li><em>.shp</em>, the shape format file, which contains the actual geographic data</li>
+<li><em>.shx</em>, the shape index file</li>
+<li><em>.dbf</em>, the attribute file in dBASE format</li>
+</ul>
+
+
+<p>Note that while the <em>.shp</em> and <em>.shx</em> files are not intended to be human-readable, the <em>.dbf</em> file is a more standardized spreadsheet format and can be open and edited using a program such as OpenOffice Calc.</p>
+
+<p>The other files in the directory are optional files:</p>
+
+<ul>
+<li><em>.prj</em>, the projection file, which contains the spatial reference and projection information</li>
+<li><em>.cpg</em>, used to specify the character encoding for the <em>.dbf</em> file</li>
+</ul>
+
+
+<p>There are a handful of <a href="https://en.wikipedia.org/wiki/Shapefile">other files associated with Shapefiles</a> that you might run into from time to time, and typically we just ignore these files.</p>
+
+<p>All the parts of the Shapefile have to be in the same directory for the file to function, so it is vital to keep your data organized. For instance, in this example, it is better to keep these files in their respective directories (e.g., <em>StateAreas-KY-OH-IN/</em>). If you have one Shapefile layer per zipped file, such as found in the <em>LessonData.zip</em>, QGIS can read the zipped file as a layer. No need to decompress and it makes handling your data much easier!</p>
+
+<p>Let's take a look at the <em>.prj</em> file. It is a plain text format that can be opened with any text-editing program. Note that <a href="http://www.brackets.io">Brackets</a> is a free application for download and use. It is a great tool to have in your toolbox for opening, reading, and writing a variety of text formats and file sizes that other applications struggle with.</p>
+
+<p>Open the <em>.prj</em> file examine the contents:</p>
+
+<pre><code>GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",SPHEROID["GRS_1980",6378137,298.257222101]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]
+</code></pre>
+
+<p>This information specifies the geographic coordinate and reference systems used to create the data, which QGIS will use when rendering the data within the application and performing any subsequence geoprocessing tasks with the data.</p>
+
+<p>In this case, the important thing to note is Geographic Coordinate System is "GCS_North_American_1983" and the datum is "D_North_American_1983." The <strong>SRID</strong> for this CRS is defined as <strong>EPSG: 4269</strong>.</p>
+
+<p>Let's now add this Shapefile layer (<em>StateAreas-KY-OH-IN.shp</em>) to QGIS. There are variety of ways to open a Vector file in Q:</p>
+
+<ul>
+<li>select <strong>Layer > Add Layer > Add Vector Layer</strong> from the menubar at the top of the screen and then <strong>Browse</strong> to the specific file within the bundled Shapefiles ending with the <em>.shp</em> or <em>.zip</em> extension</li>
+<li>click on the <strong>Add Vector Layer</strong> icon in the left-hand toolbar and then <strong>Browse</strong> to find that file.</li>
+<li>drag the file with the <em>.shp</em> or <em>.zip</em> extension from the directory into the Q application and drop within the <strong>Layers</strong> panel.</li>
+</ul>
+
+
+<p>QGIS will display the extent of the features contained within the Shapefile. Ok, add the the remaining layers from the <em>LessonData</em> folder. Now we should see three states and with five other layers.</p>
+
+<p><img src="module-01-graphics/q03-layers-in-qgis.png" alt="Data layers loaded in QGIS" /> <br/>
+Figure 04. Six layers for Kentucky, Ohio, and Indiana.</p>
+
+<p>This is a very common task using QGIS in a web mapping workflow. Often we're seeking out appropriate data, or we've been supplied with data with which to map. The first step is often to simply open it in QGIS and have a look at it, both in terms of its spatiality and the associated data attributes. Here we see dots; which is not super interesting.</p>
+
+<p>Next right-click on the <strong>StateAreas-KY-OH-IN</strong> layer and choose <strong>Open Attribute Table</strong>. This is another very common task you'll be repeating throughout this course. We often do this first to inspect the data attributes associated with the vector features. In this case, we can assume the meaning of various data attributes such as the name of the state, the population in 2010, the state FIPS ID, etc. Of course, explore the provided metadata for each layer to understand what these data attributes mean.</p>
+
+<p><img src="module-01-graphics/q04-attribute-table.png" alt="Inspecting the data attributes of a vector layer" /><br/>
+Figure 05. Inspecting the data attributes of a vector layer</p>
+
+<p><a name="filtering-attributes-in-the-qgis-layers-panel"></a></p>
+
+<h1>Filtering attributes in the QGIS Layers Panel</h1>
+
+<p>While we'll address more robust methods of interrogating your spatial in the next section using DB Manager and SQL, we have an easy and effective way to filter features in QGIS. You can access the <strong>Query Builder</strong> by right-clicking the layer in the <strong>Layers Panel</strong> and selecting the <strong>Filter...</strong>. This presents an dialog where you can execute a <strong>Query</strong>, a properly structured SQL expression that returns features that meet our selection criteria.</p>
+
+<p>The Query Builder interface will create a properly formatted expression if you just click the fields, values, and operators you need. You can test your query before you execute it, which will return the number of matching rows. You cannot delete any data using this filter function so practice away! To help build your expression, attribute fields values can be accessed with the <strong>All</strong> option.</p>
+
+<p>Let's look at some examples. If you wanted to filter only Kentucky urban areas from the layer "UrbanAreas-KY-OH-IN", then we would issue the following query:</p>
+
+<pre><code> "state" = 'KY'
+</code></pre>
+
+<p>Why don't we have all urban areas in Kentucky? After inspecting the attributes, we find that the <code>state</code> field has values for urban areas that span multiple states. We need a query that captures all possibilities:</p>
+
+<pre><code>"state" LIKE '%KY%'
+</code></pre>
+
+<p>Let's look at the <code>LIKE</code> operator and the <code>%</code> and <code>_</code> wildcards in the above expression. The <code>LIKE</code> operator does pattern matching and the <code>%</code> wildcard will match anything before or after 'KY'. The <code>_</code> wildcard matches any single character. Some examples will clarify how this works.
+<code>LIKE '_Him_'</code> matches 'sHim', 'SHimd', and 'Him', but not 'him'.
+<code>LIKE '%olo%'</code> matches 'Rolo time after dinner', 'how was that rolo', and 'olo' but not 'old'.</p>
+
+<p>We have other options to selecting features. The <code>In</code> operator allows us to select multiple values explicitly:</p>
+
+<pre><code>"state" in ('KY','KY-IN','KY-OH-IN')
+</code></pre>
+
+<p>This Query Builder uses common operators in the Structured Query Language (SQL) <code>Where</code> clause expression. You can learn more about these operators and experiment with them on the <a href="https://www.w3schools.com/SQl/sql_where.asp">W3Schools SQL tutorial</a>. If you want more exposure to SQL, you can explore the following sections on spatial databases.</p>
+
+<p>Finally, let's filter all of our layers to show only Kentucky features:</p>
+
+<p><img src="module-01-graphics/q17-map-layers.png" alt="Four map layers in QGIS Map Canvas" /> <br/>
+Figure 5.18: Four map layers in QGIS Map Canvas</p>
+
+<p><a name="spatial-databases-and-the-db-manager"></a></p>
+
+<h1>Spatial databases and the DB Manager</h1>
+
+<p style="padding:20px;background-color:#ffd9fe;">In many modules we present how to do analysis with SQL in spatial databases. These sections are optional and we show how to accomplish the same analysis through other methods in QGIS. For example, the following section explores how to filter data. While we can perform the same analysis without SQL, the advantages of learning of how to work in spatial databases are numerous, which we will discuss as we move through the modules. </p>
+
+
+<p>If you opened the attribute tables for all layers, you should appreciate how much information is provided here. To manage this data, we will create a SpatiaLite database and add these layers. Essentially we are importing many Shapefiles into a single database. What are the advantages of this?</p>
+
+<p>While Shapefiles are widely used and a de facto standard, they are a legacy data format. Let's point out a few problems with the Shapefile.</p>
+
+<ul>
+<li>A Shapefile is a multi-file format and hard to manage without a GIS application, e.g., imagine renaming a Shapefile in your OS finder or explorer. A Shapefile requires at least three files, but over the years many other files have been 'glued on.' Now imagine a project with a dozen layers to manage!</li>
+<li>The <em>.dbf</em> dBASE file has serious constraints and hard to edit outside of a GIS application (in fact few other apps use a <em>.dbf</em> file). Field names are limited to 10 characters and field data types are are only text, integer, and float (but you need to specify how many decimal points).</li>
+</ul>
+
+
+<p>Our workflow will be to convert the Shapefile to a more useful format. We'll focus on two formats; the spatial database and the GeoJSON format. We'll explore the latter format in more detail in a different section.</p>
+
+<p><a name="popular-open-source-spatial-databases"></a></p>
+
+<h2>Popular, open source spatial databases</h2>
+
+<p>A spatial database stores geometry in a table and provides spatial functions to analyze and process that geometry. In the open source world, we have two popular spatial databases, <a href="http://www.postgis.net/">PostGIS</a> and <a href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite</a>. Both share the <a href="https://trac.osgeo.org/geos/">GEOS Library</a> (Geometry Engine, Open Source) to do spatial functions, like calculate areas of polygons and intersecting layers based on spatial proximity. They both use SQL (Structured Query Language) to access these functions and other data management operations, which can be scripted, shared, and reused as plain text files.</p>
+
+<p>While we call these spatial databases PostGIS and SpatiaLite, they are actually extensions to popular open source databases. PostGIS extends <a href="https://www.postgresql.org/">PostgreSQL</a> and SpatiaLite extends <a href="http://www.sqlite.org/">SQLite</a>. While both databases are free and open source software, full-featured, share the same functions, and are natively supported in QGIS, we have some notable differences.</p>
+
+<ul>
+<li><p><strong>PostGIS/PostgreSQL</strong> is the preferred spatial database, but it is more difficult to install and setup, server-based (requires a service to continuously run on a computer), and not as portable. That said, if you want to work on big data, you will gain a lot of great experience installing and running this spatial database. PostGIS supports the raster data type and analysis. Find the installation programs and instructions with our <a href="https://newmapsplus.github.io/map671/module-01/jumpstart">installation guide</a>.</p>
+
+<ul>
+<li>Important Mac OS note: If you are on a Mac exclusively and don't use a virtual machine to host a Windows OS, then you must use PostGIS instead of SpatiaLite in DB manager.</li>
+</ul>
+</li>
+<li><p><strong>SpatiaLite/SQLite</strong> is a server-less file-based format that is easily shared and doesn't require any additional software installation. SpatiaLite is not maintained and updated as well as PostGIS, so it is better suited for basic data analysis and storage. We'll discover that after importing our layers in SpatiaLite, we'll have a very clean data hygiene for our GIS projects. SpatiaLite does not support raster data.</p></li>
+</ul>
+
+
+<p>We'll mostly use SpatiaLite, because we can share datasets easily, but the SQL statements we execute can be done in both databases. It is easy to import/export datasets between two different databases.</p>
+
+<p>The main tool we'll use to manage our databases is QGIS's DB Manager. Later in the course when we visit CARTO online mapping, we will use the same SQL on CARTO's database. First, we must create and connect our database.</p>
+
+<p><a name="create-spatailite-database"></a></p>
+
+<h2>Create SpataiLite database</h2>
+
+<p>Open QGIS's <strong>Browser Panel</strong> and right+click the <strong>SpatiaLite > Create Database</strong>.</p>
+
+<p><img src="module-01-graphics/q05-create-db.png" alt="Creating new SpatiaLite database" /><br/>
+Figure 06. Creating new SpatiaLite database</p>
+
+<p>Navigate to your lesson data directory and give the database a meaningful name. Use dashes for spaces.</p>
+
+<p><img src="module-01-graphics/q06-name-db.png" alt="Name and save new database" /><br/>
+Figure 07. Name and save new SpatiaLite database</p>
+
+<p>After you create the new database, it will be automatically connected in your <strong>Browser Panel</strong>. If you have other .sqlite databases, you can connect them here.</p>
+
+<p><img src="module-01-graphics/q07-new-db.png" alt="Connected new SpatiaLite database" /><br/>
+Figure 08. Connected new SpatiaLite database</p>
+
+<p>We now have a new database, but in order to use it we need to launch QGIS's DB Manager.</p>
+
+<p><a name="qgiss-db-manager"></a></p>
+
+<h2>QGIS's DB Manager</h2>
+
+<p>Find the manager in <strong>QGIS's menu > Database > DB Manager</strong> and click to open. You'll find four types of data that can be connected in DB Manager.</p>
+
+<ul>
+<li><strong>Geopackage</strong> is relatively new standard that can store many types of data (raster, vector, other project files) and is designed to share with other GIS platforms, like ESRI's ArcGIS.</li>
+<li><strong>PostGIS</strong> connected databases.</li>
+<li><strong>SpatiaLite</strong> connected databases. Expand it and you should your recently created database.</li>
+<li><strong>Virtual Layers</strong> are layers in QGIS's <strong>Layers Panel</strong> that we created in the current session.</li>
+</ul>
+
+
+<p><img src="module-01-graphics/q08-fresh-db.png" alt="Connected new SpatiaLite database" /><br/>
+Figure 09. Fresh SpatiaLite database tables</p>
+
+<p>Every new SpatiaLite database has a few tables included by default. Expand your new database and let's inspect what we have. These three tables are system tables and most often we do need mess with them.</p>
+
+<ul>
+<li><strong>ElementaryGeometries</strong> help SpatiaLite handle complex features like multi-polygons, e.g., the state of Hawaii can be represented as multiple polygons but be only one record in our table.</li>
+<li><strong>spatial_ref_sys_aux</strong> is a metadata table that defines SRID coordinate systems from the EPSG catalog.</li>
+<li><strong>spatial_ref_sys_all</strong> is another metadata table and is <strong>View</strong> (an SQL statement executed during creation) that defines the specific coordinate system parameters using the <strong>PROJ</strong> library.</li>
+</ul>
+
+
+<p>Select the <strong>Info</strong> tab for your database. It provides useful information for your database, like the name and location, SQLite version, and the included libraries supporting the spatial database, i.e. GEOS and PROJ. If you select tables in your database, you can get details like number of rows, fields, and data types of fields. We have no spatial data in our database, so let's add some!</p>
+
+<p><a name="add-data-to-db-manager"></a></p>
+
+<h3>Add data to DB Manager</h3>
+
+<p>Make sure you have layers in your QGIS's <strong>Layers Panel</strong>.</p>
+
+<p><img src="module-01-graphics/q09-add-data.png" alt="Add data to database" /><br/>
+Figure 10. Add data to database</p>
+
+<p>Click the <strong>Import Layer</strong> button and select your streams layer. We'll repeat this for each layer, but we need to aware of settings the import utility  presents us.</p>
+
+<p><img src="module-01-graphics/q10-add-data-parameters.png" alt="Settings for importing data" /><br/>
+Figure 11. Pay close attention to these settings!</p>
+
+<p>After you select the layer you want to import, click the <strong>Update options</strong> which will populate the import parameters with correct default settings. Let's take a look at each parameter.</p>
+
+<ul>
+<li><strong>Output table</strong> provides us the name of table (layer) in our database. The <strong>Schema</strong> (the user-based set of rules that defined how databases can be altered) option is not available to SpatiaLite databases.</li>
+<li><strong>Primary key</strong> provides the default name, "id," that uniquely identifies with an integer number for each record in the table.</li>
+<li><strong>Geometry column</strong> provides the default name, "geom," that stores the geometry for each feature.</li>
+<li><strong>Source SRID</strong> defines the coordinate system of the incoming layer. We should never change this number!</li>
+<li><strong>Target SRID</strong> defines the coordinate system of the new layer in our database. We often will change this depending on what scale we are mapping and the purpose of project. We'll discuss this later.</li>
+<li><strong>Encoding</strong> allows us to change the default encoding of our text data (how characters are defined and stored). UTF-8 is the standard.</li>
+<li><strong>Replace destination table (if exists)</strong> will allow us to overwrite existing tables and is good for managing databases.</li>
+<li><strong>Create single-part geometries instead of multi-part</strong> will break multi-part features into separate records and copy their field values into the new records. Imagine Hawaii as a single record in a database with fields for total area of state and population. If we break this into single-part geometries, every island will be a new record with the same attributes for area and population. This could certainly add confusion in the resulting table.</li>
+<li><strong>Convert field names to lowercase</strong> is available for PostGIS databases, but not for SpatiaLite</li>
+<li><strong>Create spatial index</strong> should be enabled and will accelerate the speed of querying features, but might slow import.</li>
+</ul>
+
+
+<p>Click <strong>OK</strong> and repeat for the remaining layers. After you finished your data import, right+click your database and <strong>Re-connect</strong> to refresh your tables. If you click <strong>Remove</strong> you'll remove the connection in QGIS, but not the database. If you accidentally remove your database, just right+click <strong>SpatiaLite</strong> to <strong>Add new connection</strong> and navigate to the database you created earlier.</p>
+
+<p>Explore your database and inspect your tables. Notice the unique icons for your different geometry types. The <strong>Info</strong>, <strong>Table</strong>, and <strong>Preview</strong> tabs provide useful information and should be fairly easy to understand.</p>
+
+<p><img src="module-01-graphics/q11-inspect-tables.png" alt="Settings for importing data" /> <br/>
+Figure 12: Inspect your database tables</p>
+
+<p>The <strong>Triggers</strong> section for tables are commands that are executed when certain processes are committed, like adding new features. These are database system commands and shouldn't be deleted.</p>
+
+<p>What can be deleted? The duplicate Shapefiles! If your database works, the Shapefiles are redundant and can be removed. Also remove them from the QGIS <strong>Layers Panel</strong>. Keep the metadata, though, since it's still useful.</p>
+
+<p><a name="example-sql-statements-for-this-lesson"></a></p>
+
+<h2>Example SQL statements for this lesson</h2>
+
+<p>Before we start executing SQL, let's find example statements we can use during the lesson. If you haven't changed table names, you should be able to copy these statements and paste them into DB Manager. They should run as expected since they are simply instructions. That's a benefit of using SQL.</p>
+
+<p>We offer two versions of SQL statements each week, one for SpatiaLite and the other for PostGIS, via GitHub Gists. Find your flavor of SQL for the first lesson in the following links. This week this really no difference between the two:</p>
+
+<ul>
+<li><a href="https://gist.github.com/boydx/e2494ac13dd592658d9f01dc3309a273">PostGIS</a></li>
+<li><a href="https://gist.github.com/boydx/04a9af2aa83143856f7ea039265895b8">SpatiaLite</a></li>
+</ul>
+
+
+<p><a name="sql-in-the-db-manager"></a></p>
+
+<h2>SQL in the DB Manager</h2>
+
+<p>Let's say we're going to make a map of Kentucky hydrography and urban areas. How can we prep the data in DB Manager before we add them to the <strong>Layer Panel</strong>? For example, we need to select just data for Kentucky and use pertinent attributes to style our layers.</p>
+
+<p>We will discover that we can use SQL (Structure Query Language) to perform a lot of useful tasks in DB Manager. While this course is not a class in SQL coding, we will learn by example executing SQL on our databases. Consult this <a href="http://www.w3schools.com/sql/default.asp">SQL reference and tutorial</a> to experiment with our SQL examples.</p>
+
+<p>Let's launch the <strong>SQL window</strong>, the second button from the left in DB Manager. It doesn't matter which table you have selected; we can access all tables from the SQL window.</p>
+
+<p><img src="module-01-graphics/q12-sql-window.png" alt="SQL window" /> <br/>
+Figure 13: SQL window</p>
+
+<p>This is the default SQL window where we can interrogate our data. Notice that we can <strong>Store</strong> queries, but they are only saved during this session. They are deleted once we close QGIS. Please use your code editor to save your effective queries.</p>
+
+<p><img src="module-01-graphics/q13-sql-window.png" alt="SQL window" /> <br/>
+Figure 14: SQL window to execute queries</p>
+
+<p>A <strong>Query</strong> is a properly structured <strong>SQL Statement</strong> that acts on our data. The most basic query is to return all records and columns in a table:</p>
+
+<pre><code>select * from "UrbanAreas-KY-OH-IN"
+</code></pre>
+
+<p>Use this query in your SQL window and hit <strong>Execute</strong>.</p>
+
+<p><img src="module-01-graphics/q14-sql-query.png" alt="QL query to select all records and columns" /> <br/>
+Figure 15: SQL query to select all records and columns</p>
+
+<p>You should see all records and columns returned in the DB Manager's second window. This is a selection of our data and we could add it to QGIS <strong>Map Canvas</strong> as a Virtual Layer. Let's explore some more SQL to manage our data before we start mapping.</p>
+
+<p>A few notes about syntax.</p>
+
+<ul>
+<li>Since our table has dashes in the name, we need to enclose them in quotes. We could use single quotes, too. This is only true in SQLite databases. If we replaced the dashes with the underscore character, we wouldn't need quotes. PostGIS database field names can't have dashes or capitalized characters and always uses quotes.</li>
+<li>SQL statements are case insensitive but field values are case sensitive, e.g, 'Kentucky' doesn't equal 'KENTUCKY'.</li>
+<li>We can use spaces, tabs, and comment lines to format our queries to make them easier to read. The statement below is nicely formatted with comments:</li>
+</ul>
+
+
+<pre><code>/* Comments are good to add */
+
+/* Query to select all records and columns */
+
+select  
+    * 
+from 
+    'UrbanAreas-KY-OH-IN' --table name (yes, another comment!)
+</code></pre>
+
+<p>OK, let's explore some queries to inspect and sort our data. You should be able to copy and paste these statements if your table name matches mine. The goal of the SQL statement will be given in a comment line.</p>
+
+<pre><code>/* Sort table by city name, descending */
+
+select 
+    * 
+from 
+    'UrbanAreas-KY-OH-IN'
+order by 
+    "ua_label" DESC
+</code></pre>
+
+<p>Try swapping <code>DESC</code> with <code>ASC</code> for alphabetically sorting table. <code>ASC</code> is default sort method.</p>
+
+<pre><code>/* Sort table by city name in Kentucky */
+
+select 
+    * 
+from 
+    'UrbanAreas-KY-OH-IN'
+where 
+    "state" = 'KY'
+order by 
+    "ua_label" 
+</code></pre>
+
+<p>In most cases, we don't need all columns in our output table. With SQL we can specify which column we want in the output table. This will certainly help keep our data 'slim and trim' for easier management both for cartography and for online sharing.</p>
+
+<pre><code>/* Sort table by city name in Kentucky and return only columns we want to map */
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    ua_label as "City_Name",
+    /* change column names in output table with the "AS" operator */
+    gis_acres
+from 
+    'UrbanAreas-KY-OH-IN'
+where 
+    "state" = 'KY'
+order by 
+    "ua_label" 
+</code></pre>
+
+<p><a name="field-data-types"></a></p>
+
+<h2>Field data types</h2>
+
+<p>SQLite, the database used by SpatiaLite, is very flexible about column data types. If you've work in other databases, you've probably struggled with specifying data types, e.g., should it be <em>float</em>, <em>real</em>, <em>text</em>, etc. <a href="http://www.sqlite.org/datatype3.html">Datatypes In SQLite Version 3</a> are fluid and can be modified easily. Regardless of the data types that came with your layers during import, we have five basic data storage classes:</p>
+
+<ul>
+<li><strong>Integer</strong> values contain only whole numbers.</li>
+<li><strong>Text</strong> values contain alphanumeric characters, maybe all numbers, and don't have any length restrictions, e.g.,number of characters.</li>
+<li><strong>BLOB</strong> are Binary Large Objects. That's how layer geometry is stored and can't be displayed in the table.</li>
+<li><strong>Real</strong> values are numbers with ratios and are stored as 8-byte floating point numbers.</li>
+<li><strong><em>NULL</em></strong> values are not known. Unlike zero (all zeros are the same) NULLs are not equivalent (no two NULLs are equal).</li>
+</ul>
+
+
+<p>In PostgreSQL, data types are <a href="https://www.postgresql.org/docs/9.6/static/datatype.html">numerous</a>. The above data types of <em>real</em>, <em>text</em>, and <em>integer</em> are used, but in general we use the following types most:</p>
+
+<ul>
+<li><strong>Integer</strong> values contain only whole numbers.</li>
+<li><strong>Text</strong> values contain alphanumeric characters, maybe all numbers, and don't have any length restrictions, e.g.,number of characters.</li>
+<li><strong>Numeric</strong> values are numbers with ratios and are exact values, unlike the <em>real</em> type in PostgreSQL.</li>
+</ul>
+
+
+<p>The reason there are so many types is to maintain performance on massive databases. For example, the <em>real</em> data type has less precision than <em>float</em> or <em>numeric</em> and requires less database storage space. If we don't need to detail, then don't build it into the database.</p>
+
+<p>Our databases will manage our data types pretty well, though sometimes we have small problems in our input data that we need to address. Let's sort by size of urban area as given by the <em>gis_acres</em> field. Switch back to the <strong>Info</strong> tab for this layer and notice the data type for this field is <em>TEXT</em>. This <em>TEXT</em> field will prevent us from correctly sorting our table. Try out the following SQL add see what happens:</p>
+
+<pre><code>/* Sort table by gis_acres in Kentucky and return only columns we want to map */
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    ua_label as "City_Name",
+    /* change column names in output table with the "AS" operator */
+    gis_acres
+from 
+    'UrbanAreas-KY-OH-IN'
+where 
+    "state" = 'KY'
+order by 
+    gis_acres 
+</code></pre>
+
+<p>It sorted alphabetically (e.g., 11 comes before 9), not smallest to largest value! Our database has many functions to alter our data during a <code>SELECT</code>. Let's use the <code>CAST</code> function to cast our data to a desired type. SQL functions are formatted in the following way:</p>
+
+<p><code>function_name(input and parameters)</code></p>
+
+<p>The <code>CAST</code> requires a field name, and <code>AS</code> operator, and data type.</p>
+
+<p>Execute the following SQL:</p>
+
+<pre><code>/* Sort table by gis_acres in Kentucky and return only columns we want to map */
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    ua_label as "City_Name",
+    /* change column names in output table with the "AS" operator */
+
+    cast(gis_acres as real) as "Acres"
+    /* the cast function changes a field data type */
+from 
+    'UrbanAreas-KY-OH-IN'
+where 
+    "state" = 'KY'
+order by 
+    Acres DESC
+    /* had to change the order by field name because the cast field name was changed */
+    /* The largest city in Kentucky is Louisville. Is it in this list? */
+</code></pre>
+
+<p>We all know Louisville (Kentucky Derby, Fried Chicken, and the Falls of the Ohio!) but does show up in our results? Why not? The <code>WHERE</code> clause selects only records where the column "state" is exactly 'KY'. Of the three largest cities in Kentucky, two sprawl into other states. Louisville is actually in 'KY-IN'. How can we make a <code>WHERE</code> clause that selects records with 'KY' and any other state in the name? Let's look at the <code>LIKE</code> operator and the <code>%</code> and <code>_</code> wildcards in the following statement:</p>
+
+<p><code>WHERE "state" LIKE '%KY%'</code>
+The <code>LIKE</code> operator does pattern matching and the <code>%</code> wildcard will match anything before or after 'KY'. The <code>_</code> wildcard matches any single character. Some examples will clarify how this works.
+<code>LIKE '_Him_'</code> matches 'sHim', 'SHimd', and 'Him', but not 'him'.
+<code>LIKE '%olo%'</code> matches 'Rolo time after dinner', 'how was that rolo', and 'olo' but not 'old'.</p>
+
+<p>OK, one last query before we start adding layers to our map.</p>
+
+<pre><code>/* Sort table by gis_acres for largest urban areas in Kentucky and include those urban areas that span into other states. */
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    ua_label as "City_Name",
+    /* change column names in output table with the "AS" operator */
+
+    cast(gis_acres as real) as "Acres"
+    /* the cast function changes a field data type */
+from 
+    'UrbanAreas-KY-OH-IN'
+where 
+    "state" like '%KY%'
+    /* include urban areas that extend into other states */
+order by 
+    Acres DESC
+    /* had to change the order by field name because the cast field name was changed */
+    /* The largest city in Kentucky is Louisville. Is it in this list? */
+</code></pre>
+
+<p><img src="module-01-graphics/q15-sql-query.png" alt="Output table from query" />  <br/>
+Figure 16: Output table from above query</p>
+
+<p><a name="use-a-code-editor-to-save-and-edit-your-sql"></a></p>
+
+<h2>Use a code editor to save and edit your SQL</h2>
+
+<p>As you can see, we have a lot of functionality with simple text. As we journey through New Maps Plus and online mapping, we use more and more code to produce content. It would be good to start collecting your successful SQL commands. Use a code editor like <a href="http://brackets.io">Brackets</a> to save your queries as <code>.sql</code> text files.</p>
+
+<p><a name="exporting-sql-tables-as-layers-in-map-canvas"></a></p>
+
+<h2>Exporting SQL tables as layers in Map Canvas</h2>
+
+<p>In DB Manager we can save our successful queries to QGIS's Map Canvas in two ways:</p>
+
+<ul>
+<li><strong>Load as new layer</strong> will create a Virtual Layer in Map Canvas. This does not modify your database. The only settings you need to change are the <strong>Layer name</strong>  (can have spaces, dashes, and mixed case) and selecting the <code>id</code> and <code>geom</code> columns. These need to be available for mapping.</li>
+</ul>
+
+
+<p><img src="module-01-graphics/q16-load-layer.png" alt="Load a new layer into QGIS" /> <br/>
+Figure 17: Load a new layer into QGIS Map Canvas</p>
+
+<ul>
+<li><strong>Create a view</strong> modifies the database by adding a new table view. It is the button to the right of the <strong>Execute</strong> button. You give your query a <strong>View name</strong> (cannot contain spaces, capitalized characters, or dashes). Views are stored queries and are dynamically produced when you connect to the database.</li>
+</ul>
+
+
+<p><a name="export-three-additional-layers"></a></p>
+
+<h2>Export three additional layers</h2>
+
+<p>Let's make a map of waterways and urban areas for Kentucky. We'll build some SQL statements to extract what only what we need for final cartography. Here are the layers we will query:</p>
+
+<ul>
+<li>NHD_Waterbodies-KY-OH-IN</li>
+<li>StateAreas-KY-OH-IN</li>
+<li>NHD_Streams-KY-OH-IN</li>
+</ul>
+
+
+<p><a name="selecting-kentucky-state-polygon"></a></p>
+
+<h3>Selecting Kentucky state polygon</h3>
+
+<pre><code>/* Select Kentucky state polygon with population and square miles*/
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    name,
+    pop,
+    sq_miles
+from 
+    'StateAreas-KY-OH-IN'
+where 
+    "name" = 'Kentucky'
+</code></pre>
+
+<p>If you have a successful query, <strong>Load as a new layer</strong>.</p>
+
+<p><a name="selecting-kentucky-waterbodies"></a></p>
+
+<h3>Selecting Kentucky waterbodies</h3>
+
+<pre><code>/* Select Kentucky waterbodies, which are lakes, swamps, and large rivers*/
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    name,
+    feature,
+    area_sq_mi
+from 
+    'NHD_Waterbodies-KY-OH-IN'
+where 
+    "state" like '%KY%'
+    /* rivers can span two states */
+</code></pre>
+
+<p>If you have a successful query, <strong>Load as a new layer</strong>.</p>
+
+<p><a name="selecting-kentucky-streams"></a></p>
+
+<h3>Selecting Kentucky streams</h3>
+
+<pre><code>/* Select Kentucky streams and attributes for mapping*/
+
+select 
+    /* select columns for output table */
+    id,                         
+    geom,
+    state,
+    name,
+    feature,
+    length_mi,
+    strahler as "Stream_Order"
+    /* Column showing size of stream */
+from 
+    'NHD_Streams-KY-OH-IN'
+where 
+    "state" like '%KY%'
+    /* rivers can span two states */
+and
+    "Stream_Order" &gt; -999
+    /* Use the "AND" operator to get streams in Kentucky and are on the stream network */
+order by 
+    "Stream_Order" DESC
+</code></pre>
+
+<p>If you have a successful query, <strong>Load as a new layer</strong>. This last query was based on the Metadata provided with this data. In the <code>NHD_Streams.txt</code> we find this definition of the attribute "Strahler":</p>
+
+<pre><code>Attribute:
+        Attribute_Label: Strahler
+        Attribute_Definition: 
+            A number representing the order of the stream 
+            using the Strahler stream-order classification system, 
+            in which first-order streams have no tributaries, 
+            second-order streams begin at the  confluence of two first 
+            order streams, third-order streams begin at the confluence 
+            of two second-order streams and so on.  If a lower-order 
+            stream flows into a higher-order stream, the stream 
+            order of the higher-order stream does not increase.
+        Attribute_Definition_Source: Dingman, S.L., 2002, Physical Hydrology, 2nd Ed.
+       Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 1
+            Range_Domain_Maximum: 7
+        Attribute_Domain_Values:
+          Enumerated_Domain:
+            Enumerated_Domain_Value: -998
+            Enumerated_Domain_Value_Definition: 
+              The feature is not part of the stream network and is outside the coastline.
+            Enumerated_Domain_Value_Definition_Source: National Atlas of the United States
+        Attribute_Domain_Values:
+          Enumerated_Domain:
+            Enumerated_Domain_Value: -999
+            Enumerated_Domain_Value_Definition: 
+              The feature is not part of the stream network and is inside the coastline.
+            Enumerated_Domain_Value_Definition_Source: National Atlas of the United States 
+</code></pre>
+
+<p>If you have four layers in QGIS's map canvas like shown below, you can close <strong>DB Manager</strong>. It's time to make a map!
+<img src="module-01-graphics/q17-map-layers.png" alt="Four map layers in QGIS Map Canvas" /> <br/>
+Figure 18: Four map layers in QGIS Map Canvas</p>
+
+<p><a name="why-is-kentucky-squashed-understanding-coordinate-systems-in-qgis"></a></p>
+
+<h1>Why is Kentucky squashed? Understanding coordinate systems in QGIS</h1>
+
+<p>We noted earlier that every spatial layer has a coordinate system. This information is used by a GIS or mapping application to determine how to display the spatial data. Within QGIS, both individual layers and the project as a whole will have a spatial reference setting.</p>
+
+<p>Double-clicking on the <strong>Kentucky state polygon</strong> layer within the <strong>Layers Panel</strong>, or right-clicking and choosing <strong>Properties</strong>, will open up the layer's <strong>Layer Properties</strong> window.</p>
+
+<p><img src="module-01-graphics/q18-layer-crs.png" alt="Checking the Spatial Reference System of a layer" /> <br/>
+Figure 19: The coordinate reference system of the layer. NEVER CHANGE IT HERE.</p>
+
+<p>The CRS of this layer is "EPSG: 4269", also called "NAD83", which is a Geographic Coordinate System (GCS) and only defines the shape of the sphere-like earth. It doesn't project the layer to a 2D plane and QGIS has defaulted to a <strong>equirectangular projection</strong>, where lines of longitude and latitude are equally spaced.</p>
+
+<p>Inspect all layers' CRS and find that they are all the same. This is no surprise, since we added them to database with all the same CRS. QGIS can project all of our layers simultaneously to a better representation of local area. "EPSG: 4269" is useful for storing continental-scale datasets and is one of the official CRS used by the federal and state government agencies. It is an "unprojected" CRS  with the idea that the end user will project the data to a CRS appropriate for the area mapped.</p>
+
+<p><a name="project-all-layers-on-the-fly"></a></p>
+
+<h2>Project all layers 'on the fly'</h2>
+
+<p>Click on the <strong>Project menu > Project Properties</strong>. This is where the CRS for the entire project is set. Choose the <strong>CRS</strong> tab (left-hand side). Depending on what your default settings are for QGIS, the project's coordinate reference system may not match with the layer we just imported. Find "EPSG: 3089" CRS, which is the official CRS for Kentucky. Notice the checkbox at the top of the menu box, where is says "Enable 'on the fly' CRS transformation".</p>
+
+<p><img src="module-01-graphics/q19-project-crs.png" alt="QGIS Project Properties window displaying CRS information" />
+Figure 20. Project Properties window enable 'on the fly' transformation</p>
+
+<p>When checked, this feature causes all of your layers to appear to be projected in the project CRS regardless of what they're actually projected in. This can be helpful when loading layers with different spatial reference systems. That's right, you don't necessarily need all your layers and project's spatial reference system to match! However, if you're going to do any spatial analysis (such as using one layer to clip out features from another), the layers have to actually be in the same CRS (and not just appear to be "on the fly"). We'll cover one way to properly and permanently transform CRSs in the next section.</p>
+
+<p><a name="converting-layers-to-geojson-format-with-a-projection-transformation"></a></p>
+
+<h2>Converting layers to GeoJSON format with a projection transformation</h2>
+
+<p>Let's say that now we wish to export or copy spatial layers into a format more suitable for a web mapping. We use the GeoJSON format. GeoJSON is a widely embraced open interchange format for encoding geographic data (points, lines, polygons) and used within such mapping libraries as <a href="https://www.mapbox.com">Mapbox.js</a>, <a href="http://leafletjs.com/">Leaflet</a>, <a href="https://CARTO.com">CARTO</a>, <a href="http://d3js.org/">Data Driven Documents (D3)</a>. GeoJSON is a convenient way to store your spatial data within a single text file and used it within QGIS or a web map.</p>
+
+<p>The GeoJSON has additional advantages over the Shapefile and SpatiaLite formats. The GeoJSON format can store multiple vector geometry types in one file (e.g., point and polygon in the same file. Shapefiles can store only one type of geometry in a file). GeoJSON is readable/editable with a plain text editor, e.g. such as in Brackets. Neither the SQLite nor Shapefile have this option. GeoJSON can have long field names, but Shapefiles have a 10-character limit as noted earlier.</p>
+
+<p>When we convert to a GeoJSON, we can permanently transform the data's spatial reference information from the current GCS_North_American_1983, i.e., NAD83, to one more common in the web mapping environment: WGS84.</p>
+
+<p>To perform the data conversion and spatial reference transformation:</p>
+
+<ul>
+<li>Right-click on each layer (we'll do the <em>Kentucky streams</em> layer) and choose <strong>Save As...</strong>.</li>
+<li>Change the format to <strong>GeoJSON</strong>.</li>
+<li>Click the <strong>Browse</strong> button to navigate to your data directory and provide a name for the new file. We'll give it the same name, and the file will be saved as <em>Kentucky_streams.geojson</em>.</li>
+<li>Change the <strong>CRS</strong> to "EPSG:4326 - WGS84"</li>
+<li>Scroll down within the window to find the <strong>COORDINATE_PRECISION</strong> field underneath <strong>Layer options</strong> and adjust this number to 4 (the default coordinate precision value of 15 is unnecessary and bloats the size of our file).</li>
+<li>Disable the <strong>Add saved file to map</strong> option checked and click <strong>OK</strong></li>
+<li>Note that you can omit unnecessary fields via the option <strong>Select fields to export and their export options</strong> to further reduce the size of the GeoJSON. Generally, when we create a GeoJSON for web mapping, we want to reduce the size of the file so that it downloads quicker. The easiest methods to reduce the size of a GeoJSON is reducing the coordinate precision and removing fields that are not used in the web map, e.g., will the field inform a popup window?</li>
+</ul>
+
+
+<p>QGIS then performs the format conversion as well as the projection transformation. This method is primary way we both permanently change the CRS of a layer and covert it to a new layer. The other way to perform a CRS transformation is when import (and export) layers to a spatial database.</p>
+
+<p><img src="module-01-graphics/q20-save-to-new-layer.png" alt="Save vector layer as..." /><br/>
+Figure 21. Save vector layer as...</p>
+
+<p>To briefly introduce the GeoJSON format, examine the file produced by QGIS in your folder/directory structure. The beautiful part of the GeoJSON format, compared to other formats, is that it is a single, plain text file. Go ahead and open it up using Brackets.</p>
+
+<p>While it's not initially a reading-friendly collection of text, careful examination of it's contents reveal a simple standard encoding all the geographic features. We can see, for instance, the file encodes the output spatial reference information we specified in QGIS (<em>"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },</em>), as well as the data attribute information encoded as key/value pairs that we saw earlier within the Attribute Table.</p>
+
+<p>Before submitting a GeoJSON, load the file into <a href="http://geojson.io">http://geojson.io</a>. If it looks correct on this site, then you have a properly formatted GeoJSON.</p>
+
+<p><a name="editing-geojson-layers"></a></p>
+
+<h3>Editing GeoJSON layers</h3>
+
+<p>If you're using QGIS on Windows or Mac OS you can now edit GeoJSON layers, such as adding fields new fields or geometric objects. When create a GeoJSON, you do not need to reduce the coordinate precision. You should change the CRS to a local coordinate system, e.g., in Kentucky we would use "EPSG: 3089".</p>
+
+<p><a name="creating-a-thematic-category-map-in-qgis"></a></p>
+
+<h1>Creating a thematic category map in QGIS</h1>
+
+<p>For the remainder of this module, we'll continue to explore the QGIS interface while making a simple map of hydrography in Kentucky. We'll prepare the map for export using the QGIS Print Composer. Continuing from the steps in the previous sections, you should have four layers in the proper CRS as shown here:</p>
+
+<p><img src="module-01-graphics/q21-stream-project.png" alt="Kentucky map in proper coordinate system and ready to style" />  <br/>
+Figure 22. Kentucky map in proper coordinate system and ready to style</p>
+
+<p><strong>Save</strong> your QGIS project now and save often!</p>
+
+<p><a name="styling-the-map-and-vector-features"></a></p>
+
+<h2>Styling the map and vector features</h2>
+
+<p>Let's now cover some basics of styling in QGIS.</p>
+
+<p>QGIS adds layers to the <strong>Layers Panel</strong> in the order in which you import them and renders them in the map canvas starting at the bottom of the <strong>Layers</strong>. Depending on the order in which you add your data files, this can result in some layers obscuring others. We want our layers arranged so that state outline renders first, then urban areas, streams and finally waterbodies. Drag and sort each layer to achieve this layering order.</p>
+
+<p>Next, let's set the <strong>Map Canvas</strong> background color. Let's experiment with light on dark color scheme. Go to <strong>QGIS menu > Project > Project Properties...</strong>. Select the <strong>General</strong> tab. Change the <strong>Background color</strong> to 5% black using the <strong>Select Color</strong> selector.</p>
+
+<p><img src="module-01-graphics/q22-five-percent-black.png" alt="Changing background color" />  <br/>
+Figure 23: Select Color picker to modify color</p>
+
+<p>QGIS selects a random color for each layer as you import them. To change a layer's color, right+click on the layer's name in the <strong>Layers Panel</strong> (just double-click the layer), in this case <em>Kentucky</em>, and select <strong>Properties</strong>. Select <strong>Style</strong> tab and <strong>Simple fill</strong> and make the polygon fill color a little less lighter than the background and the outline a lot lighter, but not 100% white. Let's try to build up colors and make a subtle luminous effect. Experiment with other settings, such as outline width and join style (beveled vs round corners).</p>
+
+<p><img src="module-01-graphics/q23-style-panel.png" alt="QGIS layer preferences window selecting style tab" /><br/>
+Figure 24. QGIS layer preferences window selecting Style tab</p>
+
+<p>Next, let's style the <em>Kentucky Urban Areas</em> layer. We'll remove the polygon outlines with the "No Pen" setting and give the layer some transparency to blend the with the background. Since this is a map about waterways, our urban layer should be "just a whisper." Consult this style setting:</p>
+
+<p><img src="module-01-graphics/q24-style-urban.png" alt="QGIS layer preferences window changing urban areas" /><br/>
+Figure 25. QGIS layer preferences window changing urban areas</p>
+
+<p>The stream layer has attributes that help visualize the network of major waterways, <em>Stream_Order</em>. The numbers indicate rank of streams on a network, the higher the number, the more branches up stream. In the layer's <strong>Style</strong> tab, select the method of symbology as <strong>Categorized</strong> with the column providing the categories as <em>Stream_Order</em>. While these are numbers, they only indicate rank and not magnitude. Click each symbol and change its color to <strong>#2f7fff</strong> (this is <a href="http://www.w3schools.com/colors/colors_picker.asp">hexadecimal color value</a> commonly used in web mapping applications) and make the line width increasingly thicker with higher rank. Let's say from 0.1 mm to 1.5 mm is the range of widths, though, feel free to experiment with these values.</p>
+
+<p><img src="module-01-graphics/q25-style-streams.png" alt="QGIS Style preferences for symbolizing streams by an attribute category" /><br/>
+Figure 26. QGIS Style preferences for symbolizing streams by an attribute category</p>
+
+<p>Note that layers' columns from SpatiaLite are all <em>TEXT</em> data types. We'll address this in the next module by creating new columns that are explicitly <em>NUMERIC</em>. If the data was presented as a numeric type, or if we were mapping quantities/magnitudes, we would graduate the thickness of the stream widths, which is automated in QGIS. For now, read more about <a href="http://axismaps.github.io/thematic-cartography/articles/color_schemes.html">using colors on thematic maps</a>.</p>
+
+<p>Since we've made a custom style, let's save it to our database. Click on the <strong>Style</strong> drop-down menu and <strong>Save Style > Save in database (spatialite)</strong> and call it "Stream style by Order":</p>
+
+<p><img src="module-01-graphics/q26-save-style.png" alt="Saving Style preferences for layers in a spatialite database" /><br/>
+Figure 27. Saving Style preferences for layers in a spatialite database</p>
+
+<p>Now, we'll finish our style on the <em>Kentucky waterbodies</em> layer. Open its <strong>Style</strong> and make the polygon outline the same color as your streams and the polygon fill a little lighter than the outline color, which is a traditional cartographic convention. Applying the color blue to water features is long standing convention and intuitive for most viewers. Many mappers make use of <a href="http://colorbrewer2.org/">ColorBrewer</a> to help them make good decisions when intuitive choices aren't obvious.</p>
+
+<p><img src="module-01-graphics/q27-style-waterbody.png" alt="Style the waterbody polygons" /><br/>
+Figure 28. Style the waterbody polygons</p>
+
+<p><a name="panning-and-zooming-your-styled-map"></a></p>
+
+<h2>Panning and zooming your styled map</h2>
+
+<p>Let's evaluate our styles by setting our scale and inspecting our line widths. The line widths we selected are in millimeter units and are the same regardless of the scale of the map. You might have noticed in the <strong>Style</strong> tab we could make our style units in map units, i.e., feet, but takes more experimentation to make look good. However, if you can use map units effectively it makes finishing a layout faster.</p>
+
+<p>So we know our data is optimized for 1:1,000,000-scale maps. Let's set our scale to that value in QGIS scale menu and then <strong>Lock</strong> it:</p>
+
+<p><img src="module-01-graphics/q28-scale-map.png" alt="Set Map Canvas scale" /><br/>
+Figure 29. Set Map Canvas scale</p>
+
+<p>Use the <strong>Magnifier</strong> to zoom to 400%, which is about the maximum resolution a viewer can see on a printed page. It is also the maximum zoom level for high-resolution GeoPDF maps. In this next section we'll set our page size to accommodate a 1:1,000,000 map of Kentucky.</p>
+
+<p>How does your line work look? I think my initial widths were too generous for the higher order streams. Revisit any layers' styles and change to new settings. It's always good to save the style to the database, too.</p>
+
+<p>If you get lost panning and zooming, we have a few ways to recenter our map. The easiest way is to right-click a layer that is the minimum extent of our desired area and <strong>Zoom to layer</strong>. This will change your <strong>Scale</strong> so you'll need to reset that value. The <strong>Spatial Bookmarks Panel</strong> will save desired zoom/pan views as convenient bookmarks that exported and imported in other projects:</p>
+
+<p><img src="module-01-graphics/q29-spatial-bookmarks.png" alt="Using spatial bookmarks to set desired views in QGIS Map Canvas" />  <br/>
+Figure: Using spatial bookmarks to set desired views in QGIS Map Canvas</p>
+
+<p>This is enough on styling for now. Let's move on to consider how to get this thematic map out of QGIS.</p>
+
+<p><a name="qgis-print-composer-to-export-a-finished-map"></a></p>
+
+<h1>QGIS Print Composer to export a finished map</h1>
+
+<p>We'll be using the Print Composer to prepare our map for export or print. Consult the QGIS <a href="https://docs.qgis.org/2.14/en/docs/user_manual/print_composer/print_composer.html">Print Composer</a> documentation for more details and explanation.</p>
+
+<p>Next, open up the QGIS Print Composer. This is where we'll layout our map and add the necessary map elements, like titles, a legend, scale, etc. To open Print Composer, go to <strong>Project</strong> in the top menu bar, then <strong>New Print Composer</strong>. You'll be asked to name this session, call it "Kentucky Streams".</p>
+
+<p><img src="module-01-graphics/q30-new-print-composer.png" alt="QGIS main window opening new Print Composer" /><br/>
+Figure 30. QGIS main window opening new Print Composer</p>
+
+<p>Print Composer offers a lot of options for laying out your map, we'll go through a few of the basic features.</p>
+
+<p><a name="adding-the-map-to-print-composer"></a></p>
+
+<h2>Adding the map to Print Composer</h2>
+
+<p>Let's now bring our map in by clicking the <strong>Add new map</strong> icon on the far left (or go to <strong>Layout > Add Map</strong>). The cursor will turn into crosshairs. Click and drag the cursor to draw a box. Starting at the top left corner of the white workspace, drag a box in which to place the map. You can change the size of the box once it's been created by dragging the sides.</p>
+
+<p>Visit the <strong>Composition</strong> tab and change the <strong>Page Size</strong> and <strong>Page Background</strong> color.</p>
+
+<p><img src="module-01-graphics/q31-composition-settings.png" alt="Map is displayed at too large a scale" /><br/>
+Figure 31. Setting map composition properties</p>
+
+<p>Next, select he <strong>Item properties</strong> tab and change verify the scale is 1:1,000,000 and change it if not. You might also need to <strong>Update preview</strong>. Use the <strong>Move item content</strong> tool to center your map in tis frame. A lot of options are available here to make a nice cartographic output, such as <strong>Grids</strong> and <strong>Overviews</strong>.</p>
+
+<p><img src="module-01-graphics/q32-item-settings.png" alt="Setting map item properties" />  <br/>
+Figure 32: Setting map item properties</p>
+
+<p>Once you've got it centered and scaled to your liking, check the box next to <strong>Lock layers for map item</strong> from within the  <strong>Item Properties</strong> panel.</p>
+
+<p><a name="adding-a-title-legend-and-theme"></a></p>
+
+<h2>Adding a title, legend, and theme</h2>
+
+<p>Now we'll add some basic map elements. To add a title, select the <strong>Add new label</strong> button. Drop and drag a new text box to add a title to your map. Give your map a meaningful title. Good map titles typically explain the what, where, when of the geography being depicted (you may have to consult the metadata for this information). For instance, in this case we'll write a title "Major waterways of Kentucky."</p>
+
+<p>Using the <strong>Item Properties</strong> options on the right side of the screen, you can change the content of the text box as well as alter the font. You'll want to choose a large font size for the text, for example,</p>
+
+<p><img src="module-01-graphics/q32-item-title.png" alt="A formatted title added to the map" /><br/>
+Figure 33. A formatted title added to the map</p>
+
+<p>Now use the <em>Add new label</em> to include such additional information as descriptions of the data, author name and date, and metadata information. Look in a layer's metadata for citation information. Start with:</p>
+
+<p>"Map prepared by Boyd Shearer for the Department of Geography
+January, 2016
+Software used: QGIS 2.18.3 on Ubuntu 16.04
+Data acquired from..."</p>
+
+<p>Next add a legend by clicking on the <strong>Add new legend</strong> icon and clicking and dragging in the space where you want the legend. In the <strong>Item Properties</strong> menu, unclick <strong>Auto Update</strong> under Legend Items and scroll down enough to see the menu bar below the list of legend items. To remove items from the legend we don't need, click on the item and then the <strong>negative</strong> icon. Adjust the background and font color to match your theme.</p>
+
+<p><img src="module-01-graphics/q32-item-legend.png" alt="Adjusting the legend" /><br/>
+Figure 34. Adjusting the legend</p>
+
+<p>Let's add a scale bar. The default units will be meters, but we can select "Feet" in the scale bar <strong>Item properties</strong>. Again, change the font and color to match your theme:</p>
+
+<p><img src="module-01-graphics/q33-item-scale.png" alt="Adjusting the scale bar" /><br/>
+Figure 35. Adjusting the scale bar</p>
+
+<p>There are a number of other map elements that can be added through the Print Composer interface including directional arrows, rendered HTML from other websites, and additional graphics. Play around with the settings and see what you can create. Again, consult the <a href="http://docs.qgis.org/2.14/en/docs/user_manual/print_composer/print_composer.html">QGIS documentation site</a>.</p>
+
+<p><a name="exporting-the-map"></a></p>
+
+<h2>Exporting the map</h2>
+
+<p>QGIS gives us a couple of options for exporting the map. Go to <strong>Composer</strong> in the top menu bar. In the dropdown menu you'll see that you have the option to Export as Image (from which you have a variety of image formats to choose from), Export as PDF, and Export as SVG. Try exporting several maps and examine the file produced.</p>
+
+<p>If we enable the <strong>Save world file</strong> in our <strong>Map Composition</strong> > <strong>Export Settings</strong>, we can export raster data that is georeferenced and useable in a GIS app. So, you can make finished maps to print or new layers to use in another GIS project.</p>
+
+<p><img src="module-01-graphics/q34-Major-waterways-of-Kentucky.png" alt="Example export from QGIS Print Composer" /><br/>
+Figure 36. Example export from QGIS Print Composer</p>
+
+<p>Note that you may find the Composer limited for producing the quality of the static map you're looking for. You can easily open the PDF document in an application such as Adobe's Illustrator and Photoshop, or the open-source <a href="https://inkscape.org/en/">Inkscape vector drawing program</a> for further refinement.</p>
+
+<p>Finally, don't forget to <strong>Save</strong> your work. If you've done the minimum, your final GIS project space should have the following files: <em>.qgs</em>, <em>.sqlite</em>, <em>.geojson</em>, an export from <strong>Print Composer</strong> and a folder of metadata files. That's it: slim, trim, nice, and clean!</p>
+
+<p><a name="resources-and-references"></a></p>
+
+<h1>Resources and references</h1>
+
+<ul>
+<li><a href="https://www.qgis.org/en/docs/index.html">QGIS Documentation</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/">A Gentle Introduction to GIS</a></li>
+<li><a href="https://www.mapbox.com/">Mapbox</a></li>
+<li><a href="https://CARTO.com">CARTO</a></li>
+<li><a href="https://www.arcgis.com/features/">ArcGIS</a></li>
+<li><a href="https://www.esri.com/library/whitepapers/pdfs/Shapefile.pdf">Shapefile format in a white paper</a></li>
+<li><a href="http://www.osgeo.org/">Open Source Geospatial Foundation</a></li>
+<li><a href="http://gisgeography.com/qgis-arcgis-differences/">27 Differences Between ArcGIS and QGIS – The Most Epic GIS Software Battle in GIS History</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/user_manual">QGIS User guide</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/training_manual/">QGIS Training manual</a></li>
+<li><a href="https://plugins.qgis.org/plugins/">Available QGIS plugins</a></li>
+<li><a href="https://www.python.org/">https://www.python.org/</a></li>
+<li><a href="http://www.qgis.org/en/site/">QGIS.org</a></li>
+<li><a href="https://www.qgis.org/en/site/forusers/download.html">QGIS download page</a></li>
+<li><a href="http://brackets.io">Brackets</a></li>
+<li><a href="http://www.kyngchaos.com/software/qgis">KyngChaos QGIS download</a></li>
+<li><a href="http://www.w3schools.com/Sql/sql_quickref.asp">SQL Reference</a></li>
+<li><a href="https://www.gaia-gis.it/gaia-sins/spatialite-sql-4.3.0.html">SpatiaLite Reference</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/user_manual/introduction/qgis_gui.html">QGIS User Guide</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">Coordinate Reference Systems</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/vector_data.html">vector data</a></li>
+<li><a href="http://docs.qgis.org/2.14/en/docs/gentle_gis_introduction/raster_data.html">raster data</a></li>
+<li><a href="http://nationalmap.gov/small_scale/">National Map Small-Scale Collection</a></li>
+</ul>
+
+
+<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
+
+
+
+
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+
+<p><link rel="stylesheet" href="https://yandex.st/highlightjs/7.3/styles/github.min.css"></p>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>
