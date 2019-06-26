@@ -4,36 +4,36 @@ A sampling of projects from students pursuing their Master of Science (MS) and G
 
 ## 2019
 
-https://digitalfootprints.github.io/
+https://digitalfootprints.github.io   
 https://github.com/digitalfootprints/artmap
 
-https://bazini627.github.io
+https://bazini627.github.io    
 https://github.com/bazini627/wnvSlevMap
 
-https://mikus31.github.io/
+https://mikus31.github.io/    
 https://github.com/mikus31/the-spoken-world
 
-https://andreaparr.github.io/
+https://andreaparr.github.io/    
 https://github.com/andreaparr/watersheds-biodiversity
 
-https://markcruse.github.io
+https://markcruse.github.io    
 https://github.com/MarkCruse/commute-patterns
 
-https://mahorn.github.io
+https://mahorn.github.io   
 https://github.com/mahorn/conservation
 
-https://ljmoser83.github.io
+https://ljmoser83.github.io   
 https://github.com/ljmoser83/lex-foodscape
 
-https://oabdlhaleem.github.io
+https://oabdlhaleem.github.io   
 https://oabdlhaleem.github.io/usMassShootings
 
-https://kafunk.github.io
+https://kafunk.github.io   
 https://kafunk.github.io/eco-rails
 
 https://funkmapster.github.io/A-Queer-New-York
 
-https://hstremcha.github.io
+https://hstremcha.github.io   
 https://hstremcha.github.io/weightlifting-nationals
 
 https://sebastian-ch.github.io/
