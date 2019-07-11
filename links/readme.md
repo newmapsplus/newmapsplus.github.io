@@ -7,53 +7,55 @@ A sampling of projects from students pursuing their Master of Science (MS) and G
 ## 2019
 
 Matthew Bacinskas, M.S.
-* *West Nile Virus (WNV) and St. Louis Encephalitis (SLEV) In California (2003-2018)*
-    https://bazini627.github.io/wnvSlevMap
+* *West Nile Virus (WNV) and St. Louis Encephalitis (SLEV) In California (2003-2018)*<br>
+    <a href="https://bazini627.github.io/wnvSlevMap">https://bazini627.github.io/wnvSlevMap</a>
 * <a href="https://github.com/bazini627/wnvSlevMap">https://github.com/bazini627/wnvSlevMap</a>
 * <a href="https://bazini627.github.io">https://bazini627.github.io</a><br>
-<br><br>
+
 
 Mark Cruse, M.S.
-* *Spatial Patterns in Commute to Workplace*: https://markcruse.github.io/commute-patterns/
-* GitHub repo: https://github.com/MarkCruse/commute-patterns
+* *Spatial Patterns in Commute to Workplace*<br>
+    <a href="https://markcruse.github.io/commute-patterns/">https://markcruse.github.io/commute-patterns/</a>
+* <a href="https://github.com/MarkCruse/commute-patterns">https://github.com/MarkCruse/commute-patterns</a>
+* <a href="https://markcruse.github.io">https://markcruse.github.io</a><br>
 
 Maria Horn, M.S.
-* *Conservation Areas in South America*: https://mahorn.github.io/conservation/
-GitHub repo: https://github.com/mahorn/conservation/
+* *Conservation Areas in South America*<br>
+    <a href="https://mahorn.github.io/conservation/">https://mahorn.github.io/conservation/</a>
+* <a href="https://github.com/mahorn/conservation">https://github.com/mahorn/conservation</a>
+* <a href="https://mahorn.github.io">https://mahorn.github.io</a><br>
 
 Michael McNeil, M.S.
-* *The Spoken Word*: An interactive worldwide map of place-name pronunciations: https://mikus31.github.io/the-spoken-world/
-* GitHub repo: https://github.com/mikus31/the-spoken-world
+* *The Spoken Word: An interactive worldwide map of place-name pronunciations*<br>
+    <a href="https://mikus31.github.io/the-spoken-world/">https://mikus31.github.io/the-spoken-world/</a>
+* <a href="https://github.com/mikus31/the-spoken-world">https://github.com/mikus31/the-spoken-world</a>
+* <a href="https://mikus31.github.io/">https://mikus31.github.io/</a><br>
 
 Lee Moser, M.S.
-* *Lexington, KY Foodscape Mapping Project*: https://ljmoser83.github.io/lex-foodscape/
-* GitHub repo: https://github.com/ljmoser83/lex-foodscape
+* *Lexington, KY Foodscape Mapping Project*<br>
+    <a href="https://ljmoser83.github.io/lex-foodscape/">https://ljmoser83.github.io/lex-foodscape/</a>
+* <a href="https://github.com/ljmoser83/lex-foodscape">https://github.com/ljmoser83/lex-foodscape</a>
+* <a href="https://ljmoser83.github.io">https://ljmoser83.github.io</a><br>
+
 
 Andrea Parr, M.S.
-* *Water Reclamation Projects & Biodiversity*: https://andreaparr.github.io/watersheds-biodiversity/
-* GitHub repo: https://github.com/andreaparr/watersheds-biodiversity
+* *Water Reclamation Projects & Biodiversity*<br> 
+    <a href="https://andreaparr.github.io/watersheds-biodiversity/">https://andreaparr.github.io/watersheds-biodiversity/</a>
+* <a href="https://github.com/andreaparr/watersheds-biodiversity">https://github.com/andreaparr/watersheds-biodiversity</a>
+* <a href="https://andreaparr.github.io/">https://andreaparr.github.io/</a><br>
+<br><br>
 
 Sharon Wohlgemuth, M.S.
-* *The Geography of Public Domain Objects at THE METROPOLITAN MUSEUM OF ART*
+* *The Geography of Public Domain Objects at THE METROPOLITAN MUSEUM OF ART*<br>
     <a href="https://digitalfootprints.github.io/artmap/">https://digitalfootprints.github.io/artmap</a>
 * <a href="https://github.com/digitalfootprints/artmap">https://github.com/digitalfootprints/artmap</a><br>
-* <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br><br>
+* <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
 
-<a href="https://mikus31.github.io/">https://mikus31.github.io/</a><br>
-<a href="https://github.com/mikus31/the-spoken-world">https://github.com/mikus31/the-spoken-world</a><br><br>
-<a href="https://andreaparr.github.io/">https://andreaparr.github.io/</a><br>
-<a href="https://github.com/andreaparr/watersheds-biodiversity">https://github.com/andreaparr/watersheds-biodiversity</a><br><br>
-<a href="https://markcruse.github.io">https://markcruse.github.io</a><br>
-<a href="https://github.com/MarkCruse/commute-patterns">https://github.com/MarkCruse/commute-patterns</a><br><br>
-<a href="https://mahorn.github.io">https://mahorn.github.io</a><br>
-<a href="https://github.com/mahorn/conservation">https://github.com/mahorn/conservation</a><br><br>
-<a href="https://ljmoser83.github.io">https://ljmoser83.github.io</a><br>
-<a href="https://github.com/ljmoser83/lex-foodscape">https://github.com/ljmoser83/lex-foodscape</a><br><br>
 <a href="https://oabdlhaleem.github.io">https://oabdlhaleem.github.io</a><br>
 <a href="https://oabdlhaleem.github.io/usMassShootings">https://oabdlhaleem.github.io/usMassShootings</a><br><br>
 <a href="https://kafunk.github.io">https://kafunk.github.io</a><br>
 <a href="https://kafunk.github.io/eco-rails">https://kafunk.github.io/eco-rails</a><br><br>
-<a href="https://jgieseking.org/AQNY/AQNYmap">https://jgieseking.org/AQNY/AQNYmap</a><br>
+<a href="https://jgieseking.org/AQNY/AQNYmap">https://jgieseking.org/AQNY/AQNYmap</a><br><br>
 <a href="https://hstremcha.github.io">https://hstremcha.github.io</a><br>
 <a href="https://hstremcha.github.io/weightlifting-nationals">https://hstremcha.github.io/weightlifting-nationals</a><br><br>
 <a href="https://sebastian-ch.github.io/">https://sebastian-ch.github.io/</a><br>
