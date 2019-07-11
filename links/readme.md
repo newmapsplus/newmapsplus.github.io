@@ -5,6 +5,35 @@ A sampling of projects from students pursuing their Master of Science (MS) and G
 [Map of selected projects](https://newmapsplus.github.io/projects)
 
 ## 2019
+
+Matthew Bacinskas, M.S.
+
+West Nile Virus (WNV) and St. Louis Encephalitis (SLEV) In California (2003-2018): https://bazini627.github.io/wnvSlevMap
+GitHub repo: https://github.com/bazini627/wnvSlevMap
+Mark Cruse, M.S.
+
+Spatial Patterns in Commute to Workplace: https://markcruse.github.io/commute-patterns/
+GitHub repo: https://github.com/MarkCruse/commute-patterns
+Maria Horn, M.S.
+
+Conservation Areas in South America: https://mahorn.github.io/conservation/
+GitHub repo: https://github.com/mahorn/conservation/
+Michael McNeil, M.S.
+
+The Spoken Word: An interactive worldwide map of place-name pronunciations: https://mikus31.github.io/the-spoken-world/
+GitHub repo: https://github.com/mikus31/the-spoken-world
+Lee Moser, M.S.
+
+Lexington, KY Foodscape Mapping Project: https://ljmoser83.github.io/lex-foodscape/
+GitHub repo: https://github.com/ljmoser83/lex-foodscape
+Andrea Parr, M.S.
+
+Water Reclamation Projects & Biodiversity: https://andreaparr.github.io/watersheds-biodiversity/
+GitHub repo: https://github.com/andreaparr/watersheds-biodiversity
+Sharon Wohlgemuth, M.S.
+
+The Geography of Public Domain Objects at THE METROPOLITAN MUSEUM OF ART: https://digitalfootprints.github.io/artmap/
+https://github.com/digitalfootprints/artmap/
 <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
 <a href="https://github.com/digitalfootprints/artmap">https://github.com/digitalfootprints/artmap</a><br><br>
 <a href="https://bazini627.github.io">https://bazini627.github.io</a><br>
