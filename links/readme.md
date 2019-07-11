@@ -2,7 +2,7 @@
 
 A sampling of projects from students pursuing their Master of Science (MS) and Graduate Certificate in Digital Mapping. 
 
-[Map of selected projects](../projects)
+[Map of selected projects](https://newmapsplus.github.io/projects)
 
 ## 2019
 <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
