@@ -7,7 +7,8 @@ A sampling of projects from students pursuing their Master of Science (MS) and G
 ## 2019
 
 Matthew Bacinskas, M.S.
-* *West Nile Virus (WNV) and St. Louis Encephalitis (SLEV) In California (2003-2018)*: https://bazini627.github.io/wnvSlevMap
+* *West Nile Virus (WNV) and St. Louis Encephalitis (SLEV) In California (2003-2018)*
+    https://bazini627.github.io/wnvSlevMap
 * <a href="https://github.com/bazini627/wnvSlevMap">https://github.com/bazini627/wnvSlevMap</a>
 * <a href="https://bazini627.github.io">https://bazini627.github.io</a><br>
 <br><br>
