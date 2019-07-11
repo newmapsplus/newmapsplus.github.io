@@ -2,6 +2,8 @@
 
 A sampling of projects from students pursuing their Master of Science (MS) and Graduate Certificate in Digital Mapping. 
 
+[Map of selected projects](../projects)
+
 ## 2019
 <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
 <a href="https://github.com/digitalfootprints/artmap">https://github.com/digitalfootprints/artmap</a><br><br>
