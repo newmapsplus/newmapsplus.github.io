@@ -21,7 +21,8 @@ Mark Cruse, M.S.
 
 Maria Horn, M.S.
 * *Conservation Areas in South America*<br>
-    <a href="https://mahorn.github.io/conservation/">https://mahorn.github.io/conservation</a>
+    <a href="https://mahorn.github.io/conservation/">https://mahorn.github.io/conservation</a>     
+    2019 NACIS Dynamic Map Winner
 * <a href="https://github.com/mahorn/conservation">https://github.com/mahorn/conservation</a>
 * <a href="https://mahorn.github.io">https://mahorn.github.io</a><br>
 
@@ -51,6 +52,9 @@ Sharon Wohlgemuth, M.S.
 * <a href="https://github.com/digitalfootprints/artmap">https://github.com/digitalfootprints/artmap</a><br>
 * <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
 <br>
+
+
+
 <a href="https://oabdlhaleem.github.io">https://oabdlhaleem.github.io</a><br>
 <a href="https://oabdlhaleem.github.io/usMassShootings">https://oabdlhaleem.github.io/usMassShootings</a><br><br>
 <a href="https://kafunk.github.io">https://kafunk.github.io</a><br>
@@ -64,9 +68,12 @@ Sharon Wohlgemuth, M.S.
 <a href="https://tscholten1.github.io/map673-Final-Project">https://tscholten1.github.io/map673-Final-Project</a><br><br>
 <a href="https://mup223.github.io/portfolio">https://mup223.github.io/portfolio</a><br>
 <a href="https://mup223.github.io/final_project">https://mup223.github.io/final_project</a><br><br>
+
 ## 2018
+
 <a href="https://www.kgmaps.com/">https://www.kgmaps.com/</a><br>
-<a href="https://www.kgmaps.com/oil-and-bone">https://www.kgmaps.com/oil-and-bone</a> 2018 NACIS Dynamic Map Winner<br><br>
+2018 NACIS Dynamic Map Winner    
+<a href="https://www.kgmaps.com/oil-and-bone">https://www.kgmaps.com/oil-and-bone</a>  <br><br>
 <a href="https://efano.github.io/">https://efano.github.io/</a><br>
 <a href="https://efano.github.io/iphc_survey_map">https://efano.github.io/iphc_survey_map</a><br><br>
 <a href="https://rihorn.github.io/">https://rihorn.github.io/</a><br>
@@ -97,7 +104,9 @@ Sharon Wohlgemuth, M.S.
 <a href="https://jakec-uky.github.io/">https://jakec-uky.github.io/</a><br>
 <a href="https://jakec-uky.github.io/california-cartogram">https://jakec-uky.github.io/california-cartogram</a><br><br>
 <a href="https://a-tombarge.github.io/conservation-partners/">https://a-tombarge.github.io/conservation-partners/</a><br><br>
+
 ## 2017
+
 <a href="http://cassieporter.github.io/">http://cassieporter.github.io/</a><br>
 <a href="https://cassieporter.github.io/Debt-and-the-GAD">https://cassieporter.github.io/Debt-and-the-GAD</a><br><br>
 <a href="https://flovko.github.io/">https://flovko.github.io/</a><br>
