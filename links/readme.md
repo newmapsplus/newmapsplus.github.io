@@ -20,9 +20,8 @@ Mark Cruse, M.S.
 * <a href="https://markcruse.github.io">https://markcruse.github.io</a><br>
 
 Maria Horn, M.S.
-* *Conservation Areas in South America*<br>
+* ***Conservation Areas in South America*, 2019 NACIS Dynamic Map Winner**<br>
     <a href="https://mahorn.github.io/conservation/">https://mahorn.github.io/conservation</a>     
-    2019 NACIS Dynamic Map Winner
 * <a href="https://github.com/mahorn/conservation">https://github.com/mahorn/conservation</a>
 * <a href="https://mahorn.github.io">https://mahorn.github.io</a><br>
 
@@ -72,8 +71,7 @@ Sharon Wohlgemuth, M.S.
 ## 2018
 
 <a href="https://www.kgmaps.com/">https://www.kgmaps.com/</a><br>
-2018 NACIS Dynamic Map Winner    
-<a href="https://www.kgmaps.com/oil-and-bone">https://www.kgmaps.com/oil-and-bone</a>  <br><br>
+<a href="https://www.kgmaps.com/oil-and-bone"><b>https://www.kgmaps.com/oil-and-bone</b></a>, **2018 NACIS Dynamic Map Winner**  <br><br>
 <a href="https://efano.github.io/">https://efano.github.io/</a><br>
 <a href="https://efano.github.io/iphc_survey_map">https://efano.github.io/iphc_survey_map</a><br><br>
 <a href="https://rihorn.github.io/">https://rihorn.github.io/</a><br>
