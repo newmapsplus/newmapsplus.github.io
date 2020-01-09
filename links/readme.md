@@ -1,8 +1,9 @@
 # NMP Final Projects and Portfolios
 
-A sampling of projects from students pursuing their Master of Science (MS) and Graduate Certificate in Digital Mapping. 
+Selected projects from students pursuing their Master of Science (MS) and Graduate Certificate in Digital Mapping at the University of Kentucky [New Maps Plus](https://newmapsplus.uky.edu) program. 
 
-[Map of selected projects](https://newmapsplus.github.io/projects)
+
+[![Map of Maps](graphics/map-of-maps.jpg) Map of selected projects](https://newmapsplus.github.io/projects)
 
 ## 2019
 
@@ -52,7 +53,18 @@ Sharon Wohlgemuth, M.S.
 * <a href="https://digitalfootprints.github.io">https://digitalfootprints.github.io</a><br>
 <br>
 
+### Fall
+* [Predicted Stream Health in Connecticut](https://marybecker.github.io/CT_MMI_StreamModel)   
+* [Code Enforcement: A weapon of gentrification?](https://eba287.github.io/codes-LEX)     
+* [My best Course Story maps](https://jgo324.github.io/course-storymap/) 
+* [Paradise Fun](https://gisco246.github.io/paradise-fun)
+* [Kentucky Automobile Accident Trends](https://dme256.github.io)
+* [Wind Turbine Capacity and Distribution in Illinois](https://cpe3.github.io/illinois-turbines)
+* [Rural Transportation in Central Illinois](http://trriley.github.io/rural-transportation)
+* [National Parks and Monuments of the Rocky Mountain West](https://github.com/AlexBuck328/national-parks)
+* [Wildfires in California, Greater than 10,000 Acres from 1878-2018](https://zac-stanley.github.io/california-wildfires/)
 
+### Spring
 
 <a href="https://oabdlhaleem.github.io">https://oabdlhaleem.github.io</a><br>
 <a href="https://oabdlhaleem.github.io/usMassShootings">https://oabdlhaleem.github.io/usMassShootings</a><br><br>
