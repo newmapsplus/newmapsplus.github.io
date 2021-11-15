@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Population density, 2020 Census</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Assistant", sans-serif;
+      }
+
+      .leaflet-container {
+        font-family: "Assistant", sans-serif;
+      }
+
+      .popupList {
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .popupLabel {
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+
+      .popupSecond {
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+
+      #wide {
+        width: 100%;
+      }
+
+      #map {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background-color: white;
+      }
+
+      #legend {
+        width: 200px;
+        height: 60px;
+        /* background-color: white; */
+      }
+
+      .col {
+        width: 48%;
+        float: left;
+      }
+
+      .leaflet-interactive {
+        mix-blend-mode: multiply;
+      }
+
+      .title {
+        top: 5px;
+        left: 15px;
+        position: absolute;
+        z-index: 1000;
+      }
+
+      .title h1,
+      .title h2 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wide">
+      <div class="title">
+        <h1>Population density, 2020 Census</h1>
+        <h2>with selected racial demographics by Block Group</h2>
+      </div>
+      <div id="map"></div>
+      <div id="legend"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"
+      integrity="sha512-COTaPOlz12cG4fSfcBsxZsjauBAyldqp+8FQUM/dZHm+ts/jR4AFoJhCqxy8K10Jrf3pojfsbq7fAPTb1XaVkg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://unpkg.com/simple-statistics@7.7.0/dist/simple-statistics.min.js"></script>
+    <script>
+      const options = {
+        map: {
+          zoomSnap: 0.5,
+        },
+        fillOpacity: 1,
+        tracts: {
+          color: "gray",
+          weight: 0,
+        },
+        counties: {
+          color: "black",
+          weight: 0.5,
+          fill: false,
+        },
+        highlight: {
+          color: "yellow",
+          weight: 2,
+        },
+        zoom: {
+          switch: -1,
+          countyIn: {
+            interactive: true,
+            fillOpacity: 0.9,
+            fill: true,
+          },
+          countyOut: {
+            interactive: false,
+            fill: false,
+            weight: 0.5,
+          },
+        },
+        chart: {
+          width: 240,
+          height: 180,
+          margin: {
+            top: 5,
+            right: 55,
+            bottom: 45,
+            left: 0,
+          },
+        },
+        data: [
+          {
+            name: "Black",
+            value: ["Black"],
+            color: "#5784BA",
+          },
+          {
+            name: "White",
+            value: ["White"],
+            color: "#CCD4BF",
+          },
+          {
+            name: "Asian",
+            value: ["Asian", "Hawn_PI"],
+            color: "#F27348",
+          },
+          {
+            name: "Other/multi",
+            value: ["Other", "Multi_Race"],
+            color: "#A57283",
+          },
+        ],
+      };
+
+      const map = L.map("map", {
+        zoomControl: false,
+      });
+
+      const counties = d3.json("./ky-counties.json");
+      const tracks = d3.json("./ky-blockgroups.json");
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        opacity: 1,
+      }); //.addTo(map);
+
+      // wait until data is loaded then send to draw map function
+      Promise.all([counties, tracks]).then(draw);
+
+      function draw(data) {
+        const tractsGeo = topojson.feature(data[1], {
+          type: "GeometryCollection",
+          geometries: data[1].objects["ky-blockgroups"].geometries,
+        });
+
+        const tractsLayer = L.geoJSON(tractsGeo, {
+          style: (feature) => {
+            return options.tracts;
+          },
+          onEachFeature: (feature, layer) => {
+            layer.bindPopup(chart(feature, layer));
+          },
+        }).addTo(map);
+
+        const countiesGeo = topojson.feature(data[0], {
+          type: "GeometryCollection",
+          geometries: data[0].objects["ky-counties"].geometries,
+        });
+
+        const countiesLayer = L.geoJSON(countiesGeo, {
+          style: (feature) => {
+            return options.counties;
+          },
+          onEachFeature: (feature, layer) => {
+            layer.bindPopup(chart(feature, layer));
+            if (feature.properties.County_Name === "Fayette") {
+              map.fitBounds(layer.getBounds(), {
+                padding: [20, 20],
+                animate: false,
+              });
+            }
+          },
+        }).addTo(map);
+
+        map.on("zoom", (e) => {
+          if (map.getZoom() > options.zoom.switch) {
+            tractsLayer.addTo(map);
+            countiesLayer.setStyle(options.zoom.countyOut).bringToFront();
+          } else {
+            tractsLayer.removeFrom(map);
+            countiesLayer.setStyle(options.zoom.countyIn);
+          }
+        });
+
+        // update(countiesLayer, "popdensity");
+        update(tractsLayer, "popdensity");
+      }
+
+      function update(geom, attr) {
+        const x = [];
+        geom.eachLayer(function (layer) {
+          const props = layer.feature.properties;
+          x.push(props.Pop2020 / (props.Shape_Area / 5290 ** 2));
+        });
+
+        const y = ss.ckmeans(x, 9);
+
+        let quantileScale = d3
+          .scaleQuantile()
+          .domain(x)
+          .range(d3.schemeBlues[9]);
+
+        let breaksScale = d3
+          .scaleThreshold()
+          .domain(x)
+          .range(d3.schemeBlues[9]);
+
+        let continuousScale = d3
+          .scaleLinear()
+          .domain(d3.extent(x))
+          .range(["white", "black"]);
+
+        let scale = d3
+          .scaleSequential()
+          .domain(d3.extent(x))
+          .interpolator(d3.interpolateGreys); //d3.interpolateRdPu
+
+        geom.eachLayer(function (layer) {
+          const props = layer.feature.properties;
+
+          layer.setStyle({
+            fillColor: scale(props.Pop2020 / (props.Shape_Area / 5290 ** 2)),
+            fillOpacity: options.fillOpacity,
+          });
+
+          layer.on("mouseover", function (e) {
+            layer.setStyle(options.highlight);
+            // layer.openPopup()
+          });
+          layer.on("mouseout", function (e) {
+            layer.closePopup();
+            if (props.Tract_ID) {
+              layer.setStyle(options.tracts);
+            } else {
+              layer.setStyle(options.counties);
+            }
+          });
+        });
+
+        drawLegend(scale);
+      }
+
+      function chart(feature, layer) {
+        const p = feature.properties;
+
+        const w = options.chart.width,
+          h = options.chart.height,
+          iw = w - options.chart.margin.left - options.chart.margin.right,
+          ih = h - options.chart.margin.top - options.chart.margin.bottom,
+          // radius = Math.min(iw, ih) / 3;
+          radius = iw * 0.25;
+
+        const s = [];
+        options.data.forEach((d) => {
+          const value = d.value.map((v) => p[v]);
+          s.push({
+            name: d.name,
+            value: d3.sum(value),
+            color: d.color,
+          });
+        });
+
+        const t = s.map((c) => c.color);
+
+        const ordScale = d3.scaleOrdinal().domain(s).range(t);
+
+        const pie = d3.pie().value((d) => d.value);
+
+        const arcF = d3
+          .arc()
+          .innerRadius(radius / 2)
+          .outerRadius(radius);
+        const div = d3.create("div");
+        const svg = div
+          .append("svg")
+          .attr("width", w)
+          .attr("height", h)
+          .append("g")
+          .attr(
+            "transform",
+            `translate(${options.chart.margin.left},${options.chart.margin.top})`
+          );
+
+        svg
+          .selectAll("arc")
+          .data(pie(s))
+          .enter()
+          .append("path")
+          .attr("d", arcF)
+          .attr("fill", (d) => ordScale(d))
+          .attr("transform", `translate(${radius},${radius})`);
+
+        let popup = `${p.County_Name}: ${(
+          p.Pop2020 /
+          (p.Shape_Area / 5290 ** 2)
+        ).toLocaleString("en", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        })} per sq mi`;
+
+        svg
+          .selectAll("label")
+          .data(s)
+          .enter()
+          .append("text")
+          .classed("popupLabel", true)
+          .text(popup)
+          .attr("x", 5)
+          .attr("y", 2 * radius + 30)
+          .attr("text-anchor", "left");
+
+        svg
+          .selectAll("label")
+          .data(s)
+          .enter()
+          .append("text")
+          .classed("popupLabel", true)
+          .text(p.Pop2020)
+          .attr("transform", `translate(${radius},${radius})`)
+          .attr("x", 0)
+          .attr("y", options.chart.margin.top)
+          .attr("text-anchor", "middle");
+
+        if (p.BlockGroup_ID) {
+          popup = `Block Group: ${p.BlockGroup_ID}`;
+          svg
+            .selectAll("label")
+            .data(s)
+            .enter()
+            .append("text")
+            .classed("popupSecond", true)
+            .text(popup)
+            .attr("x", 5)
+            .attr("y", 2 * radius + 60)
+            .attr("text-anchor", "left");
+        }
+
+        const percent = s.map(
+          (c) => `${((c.value / p.Pop2020) * 100).toFixed(0)}% ${c.name}`
+        );
+
+        svg
+          .selectAll("mylabels")
+          .data(s)
+          .enter()
+          .append("text")
+          .attr("x", 2 * radius + 10)
+          .attr("y", (d, i) => 10 + i * (ih / 6))
+          .style("fill", (d) => ordScale(d))
+          .text((d, i) => percent[i])
+          .attr("text-anchor", "left")
+          .style("alignment-baseline", "middle")
+          .classed("popupList", true);
+
+        return div.node();
+      }
+
+      function drawLegend(scale) {
+        // create Leaflet control for the legend
+        const legend = L.control({
+          position: "bottomleft",
+        });
+
+        // when added to the map
+        legend.onAdd = function (map) {
+          // select the element with id of 'legend'
+          const div = L.DomUtil.get("legend");
+
+          // disable the mouse events
+          L.DomEvent.disableScrollPropagation(div);
+          L.DomEvent.disableClickPropagation(div);
+
+          // add legend to the control
+          return div;
+        };
+
+        // add the control to the map
+        legend.addTo(map);
+
+        updateLegend(scale);
+      }
+
+      function updateLegend(scale) {
+        const range = scale.domain();
+
+        const svg = d3
+          .select("#legend")
+          .append("svg")
+          .attr("width", 200)
+          .attr("height", 70)
+          .append("g")
+          .attr("transform", `translate(5,5)`);
+
+        svg
+          .append("image")
+          .attr("x", 0)
+          .attr("y", 15)
+          .attr("width", 180)
+          .attr("height", 20)
+          .attr("preserveAspectRatio", "none")
+          .attr("xlink:href", ramp(scale.interpolator()).toDataURL());
+
+        svg
+          .append("text")
+          .attr("transform", `translate(0,5)`)
+          .attr("x", 0)
+          .attr("y", 5)
+          .attr("text-anchor", "left")
+          .style("font-size", "1.2em")
+          .text("People per square mile");
+
+        svg
+          .append("line")
+          .attr("transform", `translate(0,15)`)
+          .style("stroke", "black")
+          .style("stroke-width", 0.5)
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", 0)
+          .attr("y2", 25);
+
+        svg
+          .append("line")
+          .attr("transform", `translate(0,15)`)
+          .style("stroke", "black")
+          .style("stroke-width", 0.5)
+          .attr("x1", 180)
+          .attr("y1", 0)
+          .attr("x2", 180)
+          .attr("y2", 25);
+
+        svg
+          .append("text")
+          .attr("transform", `translate(0,15)`)
+          .attr("x", 0)
+          .attr("y", 40)
+          .attr("text-anchor", "middle")
+          .text(range[0].toFixed(0));
+
+        svg
+          .append("text")
+          .attr("transform", `translate(0,15)`)
+          .attr("x", 180)
+          .attr("y", 40)
+          .attr("text-anchor", "middle")
+          .text(range[1].toFixed(0));
+      }
+
+      function ramp(color, n = 256) {
+        const canvas = document.createElement("canvas");
+        canvas.width = n;
+        canvas.height = 1;
+        const context = canvas.getContext("2d");
+        for (let i = 0; i < n; ++i) {
+          context.fillStyle = color(i / (n - 1));
+          context.fillRect(i, 0, 1, 1);
+        }
+        return canvas;
+      }
+    </script>
+  </body>
+</html>
