@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maps on Advanced GIS</title>
+    <link>https://newmapsplus.github.io/maps/</link>
+    <description>Recent content in Maps on Advanced GIS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 May 2021 15:51:11 -0400</lastBuildDate>
+    <atom:link href="https://newmapsplus.github.io/maps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lexington environs</title>
+      <link>https://newmapsplus.github.io/maps/dsm/</link>
+      <pubDate>Mon, 10 May 2021 15:51:11 -0400</pubDate>
+      <guid>https://newmapsplus.github.io/maps/dsm/</guid>
+      <description>&lt;section class=&#34;container-fluid nmp-lite-bg&#34; id=&#34;fullHeight&#34;&gt;&#xA;  &lt;div class=&#34;row h-100&#34;&gt;&#xA;    &lt;div class=&#34;mx-0 px-0&#34;&gt;&#xA;      &lt;div id=&#34;dsm&#34; class=&#34;map mx-0&#34;&gt;&#xA;        &lt;!-- &lt;button&#xA;          type=&#34;button&#34;&#xA;          class=&#34;btn btn-primary text-light nmp-absolute nmp-tr&#34;&#xA;          data-bs-toggle=&#34;offcanvas&#34;&#xA;          data-bs-target=&#34;#mapInfo&#34;&#xA;        &gt;&#xA;          Map Information&#xA;        &lt;/button&gt; --&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&lt;div class=&#34;offcanvas offcanvas-end&#34; tabindex=&#34;-1&#34; id=&#34;mapInfo&#34;&gt;&#xA;  &lt;div class=&#34;offcanvas-header&#34;&gt;&#xA;    &lt;h5 id=&#34;offcanvasRightLabel&#34;&gt;Map notes&lt;/h5&gt;&#xA;    &lt;button&#xA;      type=&#34;button&#34;&#xA;      class=&#34;btn-close text-reset&#34;&#xA;      data-bs-dismiss=&#34;offcanvas&#34;&#xA;      aria-label=&#34;Close&#34;&#xA;    &gt;&lt;/button&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;div class=&#34;offcanvas-body&#34;&gt;&#xA;    &lt;p&gt;&#xA;      This digital surface model (DSM) shaded relief map of Lexington, Kentucky&#xA;      was created in the &lt;a href=&#34;https://www.blender.org/&#34;&gt;Blender&lt;/a&gt; 3D&#xA;      modeling application using lidar data from&#xA;      &lt;a href=&#34;https://kyfromabove.ky.gov/&#34;&gt;KyFromAbove&lt;/a&gt;.&#xA;    &lt;/p&gt;&#xA;    &lt;img&#xA;      src=&#34;https://uky-gis.github.io/graphics/logo-75th-01.svg&#34;&#xA;      alt=&#34;&#34;&#xA;      class=&#34;mw-100&#34;&#xA;    /&gt;&#xA;    &lt;p&gt;&#xA;      Department of Geography&lt;br /&gt;&#xA;      New Maps Plus&lt;br /&gt;&#xA;      University of Kentucky&lt;br /&gt;&#xA;      Lexington, Kentucky&#xA;    &lt;/p&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Kentucky</title>
+      <link>https://newmapsplus.github.io/maps/hill/</link>
+      <pubDate>Mon, 10 May 2021 15:09:08 -0400</pubDate>
+      <guid>https://newmapsplus.github.io/maps/hill/</guid>
+      <description>&lt;section class=&#34;container-fluid nmp-lite-bg &#34; id=&#39;fullHeight&#39;&gt;&#xA;&lt;div class=&#34;row h-100&#34;&gt;&#xA;    &lt;div class=&#34;mx-0 px-0&#34;&gt;&#xA;      &lt;div id=&#39;hill&#39; class=&#39;map mx-0&#39;&gt;&#xA;      &lt;!-- &lt;button type=&#34;button&#34; class=&#34;btn btn-primary text-light nmp-absolute nmp-tr&#34; data-bs-toggle=&#34;offcanvas&#34; data-bs-target=&#34;#mapInfo&#34; aria-controls=&#34;offcanvasRight&#34;&gt;Map Information&lt;/button&gt; --&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&lt;div class=&#34;offcanvas offcanvas-end&#34; tabindex=&#34;-1&#34; id=&#34;mapInfo&#34;&gt;&#xA;  &lt;div class=&#34;offcanvas-header&#34;&gt;&#xA;    &lt;h5 id=&#34;offcanvasRightLabel&#34;&gt;Map notes&lt;/h5&gt;&#xA;    &lt;button type=&#34;button&#34; class=&#34;btn-close text-reset&#34; data-bs-dismiss=&#34;offcanvas&#34; aria-label=&#34;Close&#34;&gt;&lt;/button&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;div class=&#34;offcanvas-body&#34;&gt;&#xA;      &lt;p&gt;This shaded relief map of Kentucky was created in the &lt;a href=&#34;https://www.blender.org/&#34;&gt;Blender&lt;/a&gt; 3D modeling application using data from &lt;a href=&#34;https://apps.nationalmap.gov/downloader/#/&#34;&gt;The National Map&lt;/a&gt;,  USGS.&lt;/p&gt;&#xA;      &lt;img src=&#34;https://uky-gis.github.io/graphics/logo-75th-01.svg&#34; alt=&#34;&#34; class=&#34;mw-100&#34;&gt;&#xA;        &lt;p&gt;&#xA;            Department of Geography&lt;br&gt;&#xA;            New Maps Plus&lt;br&gt;&#xA;            University of Kentucky&lt;br&gt;&#xA;            Lexington, Kentucky&#xA;        &lt;/p&gt;&#xA;&#xA;&#xA;    &lt;/section&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
