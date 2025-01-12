@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head>
+  <title>MAP 673: Kentucky</title>
+  <meta charset="utf-8" />
+  <meta
+    name="description"
+    content="Website meta description for google search results go here"
+  />
+  <meta name="dc.relation" content="https://newmapsplus.github.io/" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="theme-color" content="#1A94D2" />
+  
+
+   
+  <link rel="stylesheet" href="../../css/main.min.css" media="screen" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" /> 
+
+  <link rel="stylesheet" href="../../css/styles.css" />
+</head>
+<body><nav class="navbar navbar-light uk-liter-bg" id='nav'>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../">
+      <img src="https://uky-gis.github.io/graphics/logo-75th-01.svg" alt="" height="45px"
+        class="d-inline-block ">
+     <h5 class="d-inline-block font-weight-700">MAP 673</h5> 
+    </a>
+
+    <ul class="nav justify-content-start">
+    
+      
+      
+      
+              <li class="nav-item dropdown ">
+                <a class='nav-link dropdown-toggle ' href="#"
+                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Maps
+                </a>
+             
+                 <ul class="dropdown-menu .dropdown-menu-end ">
+                  
+                    <li>
+                      <a class='dropdown-item ' href="../../maps/dsm/">  Lexington environs</a>
+                    </li>
+                  
+                    <li>
+                      <a class='dropdown-item ' href="../../maps/hill/">  Kentucky</a>
+                    </li>
+                  
+                </ul> 
+              </li>
+          
+            
+    
+    <li class="nav-item">
+      <a class='nav-link' href="../../syllabus">
+         Syllabus</a>
+      </a>
+    </li>
+      
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid uk-lite-bg py-2" id="singleTitle">
+  <row>
+    <h3 class="font-weight-700 align-middle text-dark mt-1">
+      Kentucky 
+    </h3>
+  </row>
+</div>
+
+
+<section class="container-fluid nmp-lite-bg " id='fullHeight'>
+<div class="row h-100">
+    <div class="mx-0 px-0">
+      <div id='hill' class='map mx-0'>
+      <!-- <button type="button" class="btn btn-primary text-light nmp-absolute nmp-tr" data-bs-toggle="offcanvas" data-bs-target="#mapInfo" aria-controls="offcanvasRight">Map Information</button> -->
+    </div>
+    </div>
+</div>
+</section>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mapInfo">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Map notes</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <p>This shaded relief map of Kentucky was created in the <a href="https://www.blender.org/">Blender</a> 3D modeling application using data from <a href="https://apps.nationalmap.gov/downloader/#/">The National Map</a>,  USGS.</p>
+      <img src="https://uky-gis.github.io/graphics/logo-75th-01.svg" alt="" class="mw-100">
+        <p>
+            Department of Geography<br>
+            New Maps Plus<br>
+            University of Kentucky<br>
+            Lexington, Kentucky
+        </p>
+
+
+    </section>
+  </div>
+</div>
+
+ 
+
+  
+
+  
+  
+
+  <script src="../../js/bundle.min.js" defer></script>
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+  <script src="../../js/utilities.js"></script>
+</footer>
+</body>
+</html>
