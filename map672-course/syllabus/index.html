@@ -1,413 +1,500 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+
+<head>
   <title>MAP 672: Syllabus</title>
   <meta charset="utf-8" />
-  <meta
-    name="description"
-    content="Website meta description for google search results go here"
-  />
+  <meta name="description" content="Website meta description for google search results go here" />
   <meta name="dc.relation" content="https://newmapsplus.github.io/" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#1A94D2" />
-  
 
-   
+
+
   <link rel="stylesheet" href="../css/main.min.css" media="screen" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
-  />
+    crossorigin="" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" /> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
 
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
-<body><nav class="navbar navbar-light uk-liter-bg" id='nav'>
-  <div class="container-fluid">
-    <a class="navbar-brand" href="../">
-      <img src="https://uky-gis.github.io/graphics/logo-75th-01.svg" alt="" height="45px"
-        class="d-inline-block ">
-     <h5 class="d-inline-block font-weight-700">MAP 672</h5> 
-    </a>
 
-    <ul class="nav justify-content-start">
-    
-      
-      
-      
-              <li class="nav-item dropdown ">
-                <a class='nav-link dropdown-toggle ' href="#"
-                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                   Maps
-                </a>
-             
-                 <ul class="dropdown-menu .dropdown-menu-end ">
-                  
-                    <li>
-                      <a class='dropdown-item ' href="../maps/dsm/">  Lexington environs</a>
-                    </li>
-                  
-                    <li>
-                      <a class='dropdown-item ' href="../maps/hill/">  Kentucky</a>
-                    </li>
-                  
-                </ul> 
-              </li>
-          
-            
-    
-    <li class="nav-item">
-      <a class='nav-link' href="../syllabus">
-         Syllabus</a>
+<body>
+  <nav class="navbar navbar-light uk-liter-bg" id='nav'>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../">
+        <img src="https://uky-gis.github.io/graphics/logo-75th-01.svg" alt="" height="45px" class="d-inline-block ">
+        <h5 class="d-inline-block font-weight-700">MAP 672</h5>
       </a>
-    </li>
-      
 
-    </ul>
+      <ul class="nav justify-content-start">
+
+
+
+
+        <li class="nav-item dropdown ">
+          <a class='nav-link dropdown-toggle ' href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Maps
+          </a>
+
+          <ul class="dropdown-menu .dropdown-menu-end ">
+
+            <li>
+              <a class='dropdown-item ' href="../maps/dsm/"> Lexington environs</a>
+            </li>
+
+            <li>
+              <a class='dropdown-item ' href="../maps/hill/"> Kentucky</a>
+            </li>
+
+          </ul>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class='nav-link' href="../syllabus">
+            Syllabus</a>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid uk-lite-bg py-2" id="singleTitle">
+    <row>
+      <h3 class="font-weight-700 align-middle text-dark mt-1">
+        Syllabus
+      </h3>
+    </row>
   </div>
-</nav>
 
-<div class="container-fluid uk-lite-bg py-2" id="singleTitle">
-  <row>
-    <h3 class="font-weight-700 align-middle text-dark mt-1">
-      Syllabus 
-    </h3>
-  </row>
-</div>
-
-<main>
-<section class="py-3 container col-lg-8 col-xxl-6" id='documentation'>
-<h1 id="map-672-programming-for-web-mapping">MAP 672: Programming For Web Mapping</h1>
-<p><img src="../images/syllabus/banner.jpg" alt="Welcome to Map 672"></p>
-<p><strong>Department of Geography</strong><br>
-The University of Kentucky, College of Arts and Sciences<br>
-October 21 – December 22, 2024  <br>
-Online via <a href="https://uk.instructure.com/courses/2103423">Canvas</a></p>
-<p>Section: 210 (4 credits)<br>
-Instructor: Boyd Shearer<br>
-Office: Online via Zoom (by appointment) and POT805A<br>
-Office Times: 1–2:30 pm Wednesdays and Thursdays (Lexington time), and by appointment</p>
-<!-- <p class='display-1 fancy-text uk-dark-blue'>It's about data, y'all!</p> -->
-<h2 id="table-of-contents">Table of Contents</h2>
-<!-- TOC -->
-<ul>
-<li><a href="#map-672-programming-for-web-mapping">MAP 672: Programming For Web Mapping</a>
-<ul>
-<li><a href="#table-of-contents">Table of Contents</a></li>
-<li><a href="#methods-of-contact">Methods of Contact</a>
-<ul>
-<li><a href="#online-office-hours">Online office hours</a></li>
-<li><a href="#forum">Forum</a></li>
-<li><a href="#student-messaging-forum">Student Messaging Forum</a></li>
-<li><a href="#email">Email</a></li>
-</ul>
-</li>
-<li><a href="#course-description">Course Description</a>
-<ul>
-<li><a href="#student-learning-outcomes">Student Learning Outcomes</a></li>
-<li><a href="#format">Format</a></li>
-<li><a href="#required-resources">Required resources</a></li>
-<li><a href="#suggested-resources">Suggested resources</a></li>
-</ul>
-</li>
-<li><a href="#course-assignments-and-grading">Course Assignments and Grading</a>
-<ul>
-<li><a href="#exams">Exams</a></li>
-<li><a href="#grading-scale-and-rubric">Grading scale and Rubric</a></li>
-</ul>
-</li>
-<li><a href="#course-schedule">Course Schedule</a>
-<ul>
-<li><a href="#lab--module-topics">Lab &amp; Module Topics</a></li>
-</ul>
-</li>
-<li><a href="#course-policies">Course Policies</a>
-<ul>
-<li><a href="#academic-policies">Academic Policies</a></li>
-</ul>
-</li>
-<li><a href="#technical-support">Technical Support</a></li>
-<li><a href="#campus-resources-for-your-success">Campus Resources for Your Success</a>
-<ul>
-<li><a href="#an-extended-listing-of-campus-resources">An extended listing of campus resources</a></li>
-</ul>
-</li>
-<li><a href="#about-the-department-of-geography">About the Department of Geography</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-<h2 id="methods-of-contact">Methods of Contact</h2>
-<h3 id="online-office-hours">Online office hours</h3>
-<p>If you are on campus, you are invited to visit my office. Alternatively, you may choose to schedule a custom time meet online. Find the link to Zoom in the Canvas Zoom section. You do not need to share your camera, but be prepared to share your screen and microphone.</p>
-<h3 id="forum">Forum</h3>
-<p>For general questions about tasks relevant to completing assignments, please start by creating a new discussion in our Canvas Discussions section. If you find a post that you can help with, please contribute.</p>
-<p>Please follow these guidelines when posting to the discussion boards:</p>
-<ul>
-<li>Start a new discussion and include a detailed subject line</li>
-<li>When replying, make sure you reply to the correct thread.</li>
-</ul>
-<h3 id="student-messaging-forum">Student Messaging Forum</h3>
-<p>We offer a team messaging service hosted by slack.com to facilitate a more interactive forum than Canvas Discussions. This free, private service will allow us to share files and screen easily captures to diagnose and solve problems. We hope students will use this platform, but it is not required, nor is it consistently moderated. Students can use their uky.edu email address to participate in our Slack workspace: <a href="https://join.slack.com/t/newmapsplus/signup">https://join.slack.com/t/newmapsplus/signup</a>. Join the <mark>#map672</mark> channel.</p>
-<h3 id="email">Email</h3>
-<p>If students have questions about grades, accommodating missed assignments, or other personal issues, please contact the instructor via the Canvas InBox. <mark>Do not send messages to my @uky.edu email address without prior approval.</mark> Canvas InBox creates an easily accessible record of our correspondence. I will respond to messages within 24 hours.</p>
-<h2 id="course-description">Course Description</h2>
-<p>This courses introduces students to the fundamental concepts and techniques of web development and computer programming through web mapping. Students will become familiar with current web standards and proficient in manipulating the structural, stylistic and behavioral elements of web maps through programming. Students will translate these practices to achieve objectives in web cartography such as the display of a basemap, the thematic representation of data, and the employment of interaction to enhance visual communication and the presentation of information.</p>
-<h3 id="student-learning-outcomes">Student Learning Outcomes</h3>
-<ul>
-<li>Demonstrate proficiency in reading, writing, and debugging a programming language;</li>
-<li>Prepare a development environment suitable for producing web maps;</li>
-<li>Build a web map and interface using modern web standards;</li>
-<li>Integrate custom code with web mapping technology code libraries;</li>
-<li>Revise code to enhance a map and interface solution;</li>
-<li>Assess and apply online documentation to solve development problems;</li>
-<li>Use a distributed version control system (Git and GitHub) to retrieve, share, and distribute code and maps online; and</li>
-<li>Develop online web portfolios of code and related map products.</li>
-</ul>
-<h3 id="format">Format</h3>
-<p>This course is an asynchronous online course that requires dedicated participation. Much of your time will be exploring programming techniques and creating maps.</p>
-<h3 id="required-resources">Required resources</h3>
-<p>Content, assignments, and interactions rely on all students having computer hardware and software. While these are available on computers in student computer labs on the UK&rsquo;s campus, most you will not be physically present on campus and are responsible for obtaining the necessary hardware and software.</p>
-<h4 id="hardware">Hardware</h4>
-<ul>
-<li>Computer, a newer model with a recent operating system and a hard drive with at least 2-5 GB of free space (more can be useful). Having administration rights over your computer to install new software is important.</li>
-<li>Webcam and a headset/microphone for online interaction during office hours.</li>
-<li>A broadband internet connection (min 6 Mbps download/upload speed recommended).
-Students are responsible for ensuring that their computer is smoothly operating (virus-free, OS updates, etc.).</li>
-</ul>
-<h4 id="software">Software</h4>
-<p>Course modules will suggest or require downloading various software applications and provide instructions along the way:</p>
-<ul>
-<li>VS Code (<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>) or a code editor(s) of your choice.</li>
-<li>GitHub Desktop ( <a href="https://desktop.github.com/">https://desktop.github.com/</a>)</li>
-<li>Google Chrome browser ( <a href="https://www.google.com/chrome/browser/desktop/">https://www.google.com/chrome/browser/desktop/</a>)</li>
-</ul>
-<p>As part of this course, students may be expected to install various software programs, device drivers, etc. The instructor will provide specific instructions when this is the case.</p>
-<h3 id="suggested-resources">Suggested resources</h3>
-<p>There is no required textbook for this course. However, the following resources are recommended for additional learning:</p>
-<ul>
-<li><a href="https://www.w3schools.com/">W3Schools Tutorials</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">MDN Web Docs Tutorials</a></li>
-<li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
-<li><a href="https://www.codecademy.com/">Codecademy</a></li>
-<li><a href="https://www.udacity.com/">Udacity</a></li>
-</ul>
-<p>An excellent, though slightly more advanced (and free!) book on JavaScript programming:</p>
-<ul>
-<li><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a></li>
-</ul>
-<p>and just because:</p>
-<ul>
-<li><a href="http://jsforcats.com/">JavaScript for Cats</a> 🐱</li>
-</ul>
-<p>Other course readings will be provided via the Canvas Learning Management System.</p>
-<h2 id="course-assignments-and-grading">Course Assignments and Grading</h2>
-<p>This course requires the completion of 8 labs. Grade requirements are weighted as detailed below:</p>
-<p><strong>Labs</strong>: 8 @ 12.5% each of total grade</p>
-<p>Completed labs will be submitted as a URL in Canvas. They should be submitted by 11:59 pm on the day that they are due (see course schedule).</p>
-<h3 id="exams">Exams</h3>
-<p>This course has no exams.</p>
-<h3 id="grading-scale-and-rubric">Grading scale and Rubric</h3>
-<p>Lab grading will focus on three rubrics:</p>
-<ul>
-<li>Technical proficiency, e.g., does it work?</li>
-<li>Cartographic design, map production, data visualization, and/or coding/commenting style, e.g., does it look good and easy to understand?</li>
-<li>Presentation of the project web page and/or GitHub repository component, e.g., is the project nicely organized, documented, and easy to use?</li>
-</ul>
-<p>Grade: A (90% to 100%) Excellent: You show a complete understanding of course materials and turn in assignments by the due date that are error-free, well-organized, and regularly show originality and creativity. Your participation in discussions is active, thoughtful, and helps to lead class learning.</p>
-<p>Grade: B (80% to 89%) Good: You show a good grasp of key concepts within course materials and turn in the majority of work promptly that contains a few errors, but is organized and occasionally original and creative. Participation in discussions is active and contributes to ongoing conversations and work.</p>
-<p>Grade: C (70% to 79%) Average: You show a basic understanding of key concepts within course materials and turn in work often late and contains some errors but meets the assignment goals. Work is rarely original and creative. Your participation in discussions and group work primarily contributes to established conversations and work.</p>
-<p>Grade: E (below 60%) Failing: You show major gaps in understanding many concepts within the course and fail to complete projects and exercises correctly and timely. You do not engage in discussions.</p>
-<h2 id="course-schedule">Course Schedule</h2>
-<p>The course runs for eight full weeks. Each week begins at 12:01 am EST on Monday and ends at 11:59 pm EST on the following Sunday. New modules will unlock each week and are available after you have made an assignment submission for the previous module.</p>
-<p><img src="../images/syllabus/modules.png" alt="Modules"><br>
-<em>New module content is available each week.</em></p>
-<p>Any changes to the below timeline will be announced on Canvas and changed in this document.</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Week</th>
-          <th style="text-align: center">Module</th>
-          <th style="text-align: right">Due</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: center">01</td>
-          <td style="text-align: right">Lab 1, Oct 27</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: center">02</td>
-          <td style="text-align: right">Lab 2, Nov 3</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: center">03</td>
-          <td style="text-align: right">Lab 3, Nov 10</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">4</td>
-          <td style="text-align: center">04</td>
-          <td style="text-align: right">Lab 4, Nov 17</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">5</td>
-          <td style="text-align: center">05</td>
-          <td style="text-align: right">Lab 5, Nov 24</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">6</td>
-          <td style="text-align: center">06</td>
-          <td style="text-align: right">Lab 6, Dec 1</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">7</td>
-          <td style="text-align: center">07</td>
-          <td style="text-align: right">Lab 7, Dec 8</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">8</td>
-          <td style="text-align: center">08</td>
-          <td style="text-align: right">Lab 8, Dec 15</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">9</td>
-          <td style="text-align: center">EC</td>
-          <td style="text-align: right">Extra credit, Dec 22</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="lab--module-topics">Lab &amp; Module Topics</h3>
-<h4 id="module-01-learning-foundations-of-the-technology-stack-html-css-and-js">Module 01: Learning Foundations of the Technology Stack: HTML, CSS, and JS</h4>
-<p>This lesson will provide you with an introduction to the foundational technology stack used in web map development. We will introduce you to 3 separate coding technologies (HTML, CSS, and JavaScript), which work together to produce a web page and map application. The module suggests that web map design is achieved using these three technologies to structure content (HTML), and give form (CSS) and behavior (JavaScript) to this content. Design is then the convergence of content, form, and behavior.</p>
-<p>Additionally, we&rsquo;ll practice writing these technologies within our powerful text editor, Brackets, as well as using in browser development tools to inspect the Document Object Module (DOM) and debug our code.</p>
-<ul>
-<li>understanding the HTML document and Document Object Model (DOM)</li>
-<li>structuring content with HTML</li>
-<li>selecting and styling markup with CSS rules</li>
-<li>adding behavior with JavaScript</li>
-<li>using the in-browser development tools and JavaScript Console</li>
-<li>developing within a local host server environment</li>
-</ul>
-<h4 id="module-02-the-building-blocks-of-programming-statements-expressions-data-types-operators-variables-and-array-data-structures">Module 02: The Building Blocks of Programming: Statements, Expressions, Data Types, Operators, Variables, and Array Data Structures</h4>
-<p>In the previous module learned how to use HTML tags to structure our content within a webpage, and how to apply CSS style rules to modify the form of this content, or how that content looks (e.g., color, size, etc). These two elements, content and form, and the relationship between them, constitute two fundamental aspects of traditional design. Within the web environment we are able to introduce a third aspect to this classic understanding of design: that of behavior, which helps promote user interaction. In web mapping and web development in general today, the behavior of a web page or entities within it are controlled by the programming language JavaScript.</p>
-<p>This module begins developing a foundation in computer programming using JavaScript. While we will quickly apply these practices to web mapping, you first need to gain an understanding of the basics of JavaScript, which can be largely applied to web development in general. If you already know a programming language, then you may find these easy to pick up, though you&rsquo;ll gain from learning the specific syntax with which we write JavaScript, as well as its nuances. If JavaScript is your first programming language, you&rsquo;ll be pleased to know that these programming fundamentals are not unique to JavaScript, but can be applied to the other programming languages as well.</p>
-<ul>
-<li>writing code: the atomic, building-block elements of JS programming:
-<ul>
-<li>statements</li>
-<li>expressions</li>
-<li>data types</li>
-<li>operators</li>
-<li>variables</li>
-</ul>
-</li>
-<li>building and using an array data structure:
-<ul>
-<li>array construction</li>
-<li>accessing array values</li>
-<li>adding elements to arrays</li>
-</ul>
-</li>
-</ul>
-<h4 id="module-03-javascript-control-structures">Module 03: JavaScript Control Structures</h4>
-<p>In the previous module, when we ran our script within our web browser (such as by hitting page refresh), our JavaScript executed from the top of the script to the bottom. This is to say, the &ldquo;flow of program execution&rdquo; moved in one direction, from top to bottom. However, often we want to interrupt this flow of execution in various ways. This is where the idea of control structures come into play. Within this lesson, we&rsquo;ll learn how we control of flow of our JavaScript program.</p>
-<ul>
-<li>understanding program flow
-<ul>
-<li>looping in JS programming</li>
-<li>for loops</li>
-<li>while loops</li>
-</ul>
-</li>
-<li>conditional logic in JS programming (if/else statements)</li>
-</ul>
-<h4 id="module-04-javascript-functions">Module 04: JavaScript Functions</h4>
-<p>Often when we&rsquo;re programming, there are certain chucks of code (groups of JavaScript statements) that are all related and work together to accomplish specific functionality within the overall program. And often, we want to execute these at specific times, than once, or even repeatedly. Within this lesson, we&rsquo;ll learn how we make our programs more efficient through the use of functions. We&rsquo;ll first learn how we declare and define functions. Then we&rsquo;ll make functions more powerful by passing information to them and receiving information in return.</p>
-<ul>
-<li>mastering JavaScript functions:
-<ul>
-<li>declaring and calling custom functions</li>
-<li>passing arguments and using function parameters</li>
-<li>using return values</li>
-<li>understanding function scope</li>
-</ul>
-</li>
-</ul>
-<h4 id="module-05-javascript-objects-and-methods">Module 05: JavaScript Objects and Methods</h4>
-<p>This lesson introduces you to another JavaScript data structure (a data type used for storing accessing, and updating various values): the JavaScript Object. You&rsquo;ll learn how to create these, populate them with key/value pairs, access these values, and update the object with new properties. We&rsquo;ll also learn how to loop through objects, as well as how objects make use of a special kind of function known as a method.</p>
-<ul>
-<li>using JavaScript objects:
-<ul>
-<li>creation of objects</li>
-<li>accessing object properties</li>
-<li>looping through a JavaScript object</li>
-<li>using JavaScript methods (vs functions)</li>
-</ul>
-</li>
-</ul>
-<h4 id="module-06-introduction-to-leaflet-and-drawing-svg">Module 06: Introduction to Leaflet and Drawing SVG</h4>
-<p>This lesson will begin to get us acquainted with the Leaflet JavaScript mapping library. We&rsquo;ll learn how to read and understand the Leaflet API Reference documentation, which tells us how to access and use all the awesome Leaflet JavaScript functionality. We&rsquo;ll then work on creating a basic Leaflet map, including:</p>
-<ul>
-<li>providing initial options for how a map is displayed</li>
-<li>modifying these options after a map has been created</li>
-<li>providing a user with basic map interaction capabilities</li>
-<li>adding and switching between different tile set layers using a Leaflet map</li>
-</ul>
-<p>Most importantly, we&rsquo;ll want to learn how Leaflet employs Scalable Vector Graphics (SVG) to draw representations of geographic features on a map.</p>
-<ul>
-<li>getting acquainted with the Leaflet JavaScript mapping library</li>
-<li>reading and understanding the Leaflet API Reference</li>
-<li>creating a basic Leaflet map, including:
-<ul>
-<li>providing initial options for how a map is displayed</li>
-<li>modifying these options after a map has been created</li>
-<li>providing a user with basic map interaction capabilities</li>
-<li>adding and switching between different tile set layers using a * Leaflet map</li>
-</ul>
-</li>
-<li>understanding how Leaflet employs SVG to draw features on a map
-<ul>
-<li>drawing Leaflet marker objects using options, events, and methods</li>
-<li>drawing Leaflet&rsquo;s L.circle objects using options, events, and methods</li>
-</ul>
-</li>
-</ul>
-<h4 id="module-07-using-geojson-data">Module 07: Using GeoJSON Data</h4>
-<p>Within this lesson we sharpen our understanding of the GeoJSON specification and how data are encoded within it. We will use a useful web tool at <a href="http://geojson.io/">http://geojson.io/</a> to create and display GeoJSON data, and then we&rsquo;ll use this GeoJSON-encoded data within Leaflet to draw new data layers. To better understand how to use GeoJSON in Leaflet, we go into more depth exploring the Leaflet options and methods available to a Leaflet GeoJson layer.</p>
-<p>This week&rsquo;s lab will offer you a guided tutorial on storing GeoJSON data in an external file, loading it into the script, and representing those data thematically with Leaflet.</p>
-<ul>
-<li>understanding the GeoJSON specification and encoding data within it</li>
-<li>using geojson.io to create and display GeoJSON data</li>
-<li>using GeoJSON-encoded data within Leaflet to draw layers</li>
-<li>exploring the Leaflet options and methods available to a Leaflet GeoJson layer</li>
-<li>using external GeoJSON files in Leaflet</li>
-<li>storing GeoJSON data in an external file and loading into the script</li>
-<li>designing and developing a thematic proportional symbol map using Leaflet</li>
-<li>retrieving specific data values from point symbols</li>
-</ul>
-<h4 id="module-08-mastering-leaflets-geojson-methods-and-layer-controls">Module 08: Mastering Leaflet&rsquo;s GeoJSON Methods and Layer Controls</h4>
-<p>This lesson continues our study of creating and using the Leaflet L.GeoJson object. Beyond the powerful options available when we create layers using this method (pointToLayer, filter, oneEachFeature), we&rsquo;re going to invoke Leaflet methods on layer groups and individual layers after creation. We&rsquo;ll create additional layers in support of making a bi-variate promotional symbol map. We&rsquo;ll also learn how to use a Leaflet layer control to manage multiple data layers, and practice setting universal styles and layer-specific styles using the L.GeoJson style option. We&rsquo;ll finish up by introducing some advanced techniques for code refactoring.</p>
-<ul>
-<li>creating and using Leaflet L.GeoJson layers</li>
-<li>using a layer control to manage multiple data layers</li>
-<li>setting universal styles and layer-specific styles using the L.GeoJson style option</li>
-<li>invoking Leaflet methods on layer groups and individual layers after creation</li>
-<li>creating a bi-variate map</li>
-<li>introduces advanced techniques for code refactoring and debugging</li>
-</ul>
-<h4 id="extra-credit-thinking-about-map-673">Extra Credit: Thinking about MAP 673</h4>
-<p>In MAP 673, you will be tasked to create a final project. In this extra credit opportunity, you will be asked to find data and make an interactive map using the skills learned in the previous modules from both MAP 671 &amp; 672.</p>
-<!--
+  <main>
+    <section class="py-3 container col-lg-8 col-xxl-6" id='documentation'>
+      <h1 id="map-672-programming-for-web-mapping">MAP 672: Programming For Web Mapping</h1>
+      <p><img src="../images/syllabus/banner.jpg" alt="Welcome to Map 672"></p>
+      <p><strong>Department of Geography</strong><br>
+        The University of Kentucky, College of Arts and Sciences<br>
+        October 24 – December 19, 2025 <br>
+        Online via <a href="https://uk.instructure.com/courses/2103423">Canvas</a></p>
+      <p>Section: 210 (4 credits)<br>
+        Instructor: Boyd Shearer<br>
+        Office: Online via Zoom (by appointment) and POT805A<br>
+        Office Times: 1–2:30 pm Saturdays (Lexington time), and by appointment</p>
+      <!-- <p class='display-1 fancy-text uk-dark-blue'>It's about data, y'all!</p> -->
+      <h2 id="table-of-contents">Table of Contents</h2>
+      <!-- TOC -->
+      <ul>
+        <li><a href="#map-672-programming-for-web-mapping">MAP 672: Programming For Web Mapping</a>
+          <ul>
+            <li><a href="#table-of-contents">Table of Contents</a></li>
+            <li><a href="#methods-of-contact">Methods of Contact</a>
+              <ul>
+                <li><a href="#online-office-hours">Online office hours</a></li>
+                <li><a href="#forum">Forum</a></li>
+                <li><a href="#student-messaging-forum">Student Messaging Forum</a></li>
+                <li><a href="#email">Email</a></li>
+              </ul>
+            </li>
+            <li><a href="#course-description">Course Description</a>
+              <ul>
+                <li><a href="#student-learning-outcomes">Student Learning Outcomes</a></li>
+                <li><a href="#format">Format</a></li>
+                <li><a href="#required-resources">Required resources</a></li>
+                <li><a href="#suggested-resources">Suggested resources</a></li>
+              </ul>
+            </li>
+            <li><a href="#course-assignments-and-grading">Course Assignments and Grading</a>
+              <ul>
+                <li><a href="#exams">Exams</a></li>
+                <li><a href="#grading-scale-and-rubric">Grading scale and Rubric</a></li>
+              </ul>
+            </li>
+            <li><a href="#course-schedule">Course Schedule</a>
+              <ul>
+                <li><a href="#lab--module-topics">Lab &amp; Module Topics</a></li>
+              </ul>
+            </li>
+            <li><a href="#course-policies">Course Policies</a>
+              <ul>
+                <li><a href="#academic-policies">Academic Policies</a></li>
+              </ul>
+            </li>
+            <li><a href="#technical-support">Technical Support</a></li>
+            <li><a href="#campus-resources-for-your-success">Campus Resources for Your Success</a>
+              <ul>
+                <li><a href="#an-extended-listing-of-campus-resources">An extended listing of campus resources</a></li>
+              </ul>
+            </li>
+            <li><a href="#about-the-department-of-geography">About the Department of Geography</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /TOC -->
+      <h2 id="methods-of-contact">Methods of Contact</h2>
+      <h3 id="online-office-hours">Online office hours</h3>
+      <p>If you are on campus, you are invited to visit my office. Alternatively, you may choose to schedule a custom
+        time meet online. Find the link to Zoom in the Canvas Zoom section. You do not need to share your camera, but be
+        prepared to share your screen and microphone.</p>
+      <h3 id="forum">Forum</h3>
+      <p>For general questions about tasks relevant to completing assignments, please start by creating a new discussion
+        in our Canvas Discussions section. If you find a post that you can help with, please contribute.</p>
+      <p>Please follow these guidelines when posting to the discussion boards:</p>
+      <ul>
+        <li>Start a new discussion and include a detailed subject line</li>
+        <li>When replying, make sure you reply to the correct thread.</li>
+      </ul>
+      <h3 id="student-messaging-forum">Student Messaging Forum</h3>
+      <p>We offer a team messaging service hosted by slack.com to facilitate a more interactive forum than Canvas
+        Discussions. This free, private service will allow us to share files and screen easily captures to diagnose and
+        solve problems. We hope students will use this platform, but it is not required, nor is it consistently
+        moderated. Students can use their uky.edu email address to participate in our Slack workspace: <a
+          href="https://join.slack.com/t/newmapsplus/signup">https://join.slack.com/t/newmapsplus/signup</a>. Join the
+        <mark>#map672</mark> channel.
+      </p>
+      <h3 id="email">Email</h3>
+      <p>If students have questions about grades, accommodating missed assignments, or other personal issues, please
+        contact the instructor via the Canvas InBox. <mark>Do not send messages to my @uky.edu email address without
+          prior approval.</mark> Canvas InBox creates an easily accessible record of our correspondence. I will respond
+        to messages within 24 hours.</p>
+      <h2 id="course-description">Course Description</h2>
+      <p>This courses introduces students to the fundamental concepts and techniques of web development and computer
+        programming through web mapping. Students will become familiar with current web standards and proficient in
+        manipulating the structural, stylistic and behavioral elements of web maps through programming. Students will
+        translate these practices to achieve objectives in web cartography such as the display of a basemap, the
+        thematic representation of data, and the employment of interaction to enhance visual communication and the
+        presentation of information.</p>
+      <h3 id="student-learning-outcomes">Student Learning Outcomes</h3>
+      <ul>
+        <li>Demonstrate proficiency in reading, writing, and debugging a programming language;</li>
+        <li>Prepare a development environment suitable for producing web maps;</li>
+        <li>Build a web map and interface using modern web standards;</li>
+        <li>Integrate custom code with web mapping technology code libraries;</li>
+        <li>Revise code to enhance a map and interface solution;</li>
+        <li>Assess and apply online documentation to solve development problems;</li>
+        <li>Use a distributed version control system (Git and GitHub) to retrieve, share, and distribute code and maps
+          online; and</li>
+        <li>Develop online web portfolios of code and related map products.</li>
+      </ul>
+      <h3 id="format">Format</h3>
+      <p>This course is an asynchronous online course that requires dedicated participation. Much of your time will be
+        exploring programming techniques and creating maps.</p>
+      <h3 id="required-resources">Required resources</h3>
+      <p>Content, assignments, and interactions rely on all students having computer hardware and software. While these
+        are available on computers in student computer labs on the UK&rsquo;s campus, most you will not be physically
+        present on campus and are responsible for obtaining the necessary hardware and software.</p>
+      <h4 id="hardware">Hardware</h4>
+      <ul>
+        <li>Computer, a newer model with a recent operating system and a hard drive with at least 2-5 GB of free space
+          (more can be useful). Having administration rights over your computer to install new software is important.
+        </li>
+        <li>Webcam and a headset/microphone for online interaction during office hours.</li>
+        <li>A broadband internet connection (min 6 Mbps download/upload speed recommended).
+          Students are responsible for ensuring that their computer is smoothly operating (virus-free, OS updates,
+          etc.).</li>
+      </ul>
+      <h4 id="software">Software</h4>
+      <p>Course modules will suggest or require downloading various software applications and provide instructions along
+        the way:</p>
+      <ul>
+        <li>VS Code (<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>) or a code editor(s) of
+          your choice.</li>
+        <li>GitHub Desktop ( <a href="https://desktop.github.com/">https://desktop.github.com/</a>)</li>
+        <li>Google Chrome browser ( <a
+            href="https://www.google.com/chrome/browser/desktop/">https://www.google.com/chrome/browser/desktop/</a>)
+        </li>
+      </ul>
+      <p>As part of this course, students may be expected to install various software programs, device drivers, etc. The
+        instructor will provide specific instructions when this is the case.</p>
+      <h3 id="suggested-resources">Suggested resources</h3>
+      <p>There is no required textbook for this course. However, the following resources are recommended for additional
+        learning:</p>
+      <ul>
+        <li><a href="https://www.w3schools.com/">W3Schools Tutorials</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">MDN Web Docs Tutorials</a></li>
+        <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+        <li><a href="https://www.codecademy.com/">Codecademy</a></li>
+        <li><a href="https://www.udacity.com/">Udacity</a></li>
+      </ul>
+      <p>An excellent, though slightly more advanced (and free!) book on JavaScript programming:</p>
+      <ul>
+        <li><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+      </ul>
+      <p>and just because:</p>
+      <ul>
+        <li><a href="http://jsforcats.com/">JavaScript for Cats</a> 🐱</li>
+      </ul>
+      <p>Other course readings will be provided via the Canvas Learning Management System.</p>
+      <h2 id="course-assignments-and-grading">Course Assignments and Grading</h2>
+      <p>This course requires the completion of 8 labs. Grade requirements are weighted as detailed below:</p>
+      <p><strong>Labs</strong>: 8 @ 12.5% each of total grade</p>
+      <p>Completed labs will be submitted as a URL in Canvas. They should be submitted by 11:59 pm on the day that they
+        are due (see course schedule).</p>
+      <h3 id="exams">Exams</h3>
+      <p>This course has no exams.</p>
+      <h3 id="grading-scale-and-rubric">Grading scale and Rubric</h3>
+      <p>Lab grading will focus on three rubrics:</p>
+      <ul>
+        <li>Technical proficiency, e.g., does it work?</li>
+        <li>Cartographic design, map production, data visualization, and/or coding/commenting style, e.g., does it look
+          good and easy to understand?</li>
+        <li>Presentation of the project web page and/or GitHub repository component, e.g., is the project nicely
+          organized, documented, and easy to use?</li>
+      </ul>
+      <p>Grade: A (90% to 100%) Excellent: You show a complete understanding of course materials and turn in assignments
+        by the due date that are error-free, well-organized, and regularly show originality and creativity. Your
+        participation in discussions is active, thoughtful, and helps to lead class learning.</p>
+      <p>Grade: B (80% to 89%) Good: You show a good grasp of key concepts within course materials and turn in the
+        majority of work promptly that contains a few errors, but is organized and occasionally original and creative.
+        Participation in discussions is active and contributes to ongoing conversations and work.</p>
+      <p>Grade: C (70% to 79%) Average: You show a basic understanding of key concepts within course materials and turn
+        in work often late and contains some errors but meets the assignment goals. Work is rarely original and
+        creative. Your participation in discussions and group work primarily contributes to established conversations
+        and work.</p>
+      <p>Grade: E (below 60%) Failing: You show major gaps in understanding many concepts within the course and fail to
+        complete projects and exercises correctly and timely. You do not engage in discussions.</p>
+      <h2 id="course-schedule">Course Schedule</h2>
+      <p>The course runs for eight full weeks. Each week begins at 12:01 am EST on Monday and ends at 11:59 pm EST on
+        the following Sunday. New modules will unlock each week and are available after you have made an assignment
+        submission for the previous module.</p>
+      <p><img src="../images/syllabus/modules.png" alt="Modules"><br>
+        <em>New module content is available each week.</em>
+      </p>
+      <p>Any changes to the below timeline will be announced on Canvas and changed in this document.</p>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left">Week</th>
+            <th style="text-align: center">Module</th>
+            <th style="text-align: right">Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left">1</td>
+            <td style="text-align: center">01</td>
+            <td style="text-align: right">Lab 1, Oct 31</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">2</td>
+            <td style="text-align: center">02</td>
+            <td style="text-align: right">Lab 2, Nov 7</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">3</td>
+            <td style="text-align: center">03</td>
+            <td style="text-align: right">Lab 3, Nov 14</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">4</td>
+            <td style="text-align: center">04</td>
+            <td style="text-align: right">Lab 4, Nov 21</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">5</td>
+            <td style="text-align: center">05</td>
+            <td style="text-align: right">Lab 5, Nov 28</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">6</td>
+            <td style="text-align: center">06</td>
+            <td style="text-align: right">Lab 6, Dec 5</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">7</td>
+            <td style="text-align: center">07</td>
+            <td style="text-align: right">Lab 7, Dec 12</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">8</td>
+            <td style="text-align: center">08</td>
+            <td style="text-align: right">Lab 8, Dec 19</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">9</td>
+            <td style="text-align: center">EC</td>
+            <td style="text-align: right">Extra credit, Dec 22</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="lab--module-topics">Lab &amp; Module Topics</h3>
+      <h4 id="module-01-learning-foundations-of-the-technology-stack-html-css-and-js">Module 01: Learning Foundations of
+        the Technology Stack: HTML, CSS, and JS</h4>
+      <p>This lesson will provide you with an introduction to the foundational technology stack used in web map
+        development. We will introduce you to 3 separate coding technologies (HTML, CSS, and JavaScript), which work
+        together to produce a web page and map application. The module suggests that web map design is achieved using
+        these three technologies to structure content (HTML), and give form (CSS) and behavior (JavaScript) to this
+        content. Design is then the convergence of content, form, and behavior.</p>
+      <p>Additionally, we&rsquo;ll practice writing these technologies within our powerful text editor, Brackets, as
+        well as using in browser development tools to inspect the Document Object Module (DOM) and debug our code.</p>
+      <ul>
+        <li>understanding the HTML document and Document Object Model (DOM)</li>
+        <li>structuring content with HTML</li>
+        <li>selecting and styling markup with CSS rules</li>
+        <li>adding behavior with JavaScript</li>
+        <li>using the in-browser development tools and JavaScript Console</li>
+        <li>developing within a local host server environment</li>
+      </ul>
+      <h4
+        id="module-02-the-building-blocks-of-programming-statements-expressions-data-types-operators-variables-and-array-data-structures">
+        Module 02: The Building Blocks of Programming: Statements, Expressions, Data Types, Operators, Variables, and
+        Array Data Structures</h4>
+      <p>In the previous module learned how to use HTML tags to structure our content within a webpage, and how to apply
+        CSS style rules to modify the form of this content, or how that content looks (e.g., color, size, etc). These
+        two elements, content and form, and the relationship between them, constitute two fundamental aspects of
+        traditional design. Within the web environment we are able to introduce a third aspect to this classic
+        understanding of design: that of behavior, which helps promote user interaction. In web mapping and web
+        development in general today, the behavior of a web page or entities within it are controlled by the programming
+        language JavaScript.</p>
+      <p>This module begins developing a foundation in computer programming using JavaScript. While we will quickly
+        apply these practices to web mapping, you first need to gain an understanding of the basics of JavaScript, which
+        can be largely applied to web development in general. If you already know a programming language, then you may
+        find these easy to pick up, though you&rsquo;ll gain from learning the specific syntax with which we write
+        JavaScript, as well as its nuances. If JavaScript is your first programming language, you&rsquo;ll be pleased to
+        know that these programming fundamentals are not unique to JavaScript, but can be applied to the other
+        programming languages as well.</p>
+      <ul>
+        <li>writing code: the atomic, building-block elements of JS programming:
+          <ul>
+            <li>statements</li>
+            <li>expressions</li>
+            <li>data types</li>
+            <li>operators</li>
+            <li>variables</li>
+          </ul>
+        </li>
+        <li>building and using an array data structure:
+          <ul>
+            <li>array construction</li>
+            <li>accessing array values</li>
+            <li>adding elements to arrays</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="module-03-javascript-control-structures">Module 03: JavaScript Control Structures</h4>
+      <p>In the previous module, when we ran our script within our web browser (such as by hitting page refresh), our
+        JavaScript executed from the top of the script to the bottom. This is to say, the &ldquo;flow of program
+        execution&rdquo; moved in one direction, from top to bottom. However, often we want to interrupt this flow of
+        execution in various ways. This is where the idea of control structures come into play. Within this lesson,
+        we&rsquo;ll learn how we control of flow of our JavaScript program.</p>
+      <ul>
+        <li>understanding program flow
+          <ul>
+            <li>looping in JS programming</li>
+            <li>for loops</li>
+            <li>while loops</li>
+          </ul>
+        </li>
+        <li>conditional logic in JS programming (if/else statements)</li>
+      </ul>
+      <h4 id="module-04-javascript-functions">Module 04: JavaScript Functions</h4>
+      <p>Often when we&rsquo;re programming, there are certain chucks of code (groups of JavaScript statements) that are
+        all related and work together to accomplish specific functionality within the overall program. And often, we
+        want to execute these at specific times, than once, or even repeatedly. Within this lesson, we&rsquo;ll learn
+        how we make our programs more efficient through the use of functions. We&rsquo;ll first learn how we declare and
+        define functions. Then we&rsquo;ll make functions more powerful by passing information to them and receiving
+        information in return.</p>
+      <ul>
+        <li>mastering JavaScript functions:
+          <ul>
+            <li>declaring and calling custom functions</li>
+            <li>passing arguments and using function parameters</li>
+            <li>using return values</li>
+            <li>understanding function scope</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="module-05-javascript-objects-and-methods">Module 05: JavaScript Objects and Methods</h4>
+      <p>This lesson introduces you to another JavaScript data structure (a data type used for storing accessing, and
+        updating various values): the JavaScript Object. You&rsquo;ll learn how to create these, populate them with
+        key/value pairs, access these values, and update the object with new properties. We&rsquo;ll also learn how to
+        loop through objects, as well as how objects make use of a special kind of function known as a method.</p>
+      <ul>
+        <li>using JavaScript objects:
+          <ul>
+            <li>creation of objects</li>
+            <li>accessing object properties</li>
+            <li>looping through a JavaScript object</li>
+            <li>using JavaScript methods (vs functions)</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="module-06-introduction-to-leaflet-and-drawing-svg">Module 06: Introduction to Leaflet and Drawing SVG</h4>
+      <p>This lesson will begin to get us acquainted with the Leaflet JavaScript mapping library. We&rsquo;ll learn how
+        to read and understand the Leaflet API Reference documentation, which tells us how to access and use all the
+        awesome Leaflet JavaScript functionality. We&rsquo;ll then work on creating a basic Leaflet map, including:</p>
+      <ul>
+        <li>providing initial options for how a map is displayed</li>
+        <li>modifying these options after a map has been created</li>
+        <li>providing a user with basic map interaction capabilities</li>
+        <li>adding and switching between different tile set layers using a Leaflet map</li>
+      </ul>
+      <p>Most importantly, we&rsquo;ll want to learn how Leaflet employs Scalable Vector Graphics (SVG) to draw
+        representations of geographic features on a map.</p>
+      <ul>
+        <li>getting acquainted with the Leaflet JavaScript mapping library</li>
+        <li>reading and understanding the Leaflet API Reference</li>
+        <li>creating a basic Leaflet map, including:
+          <ul>
+            <li>providing initial options for how a map is displayed</li>
+            <li>modifying these options after a map has been created</li>
+            <li>providing a user with basic map interaction capabilities</li>
+            <li>adding and switching between different tile set layers using a * Leaflet map</li>
+          </ul>
+        </li>
+        <li>understanding how Leaflet employs SVG to draw features on a map
+          <ul>
+            <li>drawing Leaflet marker objects using options, events, and methods</li>
+            <li>drawing Leaflet&rsquo;s L.circle objects using options, events, and methods</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="module-07-using-geojson-data">Module 07: Using GeoJSON Data</h4>
+      <p>Within this lesson we sharpen our understanding of the GeoJSON specification and how data are encoded within
+        it. We will use a useful web tool at <a href="http://geojson.io/">http://geojson.io/</a> to create and display
+        GeoJSON data, and then we&rsquo;ll use this GeoJSON-encoded data within Leaflet to draw new data layers. To
+        better understand how to use GeoJSON in Leaflet, we go into more depth exploring the Leaflet options and methods
+        available to a Leaflet GeoJson layer.</p>
+      <p>This week&rsquo;s lab will offer you a guided tutorial on storing GeoJSON data in an external file, loading it
+        into the script, and representing those data thematically with Leaflet.</p>
+      <ul>
+        <li>understanding the GeoJSON specification and encoding data within it</li>
+        <li>using geojson.io to create and display GeoJSON data</li>
+        <li>using GeoJSON-encoded data within Leaflet to draw layers</li>
+        <li>exploring the Leaflet options and methods available to a Leaflet GeoJson layer</li>
+        <li>using external GeoJSON files in Leaflet</li>
+        <li>storing GeoJSON data in an external file and loading into the script</li>
+        <li>designing and developing a thematic proportional symbol map using Leaflet</li>
+        <li>retrieving specific data values from point symbols</li>
+      </ul>
+      <h4 id="module-08-mastering-leaflets-geojson-methods-and-layer-controls">Module 08: Mastering Leaflet&rsquo;s
+        GeoJSON Methods and Layer Controls</h4>
+      <p>This lesson continues our study of creating and using the Leaflet L.GeoJson object. Beyond the powerful options
+        available when we create layers using this method (pointToLayer, filter, oneEachFeature), we&rsquo;re going to
+        invoke Leaflet methods on layer groups and individual layers after creation. We&rsquo;ll create additional
+        layers in support of making a bi-variate promotional symbol map. We&rsquo;ll also learn how to use a Leaflet
+        layer control to manage multiple data layers, and practice setting universal styles and layer-specific styles
+        using the L.GeoJson style option. We&rsquo;ll finish up by introducing some advanced techniques for code
+        refactoring.</p>
+      <ul>
+        <li>creating and using Leaflet L.GeoJson layers</li>
+        <li>using a layer control to manage multiple data layers</li>
+        <li>setting universal styles and layer-specific styles using the L.GeoJson style option</li>
+        <li>invoking Leaflet methods on layer groups and individual layers after creation</li>
+        <li>creating a bi-variate map</li>
+        <li>introduces advanced techniques for code refactoring and debugging</li>
+      </ul>
+      <h4 id="extra-credit-thinking-about-map-673">Extra Credit: Thinking about MAP 673</h4>
+      <p>In MAP 673, you will be tasked to create a final project. In this extra credit opportunity, you will be asked
+        to find data and make an interactive map using the skills learned in the previous modules from both MAP 671
+        &amp; 672.</p>
+      <!--
 
 #### Module 09: Creating a Dynamically Drawn Choropleth Map
 
@@ -424,268 +511,555 @@ This lesson will instruct you how to create a dynamically generated choropleth m
 As in MAP 671, let your creativity soar to new heights with a project of your choice. You will create an public, interactive mapping project in a new repository with a theme of your choice. Requirements will be detailed when the module is released.
 
 -->
-<h2 id="course-policies">Course Policies</h2>
-<h4 id="covid-19-policy">COVID-19 Policy</h4>
-<p>While this course is entirely online, students may find themselves on campus and should be aware of important changes. Please check <a href="https://www.uky.edu/coronavirus/">https://www.uky.edu/coronavirus/</a> for the most up-to-date information.</p>
-<h3 id="academic-policies">Academic Policies</h3>
-<p>This course adheres to the University of Kentucky&rsquo;s academic policies provided in the following link: <a href="https://www.uky.edu/universitysenate/acadpolicy">https://www.uky.edu/universitysenate/acadpolicy</a>. Additional policies are detailed in the below sections.</p>
-<h4 id="attendance-policy">Attendance Policy</h4>
-<p>This course does not require in-person nor synchronous online attendance.</p>
-<h4 id="teamwork--collaboration">Teamwork &amp; Collaboration</h4>
-<p>We are developing a workflow that enables very efficient remote collaboration. Many assignments have you make creative and aesthetic choices that have value in different contexts. Evaluation of your assignment will include suggested changes to and comments on your choices that might reflect different design requirements and sensibilities. Consider each week a collaboration with me, the instructor. If you want to explore a specific feature or technique, let me know.</p>
-<p>If you collaborate on an assignment with fellow students, please observe the following expectations:</p>
-<ul>
-<li>You should work through the lesson independently;</li>
-<li>Please acknowledge your collaborators in your submission;</li>
-<li>Submit your lab assignment to Canvas independently; and</li>
-<li>Any textual content that you add to the map or web page, e.g., information about the area shown on the map, should be in your own words or properly cited if you are using someone else&rsquo;s words (see the section on plagiarism).</li>
-</ul>
-<h4 id="submission-of-assignments">Submission of Assignments</h4>
-<p>The required course interactions are 1) submitting assignments and 2) various discussion board interactions. Students will be assigned weekly lessons, as found in the Canvas Modules section of this course. All work listed in these lessons must be submitted through Canvas by no later than 11:59 pm EDT on the day they are due (typically, the Sunday following the module&rsquo;s opening). Precise submission dates for each assignment can found in the Canvas Assignment section.</p>
-<h4 id="late-assignments">Late Assignments</h4>
-<p>Late assignments will be accepted. If you do not have an excused absence and you submit a late assignment, 10% will automatically will be deducted. Students with excused absences approved by the instructor will not be penalized. Late assignments submitted without an excused absence may not receive submission comments with the evaluation.</p>
-<h4 id="excused-absences">Excused Absences</h4>
-<p>Senate Rules 5.2.5.2.1 defines the following as acceptable reasons for excused absences:</p>
-<ul>
-<li>significant illness;</li>
-<li>death of a family member;</li>
-<li>trips for members of student organizations sponsored by an educational unit, trips for University classes, and trips * for participation in intercollegiate athletic events;</li>
-<li>major religious holidays;</li>
-<li>interviews for graduate/professional school or full-time employment post-graduation; and</li>
-<li>other circumstances found to fit “reasonable cause for non-attendance” by the instructor of record. Students should notify the professor of absences prior to class when possible.</li>
-</ul>
-<p>In addition to these policies, this course recognizes that a documented network or platform outage, e.g., Canvas not working, justifies an excused absence. Technical problems and scheduling conflicts also arise from time-to-time, and we recognize that assignments need to be turned in late. Please notify me as soon as possible if you anticipate a late assignment to discuss a “reasonable cause for non-attendance” and justify an excused absence.</p>
-<h4 id="class-behavior-and-civility">Class Behavior and Civility</h4>
-<p>All participants in this course should maintain the highest standards of academic, professional, and personal integrity and support a safe and inclusive learning environment (see the section on non-discrimination). With an understanding of mutual respect and civil discourse, we cultivate an online environment free from:</p>
-<ul>
-<li>emotional harm, hostility, and excessive persuasion;</li>
-<li>disturbances that interfere with course instruction and learning;</li>
-<li>content that degrades an individual or group.</li>
-</ul>
-<p>The instructor reserves the right to stop and remove content (Zoom meetings, discussion posts, etc.) that conflicts with the above statement.</p>
-<h4 id="chosen-names-and-personal-pronouns">Chosen Names and Personal Pronouns</h4>
-<p>Everyone has the right to be addressed by the name and pronouns that correspond to their gender identity, including non-binary pronouns, for example, they/them/theirs, ze/zir/zirs, etc. Course rosters may not list gender or pronouns, so you may be asked to indicate the pronouns you use so that the instructor does not make assumptions based on your name and/or appearance/self-presentation (you are not obligated to do so). If you use a chosen name, please let the instructor know. Chosen names and pronouns are to be respected at all times in this course. Mistakes in addressing one another may happen, so we should encourage openness to correction and learning. Chosen names and personal pronouns may evolve, so if at any point during the semester you would like to be addressed differently, please let the instructor know.</p>
-<h4 id="course-material-copyright-statement">Course Material Copyright Statement</h4>
-<p>The University of Kentucky Code of Student Conduct defines Invasion of Privacy as using electronic or other devices to make a photographic, audio, or video record of any person without their prior knowledge or consent when such a recording is likely to cause injury or distress.</p>
-<p>Meetings of this course might be recorded by the instructor. All video and audio recordings of lectures, lab demonstrations, and class meetings, provided by the instructors, are for educational use by students in this class only. They are available only through the Canvas shell for this course and cannot be copied, shared, or redistributed.</p>
-<p>As addressed in the Student Code of Conduct, students are expected to follow appropriate university policies and maintain the security of linkblue accounts used to access recorded class materials. Recordings may not be reproduced, shared with those not enrolled in the class, or uploaded to other online environments.</p>
-<p>If the instructor or a University of Kentucky office plans any other uses for the recordings, beyond this class, students identifiable in the recordings will be notified to request consent before such use. In anticipation of such cases, students may be asked to complete an “authorization of use” form by a faculty member.</p>
-<p>Video and audio recordings by students are not permitted during the class unless the student has received prior permission from the instructor. Any sharing, distribution, and or uploading of these recordings outside of the parameters of the class is prohibited. Students with specific recording accommodations approved by the Disability Resource Center should present their official documentation to the instructor.</p>
-<p>All content for this course, including handouts, assignments, and lectures, is the instructors&rsquo; intellectual property and cannot be reproduced or sold without prior permission from the instructors. A student may use the material for reasonable educational and professional purposes extending beyond this class, such as studying for a comprehensive or qualifying examination in a degree program, preparing for a professional or certification examination, or to assist in fulfilling responsibilities at a job or internship.</p>
-<h4 id="academic-integrityprohibition-on-plagiarism">Academic Integrity—Prohibition on Plagiarism</h4>
-<p>(Senate Rules 6.3.1)</p>
-<p>Please note that any textual content that you add to the map should be in your own words or <a href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html">properly cited</a> if you are using someone else&rsquo;s words or content (see the section on plagiarism).</p>
-<p>Per University policy, students shall not plagiarize, cheat, or falsify or misuse academic records. Students are expected to adhere to University policy on cheating and plagiarism in all courses. The minimum penalty for a first offense is a zero on the assignment on which the offense occurred. If the offense is considered severe or the student has other academic offenses on their record, more serious penalties, up to suspension from the University, may be imposed.</p>
-<p>Plagiarism and cheating are serious breaches of academic conduct. Each student is advised to become familiar with the various forms of academic dishonesty, as explained in the Code of Student Rights and Responsibilities . Complete information can be found on the Academic Ombud page. A plea of ignorance is not acceptable as a defense against the charge of academic dishonesty. It is important that you review this information as all ideas borrowed from others need to be properly credited.</p>
-<p>Senate Rule 6.3.1 (see current Senate Rules ) states that all academic work, written or otherwise, submitted by students to their instructors or other academic supervisors, is expected to be the result of their own thought, research, or self-expression. In cases where students feel unsure about a question of plagiarism involving their work, they are obliged to consult their instructors on the matter before submission.</p>
-<p>When students submit work purporting to be their own, but which in any way borrows ideas, organization, wording, or content from another source without appropriate acknowledgment of the fact, the students are guilty of plagiarism.</p>
-<p>Plagiarism includes reproducing someone else&rsquo;s work (including, but not limited to, a published article, a book, a website, computer code, or a paper from a friend) without clear attribution. Plagiarism also includes the practice of employing or allowing another person to alter or revise the work which a student submits as his/her own, whoever that other person may be, except under specific circumstances (e.g., Writing Center review or peer review) allowed by the Instructor of Record or that person’s designee. Plagiarism may also include double submission, self-plagiarism, or unauthorized resubmission of one’s own work, as defined by the instructor.</p>
-<p>Students may discuss assignments among themselves or with an instructor or tutor, except where prohibited by the Instructor of Record (e.g., individual take-home exams). However, the actual work must be done by the student, and the student alone, unless collaboration is allowed by the Instructor of Record (e.g., group projects).</p>
-<p>When a student&rsquo;s assignment involves research in outside sources or information, the student must carefully acknowledge exactly what, where, and how he/she has employed them. If the words of someone else are used, the student must put quotation marks around the passage in question and add an appropriate indication of its origin. Making simple changes while leaving the organization, content, and phraseology intact is plagiaristic. However, nothing in these Rules shall apply to those ideas, which are so generally and freely circulated as to be a part of the public domain.</p>
-<p>Please note that any assignment you turn in may be submitted to an electronic database to check for plagiarism.</p>
-<h4 id="academic-integrityprohibition-on-cheating">Academic Integrity—Prohibition on Cheating</h4>
-<p>(Senate Rules 6.3.2)</p>
-<p>Cheating is defined by its general usage. It includes, but is not limited to, the wrongfully giving, taking, or presenting any information or material by a student with the intent of aiding himself/herself or another on any academic work which is considered in any way in the determination of the final grade. The fact that a student could not have benefited from an action is not by itself proof that the action does not constitute cheating. Any question of definition shall be referred to the University Appeals Board.</p>
-<h4 id="academic-integrityprohibition-on-falsificationmisuse-of-academic-records">Academic Integrity–Prohibition on Falsification/Misuse of Academic Records</h4>
-<p>(Senate Rules 6.3.3)</p>
-<p>Maintaining the integrity, accuracy, and appropriate privacy of student academic records is an essential administrative function of the University and the basic protection of all students. Accordingly, the actual or attempted falsification, theft, misrepresentation, or other alteration or misuse of any official academic record of the University, specifically including knowingly having unauthorized access to such records or the unauthorized disclosure of information contained in such records, is a serious academic offense. As used in this context, &ldquo;academic record&rdquo; includes all paper and electronic versions of the partial or complete permanent academic record, all official and unofficial academic transcripts, application documents and admission credentials, and all academic record transaction documents. The minimum sanction for falsification, including the omission of information, or attempted falsification, or other misuses of academic records as described in this section is suspension for one semester.</p>
-<h4 id="statement-on-diversity-equity-and-inclusion-dei">Statement on Diversity, Equity, and Inclusion (DEI)</h4>
-<p>The University of Kentucky is committed to our core values of diversity and inclusion, mutual respect and human dignity, and a sense of community (Governing Regulations XIV). We acknowledge and respect the seen and unseen diverse identities and experiences of all members of the university community (<a href="https://www.uky.edu/regs/gr14)">https://www.uky.edu/regs/gr14)</a>. These identities include but are not limited to those based on race, ethnicity, gender identity and expressions, ideas and perspectives, religious and cultural beliefs, sexual orientation, national origin, age, ability, and socioeconomic status. We are committed to equity and justice and providing a learning and engaging community in which every member is engaged, heard, and valued.</p>
-<p>We strive to rectify and change behavior that is inconsistent with our principles and commitment to diversity, equity, and inclusion. If students encounter such behavior in a course, they are encouraged to speak with the instructor of record and/or the Office of Institutional Equity and Equal Opportunity. Students may also contact a faculty member within the department, program director, the director of undergraduate or graduate studies, the department chair, any college administrator, or the dean. All of these individuals are mandatory reporters under University policies.</p>
-<h4 id="accommodations">Accommodations</h4>
-<p>If you have a documented disability requiring academic accommodations, please notify the instructor as soon as possible during scheduled office hours. To receive accommodations in this course, you must provide the instructor with a Letter of Accommodation from the Disability Resource Center (DRC). The DRC coordinates campus disability services available to students with disabilities. Visit the <a href="http://www.uky.edu/DisabilityResourceCenter">DRC website</a>, contact them by phone at (859) 257-2754, or visit their office on the corner of Rose Street and Huguelet Drive in the Multidisciplinary Science Building, Suite 407.</p>
-<h2 id="technical-support">Technical Support</h2>
-<h4 id="uk-online-student-resources">UK Online Student Resources</h4>
-<p>Discover resources and services unique to online students at UK Online&rsquo;s website: <a href="https://www.uky.edu/academics/online-programs/student-resources">https://www.uky.edu/academics/online-programs/student-resources</a> and <a href="https://learnanywhere.uky.edu">https://learnanywhere.uky.edu</a>.</p>
-<h4 id="distance-learning-library-services">Distance Learning Library Services</h4>
-<p>Distance Learning Library Services aims to provide access to information resources for the students who take classes through the Distance Learning Programs. Services include:</p>
-<ul>
-<li>Access to the University&rsquo;s circulating collections</li>
-<li>Document Delivery &amp; Interlibrary Loan</li>
-<li>Research Assistance</li>
-</ul>
-<p>Information on Distance Learning Library Services: <a href="http://libraries.uky.edu/DLLS">http://libraries.uky.edu/DLLS</a></p>
-<h4 id="information-technology-customer-services">Information Technology Customer Services</h4>
-<p>UKIT Customer Services provides a single point of contact for students, faculty, staff, and alumni&rsquo;s technological needs. Customer Services supports ITS&rsquo;s overall strategic goals by assisting with the knowledge and tools for success with any information technology at the University Of Kentucky. Visit the Technology Help Center <a href="http://techhelpcenter.uky.edu/">http://techhelpcenter.uky.edu/</a> for many self-help topics, or you may contact Customer Services for additional assistance. For password resets, go to <a href="https://reset.uky.edu">https://reset.uky.edu</a> or call 859-218-HELP.</p>
-<h4 id="canvas-learning-management-system">Canvas Learning Management System</h4>
-<p>This course uses the Canvas Learning Management System or LMS. The online course system is available via Canvas at <a href="https://uk.instructure.com/">https://uk.instructure.com/</a>. Use your LinkBlue account to log in, and you will see this course under the courses menu (top of the page towards the left). This course (<a href="https://uk.instructure.com/courses/1096339">https://uk.instructure.com/courses/1096339</a>) offers an orientation to Canvas, and the Help button in the top right corner provides quick access to the guides, asks the community, and the phone number for 24/7 support. Course materials (syllabus, readings, assignments, discussions, exams, etc.) will all be posted here. You are responsible for any changes in assignments, readings, and due dates posted on the course blog.</p>
-<h4 id="uk-downloads">UK Downloads</h4>
-<p>Download and install proprietary software, e.g., Microsoft Office 365, Adobe Creative Cloud, etc., as a member of the University of Kentucky community at <a href="https://download.uky.edu/">https://download.uky.edu/</a></p>
-<h2 id="campus-resources-for-your-success">Campus Resources for Your Success</h2>
-<p>The Department of Geography and your instructors want you to succeed in your studies and have the best experience at the University of Kentucky. Sometimes circumstances make it difficult. Learn about resources that can help you overcome challenges and understand that you are part of a greater, inclusive, and safe community.</p>
-<h4 id="academic-coaching">Academic Coaching</h4>
-<p><a href="https://www.uky.edu/presentationU/academic-coaching">https://www.uky.edu/presentationU/academic-coaching</a></p>
-<p>Meet with an Academic Coach to develop an individualized plan to meet your goals for this semester, and beyond. They will work with you one-on-one to determine your strengths, weaknesses, and help you reach your goals. Located in The Study Central (basement of Donovan), The Study North (Hub at Young Library), and Presentation U! @ The Hub</p>
-<h4 id="bias-incident-support-services">Bias Incident Support Services</h4>
-<p><a href="http://www.uky.edu/biss">http://www.uky.edu/biss</a> | <a href="mailto:biss@uky.edu">biss@uky.edu</a></p>
-<p>Bias Incident Support Services (BISS) provides confidential support and advocacy for any student, staff, or faculty member impacted by bias, hatred, and/or an act of identity-based violence. BISS staff aid impacted parties in accessing campus and community resources, including the Bias Incident Response Team, the University’s official reporting system for acts that negatively impact a sense of belonging. Campus and community consultation and educational opportunities centered on inclusion, diversity, equity, and belonging is a resource also provided by BISS. For more detailed information, please visit the BISS website or contact them via email.</p>
-<h4 id="counseling-center">Counseling Center</h4>
-<p><a href="https://www.uky.edu/counselingcenter/">https://www.uky.edu/counselingcenter/</a></p>
-<p>The UK Counseling Center (UKCC) provides a range of confidential psychological services and consultation to members of the UK community (students, faculty, staff, administrators, parents, concerned others). Please visit the website for more detailed information, or call 859-257-8701.</p>
-<h4 id="martin-luther-king-center">Martin Luther King Center</h4>
-<p><a href="http://www.uky.edu/mlkc/">http://www.uky.edu/mlkc/</a> | <a href="mailto:mlkc@uky.edu">mlkc@uky.edu</a></p>
-<p>The Martin Luther King Center (MLKC) supports an inclusive learning environment where diversity and individual differences are understood, respected, and appreciated as sources of strength. The MLKC’s year-round programs and activities that focus on the importance of cultural awareness and cross-cultural understanding support its three primary goals: 1) sponsoring cultural and educational programming; 2) offering opportunities for student support and development; and 3) through programmatic linkages with a wide variety of civic and community agencies, promoting community outreach, engagement, and collaboration. Students can reach the MLKC via phone at (859) 257-4130, by visiting them in Gatton Student Center Suite A230, via email, and by visiting the MLKC website.</p>
-<h4 id="office-of-lgbtq-resources">Office of LGBTQ* Resources</h4>
-<p><a href="http://www.uky.edu/lgbtq/forms-and-resources">http://www.uky.edu/lgbtq/forms-and-resources</a></p>
-<p>UK is committed to supporting students and upholding the University’s efforts to promote inclusion among our community. UK faculty and staff employees support inclusion and diversity throughout the University, including how faculty structure classroom conversations and manage those dynamics. To assist in these efforts, students are welcome to provide the names and pronouns they prefer. One easy way to do this is by using the pronoun feature of UK’s Name Change Form. Otherwise, students can provide this information to faculty members directly.</p>
-<p>Discrimination based on sexual orientation, gender expression, and gender identity is prohibited at UK. If you have questions about support, advocacy, and community-building services related to sexual orientation, gender expression, or gender identity, students are encouraged to visit the website of the Office of LGBTQ* Resources.</p>
-<h4 id="presentation-u--the-hub">Presentation U! @ The Hub</h4>
-<p><a href="http://www.uky.edu/presentationU">http://www.uky.edu/presentationU</a></p>
-<p>The Hub at Young Library and F. Paul Anderson Tower (FPAT). Free peer tutoring in composition and communication assignments (speeches, papers, group presentations, visual, and digital projects. Schedule a face-to-face or online tutoring appointment!</p>
-<h4 id="transformative-learning">Transformative Learning</h4>
-<p><a href="https://www.uky.edu/tl">https://www.uky.edu/tl</a></p>
-<p>Transformative Learning is a centralized student support unit on campus; a student’s one-stop shop for on-campus academic resources, including peer tutoring at The Study, Supplemental Instruction, and Academic Coaching. The mission of Transformative Learning is to enhance students&rsquo; academic experience as early and as often as possible.</p>
-<h4 id="university-health-service">University Health Service</h4>
-<p><a href="https://ukhealthcare.uky.edu/university-health-service">https://ukhealthcare.uky.edu/university-health-service</a></p>
-<p>UHS is your source for employee and student health care. Our physicians are board-certified in family practice, internal medicine, gynecology/genitourinary care (GYN/GU), psychiatry, and occupational medicine. In addition to our physicians, our nurse practitioners have certification in family medicine, women&rsquo;s health, psychiatry and emergency medicine.</p>
-<h4 id="veterans-resource-center--protocol-for-short-term-military-absences">Veteran’s Resource Center &amp; Protocol for Short-Term Military Absences</h4>
-<p><a href="https://www.uky.edu/veterans">https://www.uky.edu/veterans</a> | <a href="mailto:vetcenter@uky.edu">vetcenter@uky.edu</a></p>
-<p>Being both a member of the military community and a student can bring some complexities. If you are a military member or a military veteran, or a dependent, please let me know when these challenges arise. Drill schedules, calls to active duty, mandatory training exercises, issues with GI Bill disbursement, etc., can complicate your academic life. Let me know if you experience complications, and I will do my best to work with you.</p>
-<p>The Veteran’s Resource Center (VRC) is a great resource for members of our military family. If you have questions regarding your VA benefits or other related issues, the VRC has a full complement of staff to assist you. The VRC also provides study and lounge space, as well as free printing. Please visit the VRC websiteLinks to an external site., email the VRC, visit them in the basement of Erikson Hall, or call the director, Colonel Tony Dotson, at (859) 257-1148.</p>
-<p>If you are a military student serving in the National Guard or Reserve, it is in your best interest to let all of your professors know that immediately. You might also consider sharing a copy of your training schedule.</p>
-<p>If you are a military student who is a member of the National Guard or Military Reserve and are called to duty for one-fifth or less of this semester, please help me help you! Once you become aware of the call to duty, provide a copy of your military orders to the Director of the Veterans Resource Center (contact information above). (Please also provide the Director with a list of all your current courses and instructors.) The Director will verify the orders with the appropriate military authority and, on your behalf, will notify your instructors as to the known extent of the absence.</p>
-<h4 id="violence-intervention-and-prevention-vip-center">Violence Intervention and Prevention (VIP) Center</h4>
-<p><a href="https://www.uky.edu/vipcenter">https://www.uky.edu/vipcenter</a> | <a href="mailto:vipcenter@uky.edu">vipcenter@uky.edu</a></p>
-<p>If you experience an incident of sex- or gender-based discrimination or interpersonal violence, we encourage you to report it. While you may talk to a faculty member or TA/RA/GA, understand that as a &ldquo;Responsible Employee&rdquo; of the University, these individuals MUST report any acts of violence (including verbal bullying and sexual harassment) to the University&rsquo;s Title IX Coordinator in the IEEO Office. If you would like to speak with someone who may be able to afford you confidentiality, you can visit the Violence Intervention and Prevention (VIP) Center’s website (offices located in Frazee Hall, lower level; email them, or call 859-257-3574), the Counseling Center’s (CC) website, and the University Health Services (UHS) website. The VIP Center, CC, and UHS are confidential resources on campus. The VIP Center accepts walk-in appointments.</p>
-<hr>
-<h3 id="an-extended-listing-of-campus-resources">An extended listing of campus resources</h3>
-<p>The university has a number of additional resources available to students, faculty, and staff.</p>
-<h4 id="the-academic-exploration-tool">The Academic Exploration Tool</h4>
-<p><a href="https://www.uky.edu/academics">https://www.uky.edu/academics</a></p>
-<p>The Academic Exploration Tool (AET) helps unlock your potential, taking your passions, interests, and career aspirations and connecting you with UK majors that suit your goals. With AET, explore the many majors offered at UK!</p>
-<h4 id="academic-ombud">Academic Ombud</h4>
-<p><a href="https://www.uky.edu/ombud">https://www.uky.edu/ombud</a></p>
-<p>109 Bradley Hall. It helps students work through and resolve academic problems and conflicts. Stop by Bradley Hall, call 257-3737 or email <a href="mailto:Ombud@uky.edu">Ombud@uky.edu</a> with questions.</p>
-<h4 id="academic-scholarships">Academic Scholarships</h4>
-<p><a href="http://www.uky.edu/financialaid/scholarships">http://www.uky.edu/financialaid/scholarships</a></p>
-<p>Information and applications for University and departmental scholarships available on their website.</p>
-<h4 id="basic-needs">Basic Needs</h4>
-<p><a href="https://www.uky.edu/basicneeds/">https://www.uky.edu/basicneeds/</a></p>
-<p>A central site for locating resources across campus to assist students with needs related to all four components of student success: academic success, wellness, finances, and belonging. Any student who faces challenges securing their food or housing and believes this may affect their performance in the course is urged to contact the Dean of Students for support.</p>
-<h4 id="big-blue-cycles">Big Blue Cycles</h4>
-<p><a href="https://www.uky.edu/transportation/incentives/bigbluecycles">https://www.uky.edu/transportation/incentives/bigbluecycles</a></p>
-<p>Big Blue Cycles is a fleet of 150 bicycles available to students who live in campus housing and who sign a one-year commitment not to purchase a campus parking permit.</p>
-<h4 id="big-blue-pantry">Big Blue Pantry</h4>
-<p><a href="https://www.uky.edu/basicneeds/big-blue-pantry">https://www.uky.edu/basicneeds/big-blue-pantry</a></p>
-<p>Rooms 23 and 25, Whitehall Classroom Building (in the basement). The Big Blue Pantry serves UK students who are experiencing food insecurity or hunger. Any UK student with a valid UK ID, is eligible to receive non-perishable goods from the Big Blue Pantry by coming to White Hall 23-25 during our open hours. If our hours don’t fit your schedule, email us at <a href="mailto:bigbluepantry@ukcco.org">bigbluepantry@ukcco.org</a> to set up an appointment!</p>
-<h4 id="calendar-of-events">Calendar of Events</h4>
-<p><a href="https://calendar.uky.edu/calendar">https://calendar.uky.edu/calendar</a></p>
-<p>Visit this website to find out about everything happening across campus.</p>
-<h4 id="campus-map">Campus Map</h4>
-<p><a href="https://maps.uky.edu/campusmap/">https://maps.uky.edu/campusmap/</a></p>
-<p>Where is <em>X</em> on campus?</p>
-<h4 id="campus-recreation-and-wellness">Campus Recreation and Wellness</h4>
-<p><a href="https://www.uky.edu/recwell/">https://www.uky.edu/recwell/</a></p>
-<p>The mission of Campus Recreation and Wellness is to provide quality recreation and wellness programs and services for the campus community that support student success and promote healthy lifestyles.</p>
-<h4 id="career-center">Career Center</h4>
-<p><a href="https://www.uky.edu/careercenter/students">https://www.uky.edu/careercenter/students</a></p>
-<p>Stuckert Career Center. Offers appointments with a Career Advisor or Major Exploratory Associate who assist students in being career-ready for today’s diverse job market. 408 Rose Street 859-257-2746</p>
-<h4 id="center-for-academic-resources-and-enrichment-services-cares">Center for Academic Resources and Enrichment Services (CARES)</h4>
-<p><a href="http://www.uky.edu/cares">http://www.uky.edu/cares</a></p>
-<p>104 McVey Hall. The overall program goals are to increase the retention and graduation rates of students traditionally underrepresented in post-secondary education, including African Americans, Latinos, and Native Americans. Services include tutoring, study groups, academic planning/monitoring, career exploration, and networking opportunities, personal development workshops, graduate school information/preparation. Call (859) 323-6347, follow on Twitter @UK_CARES, or Facebook.</p>
-<h4 id="collegiate-recovery-community">Collegiate Recovery Community</h4>
-<p><a href="https://www.uky.edu/recwell/wellness/CRC">https://www.uky.edu/recwell/wellness/CRC</a></p>
-<p>103 Frazee Hall. The University of Kentucky’s Collegiate Recovery Community is dedicated to empowering students recovering from addictive disorders to achieve academic, personal, and professional success while maintaining recovery. The CRC provides a safe and supportive community for students in recovery, including a positive social atmosphere with like-minded peers, dedicated and qualified recovery staff, and an emphasis on developing as productive members of society. (859) 323-5981</p>
-<h4 id="dining-services">Dining Services</h4>
-<p><a href="https://uky.campusdish.com/">https://uky.campusdish.com/</a></p>
-<p>Find campus dining options, including a list of dining locations, menus, and hours.</p>
-<h4 id="disability-resource-center">Disability Resource Center</h4>
-<p><a href="https://www.uky.edu/DisabilityResourceCenter">https://www.uky.edu/DisabilityResourceCenter</a></p>
-<p>407 Multidisciplinary Science Building. Students with documented physical, learning, or temporary disabilities may receive assistance and support from this office. Call (859) 257-2754 or email <a href="mailto:drc@uky.edu">drc@uky.edu</a> for more information.</p>
-<h4 id="education-abroad--exchanges">Education Abroad &amp; Exchanges</h4>
-<p><a href="https://international.uky.edu/ea">https://international.uky.edu/ea</a></p>
-<p>310 Bradley Hall. There are hundreds of programs to match every academic interest and budget; make an appointment, and they’ll tell you everything you need to know. For more information, visit their website, call (859) 323-2106, or e-mail them at <a href="mailto:EducationAbroad@uky.edu">EducationAbroad@uky.edu</a>. Like them on Facebook and follow on Instagram @ukyabroad</p>
-<h4 id="financial-ombud-services">Financial Ombud Services</h4>
-<p><a href="https://www.uky.edu/financialaid/financial-ombud-services">https://www.uky.edu/financialaid/financial-ombud-services</a></p>
-<p>10 Funkhouser. The Financial Ombud works 1-on-1 with students/parents to identify/resolve financial problems affecting payment of tuition &amp; fees and enrollment. Contact Holly Sandlin, Financial Ombud, at (859) 218-1360, or email <a href="mailto:Financialombud@lsv.uky.edu">Financialombud@lsv.uky.edu</a>.</p>
-<h4 id="first-generation-student-advising">First-generation Student Advising</h4>
-<p><a href="https://www.uky.edu/firstgeneration">https://www.uky.edu/firstgeneration</a></p>
-<p>230 McVey Hall. First-Generation Student Advising supports first-generation students at the University of Kentucky from recruitment to graduation through research-based programs, resources, best practices, and campus-wide advocacy about the needs of students who are the first in their families to go to college. Advisors advocate for first-generation students within their colleges and collaborate with other campus offices (e.g., Division of Student and Academic Life, Enrollment Management, International Center, and Office for Institutional Diversity) to provide the best resources to promote the success of first-generation students at UK.</p>
-<h4 id="the-hub">The Hub</h4>
-<p><a href="https://www.uky.edu/Libraries/Hub">https://www.uky.edu/Libraries/Hub</a></p>
-<p>Basement of Young Library. Comfortable place to study; helpful reference librarians; technology support; Writing Center; computer labs; vending food.</p>
-<h4 id="international-center">International Center</h4>
-<p><a href="https://international.uky.edu/">https://international.uky.edu/</a></p>
-<p>International Student &amp; Scholar Services provides several services for current international students, including support and information about student employment, health coverage, etc. ISSS provides immigration advising which allows international students to achieve their academic, professional, and research goals. By facilitating cross-cultural connections, we create opportunities to develop a sense of belonging at UK.</p>
-<h4 id="kentucky-wildcab">Kentucky Wildcab</h4>
-<p><a href="https://www.uky.edu/transportation/bus/wildcab">https://www.uky.edu/transportation/bus/wildcab</a></p>
-<p>Kentucky Wildcab is a free, late-night on-demand transportation resource for UK students primarily designed to provide a free ride home to UK students and their guests while promoting responsible and safe late night transportation decisions (Thursday, Friday, and Saturday from 10 pm to 3 am). Rides may be requested using the Transloc Rider mobile app on your smartphone or online. You can access this app through Google Play or the App Store, as well as through the GoSafe option on our LiveSafe app. For assistance during business hours, call (859) 323-RIDE (323-7433).</p>
-<h4 id="lewis-honors-college">Lewis Honors College</h4>
-<p><a href="http://www.uky.edu/honors/">http://www.uky.edu/honors/</a></p>
-<p>The mission of the Lewis Honors College is to better the Commonwealth of Kentucky and the world by helping students to explore their purpose, develop intellectually, and lead with integrity.</p>
-<h4 id="map-library">Map Library</h4>
-<p><a href="https://libguides.uky.edu/maps">https://libguides.uky.edu/maps</a></p>
-<p>In 2018, the collection was named in honor of Gwen Curtis, who worked with the map library for 45 years. During her tenure, the Map Collection grew to become the largest research map collection in Kentucky and includes approximately 250,000 paper maps and aerial photos.</p>
-<h4 id="mathskeller">Mathskeller</h4>
-<p><a href="https://math.as.uky.edu/mathskeller">https://math.as.uky.edu/mathskeller</a></p>
-<p>63 Classroom Building (Basement) Open 9 a.m. to 5 p.m., Monday – Friday. Offers free tutoring and help with 100-level math classes.</p>
-<h4 id="moneycats">MoneyCats</h4>
-<p><a href="http://www.uky.edu/financialwellness/moneycats-team">http://www.uky.edu/financialwellness/moneycats-team</a></p>
-<p>302 Patterson Hall. Provides financial wellness education, resources, and 1:1 financial coaching to students enrolled at the University of Kentucky. Contact them by email at <a href="mailto:moneycats@uky.edu">moneycats@uky.edu</a>.</p>
-<h4 id="off-campus-student-advising">Off-Campus Student Advising</h4>
-<p><a href="https://www.uky.edu/studentservices/OCSA/home">https://www.uky.edu/studentservices/OCSA/home</a></p>
-<p>230 McVey Hall. Off-Campus Student Advising fosters and enhances the off-campus student experience through education, advocacy, and involvement. The Off-Campus Advisor helps students strengthen their connection to campus and navigate obstacles that emerge from living off-campus. Off-Campus Student Advising works directly with students and their academic advisors while also collaborating with other campus offices (e.g., Division of Student and Academic Life, Enrollment Management, International Center, and Office for Institutional Diversity) to provide the best resources to promote the success of off-campus students at UK.</p>
-<h4 id="safecats">SAFECATS</h4>
-<p><a href="https://www.uky.edu/police/257-safe-and-safecats">https://www.uky.edu/police/257-safe-and-safecats</a></p>
-<p>SAFECATS provides free safety escort service on campus from 8:30 p.m. –1:30 a.m. Sun – Thurs. Call 257-SAFE (7233) for both services. Hearing-impaired students may request a SAFECATS escort by e-mailing SAFECATS at <a href="mailto:uksafecats@uky.edu">uksafecats@uky.edu</a>.</p>
-<h4 id="student-employment-office">Student Employment Office</h4>
-<p><a href="https://www.uky.edu/hr/employment/student-employment">https://www.uky.edu/hr/employment/student-employment</a></p>
-<p>112 Scovell Hall. Helps students find jobs on and off-campus, visit the website to get started, or call (859) 257-9555 for more information.</p>
-<h4 id="student-financial-aid">Student Financial Aid</h4>
-<p><a href="https://www.uky.edu/financialaid/">https://www.uky.edu/financialaid/</a></p>
-<p>127 Funkhouser Building, (859) 257-3172. Assists students with the financial aid application process, responsible for the awarding and disbursement of federal, state, and institutional grants, loans, and scholarships.</p>
-<h4 id="student-organizations-and-activities">Student Organizations and Activities</h4>
-<p><a href="https://getinvolved.uky.edu/">https://getinvolved.uky.edu/</a></p>
-<p>Get involved on campus and beyond. Find out about student organizations, events, and activities.</p>
-<h4 id="student-support-services">Student Support Services</h4>
-<p><a href="https://www.uky.edu/sss/">https://www.uky.edu/sss/</a></p>
-<p>Suite 443, Multidisciplinary Science Bldg. (MDSB), 725 Rose St. Provides a holistic approach to working with students who are first-generation, low income, or have a documented disability. Services include but are not limited to the following: tutoring, mentoring, and limited computer use. You must come in and complete an application to receive services. Visit the website or call (859) 257-9797 for more information.</p>
-<h4 id="the-study">The Study!</h4>
-<p><a href="https://www.uky.edu/thestudy/">https://www.uky.edu/thestudy/</a></p>
-<p>The Study is the University of Kentucky’s centralized peer tutoring center. The Peer Tutoring Program provides FREE, drop-in, peer tutoring for many core courses in mathematics, science, &amp; business.</p>
-<h4 id="university-health-service-1">University Health Service</h4>
-<p><a href="http://ukhealthcare.uky.edu/uhs">http://ukhealthcare.uky.edu/uhs</a></p>
-<p>830 South Limestone. If you’re sick, this is the place to go. Full-time UK students see clinicians without charge, after paying the mandatory Health Fee. To make an appointment, call (859) 323-2778 (APPT).</p>
-<h4 id="walk-across-kentucky">Walk Across Kentucky</h4>
-<p><a href="https://arboretum.ca.uky.edu/walk-across-kentucky">https://arboretum.ca.uky.edu/walk-across-kentucky</a></p>
-<p>The Walk Across Kentucky is a diverse and unique Kentucky native plant collection and a living museum that captures the spirit of the Commonwealth’s landscape. Located in the Arboretum, State Botanical Garden of Kentucky, a 100-acre public garden located on the campus of the University of Kentucky in the heart of Lexington, Kentucky.</p>
-<h4 id="wildcat-wardrobe">Wildcat Wardrobe</h4>
-<p><a href="https://www.uky.edu/basicneeds/wildcat-wardrobe">https://www.uky.edu/basicneeds/wildcat-wardrobe</a></p>
-<p>Wildcat Wardrobe is a collaboration between UK Student Government Association and the Stuckert Career Center. Students can access gently used professional clothing for job interviews or internships. Wildcat Wardrobe has drop-in hours Mondays and Wednesdays from 2-4 pm.</p>
-<h4 id="wildcat-wheels">Wildcat Wheels</h4>
-<p><a href="https://www.uky.edu/transportation/bike/wildcatwheels">https://www.uky.edu/transportation/bike/wildcatwheels</a></p>
-<p>The Wildcat Wheels Bicycle Library (commonly referred to as Wildcat Wheels) is a nationally-recognized educational resource that provides free bicycle use and repair assistance to UK students and employees.</p>
-<h4 id="writing-center">Writing Center</h4>
-<p><a href="https://wrd.as.uky.edu/writing-center">https://wrd.as.uky.edu/writing-center</a></p>
-<p>The Robert E. Hemenway Writing Center offers free and friendly help to all UK students, faculty, and staff. We assist with writing, speaking, and multimedia assignments across the curriculum. We offer advice on academic, creative, and professional projects.</p>
-<h2 id="about-the-department-of-geography">About the Department of Geography</h2>
-<p>Located in Lexington, Kentucky, the Department of Geography at the University of Kentucky was established in 1944. <a href="https://newmapsplus.as.uky.edu/">New Maps Plus</a> grew out of the department in the early 2010s to offer an entirely online graduate certificate in digital mapping and an online Master of Science in Digital Mapping. The department is consistently ranked among leading geography graduate programs in the United States.</p>
-<p><a href="https://en.wikipedia.org/wiki/Department_of_Geography,_University_of_Kentucky">https://en.wikipedia.org/wiki/Department_of_Geography,_University_of_Kentucky</a></p>
-<p><img src="../images/syllabus/bottom-banner-nmp.png" alt="Dept of Geo, since 1944"></p>
-<p class='text-center display-1 fancy-text uk-dark-blue'>We are wildly spatial, y'all!</p>
-<p>.</p>
-</section>
-</main>
- <footer class="footer fixed-bottom uk-liter-bg" id="footer">
-  <div class="row footer-text">
-    <div class="col-12 col-md text-center text-md-left nav-link text-dark">
-      © UKy Geography | 1944–2024
+      <h2 id="course-policies">Course Policies</h2>
+      <h4 id="covid-19-policy">COVID-19 Policy</h4>
+      <p>While this course is entirely online, students may find themselves on campus and should be aware of important
+        changes. Please check <a href="https://www.uky.edu/coronavirus/">https://www.uky.edu/coronavirus/</a> for the
+        most up-to-date information.</p>
+      <h3 id="academic-policies">Academic Policies</h3>
+      <p>This course adheres to the University of Kentucky&rsquo;s academic policies provided in the following link: <a
+          href="https://www.uky.edu/universitysenate/acadpolicy">https://www.uky.edu/universitysenate/acadpolicy</a>.
+        Additional policies are detailed in the below sections.</p>
+      <h4 id="attendance-policy">Attendance Policy</h4>
+      <p>This course does not require in-person nor synchronous online attendance.</p>
+      <h4 id="teamwork--collaboration">Teamwork &amp; Collaboration</h4>
+      <p>We are developing a workflow that enables very efficient remote collaboration. Many assignments have you make
+        creative and aesthetic choices that have value in different contexts. Evaluation of your assignment will include
+        suggested changes to and comments on your choices that might reflect different design requirements and
+        sensibilities. Consider each week a collaboration with me, the instructor. If you want to explore a specific
+        feature or technique, let me know.</p>
+      <p>If you collaborate on an assignment with fellow students, please observe the following expectations:</p>
+      <ul>
+        <li>You should work through the lesson independently;</li>
+        <li>Please acknowledge your collaborators in your submission;</li>
+        <li>Submit your lab assignment to Canvas independently; and</li>
+        <li>Any textual content that you add to the map or web page, e.g., information about the area shown on the map,
+          should be in your own words or properly cited if you are using someone else&rsquo;s words (see the section on
+          plagiarism).</li>
+      </ul>
+      <h4 id="submission-of-assignments">Submission of Assignments</h4>
+      <p>The required course interactions are 1) submitting assignments and 2) various discussion board interactions.
+        Students will be assigned weekly lessons, as found in the Canvas Modules section of this course. All work listed
+        in these lessons must be submitted through Canvas by no later than 11:59 pm EDT on the day they are due
+        (typically, the Sunday following the module&rsquo;s opening). Precise submission dates for each assignment can
+        found in the Canvas Assignment section.</p>
+      <h4 id="late-assignments">Late Assignments</h4>
+      <p>Late assignments will be accepted. If you do not have an excused absence and you submit a late assignment, 10%
+        will automatically will be deducted. Students with excused absences approved by the instructor will not be
+        penalized. Late assignments submitted without an excused absence may not receive submission comments with the
+        evaluation.</p>
+      <h4 id="excused-absences">Excused Absences</h4>
+      <p>Senate Rules 5.2.5.2.1 defines the following as acceptable reasons for excused absences:</p>
+      <ul>
+        <li>significant illness;</li>
+        <li>death of a family member;</li>
+        <li>trips for members of student organizations sponsored by an educational unit, trips for University classes,
+          and trips * for participation in intercollegiate athletic events;</li>
+        <li>major religious holidays;</li>
+        <li>interviews for graduate/professional school or full-time employment post-graduation; and</li>
+        <li>other circumstances found to fit “reasonable cause for non-attendance” by the instructor of record. Students
+          should notify the professor of absences prior to class when possible.</li>
+      </ul>
+      <p>In addition to these policies, this course recognizes that a documented network or platform outage, e.g.,
+        Canvas not working, justifies an excused absence. Technical problems and scheduling conflicts also arise from
+        time-to-time, and we recognize that assignments need to be turned in late. Please notify me as soon as possible
+        if you anticipate a late assignment to discuss a “reasonable cause for non-attendance” and justify an excused
+        absence.</p>
+      <h4 id="class-behavior-and-civility">Class Behavior and Civility</h4>
+      <p>All participants in this course should maintain the highest standards of academic, professional, and personal
+        integrity and support a safe and inclusive learning environment (see the section on non-discrimination). With an
+        understanding of mutual respect and civil discourse, we cultivate an online environment free from:</p>
+      <ul>
+        <li>emotional harm, hostility, and excessive persuasion;</li>
+        <li>disturbances that interfere with course instruction and learning;</li>
+        <li>content that degrades an individual or group.</li>
+      </ul>
+      <p>The instructor reserves the right to stop and remove content (Zoom meetings, discussion posts, etc.) that
+        conflicts with the above statement.</p>
+      <h4 id="chosen-names-and-personal-pronouns">Chosen Names and Personal Pronouns</h4>
+      <p>Everyone has the right to be addressed by the name and pronouns that correspond to their gender identity,
+        including non-binary pronouns, for example, they/them/theirs, ze/zir/zirs, etc. Course rosters may not list
+        gender or pronouns, so you may be asked to indicate the pronouns you use so that the instructor does not make
+        assumptions based on your name and/or appearance/self-presentation (you are not obligated to do so). If you use
+        a chosen name, please let the instructor know. Chosen names and pronouns are to be respected at all times in
+        this course. Mistakes in addressing one another may happen, so we should encourage openness to correction and
+        learning. Chosen names and personal pronouns may evolve, so if at any point during the semester you would like
+        to be addressed differently, please let the instructor know.</p>
+      <h4 id="course-material-copyright-statement">Course Material Copyright Statement</h4>
+      <p>The University of Kentucky Code of Student Conduct defines Invasion of Privacy as using electronic or other
+        devices to make a photographic, audio, or video record of any person without their prior knowledge or consent
+        when such a recording is likely to cause injury or distress.</p>
+      <p>Meetings of this course might be recorded by the instructor. All video and audio recordings of lectures, lab
+        demonstrations, and class meetings, provided by the instructors, are for educational use by students in this
+        class only. They are available only through the Canvas shell for this course and cannot be copied, shared, or
+        redistributed.</p>
+      <p>As addressed in the Student Code of Conduct, students are expected to follow appropriate university policies
+        and maintain the security of linkblue accounts used to access recorded class materials. Recordings may not be
+        reproduced, shared with those not enrolled in the class, or uploaded to other online environments.</p>
+      <p>If the instructor or a University of Kentucky office plans any other uses for the recordings, beyond this
+        class, students identifiable in the recordings will be notified to request consent before such use. In
+        anticipation of such cases, students may be asked to complete an “authorization of use” form by a faculty
+        member.</p>
+      <p>Video and audio recordings by students are not permitted during the class unless the student has received prior
+        permission from the instructor. Any sharing, distribution, and or uploading of these recordings outside of the
+        parameters of the class is prohibited. Students with specific recording accommodations approved by the
+        Disability Resource Center should present their official documentation to the instructor.</p>
+      <p>All content for this course, including handouts, assignments, and lectures, is the instructors&rsquo;
+        intellectual property and cannot be reproduced or sold without prior permission from the instructors. A student
+        may use the material for reasonable educational and professional purposes extending beyond this class, such as
+        studying for a comprehensive or qualifying examination in a degree program, preparing for a professional or
+        certification examination, or to assist in fulfilling responsibilities at a job or internship.</p>
+      <h4 id="academic-integrityprohibition-on-plagiarism">Academic Integrity—Prohibition on Plagiarism</h4>
+      <p>(Senate Rules 6.3.1)</p>
+      <p>Please note that any textual content that you add to the map should be in your own words or <a
+          href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html">properly
+          cited</a> if you are using someone else&rsquo;s words or content (see the section on plagiarism).</p>
+      <p>Per University policy, students shall not plagiarize, cheat, or falsify or misuse academic records. Students
+        are expected to adhere to University policy on cheating and plagiarism in all courses. The minimum penalty for a
+        first offense is a zero on the assignment on which the offense occurred. If the offense is considered severe or
+        the student has other academic offenses on their record, more serious penalties, up to suspension from the
+        University, may be imposed.</p>
+      <p>Plagiarism and cheating are serious breaches of academic conduct. Each student is advised to become familiar
+        with the various forms of academic dishonesty, as explained in the Code of Student Rights and Responsibilities .
+        Complete information can be found on the Academic Ombud page. A plea of ignorance is not acceptable as a defense
+        against the charge of academic dishonesty. It is important that you review this information as all ideas
+        borrowed from others need to be properly credited.</p>
+      <p>Senate Rule 6.3.1 (see current Senate Rules ) states that all academic work, written or otherwise, submitted by
+        students to their instructors or other academic supervisors, is expected to be the result of their own thought,
+        research, or self-expression. In cases where students feel unsure about a question of plagiarism involving their
+        work, they are obliged to consult their instructors on the matter before submission.</p>
+      <p>When students submit work purporting to be their own, but which in any way borrows ideas, organization,
+        wording, or content from another source without appropriate acknowledgment of the fact, the students are guilty
+        of plagiarism.</p>
+      <p>Plagiarism includes reproducing someone else&rsquo;s work (including, but not limited to, a published article,
+        a book, a website, computer code, or a paper from a friend) without clear attribution. Plagiarism also includes
+        the practice of employing or allowing another person to alter or revise the work which a student submits as
+        his/her own, whoever that other person may be, except under specific circumstances (e.g., Writing Center review
+        or peer review) allowed by the Instructor of Record or that person’s designee. Plagiarism may also include
+        double submission, self-plagiarism, or unauthorized resubmission of one’s own work, as defined by the
+        instructor.</p>
+      <p>Students may discuss assignments among themselves or with an instructor or tutor, except where prohibited by
+        the Instructor of Record (e.g., individual take-home exams). However, the actual work must be done by the
+        student, and the student alone, unless collaboration is allowed by the Instructor of Record (e.g., group
+        projects).</p>
+      <p>When a student&rsquo;s assignment involves research in outside sources or information, the student must
+        carefully acknowledge exactly what, where, and how he/she has employed them. If the words of someone else are
+        used, the student must put quotation marks around the passage in question and add an appropriate indication of
+        its origin. Making simple changes while leaving the organization, content, and phraseology intact is
+        plagiaristic. However, nothing in these Rules shall apply to those ideas, which are so generally and freely
+        circulated as to be a part of the public domain.</p>
+      <p>Please note that any assignment you turn in may be submitted to an electronic database to check for plagiarism.
+      </p>
+      <h4 id="academic-integrityprohibition-on-cheating">Academic Integrity—Prohibition on Cheating</h4>
+      <p>(Senate Rules 6.3.2)</p>
+      <p>Cheating is defined by its general usage. It includes, but is not limited to, the wrongfully giving, taking, or
+        presenting any information or material by a student with the intent of aiding himself/herself or another on any
+        academic work which is considered in any way in the determination of the final grade. The fact that a student
+        could not have benefited from an action is not by itself proof that the action does not constitute cheating. Any
+        question of definition shall be referred to the University Appeals Board.</p>
+      <h4 id="academic-integrityprohibition-on-falsificationmisuse-of-academic-records">Academic Integrity–Prohibition
+        on Falsification/Misuse of Academic Records</h4>
+      <p>(Senate Rules 6.3.3)</p>
+      <p>Maintaining the integrity, accuracy, and appropriate privacy of student academic records is an essential
+        administrative function of the University and the basic protection of all students. Accordingly, the actual or
+        attempted falsification, theft, misrepresentation, or other alteration or misuse of any official academic record
+        of the University, specifically including knowingly having unauthorized access to such records or the
+        unauthorized disclosure of information contained in such records, is a serious academic offense. As used in this
+        context, &ldquo;academic record&rdquo; includes all paper and electronic versions of the partial or complete
+        permanent academic record, all official and unofficial academic transcripts, application documents and admission
+        credentials, and all academic record transaction documents. The minimum sanction for falsification, including
+        the omission of information, or attempted falsification, or other misuses of academic records as described in
+        this section is suspension for one semester.</p>
+      <h4 id="statement-on-diversity-equity-and-inclusion-dei">Statement on Diversity, Equity, and Inclusion (DEI)</h4>
+      <p>The University of Kentucky is committed to our core values of diversity and inclusion, mutual respect and human
+        dignity, and a sense of community (Governing Regulations XIV). We acknowledge and respect the seen and unseen
+        diverse identities and experiences of all members of the university community (<a
+          href="https://www.uky.edu/regs/gr14)">https://www.uky.edu/regs/gr14)</a>. These identities include but are not
+        limited to those based on race, ethnicity, gender identity and expressions, ideas and perspectives, religious
+        and cultural beliefs, sexual orientation, national origin, age, ability, and socioeconomic status. We are
+        committed to equity and justice and providing a learning and engaging community in which every member is
+        engaged, heard, and valued.</p>
+      <p>We strive to rectify and change behavior that is inconsistent with our principles and commitment to diversity,
+        equity, and inclusion. If students encounter such behavior in a course, they are encouraged to speak with the
+        instructor of record and/or the Office of Institutional Equity and Equal Opportunity. Students may also contact
+        a faculty member within the department, program director, the director of undergraduate or graduate studies, the
+        department chair, any college administrator, or the dean. All of these individuals are mandatory reporters under
+        University policies.</p>
+      <h4 id="accommodations">Accommodations</h4>
+      <p>If you have a documented disability requiring academic accommodations, please notify the instructor as soon as
+        possible during scheduled office hours. To receive accommodations in this course, you must provide the
+        instructor with a Letter of Accommodation from the Disability Resource Center (DRC). The DRC coordinates campus
+        disability services available to students with disabilities. Visit the <a
+          href="http://www.uky.edu/DisabilityResourceCenter">DRC website</a>, contact them by phone at (859) 257-2754,
+        or visit their office on the corner of Rose Street and Huguelet Drive in the Multidisciplinary Science Building,
+        Suite 407.</p>
+      <h2 id="technical-support">Technical Support</h2>
+      <h4 id="uk-online-student-resources">UK Online Student Resources</h4>
+      <p>Discover resources and services unique to online students at UK Online&rsquo;s website: <a
+          href="https://www.uky.edu/academics/online-programs/student-resources">https://www.uky.edu/academics/online-programs/student-resources</a>
+        and <a href="https://learnanywhere.uky.edu">https://learnanywhere.uky.edu</a>.</p>
+      <h4 id="distance-learning-library-services">Distance Learning Library Services</h4>
+      <p>Distance Learning Library Services aims to provide access to information resources for the students who take
+        classes through the Distance Learning Programs. Services include:</p>
+      <ul>
+        <li>Access to the University&rsquo;s circulating collections</li>
+        <li>Document Delivery &amp; Interlibrary Loan</li>
+        <li>Research Assistance</li>
+      </ul>
+      <p>Information on Distance Learning Library Services: <a
+          href="http://libraries.uky.edu/DLLS">http://libraries.uky.edu/DLLS</a></p>
+      <h4 id="information-technology-customer-services">Information Technology Customer Services</h4>
+      <p>UKIT Customer Services provides a single point of contact for students, faculty, staff, and alumni&rsquo;s
+        technological needs. Customer Services supports ITS&rsquo;s overall strategic goals by assisting with the
+        knowledge and tools for success with any information technology at the University Of Kentucky. Visit the
+        Technology Help Center <a href="http://techhelpcenter.uky.edu/">http://techhelpcenter.uky.edu/</a> for many
+        self-help topics, or you may contact Customer Services for additional assistance. For password resets, go to <a
+          href="https://reset.uky.edu">https://reset.uky.edu</a> or call 859-218-HELP.</p>
+      <h4 id="canvas-learning-management-system">Canvas Learning Management System</h4>
+      <p>This course uses the Canvas Learning Management System or LMS. The online course system is available via Canvas
+        at <a href="https://uk.instructure.com/">https://uk.instructure.com/</a>. Use your LinkBlue account to log in,
+        and you will see this course under the courses menu (top of the page towards the left). This course (<a
+          href="https://uk.instructure.com/courses/1096339">https://uk.instructure.com/courses/1096339</a>) offers an
+        orientation to Canvas, and the Help button in the top right corner provides quick access to the guides, asks the
+        community, and the phone number for 24/7 support. Course materials (syllabus, readings, assignments,
+        discussions, exams, etc.) will all be posted here. You are responsible for any changes in assignments, readings,
+        and due dates posted on the course blog.</p>
+      <h4 id="uk-downloads">UK Downloads</h4>
+      <p>Download and install proprietary software, e.g., Microsoft Office 365, Adobe Creative Cloud, etc., as a member
+        of the University of Kentucky community at <a href="https://download.uky.edu/">https://download.uky.edu/</a></p>
+      <h2 id="campus-resources-for-your-success">Campus Resources for Your Success</h2>
+      <p>The Department of Geography and your instructors want you to succeed in your studies and have the best
+        experience at the University of Kentucky. Sometimes circumstances make it difficult. Learn about resources that
+        can help you overcome challenges and understand that you are part of a greater, inclusive, and safe community.
+      </p>
+      <h4 id="academic-coaching">Academic Coaching</h4>
+      <p><a
+          href="https://www.uky.edu/presentationU/academic-coaching">https://www.uky.edu/presentationU/academic-coaching</a>
+      </p>
+      <p>Meet with an Academic Coach to develop an individualized plan to meet your goals for this semester, and beyond.
+        They will work with you one-on-one to determine your strengths, weaknesses, and help you reach your goals.
+        Located in The Study Central (basement of Donovan), The Study North (Hub at Young Library), and Presentation U!
+        @ The Hub</p>
+      <h4 id="bias-incident-support-services">Bias Incident Support Services</h4>
+      <p><a href="http://www.uky.edu/biss">http://www.uky.edu/biss</a> | <a href="mailto:biss@uky.edu">biss@uky.edu</a>
+      </p>
+      <p>Bias Incident Support Services (BISS) provides confidential support and advocacy for any student, staff, or
+        faculty member impacted by bias, hatred, and/or an act of identity-based violence. BISS staff aid impacted
+        parties in accessing campus and community resources, including the Bias Incident Response Team, the University’s
+        official reporting system for acts that negatively impact a sense of belonging. Campus and community
+        consultation and educational opportunities centered on inclusion, diversity, equity, and belonging is a resource
+        also provided by BISS. For more detailed information, please visit the BISS website or contact them via email.
+      </p>
+      <h4 id="counseling-center">Counseling Center</h4>
+      <p><a href="https://www.uky.edu/counselingcenter/">https://www.uky.edu/counselingcenter/</a></p>
+      <p>The UK Counseling Center (UKCC) provides a range of confidential psychological services and consultation to
+        members of the UK community (students, faculty, staff, administrators, parents, concerned others). Please visit
+        the website for more detailed information, or call 859-257-8701.</p>
+      <h4 id="martin-luther-king-center">Martin Luther King Center</h4>
+      <p><a href="http://www.uky.edu/mlkc/">http://www.uky.edu/mlkc/</a> | <a
+          href="mailto:mlkc@uky.edu">mlkc@uky.edu</a></p>
+      <p>The Martin Luther King Center (MLKC) supports an inclusive learning environment where diversity and individual
+        differences are understood, respected, and appreciated as sources of strength. The MLKC’s year-round programs
+        and activities that focus on the importance of cultural awareness and cross-cultural understanding support its
+        three primary goals: 1) sponsoring cultural and educational programming; 2) offering opportunities for student
+        support and development; and 3) through programmatic linkages with a wide variety of civic and community
+        agencies, promoting community outreach, engagement, and collaboration. Students can reach the MLKC via phone at
+        (859) 257-4130, by visiting them in Gatton Student Center Suite A230, via email, and by visiting the MLKC
+        website.</p>
+      <h4 id="office-of-lgbtq-resources">Office of LGBTQ* Resources</h4>
+      <p><a href="http://www.uky.edu/lgbtq/forms-and-resources">http://www.uky.edu/lgbtq/forms-and-resources</a></p>
+      <p>UK is committed to supporting students and upholding the University’s efforts to promote inclusion among our
+        community. UK faculty and staff employees support inclusion and diversity throughout the University, including
+        how faculty structure classroom conversations and manage those dynamics. To assist in these efforts, students
+        are welcome to provide the names and pronouns they prefer. One easy way to do this is by using the pronoun
+        feature of UK’s Name Change Form. Otherwise, students can provide this information to faculty members directly.
+      </p>
+      <p>Discrimination based on sexual orientation, gender expression, and gender identity is prohibited at UK. If you
+        have questions about support, advocacy, and community-building services related to sexual orientation, gender
+        expression, or gender identity, students are encouraged to visit the website of the Office of LGBTQ* Resources.
+      </p>
+      <h4 id="presentation-u--the-hub">Presentation U! @ The Hub</h4>
+      <p><a href="http://www.uky.edu/presentationU">http://www.uky.edu/presentationU</a></p>
+      <p>The Hub at Young Library and F. Paul Anderson Tower (FPAT). Free peer tutoring in composition and communication
+        assignments (speeches, papers, group presentations, visual, and digital projects. Schedule a face-to-face or
+        online tutoring appointment!</p>
+      <h4 id="transformative-learning">Transformative Learning</h4>
+      <p><a href="https://www.uky.edu/tl">https://www.uky.edu/tl</a></p>
+      <p>Transformative Learning is a centralized student support unit on campus; a student’s one-stop shop for
+        on-campus academic resources, including peer tutoring at The Study, Supplemental Instruction, and Academic
+        Coaching. The mission of Transformative Learning is to enhance students&rsquo; academic experience as early and
+        as often as possible.</p>
+      <h4 id="university-health-service">University Health Service</h4>
+      <p><a
+          href="https://ukhealthcare.uky.edu/university-health-service">https://ukhealthcare.uky.edu/university-health-service</a>
+      </p>
+      <p>UHS is your source for employee and student health care. Our physicians are board-certified in family practice,
+        internal medicine, gynecology/genitourinary care (GYN/GU), psychiatry, and occupational medicine. In addition to
+        our physicians, our nurse practitioners have certification in family medicine, women&rsquo;s health, psychiatry
+        and emergency medicine.</p>
+      <h4 id="veterans-resource-center--protocol-for-short-term-military-absences">Veteran’s Resource Center &amp;
+        Protocol for Short-Term Military Absences</h4>
+      <p><a href="https://www.uky.edu/veterans">https://www.uky.edu/veterans</a> | <a
+          href="mailto:vetcenter@uky.edu">vetcenter@uky.edu</a></p>
+      <p>Being both a member of the military community and a student can bring some complexities. If you are a military
+        member or a military veteran, or a dependent, please let me know when these challenges arise. Drill schedules,
+        calls to active duty, mandatory training exercises, issues with GI Bill disbursement, etc., can complicate your
+        academic life. Let me know if you experience complications, and I will do my best to work with you.</p>
+      <p>The Veteran’s Resource Center (VRC) is a great resource for members of our military family. If you have
+        questions regarding your VA benefits or other related issues, the VRC has a full complement of staff to assist
+        you. The VRC also provides study and lounge space, as well as free printing. Please visit the VRC websiteLinks
+        to an external site., email the VRC, visit them in the basement of Erikson Hall, or call the director, Colonel
+        Tony Dotson, at (859) 257-1148.</p>
+      <p>If you are a military student serving in the National Guard or Reserve, it is in your best interest to let all
+        of your professors know that immediately. You might also consider sharing a copy of your training schedule.</p>
+      <p>If you are a military student who is a member of the National Guard or Military Reserve and are called to duty
+        for one-fifth or less of this semester, please help me help you! Once you become aware of the call to duty,
+        provide a copy of your military orders to the Director of the Veterans Resource Center (contact information
+        above). (Please also provide the Director with a list of all your current courses and instructors.) The Director
+        will verify the orders with the appropriate military authority and, on your behalf, will notify your instructors
+        as to the known extent of the absence.</p>
+      <h4 id="violence-intervention-and-prevention-vip-center">Violence Intervention and Prevention (VIP) Center</h4>
+      <p><a href="https://www.uky.edu/vipcenter">https://www.uky.edu/vipcenter</a> | <a
+          href="mailto:vipcenter@uky.edu">vipcenter@uky.edu</a></p>
+      <p>If you experience an incident of sex- or gender-based discrimination or interpersonal violence, we encourage
+        you to report it. While you may talk to a faculty member or TA/RA/GA, understand that as a &ldquo;Responsible
+        Employee&rdquo; of the University, these individuals MUST report any acts of violence (including verbal bullying
+        and sexual harassment) to the University&rsquo;s Title IX Coordinator in the IEEO Office. If you would like to
+        speak with someone who may be able to afford you confidentiality, you can visit the Violence Intervention and
+        Prevention (VIP) Center’s website (offices located in Frazee Hall, lower level; email them, or call
+        859-257-3574), the Counseling Center’s (CC) website, and the University Health Services (UHS) website. The VIP
+        Center, CC, and UHS are confidential resources on campus. The VIP Center accepts walk-in appointments.</p>
+      <hr>
+      <h3 id="an-extended-listing-of-campus-resources">An extended listing of campus resources</h3>
+      <p>The university has a number of additional resources available to students, faculty, and staff.</p>
+      <h4 id="the-academic-exploration-tool">The Academic Exploration Tool</h4>
+      <p><a href="https://www.uky.edu/academics">https://www.uky.edu/academics</a></p>
+      <p>The Academic Exploration Tool (AET) helps unlock your potential, taking your passions, interests, and career
+        aspirations and connecting you with UK majors that suit your goals. With AET, explore the many majors offered at
+        UK!</p>
+      <h4 id="academic-ombud">Academic Ombud</h4>
+      <p><a href="https://www.uky.edu/ombud">https://www.uky.edu/ombud</a></p>
+      <p>109 Bradley Hall. It helps students work through and resolve academic problems and conflicts. Stop by Bradley
+        Hall, call 257-3737 or email <a href="mailto:Ombud@uky.edu">Ombud@uky.edu</a> with questions.</p>
+      <h4 id="academic-scholarships">Academic Scholarships</h4>
+      <p><a href="http://www.uky.edu/financialaid/scholarships">http://www.uky.edu/financialaid/scholarships</a></p>
+      <p>Information and applications for University and departmental scholarships available on their website.</p>
+      <h4 id="basic-needs">Basic Needs</h4>
+      <p><a href="https://www.uky.edu/basicneeds/">https://www.uky.edu/basicneeds/</a></p>
+      <p>A central site for locating resources across campus to assist students with needs related to all four
+        components of student success: academic success, wellness, finances, and belonging. Any student who faces
+        challenges securing their food or housing and believes this may affect their performance in the course is urged
+        to contact the Dean of Students for support.</p>
+      <h4 id="big-blue-cycles">Big Blue Cycles</h4>
+      <p><a
+          href="https://www.uky.edu/transportation/incentives/bigbluecycles">https://www.uky.edu/transportation/incentives/bigbluecycles</a>
+      </p>
+      <p>Big Blue Cycles is a fleet of 150 bicycles available to students who live in campus housing and who sign a
+        one-year commitment not to purchase a campus parking permit.</p>
+      <h4 id="big-blue-pantry">Big Blue Pantry</h4>
+      <p><a href="https://www.uky.edu/basicneeds/big-blue-pantry">https://www.uky.edu/basicneeds/big-blue-pantry</a></p>
+      <p>Rooms 23 and 25, Whitehall Classroom Building (in the basement). The Big Blue Pantry serves UK students who are
+        experiencing food insecurity or hunger. Any UK student with a valid UK ID, is eligible to receive non-perishable
+        goods from the Big Blue Pantry by coming to White Hall 23-25 during our open hours. If our hours don’t fit your
+        schedule, email us at <a href="mailto:bigbluepantry@ukcco.org">bigbluepantry@ukcco.org</a> to set up an
+        appointment!</p>
+      <h4 id="calendar-of-events">Calendar of Events</h4>
+      <p><a href="https://calendar.uky.edu/calendar">https://calendar.uky.edu/calendar</a></p>
+      <p>Visit this website to find out about everything happening across campus.</p>
+      <h4 id="campus-map">Campus Map</h4>
+      <p><a href="https://maps.uky.edu/campusmap/">https://maps.uky.edu/campusmap/</a></p>
+      <p>Where is <em>X</em> on campus?</p>
+      <h4 id="campus-recreation-and-wellness">Campus Recreation and Wellness</h4>
+      <p><a href="https://www.uky.edu/recwell/">https://www.uky.edu/recwell/</a></p>
+      <p>The mission of Campus Recreation and Wellness is to provide quality recreation and wellness programs and
+        services for the campus community that support student success and promote healthy lifestyles.</p>
+      <h4 id="career-center">Career Center</h4>
+      <p><a href="https://www.uky.edu/careercenter/students">https://www.uky.edu/careercenter/students</a></p>
+      <p>Stuckert Career Center. Offers appointments with a Career Advisor or Major Exploratory Associate who assist
+        students in being career-ready for today’s diverse job market. 408 Rose Street 859-257-2746</p>
+      <h4 id="center-for-academic-resources-and-enrichment-services-cares">Center for Academic Resources and Enrichment
+        Services (CARES)</h4>
+      <p><a href="http://www.uky.edu/cares">http://www.uky.edu/cares</a></p>
+      <p>104 McVey Hall. The overall program goals are to increase the retention and graduation rates of students
+        traditionally underrepresented in post-secondary education, including African Americans, Latinos, and Native
+        Americans. Services include tutoring, study groups, academic planning/monitoring, career exploration, and
+        networking opportunities, personal development workshops, graduate school information/preparation. Call (859)
+        323-6347, follow on Twitter @UK_CARES, or Facebook.</p>
+      <h4 id="collegiate-recovery-community">Collegiate Recovery Community</h4>
+      <p><a href="https://www.uky.edu/recwell/wellness/CRC">https://www.uky.edu/recwell/wellness/CRC</a></p>
+      <p>103 Frazee Hall. The University of Kentucky’s Collegiate Recovery Community is dedicated to empowering students
+        recovering from addictive disorders to achieve academic, personal, and professional success while maintaining
+        recovery. The CRC provides a safe and supportive community for students in recovery, including a positive social
+        atmosphere with like-minded peers, dedicated and qualified recovery staff, and an emphasis on developing as
+        productive members of society. (859) 323-5981</p>
+      <h4 id="dining-services">Dining Services</h4>
+      <p><a href="https://uky.campusdish.com/">https://uky.campusdish.com/</a></p>
+      <p>Find campus dining options, including a list of dining locations, menus, and hours.</p>
+      <h4 id="disability-resource-center">Disability Resource Center</h4>
+      <p><a href="https://www.uky.edu/DisabilityResourceCenter">https://www.uky.edu/DisabilityResourceCenter</a></p>
+      <p>407 Multidisciplinary Science Building. Students with documented physical, learning, or temporary disabilities
+        may receive assistance and support from this office. Call (859) 257-2754 or email <a
+          href="mailto:drc@uky.edu">drc@uky.edu</a> for more information.</p>
+      <h4 id="education-abroad--exchanges">Education Abroad &amp; Exchanges</h4>
+      <p><a href="https://international.uky.edu/ea">https://international.uky.edu/ea</a></p>
+      <p>310 Bradley Hall. There are hundreds of programs to match every academic interest and budget; make an
+        appointment, and they’ll tell you everything you need to know. For more information, visit their website, call
+        (859) 323-2106, or e-mail them at <a href="mailto:EducationAbroad@uky.edu">EducationAbroad@uky.edu</a>. Like
+        them on Facebook and follow on Instagram @ukyabroad</p>
+      <h4 id="financial-ombud-services">Financial Ombud Services</h4>
+      <p><a
+          href="https://www.uky.edu/financialaid/financial-ombud-services">https://www.uky.edu/financialaid/financial-ombud-services</a>
+      </p>
+      <p>10 Funkhouser. The Financial Ombud works 1-on-1 with students/parents to identify/resolve financial problems
+        affecting payment of tuition &amp; fees and enrollment. Contact Holly Sandlin, Financial Ombud, at (859)
+        218-1360, or email <a href="mailto:Financialombud@lsv.uky.edu">Financialombud@lsv.uky.edu</a>.</p>
+      <h4 id="first-generation-student-advising">First-generation Student Advising</h4>
+      <p><a href="https://www.uky.edu/firstgeneration">https://www.uky.edu/firstgeneration</a></p>
+      <p>230 McVey Hall. First-Generation Student Advising supports first-generation students at the University of
+        Kentucky from recruitment to graduation through research-based programs, resources, best practices, and
+        campus-wide advocacy about the needs of students who are the first in their families to go to college. Advisors
+        advocate for first-generation students within their colleges and collaborate with other campus offices (e.g.,
+        Division of Student and Academic Life, Enrollment Management, International Center, and Office for Institutional
+        Diversity) to provide the best resources to promote the success of first-generation students at UK.</p>
+      <h4 id="the-hub">The Hub</h4>
+      <p><a href="https://www.uky.edu/Libraries/Hub">https://www.uky.edu/Libraries/Hub</a></p>
+      <p>Basement of Young Library. Comfortable place to study; helpful reference librarians; technology support;
+        Writing Center; computer labs; vending food.</p>
+      <h4 id="international-center">International Center</h4>
+      <p><a href="https://international.uky.edu/">https://international.uky.edu/</a></p>
+      <p>International Student &amp; Scholar Services provides several services for current international students,
+        including support and information about student employment, health coverage, etc. ISSS provides immigration
+        advising which allows international students to achieve their academic, professional, and research goals. By
+        facilitating cross-cultural connections, we create opportunities to develop a sense of belonging at UK.</p>
+      <h4 id="kentucky-wildcab">Kentucky Wildcab</h4>
+      <p><a href="https://www.uky.edu/transportation/bus/wildcab">https://www.uky.edu/transportation/bus/wildcab</a></p>
+      <p>Kentucky Wildcab is a free, late-night on-demand transportation resource for UK students primarily designed to
+        provide a free ride home to UK students and their guests while promoting responsible and safe late night
+        transportation decisions (Thursday, Friday, and Saturday from 10 pm to 3 am). Rides may be requested using the
+        Transloc Rider mobile app on your smartphone or online. You can access this app through Google Play or the App
+        Store, as well as through the GoSafe option on our LiveSafe app. For assistance during business hours, call
+        (859) 323-RIDE (323-7433).</p>
+      <h4 id="lewis-honors-college">Lewis Honors College</h4>
+      <p><a href="http://www.uky.edu/honors/">http://www.uky.edu/honors/</a></p>
+      <p>The mission of the Lewis Honors College is to better the Commonwealth of Kentucky and the world by helping
+        students to explore their purpose, develop intellectually, and lead with integrity.</p>
+      <h4 id="map-library">Map Library</h4>
+      <p><a href="https://libguides.uky.edu/maps">https://libguides.uky.edu/maps</a></p>
+      <p>In 2018, the collection was named in honor of Gwen Curtis, who worked with the map library for 45 years. During
+        her tenure, the Map Collection grew to become the largest research map collection in Kentucky and includes
+        approximately 250,000 paper maps and aerial photos.</p>
+      <h4 id="mathskeller">Mathskeller</h4>
+      <p><a href="https://math.as.uky.edu/mathskeller">https://math.as.uky.edu/mathskeller</a></p>
+      <p>63 Classroom Building (Basement) Open 9 a.m. to 5 p.m., Monday – Friday. Offers free tutoring and help with
+        100-level math classes.</p>
+      <h4 id="moneycats">MoneyCats</h4>
+      <p><a
+          href="http://www.uky.edu/financialwellness/moneycats-team">http://www.uky.edu/financialwellness/moneycats-team</a>
+      </p>
+      <p>302 Patterson Hall. Provides financial wellness education, resources, and 1:1 financial coaching to students
+        enrolled at the University of Kentucky. Contact them by email at <a
+          href="mailto:moneycats@uky.edu">moneycats@uky.edu</a>.</p>
+      <h4 id="off-campus-student-advising">Off-Campus Student Advising</h4>
+      <p><a href="https://www.uky.edu/studentservices/OCSA/home">https://www.uky.edu/studentservices/OCSA/home</a></p>
+      <p>230 McVey Hall. Off-Campus Student Advising fosters and enhances the off-campus student experience through
+        education, advocacy, and involvement. The Off-Campus Advisor helps students strengthen their connection to
+        campus and navigate obstacles that emerge from living off-campus. Off-Campus Student Advising works directly
+        with students and their academic advisors while also collaborating with other campus offices (e.g., Division of
+        Student and Academic Life, Enrollment Management, International Center, and Office for Institutional Diversity)
+        to provide the best resources to promote the success of off-campus students at UK.</p>
+      <h4 id="safecats">SAFECATS</h4>
+      <p><a href="https://www.uky.edu/police/257-safe-and-safecats">https://www.uky.edu/police/257-safe-and-safecats</a>
+      </p>
+      <p>SAFECATS provides free safety escort service on campus from 8:30 p.m. –1:30 a.m. Sun – Thurs. Call 257-SAFE
+        (7233) for both services. Hearing-impaired students may request a SAFECATS escort by e-mailing SAFECATS at <a
+          href="mailto:uksafecats@uky.edu">uksafecats@uky.edu</a>.</p>
+      <h4 id="student-employment-office">Student Employment Office</h4>
+      <p><a
+          href="https://www.uky.edu/hr/employment/student-employment">https://www.uky.edu/hr/employment/student-employment</a>
+      </p>
+      <p>112 Scovell Hall. Helps students find jobs on and off-campus, visit the website to get started, or call (859)
+        257-9555 for more information.</p>
+      <h4 id="student-financial-aid">Student Financial Aid</h4>
+      <p><a href="https://www.uky.edu/financialaid/">https://www.uky.edu/financialaid/</a></p>
+      <p>127 Funkhouser Building, (859) 257-3172. Assists students with the financial aid application process,
+        responsible for the awarding and disbursement of federal, state, and institutional grants, loans, and
+        scholarships.</p>
+      <h4 id="student-organizations-and-activities">Student Organizations and Activities</h4>
+      <p><a href="https://getinvolved.uky.edu/">https://getinvolved.uky.edu/</a></p>
+      <p>Get involved on campus and beyond. Find out about student organizations, events, and activities.</p>
+      <h4 id="student-support-services">Student Support Services</h4>
+      <p><a href="https://www.uky.edu/sss/">https://www.uky.edu/sss/</a></p>
+      <p>Suite 443, Multidisciplinary Science Bldg. (MDSB), 725 Rose St. Provides a holistic approach to working with
+        students who are first-generation, low income, or have a documented disability. Services include but are not
+        limited to the following: tutoring, mentoring, and limited computer use. You must come in and complete an
+        application to receive services. Visit the website or call (859) 257-9797 for more information.</p>
+      <h4 id="the-study">The Study!</h4>
+      <p><a href="https://www.uky.edu/thestudy/">https://www.uky.edu/thestudy/</a></p>
+      <p>The Study is the University of Kentucky’s centralized peer tutoring center. The Peer Tutoring Program provides
+        FREE, drop-in, peer tutoring for many core courses in mathematics, science, &amp; business.</p>
+      <h4 id="university-health-service-1">University Health Service</h4>
+      <p><a href="http://ukhealthcare.uky.edu/uhs">http://ukhealthcare.uky.edu/uhs</a></p>
+      <p>830 South Limestone. If you’re sick, this is the place to go. Full-time UK students see clinicians without
+        charge, after paying the mandatory Health Fee. To make an appointment, call (859) 323-2778 (APPT).</p>
+      <h4 id="walk-across-kentucky">Walk Across Kentucky</h4>
+      <p><a
+          href="https://arboretum.ca.uky.edu/walk-across-kentucky">https://arboretum.ca.uky.edu/walk-across-kentucky</a>
+      </p>
+      <p>The Walk Across Kentucky is a diverse and unique Kentucky native plant collection and a living museum that
+        captures the spirit of the Commonwealth’s landscape. Located in the Arboretum, State Botanical Garden of
+        Kentucky, a 100-acre public garden located on the campus of the University of Kentucky in the heart of
+        Lexington, Kentucky.</p>
+      <h4 id="wildcat-wardrobe">Wildcat Wardrobe</h4>
+      <p><a href="https://www.uky.edu/basicneeds/wildcat-wardrobe">https://www.uky.edu/basicneeds/wildcat-wardrobe</a>
+      </p>
+      <p>Wildcat Wardrobe is a collaboration between UK Student Government Association and the Stuckert Career Center.
+        Students can access gently used professional clothing for job interviews or internships. Wildcat Wardrobe has
+        drop-in hours Mondays and Wednesdays from 2-4 pm.</p>
+      <h4 id="wildcat-wheels">Wildcat Wheels</h4>
+      <p><a
+          href="https://www.uky.edu/transportation/bike/wildcatwheels">https://www.uky.edu/transportation/bike/wildcatwheels</a>
+      </p>
+      <p>The Wildcat Wheels Bicycle Library (commonly referred to as Wildcat Wheels) is a nationally-recognized
+        educational resource that provides free bicycle use and repair assistance to UK students and employees.</p>
+      <h4 id="writing-center">Writing Center</h4>
+      <p><a href="https://wrd.as.uky.edu/writing-center">https://wrd.as.uky.edu/writing-center</a></p>
+      <p>The Robert E. Hemenway Writing Center offers free and friendly help to all UK students, faculty, and staff. We
+        assist with writing, speaking, and multimedia assignments across the curriculum. We offer advice on academic,
+        creative, and professional projects.</p>
+      <h2 id="about-the-department-of-geography">About the Department of Geography</h2>
+      <p>Located in Lexington, Kentucky, the Department of Geography at the University of Kentucky was established in
+        1944. <a href="https://newmapsplus.as.uky.edu/">New Maps Plus</a> grew out of the department in the early 2010s
+        to offer an entirely online graduate certificate in digital mapping and an online Master of Science in Digital
+        Mapping. The department is consistently ranked among leading geography graduate programs in the United States.
+      </p>
+      <p><a
+          href="https://en.wikipedia.org/wiki/Department_of_Geography,_University_of_Kentucky">https://en.wikipedia.org/wiki/Department_of_Geography,_University_of_Kentucky</a>
+      </p>
+      <p><img src="../images/syllabus/bottom-banner-nmp.png" alt="Dept of Geo, since 1944"></p>
+      <p class='text-center display-1 fancy-text uk-dark-blue'>We are wildly spatial, y'all!</p>
+      <p>.</p>
+    </section>
+  </main>
+  <footer class="footer fixed-bottom uk-liter-bg" id="footer">
+    <div class="row footer-text">
+      <div class="col-12 col-md text-center text-md-left nav-link text-dark">
+        © UKy Geography | 1944–2025
+      </div>
     </div>
-  </div>
 
-  
 
-  
-  
 
-  <script src="../js/bundle.min.js" defer></script>
-  <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
-  <script src="../js/utilities.js"></script>
-</footer>
+
+
+
+    <script src="../js/bundle.min.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"
+      charset="utf-8"></script>
+    <script src="../js/utilities.js"></script>
+  </footer>
 </body>
+
 </html>
