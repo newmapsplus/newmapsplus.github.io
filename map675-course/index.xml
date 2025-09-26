@@ -9,13 +9,6 @@
     <lastBuildDate>Fri, 04 Jun 2021 12:39:21 -0400</lastBuildDate>
     <atom:link href="https://newmapsplus.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>hawaii</title>
-      <link>https://newmapsplus.github.io/maps/hawaii/</link>
-      <pubDate>Mon, 10 May 2021 15:51:11 -0400</pubDate>
-      <guid>https://newmapsplus.github.io/maps/hawaii/</guid>
-      <description>&lt;main&gt;&#xA;    &lt;section class=&#34;py-3 container col-lg-8 col-xxl-6&#34; id=&#34;documentation&#34;&gt;&#xA;&#xA;        &lt;div id=&#39;lab-content&#39;&gt;&#xA;            &lt;h1&gt;hawaii&lt;/h1&gt;&#xA;            &lt;p&gt;Web map examples created by the user hawaii.&lt;/p&gt;&#xA;            &lt;ul&gt;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/census-api-example/&#34;&gt;US Census Data&lt;/a&gt; showing dynamically drawn&#xA;                    choropleth map.&#xA;                &lt;/li&gt;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/north-america-rivers/&#34;&gt;North American Rivers&lt;/a&gt; using rendered&#xA;                    GeoJSONs from a PostGIS database.&#xA;                &lt;/li&gt;&#xA;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/pine-mtn&#34;&gt;Pine Mountain&lt;/a&gt; using RGB DEM terrain.&#xA;                &lt;/li&gt;&#xA;            &lt;/ul&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/section&gt;&#xA;&lt;/main&gt;</description>
-    </item>
-    <item>
       <title>Syllabus</title>
       <link>https://newmapsplus.github.io/syllabus/</link>
       <pubDate>Fri, 04 Jun 2021 12:39:21 -0400</pubDate>
@@ -28,6 +21,13 @@
       <pubDate>Mon, 10 May 2021 15:51:11 -0400</pubDate>
       <guid>https://newmapsplus.github.io/maps/contig/</guid>
       <description>&lt;main&gt;&#xA;    &lt;section class=&#34;py-3 container col-lg-8 col-xxl-6&#34; id=&#34;documentation&#34;&gt;&#xA;&#xA;        &lt;div id=&#39;lab-content&#39;&gt;&#xA;            &lt;h1&gt;Our production server&lt;/h1&gt;&#xA;            &lt;p&gt;Our server for deploying our full-stack web maps is hosted by &lt;a&#xA;                    href=&#34;https://www.digitalocean.com/&#34;&gt;Digital Ocean&lt;/a&gt; as a virtual&#xA;                machine hosted in NYC with 2 vCPUs, 2 GB RAM, and 60 GB of SSD storage. It runs Ubuntu 22.04. &lt;/p&gt;&#xA;            &lt;p&gt;&#xA;                &lt;strong&gt;URL: &lt;a href=&#34;https://contig.us&#34;&gt;https://contig.us&lt;/a&gt;&lt;/strong&gt;&#xA;            &lt;/p&gt;&#xA;            &lt;p&gt;Participants in the course are encouraged to deploy a virtual machine on this platform (or similar&#xA;                virtual server hosts) to experiment configuring a production environment.&lt;/p&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/section&gt;&#xA;&lt;/main&gt;</description>
+    </item>
+    <item>
+      <title>hawaii</title>
+      <link>https://newmapsplus.github.io/maps/hawaii/</link>
+      <pubDate>Mon, 10 May 2021 15:51:11 -0400</pubDate>
+      <guid>https://newmapsplus.github.io/maps/hawaii/</guid>
+      <description>&lt;main&gt;&#xA;    &lt;section class=&#34;py-3 container col-lg-8 col-xxl-6&#34; id=&#34;documentation&#34;&gt;&#xA;        &lt;div id=&#34;lab-content&#34;&gt;&#xA;            &lt;h1&gt;hawaii&lt;/h1&gt;&#xA;            &lt;p&gt;Web map examples created by the user hawaii.&lt;/p&gt;&#xA;            &lt;ul&gt;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/census-api-example/&#34;&gt;US Census Data&lt;/a&gt;&#xA;                    showing dynamically drawn choropleth map.&#xA;                &lt;/li&gt;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/north-america-rivers/&#34;&gt;North American Rivers&lt;/a&gt;&#xA;                    using rendered GeoJSONs from a PostGIS database.&#xA;                &lt;/li&gt;&#xA;&#xA;                &lt;li&gt;&#xA;                    &lt;a href=&#34;https://contig.us/hawaii/pine-mtn&#34;&gt;Pine Mountain&lt;/a&gt; using&#xA;                    RGB DEM terrain.&#xA;                &lt;/li&gt;&#xA;            &lt;/ul&gt;&#xA;        &lt;/div&gt;&#xA;    &lt;/section&gt;&#xA;&lt;/main&gt;</description>
     </item>
   </channel>
 </rss>
